@@ -2,7 +2,7 @@
 
 Clone the repo
 ```bash
-git clone https://github.com/wpsimon09/HangoutSafari.git
+git clone https://github.com/HangoutSafari/Hangout-Safari.git
 ```
 
 CD to the repo

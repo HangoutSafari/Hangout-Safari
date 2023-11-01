@@ -29,7 +29,7 @@ export default class DemoScene {
       document.body.appendChild(renderer.domElement);
 
       const controls = new MapControls(camera, renderer.domElement);
-    
+      controls.enableRotate = false;
       controls.target.set(40.0, 0.0, 40.0);
       controls.update(0.1);
       controls.maxDistance =200

@@ -29,9 +29,11 @@ export default class DemoScene {
       document.body.appendChild(renderer.domElement);
 
       const controls = new MapControls(camera, renderer.domElement);
-      controls.enableRotate = false;
+    
       controls.target.set(40.0, 0.0, 40.0);
       controls.update(0.1);
+      controls.maxDistance =200
+    
 
       const ambient = new THREE.AmbientLight(lightColor, 1.0);
       ambient.castShadow = true;
@@ -56,6 +58,7 @@ export default class DemoScene {
           child.receiveShadow = true;
           child.castShadow = true;
         });
+        
         scene.add(gltf.scene);
         console.log(gltf);
       });

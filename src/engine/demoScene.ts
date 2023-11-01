@@ -33,7 +33,7 @@ export default class DemoScene {
       controls.target.set(40.0, 0.0, 40.0);
       controls.update(0.1);
 
-      const ambient = new THREE.AmbientLight(lightColor, 0.5);
+      const ambient = new THREE.AmbientLight(lightColor, 1.0);
       ambient.castShadow = true;
 
       const directionLight = new THREE.DirectionalLight(lightColor, 10);

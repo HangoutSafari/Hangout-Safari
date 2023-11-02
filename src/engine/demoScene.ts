@@ -32,7 +32,8 @@ export default class DemoScene {
       controls.enableRotate = false;
       controls.target.set(40.0, 0.0, 40.0);
       controls.update(0.1);
-      controls.maxDistance =200
+      controls.maxDistance =200;
+      controls.enablePan = true;
     
 
       const ambient = new THREE.AmbientLight(lightColor, 1.0);
@@ -41,7 +42,7 @@ export default class DemoScene {
       const directionLight = new THREE.DirectionalLight(lightColor, 10);
       directionLight.position.set(100, 100, 0);
 
-      const geometry = new THREE.BoxGeometry(2, 2, 2);
+      const geometry:THREE.BoxGeometry = new THREE.BoxGeometry(2, 2, 2);
       const material = new THREE.MeshBasicMaterial({ wireframe: true });
       const cube = new THREE.Mesh(geometry, material);
       cube.position.set(

@@ -2,8 +2,8 @@
 
 </script>
 
-<body >
-    <div class=" flex p-5 justify-center self-center text-center items-center">
+<body  >
+    <div class=" flex p-5 justify-center self-center text-center items-center z-30">
     <div class="bg-white p-5 rounded shadow-2xl w-96">        
         <h2 class="text-2xl font-semibold text-gray-500  mb-4">LOG IN</h2>
         <form>

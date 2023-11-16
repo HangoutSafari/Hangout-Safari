@@ -4,5 +4,5 @@
 </script>
 
 <div>
-  <!-- <h1>{animal.name} - {animal.Specie}</h1> -->
+  <h1>{data.animal.name} - {data.animal.Specie}</h1>
 </div>

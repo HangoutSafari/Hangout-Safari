@@ -2,23 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.background{
-    background-color: #f2f2f2;
+.background {
+  background-color: #f2f2f2;
 }
 @media screen and (max-width: 768px) {
-    .hov:hover{
-        background-color: #d1d5db;;
-    }
-    .desktop{
-        display: none;
-    }
+  .hov:hover {
+    background-color: #d1d5db;
+  }
+  .desktop {
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) {
-    .hov:hover{
-        background-color: #f2f2f2
-    } 
-    .desktop{
-        display: block;
-    }  
+  .hov:hover {
+    background-color: #f2f2f2;
+  }
+  .desktop {
+    display: block;
+  }
 }

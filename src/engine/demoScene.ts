@@ -53,7 +53,7 @@ export default class DemoScene {
         directionLight.position.y,
         directionLight.position.z
       );
-
+      
       scene.add(directionLight);
       scene.add(ambient);
       scene.add(cube);

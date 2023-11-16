@@ -22,8 +22,8 @@ export default class DemoScene {
       camera.position.z = 0;
       camera.position.y = 60;
 
-      const renderer = new THREE.WebGLRenderer({antialias: true});
-  
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -31,11 +31,10 @@ export default class DemoScene {
 
       const controls = new MapControls(camera, renderer.domElement);
       controls.enableRotate = true;
-
       controls.target.set(40.0, 3.0, 40.0);
       controls.update(0.1);
-      controls.maxDistance =240;
-      controls.maxPolarAngle = 1.2
+      controls.maxDistance = 240;
+      controls.maxPolarAngle = 1.2;
 
       controls.enablePan = true;
 
@@ -53,11 +52,10 @@ export default class DemoScene {
         directionLight.position.y,
         directionLight.position.z
       );
-      
+
       scene.add(directionLight);
       scene.add(ambient);
       scene.add(cube);
-
       gltfLoader.load("models/savana2.glb", (gltf) => {
         scene.children.forEach((child) => {
           child.receiveShadow = true;
@@ -66,16 +64,6 @@ export default class DemoScene {
 
         scene.add(gltf.scene);
         console.log(gltf);
-      });
-
-      gltfLoader.load("models/BIG-JUNGUS.glb", (bunny) => {
-        bunny.scene.scale.set(
-          scene.scale.x + 10,
-          scene.scale.y + 10,
-          scene.scale.z + 10
-        );
-        scene.position.setY(1000);
-        scene.add(bunny.scene);
       });
 
       function animate() {

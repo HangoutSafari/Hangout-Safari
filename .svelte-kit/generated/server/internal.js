@@ -34,7 +34,7 @@ export const options = {
       assets +
       '/favicon.png" />\r\n    <meta name="viewport" content="width=device-width" />\r\n    ' +
       head +
-      '\r\n  </head>\r\n  <body data-sveltekit-preload-data="hover">\r\n    <div style="display: contents" class="flex items-center">' +
+      '\r\n  </head>\r\n  <body data-sveltekit-preload-data="hover">\r\n    <div style="display: contents">' +
       body +
       "</div>\r\n  </body>\r\n</html>\r\n",
     error: ({ status, message }) =>
@@ -46,8 +46,7 @@ export const options = {
       message +
       "</h1>\n\t\t\t</div>\n\t\t</div>\n\t</body>\n</html>\n",
   },
-  version_hash: "1dorqin",
-
+  version_hash: "fmeexr",
 };
 
 export function get_hooks() {

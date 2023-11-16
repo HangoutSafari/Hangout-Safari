@@ -8,7 +8,7 @@ type MatcherParam<M> = M extends (param: string) => param is infer U
     : string
   : string;
 type RouteParams = {};
-type RouteId = "/";
+type RouteId = "/events";
 type MaybeWithVoid<T> = {} extends T ? T | void : T;
 export type RequiredKeys<T> = {
   [K in keyof T]-?: {} extends { [P in K]: T[K] } ? never : K;
@@ -24,20 +24,10 @@ type OptionalUnion<
   A extends keyof U = U extends U ? keyof U : never
 > = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 export type Snapshot<T = any> = Kit.Snapshot<T>;
-type PageServerParentData = EnsureDefined<LayoutServerData>;
-type PageParentData = EnsureDefined<LayoutData>;
-type LayoutRouteId =
-  | RouteId
-  | "/"
-  | "/events"
-  | "/events/[slug]"
-  | "/example"
-  | "/login"
-  | "/profile/[slug]"
-  | "/register"
-  | null;
-type LayoutParams = RouteParams & { slug?: string };
-type LayoutParentData = EnsureDefined<{}>;
+type PageServerParentData = EnsureDefined<
+  import("../$types.js").LayoutServerData
+>;
+type PageParentData = EnsureDefined<import("../$types.js").LayoutData>;
 
 export type PageServerLoad<
   OutputData extends OutputDataShape<PageServerParentData> = OutputDataShape<PageServerParentData>
@@ -50,7 +40,7 @@ export type PageServerData = Expand<
       Kit.AwaitedProperties<
         Awaited<
           ReturnType<
-            typeof import("../../../../src/routes/+page.server.js").load
+            typeof import("../../../../../src/routes/events/+page.server.js").load
           >
         >
       >
@@ -66,6 +56,4 @@ export type Action<
 export type Actions<
   OutputData extends Record<string, any> | void = Record<string, any> | void
 > = Kit.Actions<RouteParams, OutputData, RouteId>;
-export type LayoutServerData = null;
-export type LayoutData = Expand<LayoutParentData>;
 export type RequestEvent = Kit.RequestEvent<RouteParams, RouteId>;

@@ -22,7 +22,8 @@ export default class DemoScene {
       camera.position.z = 0;
       camera.position.y = 60;
 
-      const renderer = new THREE.WebGLRenderer();
+      const renderer = new THREE.WebGLRenderer({antialias: true});
+  
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -30,9 +31,12 @@ export default class DemoScene {
 
       const controls = new MapControls(camera, renderer.domElement);
       controls.enableRotate = true;
-      controls.target.set(40.0, 0.0, 40.0);
+
+      controls.target.set(40.0, 3.0, 40.0);
       controls.update(0.1);
-      controls.maxDistance = 200;
+      controls.maxDistance =240;
+      controls.maxPolarAngle = 1.2
+
       controls.enablePan = true;
 
       const ambient = new THREE.AmbientLight(lightColor, 1.0);
@@ -49,7 +53,7 @@ export default class DemoScene {
         directionLight.position.y,
         directionLight.position.z
       );
-
+      
       scene.add(directionLight);
       scene.add(ambient);
       scene.add(cube);

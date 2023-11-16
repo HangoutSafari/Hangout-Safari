@@ -206,6 +206,7 @@ declare module "$env/dynamic/private" {
     [key: `PUBLIC_${string}`]: undefined;
     [key: `${string}`]: string | undefined;
   };
+
 }
 
 /**

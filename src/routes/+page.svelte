@@ -5,7 +5,9 @@
   console.log(data);
 </script>
 
-<Example />
+<div>
+  <Example />
+</div>
 
 <style>
 </style>

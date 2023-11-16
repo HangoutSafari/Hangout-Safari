@@ -29,7 +29,7 @@ export default class DemoScene {
       document.body.appendChild(renderer.domElement);
 
       const controls = new MapControls(camera, renderer.domElement);
-      controls.enableRotate = false;
+      controls.enableRotate = true;
       controls.target.set(40.0, 0.0, 40.0);
       controls.update(0.1);
       controls.maxDistance =200;
@@ -54,6 +54,7 @@ export default class DemoScene {
       scene.add(directionLight);
       scene.add(ambient);
       scene.add(cube);
+
       gltfLoader.load("models/savana2.glb", (gltf) => {
         scene.children.forEach((child) => {
           child.receiveShadow = true;
@@ -63,6 +64,12 @@ export default class DemoScene {
         scene.add(gltf.scene);
         console.log(gltf);
       });
+
+      gltfLoader.load("models/BIG-JUNGUS.glb", (bunny) => {
+        bunny.scene.scale.set(scene.scale.x + 10, scene.scale.y + 10, scene.scale.z + 10);
+        scene.position.setY(1000);
+        scene.add(bunny.scene);
+      })
 
       function animate() {
         requestAnimationFrame(animate);

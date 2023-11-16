@@ -8,9 +8,9 @@
             <img src="" alt="Logo">
         </div>
         <!-- Navigation Buttons (Right Side) -->
-        <div class="   flex  items-center space-x-4">
+        <div class="flex items-center space-x-4">
           <!-- Button 1 -->
-          <button  class="font-semibold order-1 px-8 py-4 shadow-lg bg-white text-black rounded hover:bg-gray-300">
+          <button class="font-semibold order-1 px-8 py-4 shadow-lg bg-white text-black rounded hover:bg-gray-300">
             Events
           </button>
           <!-- Button 2 -->

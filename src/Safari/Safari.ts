@@ -1,5 +1,3 @@
-namespace Safari{
-    export default class Safari{
-        
-    }
+export class Safari {
+  public name = "ahoj";
 }

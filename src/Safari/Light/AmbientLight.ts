@@ -5,15 +5,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { MapControls } from "three/examples/jsm/controls/MapControls.js";
 import { construct_svelte_component } from "svelte/internal";
 
+export default class AmbientLight {
+  lightColor: THREE.Color;
+  lightStrenght: Number;
+  hasShadow: Boolean;
 
-
-
-export default class AmbientLight{
-    lightColor: THREE.Color;
-    lightStrenght: Number;
-    hasShadow: Boolean;
-
-    constructor(){
-        
-    }
-} 
+  constructor() {}
+}

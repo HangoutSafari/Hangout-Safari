@@ -5,11 +5,9 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { MapControls } from "three/examples/jsm/controls/MapControls.js";
 import { construct_svelte_component } from "svelte/internal";
 
-export default class DirectionLight{
-    DirectionLight: THREE.DirectionalLight;
-    Position: THREE.Vector3;
-    LightProperties: LightProperties;
-    constructor(){
-        
-    }
-} 
+export default class DirectionLight {
+  DirectionLight: THREE.DirectionalLight;
+  Position: THREE.Vector3;
+  LightProperties: LightProperties;
+  constructor() {}
+}

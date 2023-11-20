@@ -20,7 +20,7 @@ export const dictionary = {
 		"/events/[slug]": [~4],
 		"/example": [~5],
 		"/login": [~6],
-		"/profile/[slug]": [~7],
+		"/profile": [~7],
 		"/register": [~8]
 	};
 

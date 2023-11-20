@@ -14,7 +14,7 @@
     "target": "esnext",
     "ignoreDeprecations": "5.0",
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "ambient.d.ts",

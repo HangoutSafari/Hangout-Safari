@@ -1,16 +1,20 @@
-<script></script>
+<script>
+
+</script>
 
 <body>
+
   <!-- Navbar -->
   <nav class="background mt-2">
     <div
       class=" container mx-auto flex md:justify-between justify-center items-center"
     >
-      <div class=" desktop ml-2">
-        <a href="/" >
-          <img src="your_logo_path.jpg" alt="Logo" />
-        </a>
-      </div>
+    <div class="logo-container desktop ml-8">
+      <a href="/" class="flex items-center">
+        <img src="/images/logo.jpg" alt="Logo" class="rounded-full object-cover w-20 h-20" />
+        <span class="ml-2 font-bold text-2xl">Safari Hangout</span>
+      </a>
+    </div>
       <!-- Navigation Buttons (Right Side) -->
       <div class="flex items-center space-x-4">
         <!-- Button 1 -->
@@ -25,6 +29,7 @@
           class="font-semibold md:order-3 order-2 md:shadow-none shadow-lg px-5 py-4 bg-white md:bg-transparent text-black rounded hov"
         >
           icon
+          
         </a>
         <!-- Button 3 -->
         <a href="/safari"

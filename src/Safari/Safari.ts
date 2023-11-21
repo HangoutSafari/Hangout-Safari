@@ -30,7 +30,7 @@ export class Safari {
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(1, 20, 10)));
     this.lightSources.push(new DirectionLight(THREE.Color.NAMES.orange,8,true,new THREE.Vector3(0, 20, 10)));
     this.renderer = new Renderer(renderingContext);
-    this.controls = new MapControls(this.camera, renderingContext);
+    this.controls = new Controls(this.camera, renderingContext);
     this.safariModel = safariModel;
     this.animate = this.animate.bind(this);
   }

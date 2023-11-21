@@ -17,6 +17,6 @@ import type { PageData } from './$types';
 <body>
     
     <main>
-       <ProfileCard />
+       <SettingsCard />
     </main>
 </body>

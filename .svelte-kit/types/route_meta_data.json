@@ -8,5 +8,6 @@
   ],
   "/login": ["src/routes/login/+page.server.js"],
   "/profile/[slug]": ["src/routes/profile/[slug]/+page.server.js"],
-  "/register": ["src/routes/register/+page.server.js"]
+  "/register": ["src/routes/register/+page.server.js"],
+  "/safari": ["src/routes/safari/+page.server.js"]
 }

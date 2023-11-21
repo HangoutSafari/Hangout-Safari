@@ -1,14 +1,12 @@
 <script>
-  import Example from "$lib/components/Example.svelte";
+  import SideNavBar from "$lib/components/events/sidebar.svelte";
+
   export let data;
   console.log(data);
 </script>
 
-<div>
-  {#each data.items as animal}
-    <div>
-      <p><a href="/events/{animal.id}">{animal.name}</a> - {animal.Specie}</p>
-      <br />
-    </div>
-  {/each}
-</div>
+<body>
+  <div>
+    <SideNavBar />
+  </div>
+</body>

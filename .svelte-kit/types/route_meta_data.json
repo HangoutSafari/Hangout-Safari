@@ -1,24 +1,12 @@
 {
-	"/": [
-		"src/routes/+page.server.js"
-	],
-	"/events": [
-		"src/routes/events/+page.server.js"
-	],
-	"/events/[slug]": [
-		"src/routes/events/[slug]/+page.server.js"
-	],
-	"/example": [
-		"src/routes/example/+page.js",
-		"src/routes/example/+page.server.js"
-	],
-	"/login": [
-		"src/routes/login/+page.server.js"
-	],
-	"/profile/[slug]": [
-		"src/routes/profile/[slug]/+page.server.js"
-	],
-	"/register": [
-		"src/routes/register/+page.server.js"
-	]
+  "/": ["src/routes/+page.server.js"],
+  "/events": ["src/routes/events/+page.server.js"],
+  "/events/[slug]": ["src/routes/events/[slug]/+page.server.js"],
+  "/example": [
+    "src/routes/example/+page.js",
+    "src/routes/example/+page.server.js"
+  ],
+  "/login": ["src/routes/login/+page.server.js"],
+  "/profile/[slug]": ["src/routes/profile/[slug]/+page.server.js"],
+  "/register": ["src/routes/register/+page.server.js"]
 }

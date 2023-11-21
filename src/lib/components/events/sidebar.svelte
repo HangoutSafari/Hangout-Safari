@@ -1,6 +1,7 @@
 <script>
   import Category from "./category.svelte";
   import Header from "./header.svelte";
+  import Eventcard from "./eventcard.svelte";
 </script>
 
 <head>
@@ -11,7 +12,7 @@
   />
 </head>
 
-<body class="font-sans">
+<body class="font-sans bg-[#F2F2F2]">
   <!-- Sidebar -->
   <aside
     class="fixed bg-[#D9D9D9] text-gray-200 h-screen flex flex-col drop-shadow-lg w-full sm:w-80"
@@ -41,4 +42,74 @@
       <Category icon="fas fa-puzzle-piece" text="Games" />
     </ul>
   </aside>
+
+  <!-- Main Content on page-->
+  <main class="ml-80 py-16 pl-16 pr-6">
+    <h1 class="text-4xl font-bold mb-5">Events</h1>
+    
+    <div class="grid grid-cols-2 gap-8">
+
+      <!-- Event cards-->
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg" 
+      />
+
+
+      
+
+    </div>
+
+  </main>
+
 </body>

@@ -10,6 +10,7 @@
   import VectorLayer from "ol/layer/Vector.js";
   import VectorSource from "ol/source/Vector.js";
   import { fromLonLat } from "ol/proj";
+  import Overlay from "ol/Overlay.js";
   import { Attribution, defaults as defaultControls } from "ol/control.js";
 
   let target;
@@ -61,7 +62,12 @@
         target,
         view,
         layers: [tileLayer, vectorLayer],
-        controls: defaultControls({ attribution: false }).extend([attribution]),
+        controls: defaultControls({
+          attribution: false,
+          zoom: false,
+          rotate: false,
+        }).extend([attribution]),
+        interactions: [],
       });
     }
   });
@@ -70,4 +76,4 @@
 <head>
   <link rel="stylesheet" href="node_modules/ol/ol.css" />
 </head>
-<div bind:this={target} class="w-[400px] h-[400px]" />
+<div bind:this={target} class="w-[400px] h-[400px]"><div id="popup"/> </div>

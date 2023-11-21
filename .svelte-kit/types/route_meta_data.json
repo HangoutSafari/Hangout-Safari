@@ -2,6 +2,9 @@
 	"/": [
 		"src/routes/+page.server.js"
 	],
+	"/eventShow": [
+		"src/routes/eventShow/+page.server.ts"
+	],
 	"/events": [
 		"src/routes/events/+page.server.js"
 	],

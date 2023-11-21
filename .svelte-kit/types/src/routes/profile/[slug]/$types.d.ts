@@ -18,7 +18,7 @@ export type EntryGenerator = () => Promise<Array<RouteParams>> | Array<RoutePara
 export type PageServerLoad<OutputData extends OutputDataShape<PageServerParentData> = OutputDataShape<PageServerParentData>> = Kit.ServerLoad<RouteParams, PageServerParentData, OutputData, RouteId>;
 export type PageServerLoadEvent = Parameters<PageServerLoad>[0];
 export type ActionData = unknown;
-export type PageServerData = Expand<OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../../node_modules/@sveltejs/kit/src/routes/profile/[slug]/+page.server.js').load>>>>>>;
+export type PageServerData = Expand<OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../../src/routes/profile/[slug]/+page.server.js').load>>>>>>;
 export type PageData = Expand<Omit<PageParentData, keyof PageServerData> & EnsureDefined<PageServerData>>;
 export type Action<OutputData extends Record<string, any> | void = Record<string, any> | void> = Kit.Action<RouteParams, OutputData, RouteId>
 export type Actions<OutputData extends Record<string, any> | void = Record<string, any> | void> = Kit.Actions<RouteParams, OutputData, RouteId>

@@ -17,7 +17,7 @@ type PageParentData = EnsureDefined<import('../$types.js').LayoutData>;
 export type PageServerLoad<OutputData extends Partial<App.PageData> & Record<string, any> | void = Partial<App.PageData> & Record<string, any> | void> = Kit.ServerLoad<RouteParams, PageServerParentData, OutputData, RouteId>;
 export type PageServerLoadEvent = Parameters<PageServerLoad>[0];
 export type ActionData = unknown;
-export type PageServerData = Expand<OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../node_modules/@sveltejs/kit/src/routes/example/+page.server.js').load>>>>>>;
+export type PageServerData = Expand<OptionalUnion<EnsureDefined<Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../../src/routes/example/+page.server.js').load>>>>>>;
 export type PageLoad<OutputData extends OutputDataShape<PageParentData> = OutputDataShape<PageParentData>> = Kit.Load<RouteParams, PageServerData, PageParentData, OutputData, RouteId>;
 export type PageLoadEvent = Parameters<PageLoad>[0];
 export type PageData = Expand<Omit<PageParentData, keyof PageParentData & EnsureDefined<PageServerData>> & OptionalUnion<EnsureDefined<PageParentData & EnsureDefined<PageServerData>>>>;

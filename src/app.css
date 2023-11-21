@@ -21,6 +21,7 @@
     display: block;
   }
 }
+
 .active{
-  background-color: rgb(9, 70, 163);
+  border-bottom: 3px solid #fb923c;
 }

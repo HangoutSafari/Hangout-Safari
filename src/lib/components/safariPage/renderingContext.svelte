@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Safari } from "../../../Safari/Safari";
   import { onMount } from "svelte";
-  let renderingContext: HTMLElement;
+  let renderingContext: HTMLCanvasElement;
   onMount(() => {
     console.log(renderingContext);
     const safari = new Safari(renderingContext, "models/savana2.glb");
@@ -9,7 +9,4 @@
   });
 </script>
 
-<canvas
-  bind:this={renderingContext}
-  class="h-1/2 w-1/2 border-black self-center border-2"
-/>
+<canvas bind:this={renderingContext} class="lg:w-[70%] w-full h-[90%] border-black self-center border-2"></canvas>

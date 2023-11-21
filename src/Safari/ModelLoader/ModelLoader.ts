@@ -6,18 +6,20 @@ const modelLoader = new THREE.LoadingManager();
 /**
  * Returns the scene that has been loaded by using gltfLoader
  * @param path path to the .glb/.gltf file
+ * @param callback callback function that will have access to the loaded model
  * @returns loaded scene
  */
-export function loadModel(path: string): THREE.Object3D {
-  const gltfLoader = new GLTFLoader(modelLoader);
-  Debug.checkModelLoadingProcess(modelLoader);
-  let loadedModel = new THREE.Object3D();
-  gltfLoader.load(path, (loaded) => {
-    loadedModel = loaded.scene;
-    console.log(loadedModel);
-  });
+export function loadModel(path: string): Promise<THREE.Object3D> {
+  return new Promise((resolve) => {
+    const gltfLoader = new GLTFLoader(modelLoader);
+    Debug.checkModelLoadingProcess(modelLoader);
+    gltfLoader.load(path, (loaded) => {
+      const loadedModel = loaded.scene;
+      console.log(loadedModel);
 
-  return loadedModel;
+      resolve(loadedModel);
+    });
+  });
 }
 
 /**

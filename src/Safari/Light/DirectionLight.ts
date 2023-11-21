@@ -21,6 +21,7 @@ export class DirectionLight extends THREE.DirectionalLight {
     super(lColor, lStrength);
     this.castShadow = isCastingShadows;
     this.pos = lPosition;
+    this.position.set(lPosition.x, lPosition.y, lPosition.z);
   }
 
   /**

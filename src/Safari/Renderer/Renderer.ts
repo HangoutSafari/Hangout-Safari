@@ -9,9 +9,10 @@ export class Renderer extends THREE.WebGLRenderer {
     super({ antialias: true, canvas: renderingContext });
     this.shadowMap.enabled = true;
     this.setSize(
-      renderingContext.clientHeight,
       renderingContext.clientWidth,
+      renderingContext.clientHeight,
       true
     );
+    this.setPixelRatio(window.devicePixelRatio);
   }
 }

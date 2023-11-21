@@ -1,6 +1,7 @@
 import * as THREE from "three";
 
 export class Camera extends THREE.PerspectiveCamera {
+
   constructor(
     domElement: HTMLCanvasElement,
     FOV: number,
@@ -13,7 +14,7 @@ export class Camera extends THREE.PerspectiveCamera {
       nearPlane,
       farPlane
     );
-    this.move(0, 0, 10);
+    this.move(0, 0, 30);
   }
 
   /**

@@ -22,29 +22,29 @@
     </div>
 
     <!-- Date and Location-->
-    <div class="w-full flex flex-row items-center py-2 text-[#565656]/75">
-        <div class="flex flex-row items-center justify-between w-full g-4">
+    <div class="w-full flex sm:flex-row items-center py-2 text-[#565656]/75">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full g-4">
 
             <!-- Event Date - Left Half -->
-            <div class="w-1/2 flex items-center">
-                <i class="mr-4 fa-solid fa-calendar fa-lg ml-4" />
+            <div class="sm:w-1/2 flex items-center">
+                <i class="pl-4 sm:pl-0 mr-4 fa-solid fa-calendar fa-lg sm:ml-4" />
                 <h1 class="text-sm">{eventDate}</h1>
             </div>
 
             <!-- Event Location - Right Half -->
-            <div class="w-1/2 flex items-center justify-end">
-                <i class="mr-4 fa-solid fa-location-dot fa-lg" />
-                <h1 class="text-sm mr-4">{eventLocation}</h1>
+            <div class="sm:w-1/2 flex items-center sm:justify-end">
+                <i class="pl-4 sm:pl-0 mr-4 fa-solid fa-location-dot fa-lg" />
+                <h1 class="text-sm sm:mr-4">{eventLocation}</h1>
             </div>
 
         </div>
     </div>
 
-    <div class="px-4 pb-2 w-full h-full flex items-center justify-center">
+    <div class="hidden px-4 pb-2 w-full h-full sm:flex items-center justify-center">
 
         <!-- Join button -->
         <button
-            class="h-6 w-full bg-[#BCBCBC] hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow flex items-center justify-center rounded-xl text-white text-sm self-center">
+            class="h-6 w-full bg-[#BCBCBC] hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow sm:flex items-center justify-center rounded-xl text-white text-sm self-center">
             Join now
         </button>
     

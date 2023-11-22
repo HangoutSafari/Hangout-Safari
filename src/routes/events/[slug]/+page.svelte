@@ -15,7 +15,7 @@
   console.log(data);
 </script>
 
-<main class="min-h-screen flex flex-col">
+<main class="min-h-screen flex flex-col lg:mt-0 mt-4">
   <div class="flex flex-grow bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center flex-col items-center justify-center w-full relative">
       <div class="flex flex-col items-center gap-5 mt-60 mb-8 lg:mb-0"> 
           <TitleLabel />

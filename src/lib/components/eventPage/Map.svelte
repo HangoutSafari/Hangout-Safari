@@ -37,7 +37,7 @@
           anchor: [0.5, 46],
           anchorXUnits: "fraction",
           anchorYUnits: "pixels",
-          src: "images/logo.png",
+          src: "../images/logo.png",
         }),
       });
       // Applies the style to the point
@@ -74,7 +74,7 @@
 </script>
 
 <head>
-  <link rel="stylesheet" href="node_modules/ol/ol.css" />
+  <link rel="stylesheet" href="../node_modules/ol/ol.css" />
 </head>
 <div
   bind:this={target}

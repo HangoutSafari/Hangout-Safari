@@ -31,6 +31,10 @@ export class Camera extends THREE.PerspectiveCamera {
     );
   }
 
+  /**
+   * Handles the resizing of the camera and updates the matrices accordingly
+   * @param renderingContext where is the context rendered
+   */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
     this.aspect = renderingContext.clientWidth/renderingContext.clientHeight;

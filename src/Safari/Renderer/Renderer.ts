@@ -17,7 +17,10 @@ export class Renderer extends THREE.WebGLRenderer {
     this.setPixelRatio(window.devicePixelRatio);
   }
 
-  public handleResizing(renderingContext: HTMLCanvasElement)
+  /**
+   * Handles the responsivness of the canvas and resets the renderer
+   */
+  public handleResizing()
   {
     this.dimensionHelper = document.getElementById('dimentionHelper');
     this.setSize(this.dimensionHelper.clientWidth, this.dimensionHelper.clientHeight, true);

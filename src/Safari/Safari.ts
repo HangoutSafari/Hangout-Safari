@@ -65,10 +65,8 @@ export class Safari {
    */
   public processRezieEvent(){
     console.log('resizing...');
-    console.log(this.renderer);
-    this.renderer.handleResizing(this.renderingContext);
-    this.camera.handleResizing(this.renderingContext);
-    this.renderer.render(this.scene, this.camera);
+    this.renderer.handleResizing();
+    this.camera.handleResizing(this.renderer.domElement);
   }
 
   /**

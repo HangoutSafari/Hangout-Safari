@@ -30,4 +30,10 @@ export class Camera extends THREE.PerspectiveCamera {
       this.position.z + z
     );
   }
+
+  public handleResizing(renderingContext: HTMLCanvasElement)
+  {
+    this.aspect = renderingContext.clientWidth/renderingContext.clientHeight;
+    this.updateProjectionMatrix();
+  }
 }

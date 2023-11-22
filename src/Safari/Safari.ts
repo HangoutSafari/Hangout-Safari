@@ -5,8 +5,8 @@ import { Renderer } from "./Renderer/Renderer";
 import { Camera } from "./Camera/Camera";
 import { Controls } from "./Camera/MapControls";
 import { Orbit } from "./Camera/OrbitalControls";
-import { loadAndPutToScene, loadModel } from "./ModelLoader/ModelLoader";
-import { bind } from "svelte/internal";
+import { loadModel } from "./ModelLoader/ModelLoader";
+import { bind, handle_promise } from "svelte/internal";
 import { ShapeGenerator } from "./Geometry/ShapeGenerator";
 import { Scene } from "./Scene/Scene";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -24,7 +24,6 @@ export class Safari {
   public renderingContext: HTMLCanvasElement;
 
   constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
-    this.renderingContext = renderingContext;
     this.scene = new Scene();
     this.camera = new Camera(renderingContext, 65, 0.1, 2000);
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(1, 20, 10)));
@@ -32,13 +31,17 @@ export class Safari {
     this.renderer = new Renderer(renderingContext);
     this.controls = new Controls(this.camera, renderingContext);
     this.safariModel = safariModel;
+    this.renderingContext = this.renderer.domElement;
     this.animate = this.animate.bind(this);
+    this.processRezieEvent = this.processRezieEvent.bind(this);
   }
 
   /**
    * Sets up all necesary components for drawing calls E.G: pushes objects to the scene
    */
   public setup() {
+    window.addEventListener('resize',this.processRezieEvent);
+
     this.lightSources.forEach((lightSource) => {
       console.log("aded light source");
       this.scene.add(lightSource);
@@ -61,7 +64,11 @@ export class Safari {
    * Process on rezies event and updates the dimensions of canvas
    */
   public processRezieEvent(){
-
+    console.log('resizing...');
+    console.log(this.renderer);
+    this.renderer.handleResizing(this.renderingContext);
+    this.camera.handleResizing(this.renderingContext);
+    this.renderer.render(this.scene, this.camera);
   }
 
   /**

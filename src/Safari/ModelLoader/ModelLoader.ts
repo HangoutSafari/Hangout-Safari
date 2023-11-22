@@ -42,11 +42,4 @@ export function loadMeshes(
   return loadedMeshes;
 }
 
-/**
- * Loads the model and puts it to the scene
- * @param path path to the .glb/.gltf file
- * @param scene scene where to add the model
- */
-export function loadAndPutToScene(path: string, scene: THREE.Scene): void {
-  scene.add(loadModel(path));
-}
+

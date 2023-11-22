@@ -9,4 +9,6 @@
   });
 </script>
 
-<canvas bind:this={renderingContext} class="lg:w-[70%] w-full h-[90%] border-black self-center border-2"></canvas>
+<div id="dimentionHelper" class="sm:w-[70%] lg:w-1/2 h-[90%] border-red-400 self-center border-4">
+  <canvas class="w-full h-full" bind:this={renderingContext} ></canvas>  
+</div>

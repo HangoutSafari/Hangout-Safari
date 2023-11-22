@@ -76,4 +76,4 @@
 <head>
   <link rel="stylesheet" href="node_modules/ol/ol.css" />
 </head>
-<div bind:this={target} class="w-[400px] h-[400px]"><div id="popup"/> </div>
+<div bind:this={target} class="w-full h-full rounded-3xl overflow-hidden"><div id="popup"/> </div>

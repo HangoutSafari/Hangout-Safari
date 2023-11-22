@@ -9,10 +9,11 @@
     import TimeData from "$lib/components/eventShow/TimeData.svelte";
     import MapLabel from "$lib/components/eventShow/MapLabel.svelte";
     import Time from "$lib/components/eventShow/Time.svelte";
+    import Map from "$lib/components/eventPage/Map.svelte";
 </script>
 
 <main>
-    <div class="upper-part">
+    <div class="upper-part bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center">
         <div class="title">
             <TitleLabel />
             <JoinButton />
@@ -34,6 +35,7 @@
         </div>
         <div class="right-part">
             <MapLabel />
+            <Map />
         </div>
     </div>
 </main>
@@ -99,6 +101,7 @@
         flex: 1.8;
         margin-top: 35px;
         margin-right: 30px;
+        align-self: stretch;
     }
 
     .time-container {

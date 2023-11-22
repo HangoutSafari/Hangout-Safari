@@ -76,4 +76,9 @@
 <head>
   <link rel="stylesheet" href="node_modules/ol/ol.css" />
 </head>
-<div bind:this={target} class="w-full h-full rounded-3xl overflow-hidden"><div id="popup"/> </div>
+<div
+  bind:this={target}
+  class={`w-full h-full rounded-3xl overflow-hidden lg:[&>.ol-viewport]:!overflow-hidden [&>.ol-viewport]:!overflow-visible ${$$props.class}`}
+>
+  <div id="popup" />
+</div>

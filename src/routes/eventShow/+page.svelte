@@ -12,16 +12,16 @@
     import Map from "$lib/components/eventPage/Map.svelte";
 </script>
 
-<main class="min-h-screen flex flex-col relative">
-    <div class="flex flex-grow bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center flex-col items-center justify-center w-full">
-        <div class="flex flex-col items-center gap-5 mt-60"> 
+<main class="min-h-screen flex flex-col">
+    <div class="flex flex-grow bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center flex-col items-center justify-center w-full relative">
+        <div class="flex flex-col items-center gap-5 mt-60 mb-8 lg:mb-0"> 
             <TitleLabel />
             <JoinButton />
         </div>
-        <HostLabel class="absolute top-[calc(50%+20px)] translate-y-[-80%] left-0 ml-12"/>
+        <HostLabel class="absolute bottom-[-20%] translate-y-[-80%] left-0 ml-12 "/>
     </div>
-    <div class="flex flex-3 w-full items-stretch justify-center bg-[#cfcfcf64]">
-        <div class="flex flex-col items-center justify-start p-4 gap-4 flex-1 mt-16 ml-7">
+    <div class="flex flex-col lg:flex-row flex-3 w-full items-stretch justify-center bg-[#cfcfcf64]">
+        <div class="flex flex-col items-center justify-start p-4 gap-4 flex-1 xl:mt-16 lg:mt-12 mt-16 ml-7">
             <ParticipantsLabel />
             <Participants />
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="flex flex-col items-center justify-start self-stretch p-4 gap-4 flex-1 mt-9 mr-7">
             <MapLabel />
-            <Map />
+            <Map class="min-h-[200px] lg:min-h-[0] min-w-full"/>
         </div>
     </div>
 </main>

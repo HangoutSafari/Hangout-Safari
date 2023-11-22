@@ -1,31 +1,8 @@
-<div class="host-label">HOST</div>
-
-<style>
-    .host-label {
-        padding: 25px 50px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 28px;
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        color: #333333;
-        position: absolute; 
-        top: calc(50% + 20px); 
-        transform: translateY(-80%);
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 50px; 
-    }
-
-    .host-label::after {
-        content: '';
-        display: inline-block;
-        width: 60px; 
-        height: 60px; 
-        background-color: blue;
-        border-radius: 50%;
-        margin-left: 50px; 
-    }
-</style>
+<div
+  class={`py-6 px-12 bg-white rounded-3xl font-bold text-3xl text-[#333333] 
+  flex justify-center items-center gap-6 shadow-[0_2px_4px_rgba(117,106,106,0.8)] 
+  after:content-[''] after:inline-block after:w-[60px] after:h-[60px] after:bg-[#0000ff] after:rounded-full
+  ${$$props.class}`}
+>
+  HOST
+</div>

@@ -18,7 +18,7 @@
             <TitleLabel />
             <JoinButton />
         </div>
-        <HostLabel />
+        <HostLabel class="absolute top-[calc(50%+20px)] translate-y-[-80%] left-0 ml-12"/>
     </div>
     <div class="lower-part">
         <div class="left-part">
@@ -111,5 +111,6 @@
         align-items: center;
         gap: 20px;
     }
+    
     
 </style>

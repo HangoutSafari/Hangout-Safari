@@ -23,7 +23,6 @@ import {page} from '$app/stores';
             </a>
             {#if $page.url.pathname == '/events' }
                 <hr class="w-full h-1.5 mx-auto my-5  bg-gradient-to-r from-[#ffe700] to-[#ff0000] rounded ">
-                  
             {/if}
         </div>
         <div class="md:order-3 order-2">

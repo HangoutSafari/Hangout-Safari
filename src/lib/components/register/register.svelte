@@ -15,7 +15,7 @@
   <div
     class=" flex p-5 justify-center self-center text-center items-center z-30"
   >
-    <div class="bg-white p-5 rounded shadow-2xl w-96">
+    <div class="bg-white p-5 rounded shadow-2xl w-72 md:w-96">
       <h2 class="text-2xl font-semibold text-gray-500 mb-4">REGISTER</h2>
       <form>
         <div class="mb-4">

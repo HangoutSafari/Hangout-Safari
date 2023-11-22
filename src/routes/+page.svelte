@@ -3,9 +3,7 @@
   console.log(data);
 </script>
 
-<div>
- 
-</div>
+<div />
 
 <style>
 </style>

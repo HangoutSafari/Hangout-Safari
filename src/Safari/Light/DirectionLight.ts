@@ -1,14 +1,10 @@
 import * as THREE from "three";
-import { LightProperties } from "./LightProperties";
 
 /**
  * Class that handles direction light of the safari
  */
-export class DirectionLight {
-  public directionLight: THREE.DirectionalLight;
-  public position: THREE.Vector3;
-  public lightProperties: LightProperties;
-
+export class DirectionLight extends THREE.DirectionalLight {
+  public pos: THREE.Vector3;
   /**
    * Creates a new instance of the DirectionLight object
    * @param lColor color of the light
@@ -17,24 +13,40 @@ export class DirectionLight {
    * @param lPosition postiion of the light
    */
   constructor(
-    lColor: THREE.Color,
+    lColor: number,
     lStrength: number,
     isCastingShadows: boolean,
     lPosition: THREE.Vector3
   ) {
-    this.directionLight = new THREE.DirectionalLight();
-    this.lightProperties = new LightProperties(
-      this.directionLight,
-      lColor,
-      lStrength,
-      isCastingShadows
+    super(lColor, lStrength);
+    this.castShadow = isCastingShadows;
+    this.pos = lPosition;
+    this.position.set(lPosition.x, lPosition.y, lPosition.z);
+  }
+
+  /**
+   * Sets the position of the light ot the position of the provided vector
+   * @param lPosition where to move light
+   */
+  public moveToPositionV(lPosition: THREE.Vector3): void {
+    this.position.set(
+      this.position.x + lPosition.x,
+      this.position.y + lPosition.y,
+      this.position.z + lPosition.z
     );
-    this.position = lPosition;
-    this.lightProperties.moveToPosition(
-      this.directionLight,
-      lPosition.x,
-      lPosition.y,
-      lPosition.z
+  }
+
+  /**
+   * Moves to the postion specified by parameters
+   * @param x move on x axis
+   * @param y move on y axis
+   * @param z move on z axis
+   */
+  public moveToPosition(x: number, y: number, z: number) {
+    this.position.set(
+      this.position.x + x,
+      this.position.y + y,
+      this.position.z + z
     );
   }
 }

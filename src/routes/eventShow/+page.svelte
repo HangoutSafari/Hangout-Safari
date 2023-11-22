@@ -28,9 +28,9 @@
         <div class="flex flex-col items-center justify-start p-4 gap-1 flex-1 mt-9">
             <DescriptionLabel />
             <Description />
-            <div class="flex flex-row justify-center items-center gap-5 basis-1/5">
-                <TimeLabel />
-                <TimeData />
+            <div class="flex flex-row justify-center items-center gap-5 w-full">
+                <TimeLabel class="basis-2/5"/>
+                <TimeData class="basis-3/5"/>
             </div>
         </div>
         <div class="flex flex-col items-center justify-start self-stretch p-4 gap-4 flex-1 mt-9 mr-7">

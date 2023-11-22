@@ -4,32 +4,11 @@
     export let endTime = "14:00";
 </script>
 
-<div class="time-data">
-    <div class="date">{date}</div>
-    <div class="separator"></div>
-    <div class="time">{startTime} - {endTime}</div>
+<div class={`flex items-center justify-center gap-2 bg-white rounded-xl
+    shadow-[0_2px_4px_rgba(117,106,106,0.8)]
+    py-4 px-8 text-[#333] w-full
+    ${$$props.class}`}>
+    <div class="font-bold">{date}</div>
+    <div class="separator w-[4px] h-full bg-[#ff4500] py-3"></div>
+    <div class="font-bold">{startTime} - {endTime}</div>
 </div>
-
-<style>
-    .time-data {
-        display: flex;
-        align-items: center;
-        background-color: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        padding: 16px 80px;
-        font-size: 18px;
-        color: #333;
-    }
-
-    .date, .time {
-        font-weight: bold;
-    }
-
-    .separator {
-        width: 4px;
-        height: 24px;
-        background-color: #ff4500;
-        margin: 0 12px;
-    }
-</style>

@@ -44,7 +44,7 @@
 
         <!-- Join button -->
         <button
-            class="h-6 w-full bg-[#BCBCBC] hover:bg-blue-500  duration-300 ease-in-out hover:drop-shadow flex items-center justify-center rounded-xl text-white text-sm self-center">
+            class="h-6 w-full bg-[#BCBCBC] hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow flex items-center justify-center rounded-xl text-white text-sm self-center">
             Join now
         </button>
     

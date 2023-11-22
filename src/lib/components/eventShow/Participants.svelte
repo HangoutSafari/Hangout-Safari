@@ -8,46 +8,11 @@
     ];
 </script>
 
-<div class="participants-container">
+<div class="participants-container bg-white rounded-2xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] p-7 w-full h-full">
     {#each participants as participant}
-        <div class="participant">
-            <div class="avatar"></div>
-            <span class="name">{participant.name}</span>
+        <div class="participant bg-[#f0f0f0] rounded-md flex items-center mb-2.5">
+            <div class="avatar w-10 h-10 rounded-full bg-blue-500 mr-2.5"></div>
+            <span class="name text-sm font-bold text-gray-800">{participant.name}</span>
         </div>
     {/each}
 </div>
-
-<style>
-    .participants-container
-    {
-        background-color: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        padding: 30px;
-        width: 100%;
-    }
-
-    .participant
-    {
-        background-color: #f0f0f0;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-
-    .avatar {
-        border-radius: 50%; 
-        background-color: #007bff; 
-        margin-right: 10px;
-        width: 40px;
-        height: 40px; 
-        display: inline-block; 
-    }
-
-    .name {
-        font-size: 15px;
-        font-weight: bold; 
-        color: #333;
-    }
-</style>

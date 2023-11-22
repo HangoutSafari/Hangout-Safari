@@ -1,18 +1,3 @@
-<div class="title-label">
+<div class="title-label inline-flex items-center justify-center px-16 py-3 bg-white rounded-full font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800">
     FOOD LOVERS
 </div>
-
-<style>
-    .title-label {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8px 60px;
-        background-color: #ffffff;
-        border-radius: 20px; 
-        font-weight: bold;
-        font-size: 28px; 
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        color: #333333;
-    }
-</style>

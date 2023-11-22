@@ -1,18 +1,3 @@
-<div class="participants-label">
+<div class="participants-label inline-flex items-center justify-center px-15 py-2.5 bg-white rounded-2xl font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800 w-full">
     PARTICIPANTS
 </div>
-
-<style>
-    .participants-label {
-        display: inline-flex;
-        justify-content: center;
-        padding: 9px 80px;
-        background-color: #ffffff;
-        border-radius: 20px; 
-        font-weight: bold;
-        font-size: 25px; 
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        color: #333333;
-        width: 100%;
-    }
-</style>

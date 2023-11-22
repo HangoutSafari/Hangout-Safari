@@ -1,34 +1,10 @@
 <script>
-    export let address =
-        "Achter de Houttuinen 50, 4331 NJ Middelburg (Honney PIE Coffe)";
-    export let description =
-        "Join us for a gathering to discuss a diverse array of foods, from local delights to global flavors. Let's celebrate our love for culinary exploration and share our passion for all things delicious!";
+    export let address = "Achter de Houttuinen 50, 4331 NJ Middelburg (Honney PIE Coffe)";
+    export let description = "Join us for a gathering to discuss a diverse array of foods, from local delights to global flavors. Let's celebrate our love for culinary exploration and share our passion for all things delicious!";
 </script>
 
-<div class="description-box">
-    <p class="address">{address}</p>
-    <p class="description">{description}</p>
+<div class="description-box bg-[#f9f9f9] rounded-2xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] p-10 m-2.5 w-full min-h-[250px]">
+    <p class="address font-bold mb-5">{address}</p>
+    <p class="description leading-7 text-justify mt-2.5">{description}</p>
 </div>
 
-<style>
-    .description-box {
-        background-color: #f9f9f9;
-        border-radius: 20px;
-        box-shadow: 0 2px 4px rgba(117, 106, 106, 0.8);
-        padding: 40px; /* Increased padding around the content */
-        margin: 10px;
-        width: 100%;
-        min-height: 250px; /* Slightly less height */
-    }
-
-    .address {
-        font-weight: bold;
-        margin-bottom: 20px; /* Increased margin between address and description */
-    }
-
-    .description {
-        line-height: 1.4;
-        text-align: justify;
-        margin-top: 10px; /* Added margin on top of the description */
-    }
-</style>

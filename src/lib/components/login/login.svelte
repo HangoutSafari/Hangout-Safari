@@ -6,6 +6,8 @@
   const redirectToProfile= () => {
     goto('/profile');
   };
+  let underlined = true;
+  let underlined2 = true;
 </script>
 
 <body>
@@ -16,24 +18,36 @@
       <h2 class="text-2xl font-semibold text-gray-500 mb-4">LOG IN</h2>
       <form>
         <div class="mb-4">
-          <input
+          <i class="fa-regular fa-envelope absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
+          <input on:click={() => underlined = false} on:blur={()=> underlined = true}
             type="text"
-            class="w-full px-3 py-2 focus:outline-none focus:ring focus:ring-orange-500"
+            class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="E-mail"
           />
+          {#if underlined}
           <hr class="border-2 rounded border-orange-400" />
+          {/if}
+          {#if !underlined}
+          <hr class="border-2 rounded border-transparent"/>
+          {/if}
         </div>
         <div class="mb-4">
-          <input
+          <i class="fa-solid fa-key absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
+          <input on:click={() => underlined2 = false} on:blur={()=> underlined2 = true}
             type="password"
-            class="w-full px-3 py-2 focus:outline-none focus:ring focus:ring-orange-500"
+            class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="Password"
           />
+          {#if underlined2}
           <hr class="border-2 rounded border-orange-400" />
+          {/if}
+          {#if !underlined2}
+          <hr class="border-2 rounded border-transparent"/>
+          {/if}
         </div>
         <button on:click={redirectToProfile}
           type="submit"
-          class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-orange-500"
+          class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
           >SUBMIT</button
         >
         <a
@@ -50,7 +64,7 @@
       </div>
       <button on:click={redirectToRegister}
         type="submit"
-        class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-orange-500"
+        class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
         >Register</button
       >
     </div>

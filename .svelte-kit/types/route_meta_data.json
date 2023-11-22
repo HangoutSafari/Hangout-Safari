@@ -20,5 +20,8 @@
 	],
 	"/register": [
 		"src/routes/register/+page.server.js"
+	],
+	"/safari": [
+		"src/routes/safari/+page.server.js"
 	]
 }

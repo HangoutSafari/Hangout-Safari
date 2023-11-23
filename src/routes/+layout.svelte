@@ -9,9 +9,10 @@
     rel="stylesheet"
 />
 </head>
+<body>
   <Navbar />
   <slot />
-
+</body>
 
 <style>
 </style>

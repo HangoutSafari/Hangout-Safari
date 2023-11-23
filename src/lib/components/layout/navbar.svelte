@@ -1,5 +1,7 @@
 <script>
 import {page} from '$app/stores';
+import IsActive from './isActive.svelte';
+
 
 </script>
 
@@ -22,8 +24,7 @@ import {page} from '$app/stores';
               Events
             </a>
             {#if $page.url.pathname == '/events' }
-                <hr class="w-full h-1.5 mx-auto my-5  bg-gradient-to-r from-[#ffe700] to-[#ff0000] rounded ">
-                  
+              <IsActive></IsActive>
             {/if}
         </div>
         <div class="md:order-3 order-2">
@@ -31,12 +32,11 @@ import {page} from '$app/stores';
             <a href="/profile " 
               class="active font-semibold  md:shadow-none shadow-lg px-5 py-4 bg-white md:bg-transparent text-black rounded hov"
               >
-              
               <i class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white"></i>
              
             </a>
             {#if $page.url.pathname == '/profile' }
-            <hr class="w-full h-1.5 mx-auto my-5  bg-gradient-to-r from-[#ffe700] to-[#ff0000] rounded ">
+              <IsActive></IsActive>            
             {/if}
           </div>
         </div>
@@ -48,7 +48,7 @@ import {page} from '$app/stores';
               Safari
             </a>
             {#if $page.url.pathname == '/safari' }
-              <hr class="w-full h-1.5 mx-auto my-5  bg-gradient-to-r from-[#ffe700] to-[#ff0000] rounded ">  
+              <IsActive></IsActive>            
             {/if}
           </div> 
          </div> 

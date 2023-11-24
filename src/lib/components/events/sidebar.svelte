@@ -7,7 +7,7 @@
 <body class="font-sans bg-[#F2F2F2]">
   <!-- Sidebar -->
   <aside
-    class="sm:fixed z-10 sticky top-0 bg-[#D9D9D9] text-gray-200 sm:h-full lg:flex flex-col drop-shadow-lg w-full sm:w-80"
+    class="sm:fixed bg-[#D9D9D9] text-gray-200 sm:h-full lg:flex flex-col drop-shadow-lg w-full sm:w-80"
   >
     <!-- Header name -->
     <Header text="Categories" />
@@ -15,7 +15,7 @@
     <!-- Search bar-->
     <label
       for="search"
-      class="m-5 h-8 bg-[#BBBBBB] flex items-center rounded-xl focus-within:border-4 border-sky-400/30"
+      class="mx-5 my-3 sm:m-5 h-8 bg-[#BBBBBB] flex items-center rounded-xl focus-within:border-4 border-sky-400/30"
     >
       <i class="fas fa-search mx-2" />
       <input
@@ -37,104 +37,4 @@
     </ul>
   </aside>
 
-  <!-- Scrollbar -->
-  <style>
-    ::-webkit-scrollbar {
-      height: 13px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: none;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(90deg, rgba(255,231,0,1) 0%, rgba(255,0,0,1) 100%);
-        border-radius: 5px;
-    }
-    @media (min-width: 640px) {
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(0deg, rgba(255,231,0,1) 0%, rgba(255,0,0,1) 100%);
-        border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar {
-    width: 6px;
-    }
-
-    }
-    body {
-      @media (min-width: 640px){
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-    }
-
-
-  </style>
-
-  <!-- Main Content on page-->
-  <div class="mx-3 sm:mx-0 sm:ml-80 sm:py-16 sm:pl-16 sm:pr-6 block">
-    <h1 class="mt-4 sm:mt-0 text-4xl font-bold mb-5">Events</h1>
-
-    <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
-      <!-- Event cards-->
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-    </div>
-  </div>
 </body>

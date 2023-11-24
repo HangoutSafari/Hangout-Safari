@@ -1,5 +1,7 @@
 <script>
 import {page} from '$app/stores';
+
+
 </script>
 
 <body >
@@ -23,12 +25,14 @@ import {page} from '$app/stores';
             class="font-semibold order-1 px-3 py-4 background text-black rounded md:mr-1 hover:px-4 hover:py-5 duration-300 ease-in-out hover:text-white  hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg">
               <i class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white"></i> 
           </a>
+
         </div>
         <div class="md:order-2 order-3">
           <a href="/safari" class:active={$page.url.pathname == '/safari' }
           class=" font-semibold order-1 px-8 py-4 shadow-lg bg-white text-black rounded hover:px-9 hover:py-5 duration-300 ease-in-out hover:text-white  hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg">
               Safari
             </a>
+
          </div> 
       </div>
     </div>

@@ -3,7 +3,7 @@
   import "../app.css";
 </script>
 
-<main>
+<main class=" w-screen">
   <slot />
 </main>
 

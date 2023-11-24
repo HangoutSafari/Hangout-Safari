@@ -1,11 +1,10 @@
 <script>
 
   export let data;
-  console.log(data);
 </script>
 
 <div>
-
+asd
 </div>
 
 <style>

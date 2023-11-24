@@ -3,7 +3,7 @@
     @import url('https://fonts.googleapis.com/css?family=Jaldi');
 </style>
 <div class="inline-block">
-    <div class="flex flex-col bg-gray-200 items-center content-center w-[15rem] rounded-xl  p-3 gap-1  font-Jaldi drop-shadow-lg ">
+    <div class="flex flex-col bg-gray-200 items-center content-center lg:w-[15rem] rounded-xl  p-3 gap-1  font-Jaldi drop-shadow-lg ">
         <div class="flex items-center content-center gap-3">
             <p class="font-bold  drop-shadow-md text-white text-2xl ">Joe</p>
             <img class="w-[12px] h-[12px]" src="/images/edit.png" alt="">

@@ -3,9 +3,9 @@
 
 </script>
 <div class="flex flex-col bg-white rounded-md p-5 drop-shadow-lg gap-4 py-12">
-    <div class=" grid grid-cols-2 lg:flex lg:overflow-x-auto lg:flex-nowrap gap-7 pb-5">
+    <div class=" flex overflow-x-auto flex-nowrap gap-7 pb-5">
 
-         {#each {length: 30} as _, i}
+         {#each {length: 2} as _, i}
          <AnimalCard />       
          {/each}
      

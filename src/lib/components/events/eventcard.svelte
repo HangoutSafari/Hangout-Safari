@@ -3,6 +3,26 @@
     export let eventTitle;
     export let eventDate;
     export let eventLocation;
+
+    // Join Button
+    let buttonBackgroundColor = 'bg-[#BCBCBC]';
+    let buttonInnerText = 'Join now';
+    let count = 0;
+    
+    // Changes join button's color and text when clicked
+    function handleClick() {
+
+        if (count == 0) {
+            buttonBackgroundColor = 'bg-green-500';
+            buttonInnerText = 'Joined!';
+            count = 1;
+        } else {
+            buttonBackgroundColor = 'bg-[#BCBCBC]';
+            buttonInnerText = 'Join now';
+            count = 0;
+        }
+    }
+
 </script>
 
 <div class="flex flex-col items-center gap-2 drop-shadow-lg bg-slate-100 rounded-lg transition ease-in-out delay-150 hover:scale-110">
@@ -25,13 +45,13 @@
     <div class="w-full flex sm:flex-row items-center py-2 text-[#565656]/75">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full g-4">
 
-            <!-- Event Date - Left Half -->
+            <!-- Event Date -->
             <div class="sm:w-1/2 flex items-center">
                 <i class="pl-4 sm:pl-0 mr-4 fa-solid fa-calendar fa-lg sm:ml-4" />
-                <h1 class="text-sm">{eventDate}</h1>
+                <h1 class="text-sm mr-4 sm:mr-0">{eventDate}</h1>
             </div>
 
-            <!-- Event Location - Right Half -->
+            <!-- Event Location -->
             <div class="sm:w-1/2 flex items-center sm:justify-end">
                 <i class="pl-4 sm:pl-0 mr-4 fa-solid fa-location-dot fa-lg" />
                 <h1 class="text-sm sm:mr-4">{eventLocation}</h1>
@@ -44,9 +64,14 @@
 
         <!-- Join button -->
         <button
-            class="h-6 w-full bg-[#BCBCBC] hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow sm:flex items-center justify-center rounded-xl text-white text-sm self-center">
-            Join now
-        </button>
+        on:click={handleClick}
+        class={`
+            ${buttonBackgroundColor} h-6 w-full
+            ${count === 0 ? 'hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow' : ''}
+            sm:flex items-center justify-center rounded-xl text-white text-sm self-center`}>
+        {buttonInnerText}
+    </button>
+    
     
     </div>
 </div>

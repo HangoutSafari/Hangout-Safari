@@ -4,8 +4,8 @@ import {page} from '$app/stores';
 
 </script>
 
-<body >
-  <nav class="bg-transparent ">
+<body>
+  <nav class="backdrop-blur pt-2">
     <div
       class=" container mx-auto flex md:justify-between justify-center items-center"
     >

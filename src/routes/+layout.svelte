@@ -10,7 +10,7 @@
 />
 </head>
 <div class="background">
-  <div class="sticky top-1 bg-transparent">
+  <div class="z-50 sticky top-0 bg-white-500">
     <Navbar />
   </div>
   <slot />

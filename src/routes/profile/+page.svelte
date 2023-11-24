@@ -25,21 +25,18 @@
         
         <h2 class="text-2xl font-bold my-5 ml-14">Animals</h2>
         
-        <div class="lg:ml-14 lg:mr-14 mx-auto justify-self-center">
+        <div class="lg:ml-14 lg:mr-14 justify-self-center">
             <AnimalContainer/>
         </div>
         
         
         <h2 class="text-2xl font-bold my-5 ml-14">My events</h2>
         
-        <div class="mt-5 ml-14 mr-12">
+        <div class="mt-5 ml-14 mr-12 py-8">
             <EventContainer />
         </div>
         
     </div>
 
 <style>
-    body {
-        background-color: #f2f2f2;
-    }
 </style>

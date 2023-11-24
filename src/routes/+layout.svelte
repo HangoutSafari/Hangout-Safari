@@ -9,10 +9,11 @@
     rel="stylesheet"
 />
 </head>
-<body>
-  <Navbar />
+<div class="background">
+  <div class="sticky top-1 bg-transparent">
+    <Navbar />
+  </div>
   <slot />
-</body>
-
+</div>
 <style>
 </style>

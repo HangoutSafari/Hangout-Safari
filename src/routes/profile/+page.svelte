@@ -10,30 +10,33 @@
     export let data: PageData;
 </script>
 
+<div class="w-full">
     
-        <div class=" grid grid-cols-3 justify-items-center text-2xl gap-y-4">
-            <p class=" font-bold">Profile</p>
-            <p class=" font-bold">Settings</p>
-            <p class=" font-bold">Information</p>
-
+    
+    <div class=" grid grid-cols-3 justify-items-center text-2xl gap-y-4">
+        <p class=" font-bold">Profile</p>
+        <p class=" font-bold">Settings</p>
+        <p class=" font-bold">Information</p>
+        
             <ProfileCard />
             <SettingsCard />
             <InformationCard />
         </div>
-
+        
         <h2 class="text-2xl font-bold my-5 ml-14">Animals</h2>
         
-            <div class="lg:ml-14 lg:mr-14 mx-auto justify-self-center">
-                <AnimalContainer/>
-            </div>
-
-
-        <h2 class="text-2xl font-bold my-5 ml-14">My events</h2>
-
-        <div class="mt-5 ml-14 mr-12">
-             <EventContainer />
+        <div class="lg:ml-14 lg:mr-14 mx-auto justify-self-center">
+            <AnimalContainer/>
         </div>
-
+        
+        
+        <h2 class="text-2xl font-bold my-5 ml-14">My events</h2>
+        
+        <div class="mt-5 ml-14 mr-12">
+            <EventContainer />
+        </div>
+        
+    </div>
 
 <style>
     body {

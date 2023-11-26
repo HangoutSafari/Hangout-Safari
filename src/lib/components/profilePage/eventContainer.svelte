@@ -1,12 +1,18 @@
 <script>
-    import AnimalCard from "./animalCard.svelte";
+    import Eventcard from "../events/eventcard.svelte";
+import AnimalCard from "./animalCard.svelte";
 
 </script>
-<div class="flex flex-col bg-white rounded-md p-5 drop-shadow-lg gap-4 py-12">
-    <div class=" grid grid-cols-2 lg:flex lg:overflow-x-auto lg:flex-nowrap gap-7 pb-5">
+<div class="flex flex-col bg-white rounded-md  drop-shadow-lg gap-4 p-12 ">
+    <div class=" grid grid-cols-1 lg:flex lg:overflow-x-auto  gap-7 pb-5 lg:py-10 lg:pl-5">
 
-         {#each {length: 2} as _, i}
-         <AnimalCard />       
+         {#each {length: 10} as _, i}
+         <Eventcard
+         eventImage="/zelda.jpeg"
+         eventTitle="ART FAIR"
+         eventDate="December 12th - 20th"
+         eventLocation="Bibliotheek, Middelburg"
+       />  
          {/each}
      
 

@@ -7,7 +7,7 @@
   console.log(data);
 </script>
 
-<main>
+<main class="bg-[#e7e4e4]">
 
   <div class="z-50 sticky top-0">
     <SideNavBar />

@@ -5,7 +5,7 @@
 </script>
 
 <button
-    class="w-32 hover:w-52 duration-300 ease-in-out flex bg-white hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg focus:outline-none focus:ring text-black hover:text-white font-bold pl-4 rounded-xl items-center"
+    class="w-32 hover:w-52 p-5 duration-300 ease-in-out flex bg-white hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg focus:outline-none focus:ring text-black hover:text-white font-bold pl-4 rounded-xl items-center"
   >
     <p>{text}</p>
 </button>

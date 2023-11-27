@@ -73,10 +73,13 @@ export class Safari {
    * Renderers the scene by requesting the animation frame
    */
   public animate() {
-    console.log("rendering...");
-    requestAnimationFrame(this.animate);
-    this.renderer.render(this.scene, this.camera);
-    this.update();
+    if(this.canRender())
+    {
+      console.log("rendering...");
+      requestAnimationFrame(this.animate);
+      this.renderer.render(this.scene, this.camera);
+      this.update();
+    }
   }
 
   //TODO: create instance of the class and call the start method to start the animation and render loop
@@ -84,5 +87,9 @@ export class Safari {
     this.setup();
     console.log(this.scene);
     this.animate();
+  }
+
+  private canRender(): boolean{
+    return (window.location.pathname === "/safari");
   }
 }

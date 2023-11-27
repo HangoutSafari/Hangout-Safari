@@ -37,8 +37,8 @@ const AnimalList = create_ssr_component(($$result, $$props, $$bindings, slots) =
         ${validate_component(AnimalButton, "AnimalButton").$$render($$result, {}, {}, {})}</div></aside>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div class="w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none "><div class="flex flex-col w-full ">${validate_component(RenderingContext, "RenderingContext").$$render($$result, {}, {}, {})}</div>
-  <div class="flex flex-col items-start ">${validate_component(AnimalList, "AnimalList").$$render($$result, {}, {}, {})}</div>
+  return `<div class="w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none"><div class="flex flex-col w-full">${validate_component(RenderingContext, "RenderingContext").$$render($$result, {}, {}, {})}</div>
+  <div class="flex flex-col items-start">${validate_component(AnimalList, "AnimalList").$$render($$result, {}, {}, {})}</div>
 </div>`;
 });
 export {

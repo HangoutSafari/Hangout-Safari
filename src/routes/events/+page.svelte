@@ -9,6 +9,7 @@
 
 <main class="bg-[#e7e4e4] sm:flex">
 
+
   <div class="z-50 top-0  basis-[389px]">
     <SideNavBar />
   </div>

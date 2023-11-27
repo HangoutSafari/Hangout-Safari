@@ -26,13 +26,9 @@ const Register = create_ssr_component(($$result, $$props, $$bindings, slots) => 
         <div class="flex-grow border-t border-gray-400"></div></div>
       <button class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]">Login</button></div></div></body>`;
 });
-const Blank = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return ``;
-});
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<body class="background w-full h-full justify-center overflow-x-hidden"><div class="h-screen flex flex-col items-center justify-center"><div class="">${validate_component(Circle, "Circle").$$render($$result, {}, {}, {})}</div>
-    <div class="absolute z-10">${validate_component(Register, "Register").$$render($$result, {}, {}, {})}</div>
-    ${validate_component(Blank, "Customer").$$render($$result, {}, {}, {})}</div></body>`;
+    <div class="absolute z-10">${validate_component(Register, "Register").$$render($$result, {}, {}, {})}</div></div></body>`;
 });
 export {
   Page as default

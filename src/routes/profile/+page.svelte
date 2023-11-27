@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-3 place-items-center mt-5 text-[3rem] lg:hidden">
+  <div class="grid grid-cols-3 place-items-center mt-5 text-[3rem] lg:hidden py-5">
     <p bind:this={settings}>Settings</p>
     <p bind:this={animals}>Animals</p>
     <p bind:this={information}>Information</p>
@@ -69,26 +69,26 @@
 
   {#if showSettings}
     <div class="flex justify-center py-10 lg:hidden">
-      <div class="w-[80%] h-[25rem]">
+      <div class="w-[95%] h-[25rem]">
         <SettingsCard />
       </div>
     </div>
   {/if}
   {#if showAnimals}
-    <div class=" flex justify-center pb-10 lg:hidden">
-      <div class="w-[80%]">
+    <div class=" flex justify-center py-10 lg:hidden">
+      <div class="w-[95%]">
         <AnimalContainer />
       </div>
     </div>
   {/if}
   {#if showInformation}
     <div class="flex justify-center py-10 lg:hidden">
-      <div class="w-[80%] h-[25rem]">
+      <div class="w-[95%] h-[25rem]">
         <InformationCard />
       </div>
     </div>
-    <div class=" flex justify-center pb-10 lg:hidden">
-      <div class="w-[80%]">
+    <div class=" flex justify-center py-10 lg:hidden">
+      <div class="w-[95%]">
         <EventContainer />
       </div>
     </div>

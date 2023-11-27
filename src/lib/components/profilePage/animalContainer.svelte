@@ -2,7 +2,7 @@
   import AnimalCard from "./animalCard.svelte";
 </script>
 
-<div class="flex flex-col bg-white rounded-md p-5 drop-shadow-lg gap-4 py-12">
+<div class=" bg-white rounded-md p-5 drop-shadow-lg gap-4 py-12">
   <div
     class=" grid grid-cols-2 lg:flex lg:overflow-x-auto lg:flex-nowrap gap-7 pb-5"
   >

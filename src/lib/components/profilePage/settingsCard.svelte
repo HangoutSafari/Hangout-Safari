@@ -35,7 +35,7 @@
     />
   </div>
   <div
-    class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[3rem] lg:text-2xl"
+    class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[1.6rem] lg:text-2xl"
   >
     <div class=" flow-root">
       <h1 class=" float-left font-bold">Anti-aliasing</h1>
@@ -48,7 +48,7 @@
       <label
         id="label"
         for="aA"
-        class="float-right w-[2rem] h-[2rem] lg:w-auto p-2 font-medium tracking-tight lg:h-2 cursor-pointer bg-brand-light text-brand-black border-black lg:border-white border-[3px] peer-checked:border-gray-100 lg:peer-checked:bg-black"
+        class="float-right w-[1rem] h-[1rem] lg:w-auto p-2 font-medium tracking-tight lg:h-2 cursor-pointer bg-brand-light text-brand-black border-black lg:border-white border-[3px] peer-checked:border-gray-100 lg:peer-checked:bg-black"
       >
         <i bind:this={icon1} class="" style="color: #ffffff;" />
       </label>
@@ -65,7 +65,7 @@
       <label
         id="label"
         for="aR"
-        class="float-right w-[2rem] h-[2rem] lg:w-auto p-2 font-medium tracking-tight lg:h-2 cursor-pointer bg-brand-light text-brand-black border-black lg:border-white border-[3px] peer-checked:border-gray-100 lg:peer-checked:bg-black"
+        class="float-right w-[1rem] h-[1rem] lg:w-auto p-2 font-medium tracking-tight lg:h-2 cursor-pointer bg-brand-light text-brand-black border-black lg:border-white border-[3px] peer-checked:border-gray-100 lg:peer-checked:bg-black"
       >
         <i bind:this={icon2} class="" style="color: #ffffff;" />
       </label>

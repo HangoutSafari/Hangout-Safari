@@ -20,7 +20,7 @@
           <td class=""> John doe </td>
           <td>
             <img
-              class=" lg:object-fill lg:scale-100 w-[12rem] lg:w-auto"
+              class=" lg:object-fill lg:scale-100 w-[6rem] lg:w-auto"
               src="/images/edit.png"
               alt=""
             /></td

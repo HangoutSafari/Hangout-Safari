@@ -10,6 +10,5 @@
     <div class="absolute z-10">
       <Register />
     </div>
-    <Customer/>
   </div>
 </body>

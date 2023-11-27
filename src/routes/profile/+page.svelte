@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import AnimalCard from "$lib/components/profilePage/animalCard.svelte";
   import AnimalContainer from "$lib/components/profilePage/animalContainer.svelte";
   import EventContainer from "$lib/components/profilePage/eventContainer.svelte";
   import InformationCard from "$lib/components/profilePage/informationCard.svelte";

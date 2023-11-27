@@ -3,12 +3,14 @@
   import AnimalList from "$lib/components/safariPage/animalList.svelte";
 </script>
 
-<div class="w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none ">
-  <div class="flex flex-col w-full ">
+<div
+  class="w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none"
+>
+  <div class="flex flex-col w-full">
     <RenderingContext />
   </div>
-  <div class="flex flex-col items-start  ">  
-    <AnimalList/> 
+  <div class="flex flex-col items-start">
+    <AnimalList />
   </div>
 </div>
 

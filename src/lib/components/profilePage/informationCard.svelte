@@ -11,7 +11,7 @@
     />
   </div>
   <div
-    class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[3.5rem] lg:text-lg"
+    class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[1.5rem] lg:text-lg"
   >
     <table class="w-full text-left rtl:text-right">
       <tbody class="">

@@ -37,7 +37,7 @@
   export let data: PageData;
 </script>
 
-<meta name="viewport" content="" />
+<!-- <meta name="viewport" content="" /> -->
 
 <div class="w-full">
   <div
@@ -48,7 +48,7 @@
     <p class=" font-bold hidden lg:block">Information</p>
 
     <div
-      class="w-[90%] lg:w-auto flex justify-center lg:block h-[50rem] lg:h-auto"
+      class="w-[90%] lg:w-auto flex justify-center lg:block h-[25rem] lg:h-auto"
     >
       <ProfileCard />
     </div>
@@ -60,7 +60,9 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-3 place-items-center mt-5 text-[3rem] lg:hidden py-5">
+  <div
+    class="grid grid-cols-3 place-items-center mt-5 text-[1.5rem] lg:text-[3rem] lg:hidden py-5"
+  >
     <p bind:this={settings}>Settings</p>
     <p bind:this={animals}>Animals</p>
     <p bind:this={information}>Information</p>
@@ -109,7 +111,7 @@
 
     <div class=" flex justify-center lg:block pb-10">
       <div class="lg:ml-14 lg:mr-14 lg:w-auto">
-          <EventContainer />
+        <EventContainer />
       </div>
     </div>
   </div>

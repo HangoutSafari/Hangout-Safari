@@ -13,6 +13,12 @@
       "_index.js"
     ]
   },
+  "_eventcard.js": {
+    "file": "chunks/eventcard.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
   "_header.js": {
     "file": "chunks/header.js",
     "imports": [
@@ -61,12 +67,12 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
   },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout.51d39790.css",
+    "file": "_app/immutable/assets/_layout.3325ef72.css",
     "src": "src/routes/+layout.css"
   },
   "src/routes/+layout.svelte": {
     "css": [
-      "_app/immutable/assets/_layout.51d39790.css",
+      "_app/immutable/assets/_layout.3325ef72.css",
       "_app/immutable/assets/navbar.de97d7d1.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
@@ -99,7 +105,8 @@
     "file": "entries/pages/events/_page.svelte.js",
     "imports": [
       "_index.js",
-      "_header.js"
+      "_header.js",
+      "_eventcard.js"
     ],
     "isEntry": true,
     "src": "src/routes/events/+page.svelte"
@@ -162,18 +169,31 @@
     "isEntry": true,
     "src": "src/routes/login/+page.svelte"
   },
-  "src/routes/profile/[slug]/+page.server.js": {
-    "file": "entries/pages/profile/_slug_/_page.server.js",
-    "isEntry": true,
-    "src": "src/routes/profile/[slug]/+page.server.js"
+  "src/routes/profile/+page.css": {
+    "file": "_app/immutable/assets/_page.9de289ff.css",
+    "src": "src/routes/profile/+page.css"
   },
-  "src/routes/profile/[slug]/+page.svelte": {
-    "file": "entries/pages/profile/_slug_/_page.svelte.js",
+  "src/routes/profile/+page.server.ts": {
+    "file": "entries/pages/profile/_page.server.ts.js",
+    "isEntry": true,
+    "src": "src/routes/profile/+page.server.ts"
+  },
+  "src/routes/profile/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.9de289ff.css"
+    ],
+    "file": "entries/pages/profile/_page.svelte.js",
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_eventcard.js"
     ],
     "isEntry": true,
-    "src": "src/routes/profile/[slug]/+page.svelte"
+    "src": "src/routes/profile/+page.svelte"
+  },
+  "src/routes/profile/+page.ts": {
+    "file": "entries/pages/profile/_page.ts.js",
+    "isEntry": true,
+    "src": "src/routes/profile/+page.ts"
   },
   "src/routes/register/+page.server.js": {
     "file": "entries/pages/register/_page.server.js",

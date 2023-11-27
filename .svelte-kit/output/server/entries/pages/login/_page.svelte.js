@@ -20,8 +20,8 @@ import { C as Circle } from "../../../chunks/circle.js";
       <button type="submit" class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]">Register</button></div></div></body>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<body class="background w-full h-full justify-center overflow-x-hidden"><div class="h-screen flex flex-col items-center justify-center"><div class="">${validate_component(Circle, "Circle").$$render($$result, {}, {}, {})}</div>
-    <div class="absolute z-10">${validate_component(Login, "Login").$$render($$result, {}, {}, {})}</div></div></body>`;
+  return `<div class="background w-full h-full justify-center overflow-x-hidden"><div class="h-screen flex flex-col items-center justify-center"><div class="">${validate_component(Circle, "Circle").$$render($$result, {}, {}, {})}</div>
+    <div class="absolute z-10">${validate_component(Login, "Login").$$render($$result, {}, {}, {})}</div></div></div>`;
 });
 export {
   Page as default

@@ -9,7 +9,8 @@ import {page} from '$app/stores';
     <div
       class="flex  md:justify-between justify-center"
     >
-    <div  class="md:block hidden ml-4">
+
+    <div  class="logo-container md:block hidden ml-8 ">
       <a href="/" class="flex items-center">
         <img src="/images/logo.jpg" alt="Logo" class="rounded-full object-cover w-20 h-20" />
         <span class="ml-2 font-bold text-2xl">Safari Hangout</span>

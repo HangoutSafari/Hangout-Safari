@@ -1,15 +1,15 @@
 <script>
   import RenderingContext from "$lib/components/safariPage/renderingContext.svelte";
-  import AnimalList from "$lib/components/safariPage/animalList.svelte";
-</script>
+  import SideNavbar from "$lib/components/events/sidebar.svelte";
+  </script>
 
 <div
-  class="w-[100%] mt-6 lg:mt-0 h-full sm:h-[80%] gap-3 flex flex-col lg:flex-row items-center background overflow-y-none"
+  class="h-[90%] w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none"
 >
-<div class="flex flex-col items-center">
-  <AnimalList />
-</div>
-  <div class="flex flex-col w-full h-[85%] lg:h-full">
+  <div class="sm:h-full w-full lg:w-[25%] self-start">
+    <SideNavbar />
+  </div>
+  <div class="h-full flex flex-col w-full p-10">
     <RenderingContext />
   </div>
 </div>

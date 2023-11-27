@@ -4,12 +4,12 @@ import {page} from '$app/stores';
 
 </script>
 
-<body>
+
   <nav class="backdrop-blur pt-2">
     <div
-      class=" container mx-auto flex md:justify-between justify-center items-center"
+      class="flex  md:justify-between justify-center"
     >
-    <div  class="logo-container md:block hidden ml-8">
+    <div  class="md:block hidden ml-4">
       <a href="/" class="flex items-center">
         <img src="/images/logo.jpg" alt="Logo" class="rounded-full object-cover w-20 h-20" />
         <span class="ml-2 font-bold text-2xl">Safari Hangout</span>
@@ -37,7 +37,6 @@ import {page} from '$app/stores';
       </div>
     </div>
   </nav>
-</body>
 <style>
 .active {
   background: linear-gradient(to right, #F34439, #FF8D07);

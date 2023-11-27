@@ -9,7 +9,6 @@
   <aside
     class="font-sans w-full sm:h-full mr-4 bg-[#D9D9D9] text-gray-200 flex flex-col drop-shadow-lg"
   >
-  <div class="  top-24 sticky">
 
     <!-- Header name -->
     <Header text="Categories" />
@@ -37,7 +36,6 @@
   <Category icon="fas fa-palette" text="Arts" />
   <Category icon="fas fa-puzzle-piece" text="Games" />
 </ul>
-</div>
 </aside>
 
 </main>

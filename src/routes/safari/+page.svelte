@@ -4,9 +4,9 @@
 </script>
 
 <div
-  class="w-[100%] flex flex-col lg:flex-row items-center background overflow-x-none overflow-y-none"
+  class="w-[100%] h-[650px] flex flex-col lg:flex-row items-center background overflow-y-none"
 >
-  <div class="flex flex-col w-full">
+  <div class="flex flex-col w-full h-[90%]">
     <RenderingContext />
   </div>
   <div class="flex flex-col items-start">

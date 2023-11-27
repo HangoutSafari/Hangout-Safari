@@ -70,7 +70,7 @@
 
   {#if showSettings}
     <div class="flex justify-center py-10 lg:hidden">
-      <div class="w-[95%] h-[25rem]">
+      <div class="w-[95%]">
         <SettingsCard />
       </div>
     </div>
@@ -84,7 +84,7 @@
   {/if}
   {#if showInformation}
     <div class="flex justify-center py-10 lg:hidden">
-      <div class="w-[95%] h-[25rem]">
+      <div class="w-[95%]">
         <InformationCard />
       </div>
     </div>

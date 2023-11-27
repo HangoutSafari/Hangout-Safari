@@ -1,5 +1,5 @@
 <div
-  class=" rounded-2xl lg:rounded-none relative lg:safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0 bg-white lg:bg-transparent"
+  class=" rounded-2xl lg:rounded-none relative lg:safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl pb-4 m-0 bg-white lg:bg-transparent"
 >
   <div
     class="hidden lg:block lg:absolute lg:inset-0 lg:overflow-hidden lg:rounded-xl"

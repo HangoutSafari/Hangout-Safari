@@ -73,11 +73,10 @@ export class Safari {
    * Renderers the scene by requesting the animation frame
    */
   public animate() {
-    console.log("rendering...");
-    if(this.canContinue())
+    if(this.canRender())
     {
+      console.log("rendering...");
       requestAnimationFrame(this.animate);
-      console.log(this.canContinue());
       this.renderer.render(this.scene, this.camera);
       this.update();
     }
@@ -90,7 +89,7 @@ export class Safari {
     this.animate();
   }
 
-  private canContinue(): boolean{
+  private canRender(): boolean{
     return (window.location.pathname === "/safari");
   }
 }

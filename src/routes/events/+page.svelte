@@ -7,7 +7,7 @@
   console.log(data);
 </script>
 
-<body>
+<main>
 
   <div class="z-50 sticky top-0">
     <SideNavBar />
@@ -112,4 +112,4 @@
       }
   
     </style>
-</body>
+</main>

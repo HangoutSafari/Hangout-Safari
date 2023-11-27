@@ -4,7 +4,7 @@
   import Eventcard from "./eventcard.svelte";
 </script>
 
-<body class="font-sans bg-[#F2F2F2]">
+<main class="font-sans bg-[#F2F2F2]">
   <!-- Sidebar -->
   <aside
     class="sm:fixed bg-[#D9D9D9] text-gray-200 sm:h-full lg:flex flex-col drop-shadow-lg w-full sm:w-80"
@@ -37,4 +37,4 @@
     </ul>
   </aside>
 
-</body>
+</main>

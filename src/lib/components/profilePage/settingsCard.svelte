@@ -25,7 +25,7 @@
 />
 
 <div
-  class=" rounded-2xl lg:rounded-none relative safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0 bg-white lg:bg-none"
+  class=" rounded-2xl lg:rounded-none relative safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0 bg-white lg:bg-transparent"
 >
   <div class="absolute inset-0 overflow-hidden rounded-xl">
     <img

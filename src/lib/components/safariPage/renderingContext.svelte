@@ -9,6 +9,6 @@
   });
 </script>
 
-<div id="dimentionHelper" class=" w-full lg:w-[70%] h-[50%] lg:h-full border-red-400 self-center flex flex-col items-center">
+<div id="dimentionHelper" class=" w-full lg:w-[70%] h-full lg:h-full border-red-400 self-center flex flex-col items-center">
   <canvas class="w-full h-full" bind:this={renderingContext} ></canvas>  
 </div>  

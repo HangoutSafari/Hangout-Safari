@@ -7,14 +7,14 @@
   console.log(data);
 </script>
 
-<main>
+<main class="bg-zinc-200">
 
   <div class="z-50 sticky top-0">
     <SideNavBar />
   </div>
 
   <!-- Main Content on page-->
-  <div class="mx-3 sm:mx-0 sm:ml-72 sm:pb-16 sm:pl-16 sm:pr-6 block">
+  <div class=" mx-3 sm:mx-0 sm:ml-72 sm:pb-16 sm:pl-16 sm:pr-6 block">
     <h1 class="mt-4 sm:mt-0 text-4xl font-bold mb-5">Events</h1>
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">

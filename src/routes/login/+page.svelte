@@ -4,7 +4,7 @@
   import Navbar from "$lib/components/layout/navbar.svelte";
 </script>
 
-<body class="background w-full h-full justify-center overflow-x-hidden">
+<div class="background w-full h-full justify-center overflow-x-hidden">
   <div class="h-screen flex flex-col items-center justify-center">
     <div class="">
       <Circle />
@@ -13,4 +13,4 @@
       <Login />
     </div>
   </div>
-</body>
+</div>

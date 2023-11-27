@@ -30,8 +30,13 @@ const Navbar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   "../lib/components/layout/navbar.svelte";
-  return `<div class="background"><div class="z-50 sticky top-0 bg-white-500">${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}</div>
-  ${slots.default ? slots.default({}) : ``}
+  return `<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"></head>
+
+<div><div class="z-50 sm:sticky top-0 bg-white-500"></div>
+
+  <div class="background h-full"><div class="z-50 sticky top-0 bg-white-500">${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}</div>
+    ${slots.default ? slots.default({}) : ``}</div>
 </div>`;
 });
 export {

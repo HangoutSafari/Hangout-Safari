@@ -5,14 +5,14 @@
 
 <div class="flex flex-col bg-white rounded-md drop-shadow-lg gap-4 p-12">
   <div
-    class=" grid grid-cols-1 lg:flex lg:overflow-x-auto gap-7 pb-5 lg:py-10 lg:pl-5"
+    class=" grid grid-cols-1 lg:flex  lg:overflow-x-auto gap-7 pb-5 lg:py-10 lg:pl-5"
   >
     {#each { length: 10 } as _, i}
       <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
+      eventImage="/zelda.jpeg"
+      eventTitle="ART FAIR"
+      eventDate="December 12th - 20th"
+      eventLocation="Bibliotheek, Middelburg"
       />
     {/each}
   </div>

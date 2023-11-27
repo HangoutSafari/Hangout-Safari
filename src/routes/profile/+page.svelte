@@ -110,7 +110,7 @@
 
     <div class=" flex justify-center lg:block pb-10">
       <div class="lg:ml-14 lg:mr-14 lg:w-auto">
-        <EventContainer />
+          <EventContainer />
       </div>
     </div>
   </div>

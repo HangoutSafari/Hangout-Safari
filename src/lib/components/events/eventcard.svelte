@@ -25,7 +25,7 @@
 
 </script>
 
-<div class="flex flex-col items-center gap-2 drop-shadow-lg bg-slate-100 rounded-lg transition ease-in-out delay-150 hover:scale-110">
+<div class="flex flex-col lg:shrink-0 items-center gap-2 drop-shadow-lg bg-slate-100 rounded-lg transition ease-in-out delay-150 hover:scale-110">
 
     <!-- Image inside card-->
     <div class="h-[135px] w-full">

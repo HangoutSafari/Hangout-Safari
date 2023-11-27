@@ -28,8 +28,7 @@ const Register = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<body class="background w-full h-full justify-center overflow-x-hidden"><div class="h-screen flex flex-col items-center justify-center"><div class="">${validate_component(Circle, "Circle").$$render($$result, {}, {}, {})}</div>
-    <div class="absolute z-10">${validate_component(Register, "Register").$$render($$result, {}, {}, {})}</div>
-    ${validate_component(Customer, "Customer").$$render($$result, {}, {}, {})}</div></body>`;
+    <div class="absolute z-10">${validate_component(Register, "Register").$$render($$result, {}, {}, {})}</div></div></body>`;
 });
 export {
   Page as default

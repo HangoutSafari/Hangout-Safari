@@ -11,6 +11,8 @@
 </head>
 <div>
   <div class="z-50 sm:sticky top-0 bg-white-500">
+<div class="background">
+  <div class="z-50 sticky top-0 bg-white-500">
     <Navbar />
   </div>
   <slot />

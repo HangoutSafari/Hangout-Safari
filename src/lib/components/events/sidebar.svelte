@@ -6,7 +6,7 @@
   export let header;
 </script>
 
-<main class="sm:h-full w-full">
+<main class="sm:h-full w-full mt-4 lg:mt-0">
   <!-- Sidebar -->
   <aside
     class="font-sans w-full sm:h-full mr-4 bg-[#D9D9D9] text-gray-200 flex flex-col drop-shadow-lg"
@@ -18,7 +18,7 @@
       <!-- Search bar-->
       <label
         for="search"
-        class="mx-5 my-3 sm:m-5 h-8 bg-[#BBBBBB] flex items-center rounded-xl focus-within:border-4 border-sky-400/30"
+        class=" hidden lg:flex mx-5 my-3 sm:m-5 h-8 bg-[#BBBBBB] items-center rounded-xl focus-within:border-4 border-sky-400/30"
       >
         <i class="fas fa-search mx-2" />
         <input
@@ -31,7 +31,7 @@
 
       <!-- Event categories -->
       <ul
-        class="pl-5 pb-3 sm:pl-0 flex overflow-x-auto gap-4 flex-row sm:flex-col sm:items-center sm:space-y-7 sm:gap-0"
+        class="pl-5 m-2 lg:m-0 sm:pl-0 flex overflow-x-auto gap-4 flex-row sm:flex-col sm:items-center sm:space-y-7 sm:gap-0"
       >
         <Category icon="fas fa-futbol" text="Sports" />
         <Category icon="fas fa-music" text="Music" />

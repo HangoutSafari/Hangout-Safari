@@ -9,7 +9,7 @@
   <div class="sm:h-full w-full lg:w-[25%] self-start">
     <SideNavbar />
   </div>
-  <div class="h-full flex flex-col w-full p-10">
+  <div class="h-full flex flex-col w-full p-4 lg:p-10">
     <RenderingContext />
   </div>
 </div>

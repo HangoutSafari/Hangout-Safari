@@ -9,7 +9,7 @@
   >
     <div class="sticky top-20">
       <!-- Header name -->
-      <Header text="Categories" />
+      <Header text="Categories" class="hidden sm:inline-block"/>
 
       <!-- Search bar-->
       <label

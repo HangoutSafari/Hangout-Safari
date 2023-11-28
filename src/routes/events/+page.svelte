@@ -9,7 +9,7 @@
 
 <main class="bg-[#e7e4e4]">
 
-  <div class="z-50 sticky top-0">
+  <div class="z-[51] sticky top-0">
     <SideNavBar />
   </div>
 

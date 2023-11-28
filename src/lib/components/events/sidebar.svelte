@@ -2,6 +2,8 @@
   import Category from "./category.svelte";
   import Header from "./header.svelte";
   import Eventcard from "./eventcard.svelte";
+
+  export let header;
 </script>
 
 <main class="sm:h-full w-full">
@@ -11,7 +13,7 @@
   >
     <div class="sticky top-20">
       <!-- Header name -->
-      <Header text="Categories" />
+      <Header text={header} />
 
       <!-- Search bar-->
       <label

@@ -17,10 +17,12 @@ import {page} from '$app/stores';
       </a>
     </div>
       <div class="flex items-center space-x-4">
+        <div>
             <a href="/events" class:active={$page.url.pathname == '/events' }
             class=" font-semibold order-1 px-8 py-4 shadow-lg bg-white text-black rounded hover:px-9 hover:py-5 duration-300 ease-in-out hover:text-white  hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg">
               Events
             </a>
+        </div>
         <div class="md:order-3 order-2">
           <a href="/profile" class:active={$page.url.pathname == '/profile' }
             class="font-semibold order-1 px-3 py-4 pt-5 background text-black rounded md:mr-1 hover:px-4 hover:py-5 duration-300 ease-in-out hover:text-white  hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:drop-shadow-lg">

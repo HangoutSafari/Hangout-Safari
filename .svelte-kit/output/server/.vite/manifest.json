@@ -19,12 +19,6 @@
       "_index.js"
     ]
   },
-  "_header.js": {
-    "file": "chunks/header.js",
-    "imports": [
-      "_index.js"
-    ]
-  },
   "_index.js": {
     "file": "chunks/index.js"
   },
@@ -33,6 +27,12 @@
   },
   "_internal.js": {
     "file": "chunks/internal.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_sidebar.js": {
+    "file": "chunks/sidebar.js",
     "imports": [
       "_index.js"
     ]
@@ -67,12 +67,12 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
   },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout.3325ef72.css",
+    "file": "_app/immutable/assets/_layout.f65a0506.css",
     "src": "src/routes/+layout.css"
   },
   "src/routes/+layout.svelte": {
     "css": [
-      "_app/immutable/assets/_layout.3325ef72.css",
+      "_app/immutable/assets/_layout.f65a0506.css",
       "_app/immutable/assets/navbar.de97d7d1.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
@@ -105,7 +105,7 @@
     "file": "entries/pages/events/_page.svelte.js",
     "imports": [
       "_index.js",
-      "_header.js",
+      "_sidebar.js",
       "_eventcard.js"
     ],
     "isEntry": true,
@@ -218,7 +218,7 @@
     "file": "entries/pages/safari/_page.svelte.js",
     "imports": [
       "_index.js",
-      "_header.js"
+      "_sidebar.js"
     ],
     "isEntry": true,
     "src": "src/routes/safari/+page.svelte"

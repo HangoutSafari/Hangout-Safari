@@ -83,7 +83,7 @@ const MapLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 </div>`;
 });
 const TimeLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div${add_attribute("class", `${$$props.class} inline-flex items-center justify-center px-18 py-2.5 bg-white rounded-2xl font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800 w-full`, 0)}>TIME
+  return `<div${add_attribute("class", `${$$props.class} inline-flex items-center justify-center px-10 py-2.5 bg-white rounded-2xl font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800 w-full`, 0)}>TIME
 </div>`;
 });
 const Map_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -97,23 +97,38 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
   return `<main class="min-h-screen flex flex-col lg:mt-0 mt-4"><div class="flex flex-grow bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center flex-col items-center justify-center w-full relative"><div class="flex flex-col items-center gap-5 mt-60 mb-8 lg:mb-0">${validate_component(TitleLabel, "TitleLabel").$$render($$result, {}, {}, {})}
-          ${validate_component(JoinButton, "JoinButton").$$render($$result, {}, {}, {})}</div>
-      ${validate_component(HostLabel, "HostLabel").$$render(
+            ${validate_component(JoinButton, "JoinButton").$$render($$result, {}, {}, {})}</div>
+        ${validate_component(HostLabel, "HostLabel").$$render(
     $$result,
     {
-      class: "absolute bottom-[-20%] translate-y-[-80%] left-0 ml-12 "
+      class: "absolute bottom-[-20%] translate-y-[-80%] left-0 ml-4 mm:ml-12"
     },
     {},
     {}
   )}</div>
-  <div class="flex flex-col lg:flex-row flex-3 w-full items-stretch justify-center bg-[#cfcfcf64]"><div class="flex flex-col items-center justify-start p-4 gap-4 flex-1 xl:mt-16 lg:mt-12 mt-16 ml-7">${validate_component(ParticipantsLabel, "ParticipantsLabel").$$render($$result, {}, {}, {})}
-          ${validate_component(Participants, "Participants").$$render($$result, {}, {}, {})}</div>
-      <div class="flex flex-col items-center justify-start p-4 gap-1 flex-1 mt-9">${validate_component(DescriptionLabel, "DescriptionLabel").$$render($$result, {}, {}, {})}
-          ${validate_component(Description, "Description").$$render($$result, {}, {}, {})}
-          <div class="flex flex-row justify-center items-center gap-5 w-full">${validate_component(TimeLabel, "TimeLabel").$$render($$result, { class: "basis-2/5" }, {}, {})}
-              ${validate_component(TimeData, "TimeData").$$render($$result, { class: "basis-3/5" }, {}, {})}</div></div>
-      <div class="flex flex-col items-center justify-start self-stretch p-4 gap-4 flex-1 mt-9 mr-7">${validate_component(MapLabel, "MapLabel").$$render($$result, {}, {}, {})}
-          ${validate_component(Map_1, "Map").$$render(
+    <div class="flex flex-col lg:flex-row flex-3 w-full items-stretch justify-center bg-[#f2f2f2] sm:mt-4"><div class="flex flex-col items-center justify-start p-4 gap-3 flex-1 mt-9 ml-0 lg:ml-7 mm:mt-2 xs:mt-10">${validate_component(ParticipantsLabel, "ParticipantsLabel").$$render($$result, {}, {}, {})}
+            ${validate_component(Participants, "Participants").$$render($$result, {}, {}, {})}</div>
+        <div class="flex flex-col items-center justify-start p-4 gap-1 flex-1 mt-9 xs:mt-1">${validate_component(DescriptionLabel, "DescriptionLabel").$$render($$result, { class: "w-full" }, {}, {})}
+            ${validate_component(Description, "Description").$$render($$result, { class: "w-full mb-6 sm:mb-4" }, {}, {})}
+            <div class="block sm:hidden w-full h-4"></div>
+            <div class="flex flex-col sm:flex-row justify-center items-stretch gap-3 w-full">${validate_component(TimeLabel, "TimeLabel").$$render(
+    $$result,
+    {
+      class: "w-full text-center sm:basis-2/6 sm:text-left"
+    },
+    {},
+    {}
+  )}
+                ${validate_component(TimeData, "TimeData").$$render(
+    $$result,
+    {
+      class: "w-full text-center sm:basis-4/6 sm:text-left"
+    },
+    {},
+    {}
+  )}</div></div>        
+        <div class="flex flex-col items-center justify-start self-stretch p-4 gap-3 flex-1 mt-9 mr-0 lg:mr-7 xs:mt-1">${validate_component(MapLabel, "MapLabel").$$render($$result, {}, {}, {})}
+            ${validate_component(Map_1, "Map").$$render(
     $$result,
     {
       class: "min-h-[200px] lg:min-h-[0] min-w-full"

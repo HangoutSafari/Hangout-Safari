@@ -63,15 +63,17 @@
     <div class="hidden px-4 pb-2 w-full h-full sm:flex items-center justify-center">
 
         <!-- Join button -->
-        <button
-        on:click={handleClick}
-        class={`
-            ${buttonBackgroundColor} h-6 w-full
-            ${count === 0 ? 'hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow' : ''}
-            sm:flex items-center justify-center rounded-xl text-white text-sm self-center`}>
-        {buttonInnerText}
-    </button>
-    
+        <a href="/events/1" class="block w-full">
+            <button
+                on:click={handleClick}
+                class={`
+                    ${buttonBackgroundColor} h-6 w-full
+                    ${count === 0 ? 'hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow' : ''}
+                    sm:flex items-center justify-center rounded-xl text-white text-sm self-center`}>
+                {buttonInnerText}
+            </button>
+        </a>
     
     </div>
+    
 </div>

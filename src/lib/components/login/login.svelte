@@ -45,6 +45,7 @@
           <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>
+      </form>
         <button on:click={redirectToProfile}
           type="submit"
           class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
@@ -56,7 +57,6 @@
         >
         <br />
         <br />
-      </form>
       <div class="relative flex py-5 items-center">
         <div class="flex-grow border-t border-gray-400" />
         <span class="flex-shrink mx-4 text-gray-400">No account yet?</span>

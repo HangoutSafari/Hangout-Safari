@@ -21,7 +21,8 @@ export class ShapeGenerator {
     depth: number,
     gColor: number = THREE.Color.NAMES.gray
   ): THREE.Mesh {
-    const geometry = new THREE.SphereGeometry(1);
+    const geometry = new THREE.SphereGeometry(15);
+    geometry.translate(0,56, 0);
     const material = new THREE.MeshPhysicalMaterial({ color: gColor, metalness:0.7, roughness:0.1,});
     const cube = new THREE.Mesh(geometry, material);
     return cube;

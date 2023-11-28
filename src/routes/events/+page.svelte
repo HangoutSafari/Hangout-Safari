@@ -11,7 +11,7 @@
 
 
   <div class="z-50 top-0  basis-[389px]">
-    <SideNavBar />
+    <SideNavBar header = "Categories"/>
   </div>
 
   <!-- Main Content on page-->

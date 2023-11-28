@@ -10,7 +10,7 @@
     <SideNavbar />
   </div>
   <div class="h-full flex flex-col w-full p-4 lg:p-10">
-    <RenderingContext />
+    <RenderingContext  />
   </div>
 </div>
 

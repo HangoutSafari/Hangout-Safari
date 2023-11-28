@@ -7,27 +7,72 @@
   console.log(data);
 </script>
 
-<main class="bg-[#e7e4e4] sm:flex">
+<main class="bg-[#e7e4e4]">
 
-
-  <div class="z-50 top-0  basis-[389px]">
+  <div class="z-50 sticky top-0">
     <SideNavBar />
   </div>
 
   <!-- Main Content on page-->
-  <div class="mx-3 sm:mx-0 sm:basis-[100%] sm:pb-16 sm:pl-16 sm:pr-6 inline-block">
+  <div class="mx-3 sm:mx-0 sm:ml-72 sm:pb-16 sm:pl-16 sm:pr-6 block">
     <h1 class="mt-4 sm:mt-0 text-4xl font-bold mb-5">Events</h1>
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
       <!-- Event cards-->
-      {#each { length: 15 } as _, i}
       <Eventcard
-        eventImage="/images/FoodAndDrinkDesignColour.svg"
-        eventTitle="FOOD LOVERS"
-        eventDate="November 27th"
-        eventLocation="Honney PIE Coffe, Middelburg"
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
       />
-      {/each}
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
+      <Eventcard
+        eventImage="/zelda.jpeg"
+        eventTitle="ART FAIR"
+        eventDate="December 12th - 20th"
+        eventLocation="Bibliotheek, Middelburg"
+      />
     </div>
   </div>
 

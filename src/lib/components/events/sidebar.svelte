@@ -1,20 +1,16 @@
 <script>
-  import Category from "./category.svelte";
-  import Header from "./header.svelte";
-  import Eventcard from "./eventcard.svelte";
-
-  export let header;
-</script>
-
-<main class="sm:h-full w-full mt-4 lg:mt-0">
-  <!-- Sidebar -->
-  <aside
-    class="font-sans w-full sm:h-full mr-4 bg-[#D9D9D9] text-gray-200 flex flex-col drop-shadow-lg"
-  >
-    <div class="sticky top-20">
+    import Category from "./category.svelte";
+    import Header from "./header.svelte";
+  </script>
+  
+  <main class="font-sans bg-[#F2F2F2]">
+    <!-- Sidebar -->
+    <aside
+      class="sm:fixed bg-[#D9D9D9] text-gray-200 sm:h-full lg:flex flex-col drop-shadow-lg w-full sm:w-80"
+    >
       <!-- Header name -->
-      <Header text={header} />
-
+      <Header text="Categories" />
+  
       <!-- Search bar-->
       <label
         for="search"
@@ -28,7 +24,7 @@
           class="outline-none border-none bg-transparent placeholder-gray-200"
         />
       </label>
-
+  
       <!-- Event categories -->
       <ul
         class="pl-5 m-2 lg:m-0 sm:pl-0 flex overflow-x-auto gap-4 flex-row sm:flex-col sm:items-center sm:space-y-7 sm:gap-0"
@@ -38,6 +34,7 @@
         <Category icon="fas fa-palette" text="Arts" />
         <Category icon="fas fa-puzzle-piece" text="Games" />
       </ul>
-    </div>
-  </aside>
-</main>
+    </aside>
+  
+  </main>
+  

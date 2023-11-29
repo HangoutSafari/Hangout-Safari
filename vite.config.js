@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [sveltekit()],
   test: {
     include: ["src/**/*.{test,spec}.{js,ts}"],
-    exclude: isGitHubActions ? ["animals.api.response.test.ts"] : [],
+    exclude: isGitHubActions ? [] : ["animals.api.response.test.ts"],
   },
 });

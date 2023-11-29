@@ -16,6 +16,11 @@ jobs:
       - run: echo "Building application 👷"
       - run: npm run build --if-present
       - run: echo "Building is complete ✅"
-      - run: echo "Starting tests 🧪"
-      - run: npm run test -- --exclude=src/tests/unit/api/animals.api.response.test.ts
+      - run: |
+          echo "Starting tests 🧪"
+          find . -type f -name '*.test.ts' \
+            ! -name 'animals.api.response.test.ts' \
+          -exec vitest {} +
+          echo "Tests have passed ✅"
       - run: echo "Tests have passed ✅"
+

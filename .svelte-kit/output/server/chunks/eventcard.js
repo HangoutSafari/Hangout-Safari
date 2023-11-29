@@ -31,14 +31,14 @@ const Eventcard = create_ssr_component(($$result, $$props, $$bindings, slots) =>
                 <h1 class="text-sm sm:mr-4">${escape(eventLocation)}</h1></div></div></div>
 
     <div class="hidden px-4 pb-2 w-full h-full sm:flex items-center justify-center">
-        <button${add_attribute(
+        <a href="/events/1" class="block w-full"><button${add_attribute(
     "class",
     `
-            ${buttonBackgroundColor} h-6 w-full
-            ${"hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow"}
-            sm:flex items-center justify-center rounded-xl text-white text-sm self-center`,
+                    ${buttonBackgroundColor} h-6 w-full
+                    ${"hover:bg-blue-500 duration-300 ease-in-out hover:drop-shadow"}
+                    sm:flex items-center justify-center rounded-xl text-white text-sm self-center`,
     0
-  )}>${escape(buttonInnerText)}</button></div></div>`;
+  )}>${escape(buttonInnerText)}</button></a></div></div>`;
 });
 export {
   Eventcard as E

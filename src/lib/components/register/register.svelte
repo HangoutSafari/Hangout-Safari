@@ -1,18 +1,17 @@
 <script>
   import { goto } from '$app/navigation';
   
-    const redirectToLogin  = (event) => {
-    event.preventDefault();
+  export const redirectToLogin= () => {
     goto('/login');
   };
+  console.log(redirectToLogin)
   let underlined = true;
   let underlined2 = true;
   let underlined3 = true;
   let underlined4 = true;
 </script>
 
-<body>
-  <div
+<div
     class=" flex p-5 justify-center self-center text-center items-center z-30"
   >
     <div class="bg-white p-5 rounded shadow-2xl w-72 md:w-96">
@@ -74,14 +73,14 @@
            <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>
+      </form>
         <button on:click={redirectToLogin}
           type="submit"
           class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
           >SUBMIT</button
         >
-        
         <br />
-      </form>
+      
       <div class="relative flex py-5 items-center">
         <div class="flex-grow border-t border-gray-400" />
         <span class="flex-shrink mx-4 text-gray-400">Already have an account?</span>
@@ -92,5 +91,4 @@
         >Login</button
       >
     </div>
-  </div>
-</body>
+</div>

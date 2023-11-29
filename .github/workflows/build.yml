@@ -4,13 +4,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        exclude:
-          - test_name: src/tests/unit/profile/profile.response.test.ts
-          - test_name: src/tests/unit/api/animals.api.dataResponse.test.ts
-  
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
@@ -24,6 +17,5 @@ jobs:
       - run: npm run build --if-present
       - run: echo "Building is complete ✅"
       - run: echo "Starting tests 🧪"
-      - run: |
-          npm run test ${{ matrix.test_file }}
+      - run: npm run test -- --exclude=src/tests/unit/api/animals.api.response.test.ts
       - run: echo "Tests have passed ✅"

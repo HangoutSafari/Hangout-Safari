@@ -1,5 +1,6 @@
 <script>
   import { goto } from '$app/navigation';
+  
   const redirectToRegister = () => {
     goto('/register');
   };
@@ -10,8 +11,7 @@
   let underlined2 = true;
 </script>
 
-<body>
-  <div
+<div
     class=" flex p-5 justify-center self-center text-center items-center z-30"
   >
     <div class="bg-white p-5 rounded shadow-2xl w-72 md:w-96">
@@ -68,5 +68,4 @@
         >Register</button
       >
     </div>
-  </div>
-</body>
+</div>

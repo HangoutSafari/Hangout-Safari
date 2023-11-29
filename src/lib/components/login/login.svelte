@@ -7,8 +7,8 @@
   const redirectToProfile= () => {
     goto('/profile');
   };
-  let underlined = true;
-  let underlined2 = true;
+  export let underlined = true;
+  export let underlined2 = true;
 </script>
 
 <div

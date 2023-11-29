@@ -1,10 +1,9 @@
 <script>
   import { goto } from '$app/navigation';
   
-  export const redirectToLogin= () => {
+  const redirectToLogin = () => {
     goto('/login');
   };
-  console.log(redirectToLogin)
   let underlined = true;
   let underlined2 = true;
   let underlined3 = true;

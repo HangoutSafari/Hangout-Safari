@@ -34,6 +34,7 @@ declare module '$env/static/private' {
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
 	export const COLOR: string;
 	export const COLORTERM: string;
+	export const COLOR: string;
 	export const COMMONPROGRAMFILES: string;
 	export const CommonProgramW6432: string;
 	export const COMPUTERNAME: string;
@@ -48,6 +49,9 @@ declare module '$env/static/private' {
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GIT_ASKPASS: string;
+	export const EXEPATH: string;
+	export const FPS_BROWSER_APP_PROFILE_STRING: string;
+	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
 	export const HOMEPATH: string;
@@ -56,6 +60,9 @@ declare module '$env/static/private' {
 	export const INFOPATH: string;
 	export const INIT_CWD: string;
 	export const LANG: string;
+	export const INFOPATH: string;
+	export const INIT_CWD: string;
+	export const LC_CTYPE: string;
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
 	export const MANPATH: string;
@@ -65,7 +72,7 @@ declare module '$env/static/private' {
 	export const MODE: string;
 	export const MOZ_PLUGIN_PATH: string;
 	export const MSYS: string;
-	export const MSYSTEM: string;
+  export const MSYSTEM: string;
 	export const MSYSTEM_CARCH: string;
 	export const MSYSTEM_CHOST: string;
 	export const MSYSTEM_PREFIX: string;
@@ -91,6 +98,7 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const npm_package_version: string;
 	export const NUMBER_OF_PROCESSORS: string;
+	export const OLDPWD: string;
 	export const OneDrive: string;
 	export const ORIGINAL_PATH: string;
 	export const ORIGINAL_TEMP: string;
@@ -104,6 +112,14 @@ declare module '$env/static/private' {
 	export const PKG_CONFIG_PATH: string;
 	export const PKG_CONFIG_SYSTEM_INCLUDE_PATH: string;
 	export const PKG_CONFIG_SYSTEM_LIBRARY_PATH: string;
+	export const OneDriveConsumer: string;
+	export const ORIGINAL_PATH: string;
+	export const ORIGINAL_TEMP: string;
+	export const ORIGINAL_TMP: string;
+	export const OS: string;
+	export const PATH: string;
+	export const PATHEXT: string;
+	export const PKG_CONFIG_PATH: string;
 	export const PLINK_PROTOCOL: string;
 	export const PROCESSOR_ARCHITECTURE: string;
 	export const PROCESSOR_IDENTIFIER: string;
@@ -134,7 +150,6 @@ declare module '$env/static/private' {
 	export const USERDOMAIN_ROAMINGPROFILE: string;
 	export const USERNAME: string;
 	export const USERPROFILE: string;
-	export const VBOX_MSI_INSTALL_PATH: string;
 	export const VITEST: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
@@ -142,6 +157,7 @@ declare module '$env/static/private' {
 	export const VSCODE_GIT_IPC_HANDLE: string;
 	export const WINDIR: string;
 	export const ZES_ENABLE_SYSMAN: string;
+	export const WINDIR: string;
 	export const _: string;
 }
 
@@ -180,6 +196,7 @@ declare module '$env/dynamic/private' {
 		CHROME_CRASHPAD_PIPE_NAME: string;
 		COLOR: string;
 		COLORTERM: string;
+		COLOR: string;
 		COMMONPROGRAMFILES: string;
 		CommonProgramW6432: string;
 		COMPUTERNAME: string;
@@ -194,6 +211,9 @@ declare module '$env/dynamic/private' {
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GIT_ASKPASS: string;
+		EXEPATH: string;
+		FPS_BROWSER_APP_PROFILE_STRING: string;
+		FPS_BROWSER_USER_PROFILE_STRING: string;
 		HOME: string;
 		HOMEDRIVE: string;
 		HOMEPATH: string;
@@ -202,6 +222,9 @@ declare module '$env/dynamic/private' {
 		INFOPATH: string;
 		INIT_CWD: string;
 		LANG: string;
+		INFOPATH: string;
+		INIT_CWD: string;
+		LC_CTYPE: string;
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
 		MANPATH: string;
@@ -237,6 +260,7 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		npm_package_version: string;
 		NUMBER_OF_PROCESSORS: string;
+		OLDPWD: string;
 		OneDrive: string;
 		ORIGINAL_PATH: string;
 		ORIGINAL_TEMP: string;
@@ -250,6 +274,14 @@ declare module '$env/dynamic/private' {
 		PKG_CONFIG_PATH: string;
 		PKG_CONFIG_SYSTEM_INCLUDE_PATH: string;
 		PKG_CONFIG_SYSTEM_LIBRARY_PATH: string;
+		OneDriveConsumer: string;
+		ORIGINAL_PATH: string;
+		ORIGINAL_TEMP: string;
+		ORIGINAL_TMP: string;
+		OS: string;
+		PATH: string;
+		PATHEXT: string;
+		PKG_CONFIG_PATH: string;
 		PLINK_PROTOCOL: string;
 		PROCESSOR_ARCHITECTURE: string;
 		PROCESSOR_IDENTIFIER: string;
@@ -280,7 +312,6 @@ declare module '$env/dynamic/private' {
 		USERDOMAIN_ROAMINGPROFILE: string;
 		USERNAME: string;
 		USERPROFILE: string;
-		VBOX_MSI_INSTALL_PATH: string;
 		VITEST: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
@@ -288,6 +319,7 @@ declare module '$env/dynamic/private' {
 		VSCODE_GIT_IPC_HANDLE: string;
 		WINDIR: string;
 		ZES_ENABLE_SYSMAN: string;
+		WINDIR: string;
 		_: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;

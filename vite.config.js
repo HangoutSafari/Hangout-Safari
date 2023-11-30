@@ -6,7 +6,8 @@ const isGitHubActions = process.env.CI === 'true';
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
-    exclude: isGitHubActions ? ["src/tests/unit/api/animals.api.response.test.ts","src/tests/unit/profile/profile.nonExistentUri.test.ts","src/tests/unit/profile/profile.response.test.ts","src/tests/unit/api/animals.api.dataResponse.test.ts"] : [],
-
+    include: ["src/**/*.{test,spec}.{js,ts}"],
+    exclude: isGitHubActions ? ["src/tests/unit/api/animals.api.response.test.ts","src/tests/unit/profile/profile.nonExistentUri.test.ts","src/tests/unit/profile/profile.response.test.ts","src/tests/unit/api/animals.api.dataResponse.test.ts"] : ["/node_modules"],
+  
   },
 });

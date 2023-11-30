@@ -12,12 +12,12 @@
 />
 </head>
 
-<div class="h-full">
+<div class="h-[100vh]">
     <div class="z-50 sm:sticky top-0 bg-white-500"></div>
 
   <div class="background h-full">
 
-    <div class="z-[51] sticky top-0 bg-white-500">
+    <div class="z-50 sticky top-0 bg-white-500">
       <Navbar />
     </div>
     <slot />

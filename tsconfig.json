@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
+  },
+  "extends": "./.svelte-kit/tsconfig.json",
+
+  "include": ["src/**/*", "src/node_modules", "src/tests/feature/shapeGenerator.test.ts"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+}

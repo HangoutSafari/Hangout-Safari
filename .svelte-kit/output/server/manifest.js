@@ -1,63 +1,90 @@
 export const manifest = (() => {
-  function __memo(fn) {
-    let value;
-    return () => (value ??= value = fn());
-  }
+function __memo(fn) {
+	let value;
+	return () => value ??= (value = fn());
+}
 
-  return {
-    appDir: "_app",
-    appPath: "_app",
-    assets: new Set([
-      "favicon.png",
-      "models/gltf_embedded_0.png",
-      "models/savana.glb",
-      "models/savana2.glb",
-      "models/tree.gltf",
-    ]),
-    mimeTypes: {
-      ".png": "image/png",
-      ".glb": "model/gltf-binary",
-      ".gltf": "model/gltf+json",
-    },
-    _: {
-      client: {
-        start: "_app/immutable/entry/start.f15d069d.js",
-        app: "_app/immutable/entry/app.8e77e053.js",
-        imports: [
-          "_app/immutable/entry/start.f15d069d.js",
-          "_app/immutable/chunks/index.dada67a2.js",
-          "_app/immutable/chunks/singletons.52c8995b.js",
-          "_app/immutable/entry/app.8e77e053.js",
-          "_app/immutable/chunks/index.dada67a2.js",
-        ],
-        stylesheets: [],
-        fonts: [],
-      },
-      nodes: [
-        __memo(() => import("./nodes/0.js")),
-        __memo(() => import("./nodes/1.js")),
-        __memo(() => import("./nodes/2.js")),
-        __memo(() => import("./nodes/3.js")),
-      ],
-      routes: [
-        {
-          id: "/",
-          pattern: /^\/$/,
-          params: [],
-          page: { layouts: [0], errors: [1], leaf: 2 },
-          endpoint: null,
-        },
-        {
-          id: "/example",
-          pattern: /^\/example\/?$/,
-          params: [],
-          page: { layouts: [0], errors: [1], leaf: 3 },
-          endpoint: null,
-        },
-      ],
-      matchers: async () => {
-        return {};
-      },
-    },
-  };
+return {
+	appDir: "_app",
+	appPath: "_app",
+	assets: new Set(["favicon.png","images/bunny.png","images/customer.jpg","images/edit.png","images/FoodAndDrinkDesignColour.svg","images/logo.jpg","images/logo.png","images/profileBg.png","images/profileImage.jpg","images/savana.jpg","models/BIG-JUNGUS.glb","models/gltf_embedded_0.png","models/savana.glb","models/savana2.glb","models/tree.gltf","zelda.jpeg"]),
+	mimeTypes: {".png":"image/png",".jpg":"image/jpeg",".svg":"image/svg+xml",".glb":"model/gltf-binary",".gltf":"model/gltf+json",".jpeg":"image/jpeg"},
+	_: {
+		client: {"start":"_app/immutable/entry/start.c0d34238.js","app":"_app/immutable/entry/app.236dfbee.js","imports":["_app/immutable/entry/start.c0d34238.js","_app/immutable/chunks/index.4a4bc412.js","_app/immutable/chunks/singletons.c16db320.js","_app/immutable/entry/app.236dfbee.js","_app/immutable/chunks/index.4a4bc412.js"],"stylesheets":[],"fonts":[]},
+		nodes: [
+			__memo(() => import('./nodes/0.js')),
+			__memo(() => import('./nodes/1.js')),
+			__memo(() => import('./nodes/2.js')),
+			__memo(() => import('./nodes/3.js')),
+			__memo(() => import('./nodes/4.js')),
+			__memo(() => import('./nodes/5.js')),
+			__memo(() => import('./nodes/6.js')),
+			__memo(() => import('./nodes/7.js')),
+			__memo(() => import('./nodes/8.js')),
+			__memo(() => import('./nodes/9.js'))
+		],
+		routes: [
+			{
+				id: "/",
+				pattern: /^\/$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 2 },
+				endpoint: null
+			},
+			{
+				id: "/events",
+				pattern: /^\/events\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 3 },
+				endpoint: null
+			},
+			{
+				id: "/events/[slug]",
+				pattern: /^\/events\/([^/]+?)\/?$/,
+				params: [{"name":"slug","optional":false,"rest":false,"chained":false}],
+				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				endpoint: null
+			},
+			{
+				id: "/example",
+				pattern: /^\/example\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 5 },
+				endpoint: null
+			},
+			{
+				id: "/login",
+				pattern: /^\/login\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 6 },
+				endpoint: null
+			},
+			{
+				id: "/profile",
+				pattern: /^\/profile\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 7 },
+				endpoint: null
+			},
+			{
+				id: "/register",
+				pattern: /^\/register\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 8 },
+				endpoint: null
+			},
+			{
+				id: "/safari",
+				pattern: /^\/safari\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 9 },
+				endpoint: null
+			}
+		],
+		matchers: async () => {
+			
+			return {  };
+		}
+	}
+}
 })();

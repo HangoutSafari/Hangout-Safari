@@ -7,11 +7,11 @@ export class ShapeGenerator {
     gColor: number = THREE.Color.NAMES.gray
   ): THREE.Mesh {
     const geometry = new THREE.PlaneGeometry(1, 1);
-    const material = new THREE.MeshPhongMaterial({
+    const mat = new THREE.MeshPhongMaterial({
       color: gColor,
       side: THREE.DoubleSide,
     });
-    const plane = new THREE.Mesh(geometry, material);
+    const plane = new THREE.Mesh(geometry, mat);
     return plane;
   }
 
@@ -21,10 +21,9 @@ export class ShapeGenerator {
     depth: number,
     gColor: number = THREE.Color.NAMES.gray
   ): THREE.Mesh {
-    const geometry = new THREE.SphereGeometry(15);
-    geometry.translate(0,56, 0);
-    const material = new THREE.MeshPhysicalMaterial({ color: gColor, metalness:0.7, roughness:0.1,});
-    const cube = new THREE.Mesh(geometry, material);
+    const geometry = new THREE.BoxGeometry(width,height,depth);
+    const mat = new THREE.MeshPhysicalMaterial({ color: gColor, metalness:0.7, roughness:0.1,});
+    const cube = new THREE.Mesh(geometry, mat);
     return cube;
   }
 }

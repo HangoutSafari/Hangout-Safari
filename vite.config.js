@@ -17,7 +17,7 @@ export default defineConfig({
           "src/tests/unit/administration/register.test.ts",
           "src/tests/unit/profile/profile.nonExistentUri.test.ts",
           "src/tests/unit/profile/profile.response.test.ts",
-          "/node_modules",
+          "node_modules",
         ]
       : ["node_modules"],
   },

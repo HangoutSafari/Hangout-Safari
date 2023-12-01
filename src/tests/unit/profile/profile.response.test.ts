@@ -6,4 +6,3 @@ describe("Profile can be called", () => {
     expect(response.status).toBe(200);
   });
 });
-

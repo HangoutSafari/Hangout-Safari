@@ -1,13 +1,24 @@
-<script>
+<script context="module">
   import { goto } from '$app/navigation';
   
   const redirectToLogin = () => {
     goto('/login');
   };
-  let underlined = true;
-  let underlined2 = true;
-  let underlined3 = true;
-  let underlined4 = true;
+  export function handleInputKeydown(e, index) {
+    const focusableInputs = document.querySelectorAll('input');
+    const currentIndex = index;
+    if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+      e.preventDefault();
+      let nextIndex;
+      if (e.key === "ArrowUp") {
+        nextIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+      } else {
+        nextIndex = currentIndex < focusableInputs.length - 1 ? currentIndex + 1 : currentIndex;
+      }
+      focusableInputs[nextIndex].focus();
+    }
+  }
+  let underlined = [true,true,true,true]
 </script>
 
 <div
@@ -18,57 +29,65 @@
       <form>
         <div class="mb-4">
           <i class="fa-regular fa-user absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-            <input  on:blur={()=> underlined = true} on:click={() => underlined = false} 
+            <input  on:blur={()=> underlined[0] = true} 
+              on:click={() => underlined[0] = false} 
+              on:keydown={(e) => handleInputKeydown(e, 0)}
               type="text"
               class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400 "
               placeholder="Username"
             />
-            {#if underlined}
+            {#if underlined[0]}
              <hr class="border-2 rounded border-orange-400" />
             {/if}
-            {#if !underlined}
+            {#if !underlined[0]}
               <hr class="border-2 rounded border-transparent"/>
             {/if}
           </div>
         <div class="mb-4">
           <i class="fa-regular fa-envelope absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-          <input on:blur={()=> underlined2 = true} on:click={() => underlined2 = false}
+          <input on:blur={()=> underlined[1] = true}
+            on:click={() => underlined[1] = false}
+            on:keydown={(e) => handleInputKeydown(e, 1)}
             type="text"
             class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="E-mail"
           />
-          {#if underlined2}
+          {#if underlined[1]}
            <hr class="border-2 rounded border-orange-400" />
           {/if}
-          {#if !underlined2}
+          {#if !underlined[1]}
            <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>
         <div class="mb-4">
           <i class="fa-solid fa-key absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-            <input on:blur={()=> underlined3 = true} on:click={() => underlined3 = false}
+            <input on:blur={()=> underlined[2] = true}
+              on:click={() => underlined[2] = false}
+              on:keydown={(e) => handleInputKeydown(e, 2)}
               type="text"
               class="w-full px-7 py-2 focus:outline-none focus:ring  focus:ring-orange-400"
               placeholder="Password"
             />
-            {#if underlined3}
+            {#if underlined[2]}
              <hr class="border-2 rounded border-orange-400" />
             {/if}
-            {#if !underlined3}
+            {#if !underlined[2]}
               <hr class="border-2 rounded border-transparent"/>
             {/if}
           </div>
         <div class="mb-4">
           <i class="fa-solid fa-key absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-          <input on:blur={()=> underlined4 = true} on:click={() => underlined4 = false}
+          <input on:blur={()=> underlined[3] = true}
+            on:click={() => underlined[3] = false}
+            on:keydown={(e) => handleInputKeydown(e, 3)}
             type="password"
             class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="Confirm Password"
           />
-          {#if underlined4}
+          {#if underlined[3]}
            <hr class="border-2 rounded border-orange-400" />
           {/if}
-          {#if !underlined4}
+          {#if !underlined[3]}
            <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>

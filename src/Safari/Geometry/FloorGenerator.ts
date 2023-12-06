@@ -15,14 +15,16 @@ export class FloorGenerator
 
     public constructor()
     {
-        this.width = 40;
+        this.width = 20;
         this.height = this.width;
         this.planes = new THREE.Group();
-        this.planes.add(ShapeGenerator.generatePlane(this.width,this.height));
+        this.planes.add(ShapeGenerator.generatePlane(this.width ,this.height));
         this.x = new THREE.Vector3(this.width/2, 0, 0);
         this.z = new THREE.Vector3(0,0,this.height/2);
         this.numberOfplanesRendered = 0;
-        this.precalculateThePositions();
+        this.planePositions = this.precalculateThePositions();
+        console.log(this.planePositions);
+        //this.preacalcualteThePsition_SimonM();
     }
 
     public appednInScene(scene :Scene)
@@ -39,17 +41,41 @@ export class FloorGenerator
      * |-----------------------|
      * | -x-z  | 2*-X  | -x+z  |         
      * |-----------------------|
-     * @returns Calculated ammount of position
+     * @returns Calculated positions
      */
     private precalculateThePositions (): Array<THREE.Vector3>{
+        const calX = new THREE.Vector3(this.x.x, 0,0);
+        const calcZ = new THREE.Vector3(0, 0,this.z.z);
         const center = new THREE.Vector3(0,0,0);
         const operationMatrix :Array<THREE.Vector3> =[
-            this.x.sub(this.z),            this.x.multiplyScalar(2),       this.z.add(this.x),
+            calX.add(calcZ.negate()),            calX.multiplyScalar(2),       calcZ.add(calX),
             //-----------------------------------------------------------------------------------------
-            this.z.multiplyScalar(-2),            center,                  this.z.multiplyScalar(2),
+            calcZ.negate().multiplyScalar(2),            center,          calcZ.multiplyScalar(2),
             //-----------------------------------------------------------------------------------------
-            this.z.sub(this.x.negate()),   this.x.multiplyScalar(-2),      this.x.negate().add(this.z) 
+            calcZ.sub(calX.negate()),   calX.multiplyScalar(-2),      calX.negate().add(calcZ) 
         ]
+        console.log("Z is:" +this.z.z);
+        console.log("X is:" +this.x.x);
         return operationMatrix;
+    }
+
+
+    private preacalcualteThePsition_SimonM()
+    {
+        let grid:Array<THREE.Vector3> = [
+            new THREE.Vector3(-1, 0, 1),
+            new THREE.Vector3(0,0,1),
+            new THREE.Vector3(1,0,1),
+            new THREE.Vector3(-1,0,0),
+            new THREE.Vector3(0,0,0),
+            new THREE.Vector3(1,0,0),
+            new THREE.Vector3(-1,0,-1),
+            new THREE.Vector3(0,0,-1),
+            new THREE.Vector3(1, 0, -1),
+        ];
+        grid.forEach(gridCell => {
+            gridCell.multiplyScalar(20);
+        })
+        console.log(grid);
     }
 }

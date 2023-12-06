@@ -29,7 +29,6 @@ declare module '$env/static/private' {
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
-	export const BASE_URL: string;
 	export const ChocolateyLastPathUpdate: string;
 	export const COLOR: string;
 	export const COMMONPROGRAMFILES: string;
@@ -37,11 +36,10 @@ declare module '$env/static/private' {
 	export const COMPUTERNAME: string;
 	export const COMSPEC: string;
 	export const CONFIG_SITE: string;
-	export const DEV: string;
 	export const DISPLAY: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_6116: string;
+	export const EFC_6448: string;
 	export const EXEPATH: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -59,7 +57,6 @@ declare module '$env/static/private' {
 	export const MINGW_CHOST: string;
 	export const MINGW_PACKAGE_PREFIX: string;
 	export const MINGW_PREFIX: string;
-	export const MODE: string;
 	export const MOZ_PLUGIN_PATH: string;
 	export const MSYS: string;
 	export const MSYSTEM: string;
@@ -74,9 +71,9 @@ declare module '$env/static/private' {
 	export const npm_config_global_prefix: string;
 	export const npm_config_init_module: string;
 	export const npm_config_local_prefix: string;
-	export const npm_config_metrics_registry: string;
 	export const npm_config_node_gyp: string;
 	export const npm_config_noproxy: string;
+	export const npm_config_npm_version: string;
 	export const npm_config_prefix: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_user_agent: string;
@@ -88,6 +85,9 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const npm_package_version: string;
 	export const NUMBER_OF_PROCESSORS: string;
+	export const NVM_HOME: string;
+	export const NVM_SYMLINK: string;
+	export const OLDPWD: string;
 	export const OneDrive: string;
 	export const ORIGINAL_PATH: string;
 	export const ORIGINAL_TEMP: string;
@@ -105,7 +105,6 @@ declare module '$env/static/private' {
 	export const PROCESSOR_IDENTIFIER: string;
 	export const PROCESSOR_LEVEL: string;
 	export const PROCESSOR_REVISION: string;
-	export const PROD: string;
 	export const ProgramData: string;
 	export const PROGRAMFILES: string;
 	export const ProgramW6432: string;
@@ -123,7 +122,6 @@ declare module '$env/static/private' {
 	export const TERM: string;
 	export const TERM_PROGRAM: string;
 	export const TERM_PROGRAM_VERSION: string;
-	export const TEST: string;
 	export const TMP: string;
 	export const TMPDIR: string;
 	export const USERDOMAIN: string;
@@ -131,7 +129,6 @@ declare module '$env/static/private' {
 	export const USERNAME: string;
 	export const USERPROFILE: string;
 	export const VBOX_MSI_INSTALL_PATH: string;
-	export const VITEST: string;
 	export const WINDIR: string;
 	export const ZES_ENABLE_SYSMAN: string;
 	export const _: string;
@@ -167,7 +164,6 @@ declare module '$env/dynamic/private' {
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
-		BASE_URL: string;
 		ChocolateyLastPathUpdate: string;
 		COLOR: string;
 		COMMONPROGRAMFILES: string;
@@ -175,11 +171,10 @@ declare module '$env/dynamic/private' {
 		COMPUTERNAME: string;
 		COMSPEC: string;
 		CONFIG_SITE: string;
-		DEV: string;
 		DISPLAY: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_6116: string;
+		EFC_6448: string;
 		EXEPATH: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -197,7 +192,6 @@ declare module '$env/dynamic/private' {
 		MINGW_CHOST: string;
 		MINGW_PACKAGE_PREFIX: string;
 		MINGW_PREFIX: string;
-		MODE: string;
 		MOZ_PLUGIN_PATH: string;
 		MSYS: string;
 		MSYSTEM: string;
@@ -212,9 +206,9 @@ declare module '$env/dynamic/private' {
 		npm_config_global_prefix: string;
 		npm_config_init_module: string;
 		npm_config_local_prefix: string;
-		npm_config_metrics_registry: string;
 		npm_config_node_gyp: string;
 		npm_config_noproxy: string;
+		npm_config_npm_version: string;
 		npm_config_prefix: string;
 		npm_config_userconfig: string;
 		npm_config_user_agent: string;
@@ -226,6 +220,9 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		npm_package_version: string;
 		NUMBER_OF_PROCESSORS: string;
+		NVM_HOME: string;
+		NVM_SYMLINK: string;
+		OLDPWD: string;
 		OneDrive: string;
 		ORIGINAL_PATH: string;
 		ORIGINAL_TEMP: string;
@@ -243,7 +240,6 @@ declare module '$env/dynamic/private' {
 		PROCESSOR_IDENTIFIER: string;
 		PROCESSOR_LEVEL: string;
 		PROCESSOR_REVISION: string;
-		PROD: string;
 		ProgramData: string;
 		PROGRAMFILES: string;
 		ProgramW6432: string;
@@ -261,7 +257,6 @@ declare module '$env/dynamic/private' {
 		TERM: string;
 		TERM_PROGRAM: string;
 		TERM_PROGRAM_VERSION: string;
-		TEST: string;
 		TMP: string;
 		TMPDIR: string;
 		USERDOMAIN: string;
@@ -269,7 +264,6 @@ declare module '$env/dynamic/private' {
 		USERNAME: string;
 		USERPROFILE: string;
 		VBOX_MSI_INSTALL_PATH: string;
-		VITEST: string;
 		WINDIR: string;
 		ZES_ENABLE_SYSMAN: string;
 		_: string;

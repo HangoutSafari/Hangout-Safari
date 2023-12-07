@@ -5,6 +5,7 @@ export class ShapeGenerator {
   public static generatePlane(
     width: number,
     height: number,
+    gPosition: THREE.Vector3 = new THREE.Vector3(0,0,0),
     gColor: number = THREE.Color.NAMES.gray
   ): THREE.Mesh {
     const geometry = new THREE.PlaneGeometry(width, height);
@@ -15,7 +16,10 @@ export class ShapeGenerator {
       roughness: 0.5
     });
     const plane = new THREE.Mesh(geometry, mat);
+    const translationMatrix = new THREE.Matrix4();
+    translationMatrix.makeTranslation(gPosition);
     plane.rotateX(degToRad(90));
+    plane.applyMatrix4(translationMatrix);
     
     return plane;
   }

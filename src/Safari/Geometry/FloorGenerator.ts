@@ -1,6 +1,7 @@
 import  * as THREE from 'three'
 import { ShapeGenerator } from './ShapeGenerator';
 import type { Scene } from '../Scene/Scene';
+import { SafariVector } from '../Math/SafariVector';
 
 export class FloorGenerator
 {
@@ -19,16 +20,25 @@ export class FloorGenerator
         this.height = this.width;
         this.planes = new THREE.Group();
         this.planes.add(ShapeGenerator.generatePlane(this.width ,this.height));
-        this.x = new THREE.Vector3(this.width/2, 0, 0);
-        this.z = new THREE.Vector3(0,0,this.height/2);
+        this.x = new THREE.Vector3(this.width, 0, 0);
+        this.z = new THREE.Vector3(0,0,this.height);
         this.numberOfplanesRendered = 0;
         this.planePositions = this.precalculateThePositions();
         console.log(this.planePositions);
         //this.preacalcualteThePsition_SimonM();
+        this.renderPlanes = this.renderPlanes
+    }
+
+    private renderPlanes()
+    {
+        this.planePositions.forEach(position => {
+            this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, position));
+        });
     }
 
     public appednInScene(scene :Scene)
     {
+        this.renderPlanes();
         scene.add(this.planes);
     }
     
@@ -44,18 +54,14 @@ export class FloorGenerator
      * @returns Calculated positions
      */
     private precalculateThePositions (): Array<THREE.Vector3>{
-        const calX = new THREE.Vector3(this.x.x, 0,0);
-        const calcZ = new THREE.Vector3(0, 0,this.z.z);
         const center = new THREE.Vector3(0,0,0);
         const operationMatrix :Array<THREE.Vector3> =[
-            calX.add(calcZ.negate()),            calX.multiplyScalar(2),       calcZ.add(calX),
+            new SafariVector(this.x.clone().sub(this.z)),    new SafariVector(this.x.clone()),       new SafariVector(this.z.clone().add(this.x)),
             //-----------------------------------------------------------------------------------------
-            calcZ.negate().multiplyScalar(2),            center,          calcZ.multiplyScalar(2),
+            new SafariVector(this.z.clone().negate()),            center,          new SafariVector(this.z.clone()),
             //-----------------------------------------------------------------------------------------
-            calcZ.sub(calX.negate()),   calX.multiplyScalar(-2),      calX.negate().add(calcZ) 
+            new SafariVector(this.z.clone().sub(this.x)),   new SafariVector(this.x.clone().negate()),      new SafariVector(this.x.clone().negate().add(this.z.clone().negate())) 
         ]
-        console.log("Z is:" +this.z.z);
-        console.log("X is:" +this.x.x);
         return operationMatrix;
     }
 

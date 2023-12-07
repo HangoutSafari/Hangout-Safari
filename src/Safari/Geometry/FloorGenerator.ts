@@ -56,32 +56,12 @@ export class FloorGenerator
     private precalculateThePositions (): Array<THREE.Vector3>{
         const center = new THREE.Vector3(0,0,0);
         const operationMatrix :Array<THREE.Vector3> =[
-            new SafariVector(this.x.clone().sub(this.z)),    new SafariVector(this.x.clone()),       new SafariVector(this.z.clone().add(this.x)),
+            this.x.clone().sub(this.z),    this.x.clone(),       this.z.clone().add(this.x),
             //-----------------------------------------------------------------------------------------
-            new SafariVector(this.z.clone().negate()),            center,          new SafariVector(this.z.clone()),
+            this.z.clone().negate(),            center,          this.z.clone(),
             //-----------------------------------------------------------------------------------------
-            new SafariVector(this.z.clone().sub(this.x)),   new SafariVector(this.x.clone().negate()),      new SafariVector(this.x.clone().negate().add(this.z.clone().negate())) 
+            this.z.clone().sub(this.x),   this.x.clone().negate(),      this.x.clone().negate().add(this.z.clone().negate()) 
         ]
         return operationMatrix;
-    }
-
-
-    private preacalcualteThePsition_SimonM()
-    {
-        let grid:Array<THREE.Vector3> = [
-            new THREE.Vector3(-1, 0, 1),
-            new THREE.Vector3(0,0,1),
-            new THREE.Vector3(1,0,1),
-            new THREE.Vector3(-1,0,0),
-            new THREE.Vector3(0,0,0),
-            new THREE.Vector3(1,0,0),
-            new THREE.Vector3(-1,0,-1),
-            new THREE.Vector3(0,0,-1),
-            new THREE.Vector3(1, 0, -1),
-        ];
-        grid.forEach(gridCell => {
-            gridCell.multiplyScalar(20);
-        })
-        console.log(grid);
     }
 }

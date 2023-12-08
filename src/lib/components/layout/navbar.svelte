@@ -8,7 +8,7 @@ import {page} from '$app/stores';
     >
     <div  class="logo-container md:block hidden ml-8 ">
       <a href="/" class="flex items-center">
-        <img src="/images/logo.jpg" alt="Logo" class="rounded-full object-cover w-20 h-20" />
+        <img src="/images/logo.jpg" alt="Logo" class="rounded-tr-[40px] rounded-br-[40px] rounded-bl-[40px] object-cover w-20 h-20" />
         <span class="ml-2 font-bold text-2xl">Safari Hangout</span>
       </a>
     </div>

@@ -26,7 +26,7 @@
  * ```
  */
 declare module '$env/static/private' {
-<<<<<<< HEAD
+
 	export const ACLOCAL_PATH: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
@@ -66,9 +66,7 @@ declare module '$env/static/private' {
 	export const MSYSTEM_PREFIX: string;
 	export const NODE: string;
 	export const NODE_ENV: string;
-=======
 	export const SHELL: string;
->>>>>>> a2671ada406e9104e5fc8d2d764ff387fbc0bf29
 	export const npm_command: string;
 	export const SESSION_MANAGER: string;
 	export const WINDOWID: string;
@@ -155,8 +153,48 @@ declare module '$env/static/private' {
 	export const XDG_RUNTIME_DIR: string;
 	export const DEBUGINFOD_URLS: string;
 	export const npm_package_json: string;
-<<<<<<< HEAD
+	export const LESSOPEN: string;
+	export const USER: string;
+	export const npm_config_user_agent: string;
+	export const GIT_ASKPASS: string;
+	export const npm_node_execpath: string;
+	export const SHLVL: string;
+	export const npm_config_noproxy: string;
+	export const MOTD_SHOWN: string;
+	export const HOME: string;
+	export const TERM_PROGRAM_VERSION: string;
+	export const VSCODE_IPC_HOOK_CLI: string;
+	export const npm_package_json: string;
+	export const VSCODE_GIT_ASKPASS_MAIN: string;
+	export const VSCODE_GIT_ASKPASS_NODE: string;
+	export const npm_config_userconfig: string;
+	export const npm_config_local_prefix: string;
+	export const COLORTERM: string;
+	export const WSL_DISTRO_NAME: string;
+	export const COLOR: string;
+	export const NVM_DIR: string;
+	export const WAYLAND_DISPLAY: string;
+	export const LOGNAME: string;
+	export const NAME: string;
+	export const WSL_INTEROP: string;
+	export const PULSE_SERVER: string;
+	export const _: string;
+	export const npm_config_prefix: string;
+	export const npm_config_npm_version: string;
+	export const TERM: string;
+	export const npm_config_cache: string;
+	export const npm_config_node_gyp: string;
+	export const PATH: string;
+	export const NODE: string;
 	export const npm_package_name: string;
+	export const XDG_RUNTIME_DIR: string;
+	export const DISPLAY: string;
+	export const LANG: string;
+	export const LS_COLORS: string;
+	export const VSCODE_GIT_IPC_HANDLE: string;
+	export const TERM_PROGRAM: string;
+	export const npm_lifecycle_script: string;
+	export const SHELL: string;
 	export const npm_package_version: string;
 	export const NUMBER_OF_PROCESSORS: string;
 	export const NVM_HOME: string;
@@ -166,7 +204,6 @@ declare module '$env/static/private' {
 	export const ORIGINAL_TEMP: string;
 	export const ORIGINAL_TMP: string;
 	export const OS: string;
-=======
 	export const LC_TIME: string;
 	export const P9K_SSH: string;
 	export const QT_AUTO_SCREEN_SCALE_FACTOR: string;
@@ -176,7 +213,6 @@ declare module '$env/static/private' {
 	export const XDG_DATA_DIRS: string;
 	export const KDE_FULL_SESSION: string;
 	export const npm_config_noproxy: string;
->>>>>>> a2671ada406e9104e5fc8d2d764ff387fbc0bf29
 	export const PATH: string;
 	export const npm_config_node_gyp: string;
 	export const DBUS_SESSION_BUS_ADDRESS: string;
@@ -188,6 +224,30 @@ declare module '$env/static/private' {
 	export const OLDPWD: string;
 	export const KONSOLE_DBUS_WINDOW: string;
 	export const NODE_ENV: string;
+	export const npm_lifecycle_event: string;
+	export const LESSCLOSE: string;
+	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
+	export const npm_config_globalconfig: string;
+	export const npm_config_init_module: string;
+	export const PWD: string;
+	export const npm_execpath: string;
+	export const NVM_CD_FLAGS: string;
+	export const XDG_DATA_DIRS: string;
+	export const npm_config_global_prefix: string;
+	export const npm_command: string;
+	export const WSL2_GUI_APPS_ENABLED: string;
+	export const HOSTTYPE: string;
+	export const NVM_RC_VERSION: string;
+	export const WSLENV: string;
+	export const INIT_CWD: string;
+	export const EDITOR: string;
+	export const TEST: string;
+	export const VITEST: string;
+	export const NODE_ENV: string;
+	export const PROD: string;
+	export const DEV: string;
+	export const BASE_URL: string;
+	export const MODE: string;
 }
 
 /**
@@ -217,7 +277,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-<<<<<<< HEAD
 		ACLOCAL_PATH: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
@@ -257,9 +316,7 @@ declare module '$env/dynamic/private' {
 		MSYSTEM_PREFIX: string;
 		NODE: string;
 		NODE_ENV: string;
-=======
 		SHELL: string;
->>>>>>> a2671ada406e9104e5fc8d2d764ff387fbc0bf29
 		npm_command: string;
 		SESSION_MANAGER: string;
 		WINDOWID: string;
@@ -346,8 +403,48 @@ declare module '$env/dynamic/private' {
 		XDG_RUNTIME_DIR: string;
 		DEBUGINFOD_URLS: string;
 		npm_package_json: string;
-<<<<<<< HEAD
+		LESSOPEN: string;
+		USER: string;
+		npm_config_user_agent: string;
+		GIT_ASKPASS: string;
+		npm_node_execpath: string;
+		SHLVL: string;
+		npm_config_noproxy: string;
+		MOTD_SHOWN: string;
+		HOME: string;
+		TERM_PROGRAM_VERSION: string;
+		VSCODE_IPC_HOOK_CLI: string;
+		npm_package_json: string;
+		VSCODE_GIT_ASKPASS_MAIN: string;
+		VSCODE_GIT_ASKPASS_NODE: string;
+		npm_config_userconfig: string;
+		npm_config_local_prefix: string;
+		COLORTERM: string;
+		WSL_DISTRO_NAME: string;
+		COLOR: string;
+		NVM_DIR: string;
+		WAYLAND_DISPLAY: string;
+		LOGNAME: string;
+		NAME: string;
+		WSL_INTEROP: string;
+		PULSE_SERVER: string;
+		_: string;
+		npm_config_prefix: string;
+		npm_config_npm_version: string;
+		TERM: string;
+		npm_config_cache: string;
+		npm_config_node_gyp: string;
+		PATH: string;
+		NODE: string;
 		npm_package_name: string;
+		XDG_RUNTIME_DIR: string;
+		DISPLAY: string;
+		LANG: string;
+		LS_COLORS: string;
+		VSCODE_GIT_IPC_HANDLE: string;
+		TERM_PROGRAM: string;
+		npm_lifecycle_script: string;
+		SHELL: string;
 		npm_package_version: string;
 		NUMBER_OF_PROCESSORS: string;
 		NVM_HOME: string;
@@ -357,7 +454,6 @@ declare module '$env/dynamic/private' {
 		ORIGINAL_TEMP: string;
 		ORIGINAL_TMP: string;
 		OS: string;
-=======
 		LC_TIME: string;
 		P9K_SSH: string;
 		QT_AUTO_SCREEN_SCALE_FACTOR: string;
@@ -367,7 +463,6 @@ declare module '$env/dynamic/private' {
 		XDG_DATA_DIRS: string;
 		KDE_FULL_SESSION: string;
 		npm_config_noproxy: string;
->>>>>>> a2671ada406e9104e5fc8d2d764ff387fbc0bf29
 		PATH: string;
 		npm_config_node_gyp: string;
 		DBUS_SESSION_BUS_ADDRESS: string;
@@ -379,6 +474,30 @@ declare module '$env/dynamic/private' {
 		OLDPWD: string;
 		KONSOLE_DBUS_WINDOW: string;
 		NODE_ENV: string;
+		npm_lifecycle_event: string;
+		LESSCLOSE: string;
+		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
+		npm_config_globalconfig: string;
+		npm_config_init_module: string;
+		PWD: string;
+		npm_execpath: string;
+		NVM_CD_FLAGS: string;
+		XDG_DATA_DIRS: string;
+		npm_config_global_prefix: string;
+		npm_command: string;
+		WSL2_GUI_APPS_ENABLED: string;
+		HOSTTYPE: string;
+		NVM_RC_VERSION: string;
+		WSLENV: string;
+		INIT_CWD: string;
+		EDITOR: string;
+		TEST: string;
+		VITEST: string;
+		NODE_ENV: string;
+		PROD: string;
+		DEV: string;
+		BASE_URL: string;
+		MODE: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

@@ -39,14 +39,7 @@ export class Scene extends THREE.Scene {
       console.log("aded light source");
       this.add(lightSource);
     });
-    this.add(new THREE.AxesHelper(40));  
 
-    //-------------
-    // GRID (DEBUG)
-    //------------
-    const gridHelper = new THREE.GridHelper( 400, 200 );
-    gridHelper.translateY(-2)
-    this.add( gridHelper );
   }
 
   public update(): void

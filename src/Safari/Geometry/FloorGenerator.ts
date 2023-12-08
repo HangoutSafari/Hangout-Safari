@@ -11,45 +11,59 @@ export class FloorGenerator
     private z: THREE.Vector3;
     private width: number;
     private height: number;
-    private numberOfplanesRendered;
     private planePositions: Array<THREE.Vector3>
+    private renderedChunks: number;
 
     public constructor()
     {
-        this.width = 20;
+        this.width = 440;
         this.height = this.width;
         this.planes = new THREE.Group();
-        this.planes.add(ShapeGenerator.generatePlane(this.width ,this.height));
+        this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, new THREE.Vector3(0,0,0)));
         this.x = new THREE.Vector3(this.width, 0, 0);
         this.z = new THREE.Vector3(0,0,this.height);
-        this.numberOfplanesRendered = 0;
+        this.renderedChunks = 0;
         this.planePositions = this.precalculateThePositions();
-        console.log(this.planePositions);
-        //this.preacalcualteThePsition_SimonM();
-        this.renderPlanes = this.renderPlanes
+        this.isCenter = this.isCenter;
+        this.addChunk = this.addChunk;
     }
 
-    private renderPlanes()
+
+    /**
+     * Adds chunk to the ground
+     */
+    public addChunk():void 
     {
-        this.planePositions.forEach(position => {
-            this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, position));
-        });
+        if(this.renderedChunks <= 9){
+            if(!this.isCenter())
+            {
+                this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, this.planePositions[this.renderedChunks]));
+                this.renderedChunks++;
+            }
+            else this.renderedChunks++;
+        }
+        else{
+            alert('maximum size of the safari reached');
+        }
     }
 
+    /**
+     * Appends floor in the scene
+     * @param scene scene where to append group of planes
+     */
     public appednInScene(scene :Scene)
     {
-        this.renderPlanes();
         scene.add(this.planes);
     }
     
     /**
      * Calculates position of planes 
      * |-----------------------|
-     * |  x-z  |  2*x  |  z+x  |
+     * |  x-z  |   x   |  z+x  |
      * |-----------------------|
-     * | 2*-z  | 0,0,0 |  2*z  |
+     * |  -z   | 0,0,0 |   z   |
      * |-----------------------|
-     * | -x-z  | 2*-X  | -x+z  |         
+     * | -x-z  |  -X   | -x+z  |         
      * |-----------------------|
      * @returns Calculated positions
      */
@@ -57,31 +71,20 @@ export class FloorGenerator
         const center = new THREE.Vector3(0,0,0);
         const operationMatrix :Array<THREE.Vector3> =[
             new SafariVector(this.x.clone().sub(this.z)),    new SafariVector(this.x.clone()),       new SafariVector(this.z.clone().add(this.x)),
-            //-----------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------------------------------------------------------
             new SafariVector(this.z.clone().negate()),            center,          new SafariVector(this.z.clone()),
-            //-----------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------------------------------------------------------
             new SafariVector(this.z.clone().sub(this.x)),   new SafariVector(this.x.clone().negate()),      new SafariVector(this.x.clone().negate().add(this.z.clone().negate())) 
         ]
         return operationMatrix;
     }
 
-
-    private preacalcualteThePsition_SimonM()
-    {
-        let grid:Array<THREE.Vector3> = [
-            new THREE.Vector3(-1, 0, 1),
-            new THREE.Vector3(0,0,1),
-            new THREE.Vector3(1,0,1),
-            new THREE.Vector3(-1,0,0),
-            new THREE.Vector3(0,0,0),
-            new THREE.Vector3(1,0,0),
-            new THREE.Vector3(-1,0,-1),
-            new THREE.Vector3(0,0,-1),
-            new THREE.Vector3(1, 0, -1),
-        ];
-        grid.forEach(gridCell => {
-            gridCell.multiplyScalar(20);
-        })
-        console.log(grid);
+    /**
+     * Checks if currently rendered chunk is in the center of the floor
+     * @returns true if yes otherwise false
+     */
+    private isCenter(): boolean{
+        return this.renderedChunks == 4;
     }
+
 }

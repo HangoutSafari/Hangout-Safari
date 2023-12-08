@@ -19,7 +19,7 @@ export class Scene extends THREE.Scene {
   constructor(renderingContext: HTMLCanvasElement) {
     super();
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(1, 20, 10)));
-    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.orange,8,true,new THREE.Vector3(0, 40, 30)));
+    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,8,true,new THREE.Vector3(0, 40, 30)));
     this.camera = new Camera(renderingContext, 65, 0.1, 2000);
     this.renderer = new Renderer(renderingContext);
     //----------------------------------

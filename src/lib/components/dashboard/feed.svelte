@@ -1,6 +1,8 @@
 <script>
     export let profileImage;
     export let animalImage;
+    export let locationObtained;
+    export let dateObtained;
 </script>
 
 <div class="grid grid-flow-col items-center justify-items-center border-b border-slate-300 py-3 md:container md:mx-auto"> 
@@ -15,17 +17,17 @@
 
     <p>Jhon Doe obtained Joe!</p>
 
-        <div class="flex text-sm gap-4 content-around text-black text-opacity-40">
+        <div class="flex text-sm gap-4 content-around pt-1 text-black text-opacity-40">
             <div class="flex justify-items-start">
                 <div class="flex">
                     <i class="mr-2 fa-solid fa-calendar" />
-                    <p class="">Art Fair</p>
+                    <p class="">{locationObtained}</p>
                 </div>
             </div>
             <div class="flex justify-items-end">
                 <div class="flex">
                     <i class=" mr-2 fa-solid fa-location-dot" />
-                    <p class="">1-12-2023</p>
+                    <p class="">{dateObtained}</p>
                 </div>
             </div>
         </div>

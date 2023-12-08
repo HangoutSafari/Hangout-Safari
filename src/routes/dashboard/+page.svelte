@@ -6,7 +6,7 @@
 
 <!-- <meta name="viewport" content="" /> -->
 
-<div class="flex flex-col">
+<div class="w-[390px] pt-8 pl-8">
   <FeedContainer />
 </div>
 

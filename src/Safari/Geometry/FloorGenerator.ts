@@ -86,5 +86,4 @@ export class FloorGenerator
     private isCenter(): boolean{
         return this.renderedChunks == 4;
     }
-
 }

@@ -6,7 +6,7 @@
   }
 </script>
 
-<div class="{$$props.class} w-[400px]">
+<div class="{$$props.class} w-full">
   <div>
     <i
       class="fa-solid fa-image absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"
@@ -30,6 +30,7 @@
   <div>
     <img
       {src}
+      class="h-[200px] w-full"
       alt="Your face will appear here once you select a file showing it"
     />
   </div>

@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="{$$props.class} w-[400px]">
+<div class="{$$props.class} w-full">
   <i
     class="fa-solid fa-pen absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"
   />

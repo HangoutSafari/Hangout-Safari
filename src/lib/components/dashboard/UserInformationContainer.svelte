@@ -25,18 +25,19 @@
 
             <div class="flex justify-center pt-6">
                 <h1 class="font-bold text-base pr-6">Favorite Events</h1>
-                <img
-                    src="/images/bunny.png"
-                    alt="Profile Image"
-                    class="h-12 bg-orange-400 rounded-lg p-1">
+                <div class="flex items-center text-white h-12 w-12 bg-orange-400 rounded-lg p-1">
+                    <i class="fa-solid fa-music fa-2xl"></i>
+                </div>
             </div>
 
             <div class="flex justify-center pt-4">
                 <h1 class="font-bold text-base pr-6">Favorite Animal</h1>
-                <img
-                    src="/images/bunny.png"
-                    alt="Profile Image"
-                    class="h-12 bg-orange-400 rounded-lg p-1">
+                <div class="h-12 w-12">
+                    <img
+                        src="/images/bunny.png"
+                        alt="Profile Image"
+                        class=" bg-orange-400 rounded-lg p-1">
+                </div>
             </div>
 
         </div>

@@ -25,54 +25,6 @@
         eventDate="December 12th - 20th"
         eventLocation="Bibliotheek, Middelburg"
       />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
-      <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
-      />
     </div>
   </div>
 

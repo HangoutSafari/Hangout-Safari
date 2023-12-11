@@ -1,21 +1,26 @@
 <script lang="ts">
   import UserInformationContainer from "$lib/components/dashboard/UserInformationContainer.svelte";
-import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
-    import InformationCard from "$lib/components/profilePage/informationCard.svelte";
+  import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
+  import UpcomingContainer from "$lib/components/dashboard/upcomingContainer.svelte";
+  import InformationCard from "$lib/components/profilePage/informationCard.svelte";
   import type { PageData } from "./$types";
   // export let data: PageData;
 </script>
 
 <!-- <meta name="viewport" content="" /> -->
 
-<div class="sm:grid grid-cols-3 pt-8">
+<div class="grid sm:flex justify-between pt-4">
   
-  <div class="w-[390px] sm:pl-8">
+  <div class="order-2 sm:order-none w-[390px] sm:pl-4">
     <FeedContainer />
   </div>
   
-  <div class="sm:flex justify-center">
+  <div class="order-3 sm:order-none sm:flex justify-center">
     <UserInformationContainer />
+  </div>
+
+  <div class="order-1 sm:order-none sm:w-[390px] h-full pr-4">
+    <UpcomingContainer />
   </div>
   
 </div>

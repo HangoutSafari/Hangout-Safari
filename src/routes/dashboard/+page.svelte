@@ -8,13 +8,13 @@ import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
 
 <!-- <meta name="viewport" content="" /> -->
 
-<div class="sm:flex pt-8">
+<div class="sm:grid grid-cols-3 pt-8">
   
   <div class="w-[390px] sm:pl-8">
     <FeedContainer />
   </div>
   
-  <div class="justify-center">
+  <div class="sm:flex justify-center">
     <UserInformationContainer />
   </div>
   

@@ -1,4 +1,5 @@
 <script>
+  export let value = "Description...";
 </script>
 
 <div class="{$$props.class} w-full">
@@ -10,6 +11,6 @@
     rows="4"
     class="w-full px-7 py-2 outline-none ring ring-orange-400"
   >
-    Description...
+    {value}
   </textarea>
 </div>

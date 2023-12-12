@@ -4,18 +4,21 @@ export class OrthoCamera extends THREE.OrthographicCamera {
 
   constructor(
     domElement: HTMLCanvasElement,
+
   ) {
     super(
+    //   FOV,
       domElement.clientWidth / - 2,
       domElement.clientWidth / 2,
+
       domElement.clientHeight / 2,
       domElement.clientHeight / - 2,
 
-      0,
+      -1000,
       1000
-    );
 
-    this.move(0, 0, 2);
+    );
+    this.move(2, 2, 2);
   }
 
   /**
@@ -38,6 +41,7 @@ export class OrthoCamera extends THREE.OrthographicCamera {
    */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
+    
     this.updateProjectionMatrix();
   }
 }

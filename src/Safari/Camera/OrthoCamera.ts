@@ -14,7 +14,7 @@ export class OrthoCamera extends THREE.OrthographicCamera {
       domElement.clientHeight / 2,
       domElement.clientHeight / - 2,
 
-      1,
+      -1000,
       1000
 
     );
@@ -41,6 +41,7 @@ export class OrthoCamera extends THREE.OrthographicCamera {
    */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
+    
     this.updateProjectionMatrix();
   }
 }

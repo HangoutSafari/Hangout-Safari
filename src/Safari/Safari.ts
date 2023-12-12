@@ -24,7 +24,10 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-
+    // loadModel("models/savana2.glb")
+    // .then((model)=>{
+    //   this.scene.add(model);
+    // })
     //----------------------------------------------------
     // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE (debug)
     //----------------------------------------------------

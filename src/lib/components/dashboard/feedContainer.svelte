@@ -16,7 +16,7 @@
 
 </div>
 
-<div class="bg-white drop-shadow-lg p-4 rounded-b-2xl">
+<div class="bg-white p-4 rounded-b-2xl">
 
   <div>
       {#each { length: 6 } as _, i}

@@ -15,6 +15,6 @@ export class Chunk extends THREE.Group
     {
         super();
         this.add(new Floor(widht, position));
-        this.add(new Vegetation(20, widht));
+        this.add(new Vegetation(1, widht));
     }
 }

@@ -31,8 +31,10 @@ export class ShapeGenerator {
     gColor: number = THREE.Color.NAMES.gray
   ): THREE.Mesh {
     const geometry = new THREE.BoxGeometry(width,height,depth);
+
     const mat = new THREE.MeshPhysicalMaterial({ color: gColor, metalness:0.7, roughness:0.1,});
     const cube = new THREE.Mesh(geometry, mat);
+    cube.castShadow=true;
     return cube;
   }
 

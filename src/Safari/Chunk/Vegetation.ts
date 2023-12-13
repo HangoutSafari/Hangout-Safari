@@ -12,7 +12,7 @@ export class Vegetation extends THREE.Group
     public constructor(numberOfInstanves: number, maxDimetions: number)
     {
         super();
-        loadModel('/models/tree.gltf')
+        loadModel('/models/voxel_tree.glb')
         .then(model =>{
             for(let i = 0; i<numberOfInstanves; i++)
             {
@@ -20,7 +20,7 @@ export class Vegetation extends THREE.Group
                const translationMatxi = new THREE.Matrix4();
                translationMatxi.makeTranslation(new THREE.Vector3(Math.random() * maxDimetions, 0, Math.random()* maxDimetions));
                this.vegetationModel.applyMatrix4(translationMatxi);    
-               console.log(this.vegetationModel.children);
+            //    console.log(this.vegetationModel.children);
                this.add(this.vegetationModel);
             }
         });

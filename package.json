@@ -38,6 +38,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@supabase/auth-helpers-sveltekit": "^0.10.7",
+    "@supabase/supabase-js": "^2.39.0",
     "@types/three": "^0.157.2",
     "dat.gui": "^0.7.9",
     "ol": "^8.2.0",

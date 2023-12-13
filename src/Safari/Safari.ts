@@ -35,8 +35,6 @@ export class Safari {
       this.scene.lightSources[1].position,
       this.scene.lightSources[1].color
       ));
-
-      this.scene.add(ShapeGenerator.generateBox(30,30,39, THREE.Color.NAMES.crimson))
   }
 
 

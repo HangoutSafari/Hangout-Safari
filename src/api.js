@@ -1,9 +1,12 @@
-export async function postData(url,{username, email, password}) {
-    const response = await fetch(url, {
-      // method: 'GET',
-      // body: JSON.stringify({ username, email, password }),
-    })
+export async function postData(url, { username, email, password }) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, email, password }),
+  })
     .then((res) => res.json())
-    .then(data => console.log(data))
-    .catch (error => console.log(error)); 
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
 }

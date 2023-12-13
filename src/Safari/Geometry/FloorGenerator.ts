@@ -2,28 +2,26 @@ import  * as THREE from 'three'
 import { ShapeGenerator } from './ShapeGenerator';
 import type { Scene } from '../Scene/Scene';
 import { SafariVector } from '../Math/SafariVector';
+import { Chunk } from '../Chunk/Chunk';
 
 export class FloorGenerator
 {
-    public planes: THREE.Group;
-    
+    public chunks: THREE.Group;
     private x: THREE.Vector3;
     private z: THREE.Vector3;
-    private width: number;
-    private height: number;
-    private planePositions: Array<THREE.Vector3>
+    private dimensions: number;
+    private chunksPositions: Array<THREE.Vector3>
     private renderedChunks: number;
 
     public constructor()
     {
-        this.width = 440;
-        this.height = this.width;
-        this.planes = new THREE.Group();
-        this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, new THREE.Vector3(0,0,0)));
-        this.x = new THREE.Vector3(this.width, 0, 0);
-        this.z = new THREE.Vector3(0,0,this.height);
+        this.dimensions = 500;
+        this.chunks = new THREE.Group();
+        this.chunks.add(new Chunk(this.dimensions,new THREE.Vector3(0,0,0)));
+        this.x = new THREE.Vector3(this.dimensions, 0, 0);
+        this.z = new THREE.Vector3(0,0,this.dimensions);
         this.renderedChunks = 0;
-        this.planePositions = this.precalculateThePositions();
+        this.chunksPositions = this.precalculateThePositions();
         this.isCenter = this.isCenter;
         this.addChunk = this.addChunk;
     }
@@ -37,7 +35,7 @@ export class FloorGenerator
         if(this.renderedChunks <= 9){
             if(!this.isCenter())
             {
-                this.planes.add(ShapeGenerator.generatePlane(this.width, this.height, this.planePositions[this.renderedChunks]));
+                this.chunks.add(new Chunk(this.dimensions,this.chunksPositions[this.renderedChunks]));
                 this.renderedChunks++;
             }
             else this.renderedChunks++;
@@ -53,7 +51,7 @@ export class FloorGenerator
      */
     public appednInScene(scene :Scene)
     {
-        scene.add(this.planes);
+        scene.add(this.chunks);
     }
     
     /**

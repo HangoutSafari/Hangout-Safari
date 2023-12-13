@@ -1,20 +1,24 @@
 import * as THREE from "three";
 
-export class Camera extends THREE.PerspectiveCamera {
+export class OrthoCamera extends THREE.OrthographicCamera {
 
   constructor(
-    domElement: HTMLCanvasElement,
-    FOV: number,
-    nearPlane: number,
-    farPlane: number
+    renderingContext: HTMLCanvasElement,
+
   ) {
     super(
-      FOV,
-      domElement.clientWidth / domElement.clientHeight,
-      nearPlane,
-      farPlane
+    //   FOV,
+      renderingContext.clientWidth / - 2,
+      renderingContext.clientWidth / 2,
+
+      renderingContext.clientHeight / 2,
+      renderingContext.clientHeight / - 2,
+
+      -1000,
+      1000
+
     );
-    this.move(0, 0, 2);
+    this.move(2, 2, 2);
   }
 
   /**
@@ -37,9 +41,13 @@ export class Camera extends THREE.PerspectiveCamera {
    */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
-    this.aspect = renderingContext.clientWidth/renderingContext.clientHeight;
+    this.left = renderingContext.clientWidth / - 2;
+    this.right = renderingContext.clientWidth / 2;
+    this.top = renderingContext.clientHeight / 2;
+    this.bottom = renderingContext.clientHeight / - 2;
+
+    this.near = - 1000;
+    this.far = 1000;
     this.updateProjectionMatrix();
   }
 }
-
-

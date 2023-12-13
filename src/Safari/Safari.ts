@@ -24,7 +24,10 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-
+    // loadModel("models/savana2.glb")
+    // .then((model)=>{
+    //   this.scene.add(model);
+    // })
     //----------------------------------------------------
     // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE (debug)
     //----------------------------------------------------
@@ -32,6 +35,8 @@ export class Safari {
       this.scene.lightSources[1].position,
       this.scene.lightSources[1].color
       ));
+
+      this.scene.add(ShapeGenerator.generateBox(30,30,39, THREE.Color.NAMES.crimson))
   }
 
 
@@ -56,7 +61,7 @@ export class Safari {
   public animate() {
     if(this.canRender())
     {
-      console.log("rendering...");
+      // console.log("rendering...");
       requestAnimationFrame(this.animate);
       this.scene.renderer.render(this.scene, this.scene.camera);
       this.update();

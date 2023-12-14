@@ -1,9 +1,10 @@
 import * as THREE from "three";
 import { MapControls } from "three/examples/jsm/controls/MapControls";
 import type { Camera } from "./Camera";
+import type { OrthoCamera } from "./OrthoCamera";
 
 export class Controls extends MapControls {
-  constructor(camera: Camera, renderingContext: HTMLCanvasElement) {
+  constructor(camera: OrthoCamera, renderingContext: HTMLCanvasElement) {
     super(camera, renderingContext);
     this.enablePan = true;
     this.enableRotate = true;

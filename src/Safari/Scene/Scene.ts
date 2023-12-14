@@ -1,13 +1,11 @@
 import * as THREE from "three";
 import  { Renderer } from "../Renderer/Renderer";
-import type  { Controls } from "../Camera/MapControls";
 import { AmbientLight } from "../Light/AmbientLight";
 import { DirectionLight } from "../Light/DirectionLight";
 import { Camera } from "../Camera/Camera";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OrthoCamera } from "../Camera/OrthoCamera";
-import { MapControls } from "three/examples/jsm/controls/MapControls";
-
+import { Controls } from "../Camera/MapControls";
 export class Scene extends THREE.Scene {
 
   public lightSources: Array<THREE.Light> = [];
@@ -31,13 +29,13 @@ export class Scene extends THREE.Scene {
 
     this.renderer = new Renderer(renderingContext);
 
-    this.controls = new MapControls(this.camera, renderingContext);
+    this.controls = new Controls(this.camera, renderingContext);
 
     //----------------------------------
     //ORBIT CONTROLS FOR DEBUG PUPRPOSES
     //----------------------------------
-    //this.controls = new Controls(this.camera, this.renderer.domElement);
-    // this.controls = new OrbitControls(this.camera, renderingContext);
+   // this.controls = new Controls(this.camera, this.renderer.domElement);
+    //this.controls = new OrbitControls(this.camera, renderingContext);
 
     this.background = new THREE.Color(THREE.Color.NAMES.gray);
     this.renderingContext = renderingContext;

@@ -19,9 +19,9 @@ type IndexModel = {
 
 export const Models: IndexModel = {
     0: Model.CENTER,
-    1: Model.TOP_LEFT,
+    1: Model.TOP_RIGHT,
     2: Model.CENTER_TOP,
-    3: Model.TOP_RIGHT,
+    3: Model.TOP_LEFT,
     4: Model.CENTER_LEFT,
     5: Model.CENTER_RIGHT,
     6: Model.BOTTOM_LEFT,

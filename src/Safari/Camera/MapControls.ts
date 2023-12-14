@@ -12,5 +12,6 @@ export class Controls extends MapControls {
     this.update(0.1);
     this.maxDistance = 240;
     this.maxPolarAngle = 1.2;
+    this.minAzimuthAngle = 90.0
   }
 }

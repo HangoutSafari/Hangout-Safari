@@ -1,6 +1,9 @@
 {
 	"compilerOptions": {
 		"paths": {
+			"map-css": [
+				"../../node_modules/ol/ol.css"
+			],
 			"$lib": [
 				"../src/lib"
 			],

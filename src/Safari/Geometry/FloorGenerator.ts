@@ -15,14 +15,15 @@ export class FloorGenerator
 
     public constructor()
     {
-        this.dimensions = 500;
+        this.dimensions = 400;
         this.chunks = new THREE.Group();
-        this.x = new THREE.Vector3(this.dimensions, 0, 0);
+        this.x = new THREE.Vector3( this.dimensions, 0, 0);
         this.z = new THREE.Vector3(0,0,this.dimensions);
         this.renderedChunks = 0;
         this.chunksPositions = this.precalculateThePositions();
         this.isCenter = this.isCenter;
         this.chunks.add(new Chunk(this.renderedChunks,new THREE.Vector3(0,0,0)));
+        this.renderedChunks ;
         this.addChunk = this.addChunk;
     }
 
@@ -33,12 +34,9 @@ export class FloorGenerator
     public addChunk():void 
     {
         if(this.renderedChunks <= 9){
-            if(!this.isCenter())
-            {
-                this.chunks.add(new Chunk(this.renderedChunks,this.chunksPositions[this.renderedChunks]));
-                this.renderedChunks++;
-            }
-            else this.renderedChunks++;
+                const index = this.renderedChunks + 1;
+                this.chunks.add(new Chunk(index,this.chunksPositions[this.renderedChunks]));
+                this.renderedChunks++
         }
         else{
             alert('maximum size of the safari reached');
@@ -70,7 +68,7 @@ export class FloorGenerator
         const operationMatrix :Array<THREE.Vector3> =[
             new SafariVector(this.x.clone().sub(this.z)),    new SafariVector(this.x.clone()),       new SafariVector(this.z.clone().add(this.x)),
             //------------------------------------------------------------------------------------------------------------------------------------
-            new SafariVector(this.z.clone().negate()),            center,          new SafariVector(this.z.clone()),
+            new SafariVector(this.z.clone().negate()),                                              new SafariVector(this.z.clone()),
             //------------------------------------------------------------------------------------------------------------------------------------
             new SafariVector(this.z.clone().sub(this.x)),   new SafariVector(this.x.clone().negate()),      new SafariVector(this.x.clone().negate().add(this.z.clone().negate())) 
         ]

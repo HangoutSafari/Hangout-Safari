@@ -1,39 +1,20 @@
 import * as THREE from "three";
-import { AmbientLight } from "./Light/AmbientLight";
-import { DirectionLight } from "./Light/DirectionLight";
-import { Renderer } from "./Renderer/Renderer";
-import { Camera } from "./Camera/Camera";
-import { Controls } from "./Camera/MapControls";
-import { Orbit } from "./Camera/OrbitalControls";
 import { loadModel } from "./ModelLoader/ModelLoader";
-import { bind, handle_promise } from "svelte/internal";
 import { ShapeGenerator } from "./Geometry/ShapeGenerator";
 import { Scene } from "./Scene/Scene";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { MapControls } from "three/examples/jsm/controls/MapControls";
+import { FloorGenerator } from "./Geometry/FloorGenerator";
 
 export class Safari {
   public scene: Scene;
-  public lightSources: Array<THREE.Light> = [];
-  public renderer: Renderer;
-  public camera: Camera;
-  public controls: Controls;
   public safariModel: string;
-  public ground: THREE.PlaneGeometry;
-
-  public renderingContext: HTMLCanvasElement;
+  public ground: FloorGenerator;
 
   constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
-    this.scene = new Scene();
-    this.camera = new Camera(renderingContext, 65, 0.1, 2000);
-    this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(1, 20, 10)));
-    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.orange,8,true,new THREE.Vector3(0, 20, 10)));
-    this.renderer = new Renderer(renderingContext);
-    this.controls = new Controls(this.camera, renderingContext);
+    this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
-    this.renderingContext = this.renderer.domElement;
     this.animate = this.animate.bind(this);
     this.processRezieEvent = this.processRezieEvent.bind(this);
+    this.ground = new FloorGenerator();
   }
 
   /**
@@ -41,23 +22,29 @@ export class Safari {
    */
   public setup() {
     window.addEventListener('resize',this.processRezieEvent);
+    this.scene.setup();
+    this.ground.appednInScene(this.scene);
+    // loadModel("models/savana2.glb")
+    // .then((model)=>{
+    //   this.scene.add(model);
+    // })
+    //----------------------------------------------------
+    // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE (debug)
+    //----------------------------------------------------
+    this.scene.add(ShapeGenerator.generateSphere(
+      this.scene.lightSources[1].position,
+      this.scene.lightSources[1].color
+      ));
 
-    this.lightSources.forEach((lightSource) => {
-      console.log("aded light source");
-      this.scene.add(lightSource);
-    });
-    loadModel("models/savana2.glb")
-    .then((model)=>{
-      this.scene.add(model);
-    })
-    this.scene.add(ShapeGenerator.generateBox(3, 3, 3, THREE.Color.NAMES.aqua));
+      this.scene.add(ShapeGenerator.generateBox(30,30,39, THREE.Color.NAMES.crimson))
   }
+
 
   /**
    * Update elements on begining of each drawing call
    */
   public update() {
-    this.controls.update(0.01);
+    this.scene.update();
   }
 
   /**
@@ -65,8 +52,7 @@ export class Safari {
    */
   public processRezieEvent(){
     console.log('resizing...');
-    this.renderer.handleResizing();
-    this.camera.handleResizing(this.renderer.domElement);
+    this.scene.processResizing();
   }
 
   /**
@@ -75,14 +61,13 @@ export class Safari {
   public animate() {
     if(this.canRender())
     {
-      console.log("rendering...");
+      // console.log("rendering...");
       requestAnimationFrame(this.animate);
-      this.renderer.render(this.scene, this.camera);
+      this.scene.renderer.render(this.scene, this.scene.camera);
       this.update();
     }
   }
 
-  //TODO: create instance of the class and call the start method to start the animation and render loop
   public start() {
     this.setup();
     console.log(this.scene);

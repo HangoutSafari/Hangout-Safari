@@ -6,6 +6,11 @@
     console.log(renderingContext);
     const safari = new Safari(renderingContext, "models/savana2.glb");
     safari.start();
+    document.addEventListener("keypress", function(event) {
+            if (event.keyCode == 13) {
+              safari.ground.addChunk();   
+            }
+          });
   });
 </script>
 

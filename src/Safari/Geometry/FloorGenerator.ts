@@ -17,12 +17,12 @@ export class FloorGenerator
     {
         this.dimensions = 500;
         this.chunks = new THREE.Group();
-        this.chunks.add(new Chunk(0,new THREE.Vector3(0,0,0)));
         this.x = new THREE.Vector3(this.dimensions, 0, 0);
         this.z = new THREE.Vector3(0,0,this.dimensions);
         this.renderedChunks = 0;
         this.chunksPositions = this.precalculateThePositions();
         this.isCenter = this.isCenter;
+        this.chunks.add(new Chunk(this.renderedChunks,new THREE.Vector3(0,0,0)));
         this.addChunk = this.addChunk;
     }
 
@@ -32,7 +32,7 @@ export class FloorGenerator
      */
     public addChunk():void 
     {
-        if(this.renderedChunks <= 4){
+        if(this.renderedChunks <= 9){
             if(!this.isCenter())
             {
                 this.chunks.add(new Chunk(this.renderedChunks,this.chunksPositions[this.renderedChunks]));

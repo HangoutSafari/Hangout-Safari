@@ -20,9 +20,9 @@ import {page} from '$app/stores';
             </a>
         </div>
         <div class="md:order-3 order-2">
-          <a href="/profile" 
+          <a href="/dashboard" 
             class="font-semibold order-1  py-1  background text-black rounded-full md:mr-1 hover:px-3 hover:py-4 duration-300 ease-in-out">
-              <i class:shadoww={$page.url.pathname == '/profile' } class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white"></i> 
+              <i class:shadoww={$page.url.pathname == '/dashboard' } class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white"></i> 
           </a>
         </div>
         <div class="md:order-2 order-3">

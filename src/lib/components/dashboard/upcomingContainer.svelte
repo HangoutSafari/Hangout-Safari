@@ -24,6 +24,8 @@
                         eventTitle="ART FAIR"
                         eventDate="December 12th - 20th"
                         eventLocation="Bibliotheek, Middelburg"
+                        buttonText="View"
+                        buttonColor = 'bg-green-500';
                     />
                 </div>
             {/each}

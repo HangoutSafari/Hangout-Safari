@@ -21,10 +21,10 @@
       <!-- Event cards-->
       {#each { length: 8 } as _, i}
       <Eventcard
-        eventImage="/zelda.jpeg"
-        eventTitle="ART FAIR"
-        eventDate="December 12th - 20th"
-        eventLocation="Bibliotheek, Middelburg"
+        eventImage="/images/FoodAndDrinkDesignColour.svg"
+        eventTitle="Food Lovers"
+        eventDate="November 27th"
+        eventLocation="Bibliotheek, Honney PIE Coffe, Middelburg"
       />
       {/each}
 

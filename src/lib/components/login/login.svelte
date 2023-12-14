@@ -6,7 +6,7 @@
     goto('/register');
   };
   const redirectToProfile= () => {
-    goto('/profile');
+    goto('/dashboard');
   };
   let underlined = [true,true]
 </script>

@@ -12,6 +12,7 @@
   import { fromLonLat } from "ol/proj";
   import Overlay from "ol/Overlay.js";
   import { Attribution, defaults as defaultControls } from "ol/control.js";
+  import { lat, long } from "../form/store";
 
   let target;
   let map;
@@ -19,8 +20,14 @@
     if (browser) {
       // Sets the starting point of the map
       const view = new View({
-        center: fromLonLat([3.609493, 51.494887]),
+        center: fromLonLat([0, 0]),
         zoom: 16,
+      });
+      lat.subscribe((value) => {
+        view.setCenter(fromLonLat([$long, value]));
+      });
+      long.subscribe((value) => {
+        view.setCenter(fromLonLat([value, $lat]));
       });
       // Gets the map source from OpenStreetMap
       const tileLayer = new TileLayer({ source: new OSM() });
@@ -73,12 +80,14 @@
   });
 </script>
 
-<head>
-  <link rel="stylesheet" href="../node_modules/ol/ol.css" />
-</head>
-<div
-  bind:this={target}
+<a
+  href="https://www.google.com/maps/@{$lat},{$long},16z"
   class={`w-full h-full rounded-3xl overflow-hidden lg:[&>.ol-viewport]:!overflow-hidden [&>.ol-viewport]:!overflow-visible ${$$props.class}`}
+  target="_blank"
+  ><div
+    bind:this={target}
+    class={`w-full h-full rounded-3xl overflow-hidden lg:[&>.ol-viewport]:!overflow-hidden [&>.ol-viewport]:!overflow-visible ${$$props.class}`}
+  >
+    <div id="popup" />
+  </div></a
 >
-  <div id="popup" />
-</div>

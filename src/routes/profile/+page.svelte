@@ -48,7 +48,7 @@
     <p class=" font-bold hidden lg:block">Information</p>
 
     <div
-      class="w-[90%] lg:w-auto flex justify-center lg:block h-[25rem] lg:h-auto"
+      class="w-[90%] lg:w-auto sm:flex justify-center lg:block h-[25rem] lg:h-auto"
     >
       <ProfileCard />
     </div>

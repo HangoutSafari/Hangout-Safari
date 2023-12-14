@@ -2,6 +2,10 @@
 	"/": [
 		"src/routes/+page.server.js"
 	],
+	"/dashboard": [
+		"src/routes/dashboard/+page.ts",
+		"src/routes/dashboard/+page.server.ts"
+	],
 	"/events": [
 		"src/routes/events/+page.server.js"
 	],

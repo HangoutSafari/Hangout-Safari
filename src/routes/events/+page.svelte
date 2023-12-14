@@ -19,12 +19,15 @@
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
       <!-- Event cards-->
+      {#each { length: 8 } as _, i}
       <Eventcard
         eventImage="/zelda.jpeg"
         eventTitle="ART FAIR"
         eventDate="December 12th - 20th"
         eventLocation="Bibliotheek, Middelburg"
       />
+      {/each}
+
     </div>
   </div>
 

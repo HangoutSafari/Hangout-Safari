@@ -15,7 +15,7 @@ export class FloorGenerator
 
     public constructor()
     {
-        this.dimensions = 400;
+        this.dimensions = 500;
         this.chunks = new THREE.Group();
         this.x = new THREE.Vector3( this.dimensions, 0, 0);
         this.z = new THREE.Vector3(0,0,this.dimensions);

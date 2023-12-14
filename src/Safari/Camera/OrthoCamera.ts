@@ -14,8 +14,8 @@ export class OrthoCamera extends THREE.OrthographicCamera {
       renderingContext.clientHeight / 2,
       renderingContext.clientHeight / - 2,
 
-      -1000,
-      1000
+      -2000,
+      2000
 
     );
     this.move(2, 2, 2);
@@ -46,8 +46,8 @@ export class OrthoCamera extends THREE.OrthographicCamera {
     this.top = renderingContext.clientHeight / 2;
     this.bottom = renderingContext.clientHeight / - 2;
 
-    this.near = - 1000;
-    this.far = 1000;
+    this.near = - 2000;
+    this.far = 2000;
     this.updateProjectionMatrix();
   }
 }

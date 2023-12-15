@@ -13,7 +13,7 @@ describe('Testing if correct geometry is generated', ()=>{
 
 describe('Testing if correct geometry is generated', ()=>{
     it("creates plane and checks if the mesh is plane", ()=>{
-        const cube = ShapeGenerator.generatePlane(10,10, THREE.Color.NAMES.aliceblue);
+        const cube = ShapeGenerator.generatePlane(10,10,new THREE.Vector3(0,0,0), THREE.Color.NAMES.aliceblue);
         const result = new THREE.PlaneGeometry(0,0,0).type;
         expect(cube.geometry.type).toBe(result);
     })

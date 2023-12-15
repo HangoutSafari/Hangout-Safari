@@ -9,9 +9,12 @@
 	"/events": [
 		"src/routes/events/+page.server.js"
 	],
+	"/events/create": [],
+	"/events/crud": [],
 	"/events/[slug]": [
 		"src/routes/events/[slug]/+page.server.js"
 	],
+	"/events/[slug]/edit": [],
 	"/example": [
 		"src/routes/example/+page.js",
 		"src/routes/example/+page.server.js"

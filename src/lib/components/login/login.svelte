@@ -1,16 +1,15 @@
 <script>
   import { goto } from '$app/navigation';
+  import {handleInputKeydown} from "$lib/components/register/register.svelte"
   
   const redirectToRegister = () => {
     goto('/register');
   };
   const redirectToProfile= () => {
-    goto('/profile');
+    goto('/dashboard');
   };
-  export let underlined = true;
-  export let underlined2 = true;
+  let underlined = [true,true]
 </script>
-
 <div
     class=" flex p-5 justify-center self-center text-center items-center z-30"
   >
@@ -19,34 +18,38 @@
       <form>
         <div class="mb-4">
           <i class="fa-regular fa-envelope absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-          <input on:click={() => underlined = false} on:blur={()=> underlined = true}
+          <input on:click={() => underlined[0] = false}
+            on:blur={()=> underlined[0] = true}
+            on:keydown={(e) => handleInputKeydown(e, 0)}
             type="text"
             class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="E-mail"
           />
-          {#if underlined}
+          {#if underlined[0]}
           <hr class="border-2 rounded border-orange-400" />
           {/if}
-          {#if !underlined}
+          {#if !underlined[0]}
           <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>
         <div class="mb-4">
           <i class="fa-solid fa-key absolute text-center mt-3 px-1 border-orange-300 border-r-2 text-gray-400"></i>
-          <input on:click={() => underlined2 = false} on:blur={()=> underlined2 = true}
-            type="password"
+          <input on:click={() => underlined[1] = false}
+            on:blur={()=> underlined[1] = true}
+            on:keydown={(e) => handleInputKeydown(e, 1)}
+            type="password" 
             class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="Password"
           />
-          {#if underlined2}
+          {#if underlined[1]}
           <hr class="border-2 rounded border-orange-400" />
           {/if}
-          {#if !underlined2}
+          {#if !underlined[1]}
           <hr class="border-2 rounded border-transparent"/>
           {/if}
         </div>
       </form>
-        <button on:click={redirectToProfile}
+        <button id=3 on:click={redirectToProfile}
           type="submit"
           class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
           >SUBMIT</button

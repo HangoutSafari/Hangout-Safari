@@ -35,7 +35,10 @@ export class FloorGenerator
     {
         if(this.renderedChunks <= 9){
                 const index = this.renderedChunks + 1;
-                this.chunks.add(new Chunk(index,this.chunksPositions[this.renderedChunks]));
+                const newChunk = new Chunk(index,this.chunksPositions[this.renderedChunks])
+                newChunk.castShadow = true;
+                newChunk.receiveShadow = true;
+                this.chunks.add(newChunk);
                 this.renderedChunks++
         }
         else{

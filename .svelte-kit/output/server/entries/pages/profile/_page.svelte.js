@@ -1,5 +1,16 @@
 import { c as create_ssr_component, d as each, v as validate_component, a as add_attribute } from "../../../chunks/index.js";
 import { E as Eventcard } from "../../../chunks/eventcard.js";
+import { P as ProfileCard } from "../../../chunks/profileCard.js";
+const InformationCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<div class="rounded-2xl lg:rounded-none relative lg:safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl pb-4 m-0 bg-white lg:bg-transparent"><div class="hidden lg:block lg:absolute lg:inset-0 lg:overflow-hidden lg:rounded-xl"><img class="w-full h-full object-cover object-center blur-[8px] brightness-75" src="/images/profileBg.png" alt="Safari Background"></div>
+  <div class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[1.5rem] lg:text-lg"><table class="w-full text-left rtl:text-right"><tbody class=""><tr class="border-b w-full"><td>Name </td>
+          <td class="">John doe </td>
+          <td><img class="lg:object-fill lg:scale-100 w-[6rem] lg:w-auto" src="/images/edit.png" alt=""></td></tr>
+        <tr class="border-b"><td class="pt-5">E-mail </td>
+          <td class="pt-5">John@doe.ru </td></tr>
+        <tr class="border-b"><td class="pt-5 pr-16 lg:pr-0">Password </td>
+          <td class="pt-5"><input name="password" class="bg-transparent w-full border-transparent focus:border-transparent focus:ring-0" type="password" value="asdsad"></td></tr></tbody></table></div></div>`;
+});
 const animalCard_svelte_svelte_type_style_lang = "";
 const css$2 = {
   code: '@import url("https://fonts.googleapis.com/css?family=Jaldi");',
@@ -50,25 +61,6 @@ const EventContainer = create_ssr_component(($$result, $$props, $$bindings, slot
   })}</div>
 </div>`;
 });
-const InformationCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div class="rounded-2xl lg:rounded-none relative lg:safari-bg flex w-full h-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl pb-4 m-0 bg-white lg:bg-transparent"><div class="hidden lg:block lg:absolute lg:inset-0 lg:overflow-hidden lg:rounded-xl"><img class="w-full h-full object-cover object-center blur-[8px] brightness-75" src="/images/profileBg.png" alt="Safari Background"></div>
-  <div class="w-full z-10 lg:text-white mt-5 justify-self-center mx-5 text-[1.5rem] lg:text-lg"><table class="w-full text-left rtl:text-right"><tbody class=""><tr class="border-b w-full"><td>Name </td>
-          <td class="">John doe </td>
-          <td><img class="lg:object-fill lg:scale-100 w-[6rem] lg:w-auto" src="/images/edit.png" alt=""></td></tr>
-        <tr class="border-b"><td class="pt-5">E-mail </td>
-          <td class="pt-5">John@doe.ru </td></tr>
-        <tr class="border-b"><td class="pt-5 pr-16 lg:pr-0">Password </td>
-          <td class="pt-5"><input name="password" class="bg-transparent w-full border-transparent focus:border-transparent focus:ring-0" type="password" value="asdsad"></td></tr></tbody></table></div></div>`;
-});
-const ProfileCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0"><div class="absolute inset-0 overflow-hidden rounded-xl"><img class="w-full h-full object-cover object-center blur-[8px] brightness-75" src="/images/profileBg.png" alt="Safari Background"></div>
-  <div class="w-full z-10 text-white text-center content-center self-center justify-self-center"><img class="w-auto h-[10rem] lg:h-[15rem] lg:w-[15rem] mt-1 rounded-full mx-auto lg:mt-[-1rem] mb-5" src="/images/profileImage.jpg" alt="">
-    
-    <h1 class="text-[1.5rem] lg:text-[2rem] font-bold">Jane Doe</h1>
-    <p class="font-bold text-[1.5rem] lg:text-[1rem] mt-7 lg:mt-2 mb-3 lg:mb-auto">Animal count: 1245
-    </p>
-    </div></div>`;
-});
 const SettingsCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let checkbox1;
   let icon1;
@@ -98,7 +90,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <p class="font-bold hidden lg:block">Settings</p>
     <p class="font-bold hidden lg:block">Information</p>
 
-    <div class="w-[90%] lg:w-auto flex justify-center lg:block h-[25rem] lg:h-auto">${validate_component(ProfileCard, "ProfileCard").$$render($$result, {}, {}, {})}</div>
+    <div class="w-[90%] lg:w-auto sm:flex justify-center lg:block h-[25rem] lg:h-auto">${validate_component(ProfileCard, "ProfileCard").$$render($$result, {}, {}, {})}</div>
     <div class="hidden lg:block">${validate_component(SettingsCard, "SettingsCard").$$render($$result, {}, {}, {})}</div>
     <div class="hidden lg:block">${validate_component(InformationCard, "InformationCard").$$render($$result, {}, {}, {})}</div></div>
 

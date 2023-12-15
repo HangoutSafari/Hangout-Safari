@@ -17,14 +17,18 @@ type IndexModel = {
     [key: number]: Model;
   };
 
+  /**
+   * Variable that is defining at what order are chunks being spawn
+   * !!!!!!! DONT CHANGE THE ORDER !!!!!!!
+   */
 export const Models: IndexModel = {
     0: Model.CENTER,
-    1: Model.TOP_LEFT,
-    2: Model.CENTER_TOP,
-    3: Model.TOP_RIGHT,
-    4: Model.CENTER_LEFT,
-    5: Model.CENTER_RIGHT,
+    1: Model.TOP_RIGHT,
+    2: Model.CENTER_RIGHT,
+    3: Model.BOTTOM_RIGHT,
+    4: Model.CENTER_TOP,
+    5: Model.BOTTOM_CENTER,
     6: Model.BOTTOM_LEFT,
-    7: Model.BOTTOM_CENTER,
-    8: Model.BOTTOM_RIGHT,
+    7: Model.CENTER_LEFT,
+    8: Model.TOP_LEFT,
 }

@@ -1,5 +1,5 @@
 import { c as create_ssr_component, d as each, e as escape, a as add_attribute, v as validate_component } from "../../../../chunks/index.js";
-import "ol/proj.js";
+import { M as Map_1 } from "../../../../chunks/Map.js";
 const ParticipantsLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<div class="inline-flex items-center justify-center px-15 py-2.5 bg-white rounded-2xl font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800 w-full">PARTICIPANTS
 </div>`;
@@ -85,11 +85,6 @@ const MapLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 const TimeLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<div${add_attribute("class", `${$$props.class} inline-flex items-center justify-center px-10 py-2.5 bg-white rounded-2xl font-bold text-3xl shadow-[0_4px_6px_rgba(117,106,106,0.8)] text-gray-800 w-full`, 0)}>TIME
 </div>`;
-});
-const Map_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let target;
-  return `<head><link rel="stylesheet" href="../node_modules/ol/ol.css"></head>
-<div${add_attribute("class", `w-full h-full rounded-3xl overflow-hidden lg:[&>.ol-viewport]:!overflow-hidden [&>.ol-viewport]:!overflow-visible ${$$props.class}`, 0)}${add_attribute("this", target, 0)}><div id="popup"></div></div>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data } = $$props;

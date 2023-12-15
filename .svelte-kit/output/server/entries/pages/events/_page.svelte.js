@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component } from "../../../chunks/index.js";
+import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component, d as each } from "../../../chunks/index.js";
 import { H as Header } from "../../../chunks/header.js";
 import { E as Eventcard } from "../../../chunks/eventcard.js";
 const Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -46,105 +46,19 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   <div class="mx-3 sm:mx-0 sm:ml-72 sm:pb-16 sm:pl-16 sm:pr-6 block"><h1 class="mt-4 sm:mt-0 text-4xl font-bold mb-5">Events</h1>
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}
-      ${validate_component(Eventcard, "Eventcard").$$render(
-    $$result,
-    {
-      eventImage: "/zelda.jpeg",
-      eventTitle: "ART FAIR",
-      eventDate: "December 12th - 20th",
-      eventLocation: "Bibliotheek, Middelburg"
-    },
-    {},
-    {}
-  )}</div></div>
+      ${each({ length: 8 }, (_, i) => {
+    return `${validate_component(Eventcard, "Eventcard").$$render(
+      $$result,
+      {
+        eventImage: "/zelda.jpeg",
+        eventTitle: "ART FAIR",
+        eventDate: "December 12th - 20th",
+        eventLocation: "Bibliotheek, Middelburg"
+      },
+      {},
+      {}
+    )}`;
+  })}</div></div>
 
     
     <style>::-webkit-scrollbar {

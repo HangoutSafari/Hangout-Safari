@@ -21,33 +21,33 @@ export class Scene extends THREE.Scene {
   constructor(renderingContext: HTMLCanvasElement) {
     super();
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(0, 60, 30)));
-    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(0, 800, 30)));
+    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(-900, 900, 0)));
     
-    // this.camera = new Camera(renderingContext, 65, 0.1, 2000);
-
     this.camera = new OrthoCamera(renderingContext);
 
     this.renderer = new Renderer(renderingContext);
 
     this.controls = new Controls(this.camera, renderingContext);
 
-    //----------------------------------
-    //ORBIT CONTROLS FOR DEBUG PUPRPOSES
-    //----------------------------------
-   // this.controls = new Controls(this.camera, this.renderer.domElement);
-    //this.controls = new OrbitControls(this.camera, renderingContext);
-
     this.background = new THREE.Color(THREE.Color.NAMES.gray);
+
     this.renderingContext = renderingContext;
+
   }
 
 
   public setup(): void
   {
     this.lightSources.forEach((lightSource) => {
-      console.log("aded light source");
+      if(lightSource instanceof THREE.DirectionalLight)
+      {
+        this.add(lightSource.target);
+        console.log("aded light source");
+      }
       this.add(lightSource);
     });
+      
+  
 
   }
 

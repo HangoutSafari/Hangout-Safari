@@ -28,9 +28,10 @@ export class Safari {
     // .then((model)=>{
     //   this.scene.add(model);
     // })
-    //----------------------------------------------------
-    // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE (debug)
-    //----------------------------------------------------
+    //--------------------------------------------
+    // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE
+    //--------------------------------------------
+    //!!!!!!!!!!!!!!DEBUG FEATURE!!!!!!!!!!!!!!!!!!!!!
     this.scene.add(ShapeGenerator.generateSphere(
       this.scene.lightSources[1].position,
       this.scene.lightSources[1].color

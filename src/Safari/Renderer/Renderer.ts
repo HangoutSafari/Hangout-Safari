@@ -8,6 +8,7 @@ export class Renderer extends THREE.WebGLRenderer {
   constructor(renderingContext: HTMLCanvasElement) {
     super({ antialias: true, canvas: renderingContext });
     this.shadowMap.enabled = true;
+    this.shadowMap.type = THREE.PCFSoftShadowMap;
     this.setSize(
       renderingContext.clientWidth,
       renderingContext.clientHeight,

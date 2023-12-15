@@ -15,7 +15,8 @@ export class Chunk extends THREE.Object3D
     {
         super();
         console.log(index);
-        
+        this.castShadow = true;
+        this.receiveShadow = true;
         console.log('trying to load: '+ Models[index]);
         loadModel(Models[index])
         .then(model =>{
@@ -23,6 +24,7 @@ export class Chunk extends THREE.Object3D
             translationMatxi.makeTranslation(position);
             model.scene.traverse(child =>{
                 child.castShadow = true;
+                child.receiveShadow = true;
             });
             model.scene.position.set(0,0,0);
             model.scene.scale.set(2.4, 2.4, 2.4);

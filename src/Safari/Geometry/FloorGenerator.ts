@@ -17,6 +17,8 @@ export class FloorGenerator
     {
         this.dimensions = 500;
         this.chunks = new THREE.Group();
+        this.chunks.castShadow = true;
+        this.chunks.receiveShadow = true;
         this.x = new THREE.Vector3( this.dimensions, 0, 0);
         this.z = new THREE.Vector3(0,0,this.dimensions);
         this.renderedChunks = 0;

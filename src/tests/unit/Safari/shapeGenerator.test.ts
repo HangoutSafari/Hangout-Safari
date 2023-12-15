@@ -30,9 +30,8 @@ describe('Testing if correct material is generated', ()=>{
 
 describe('Testing if correct material is generated', ()=>{
     it("creates plane and checks if the material is correctly configured", ()=>{
-        const cube = ShapeGenerator.generatePlane(10,10, THREE.Color.NAMES.aliceblue);
-        const correctMatrial = new THREE.MeshPhongMaterial({ color: 0xf0f8ff, side: THREE.DoubleSide});
-    
+        const cube = ShapeGenerator.generatePlane(10,10, new THREE.Vector3(10,10,0),THREE.Color.NAMES.aliceblue);
+        const correctMatrial = new THREE.MeshPhysicalMaterial({ color: 0xf0f8ff, side: THREE.DoubleSide});
         expect(cube.material.type).toBe(correctMatrial.type);
     })
 });

@@ -20,11 +20,10 @@ export class DirectionLight extends THREE.DirectionalLight {
   ) {
     super(lColor, lStrength);
     this.castShadow = isCastingShadows;
-    this.shadow.mapSize.width = 1000;
-    this.shadow.mapSize.height=1000;
-    this.shadow.camera.near = 0.1;
-    this.shadow.camera.far = 2000;
+    this.shadow.camera.far = 20;
+    this.shadow.camera.scale.set(240,200,200);
     this.pos = lPosition;
+    this.target.position.set(190,0,190)
     this.position.set(lPosition.x, lPosition.y, lPosition.z);
   }
 

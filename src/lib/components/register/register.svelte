@@ -17,20 +17,17 @@
     return;
   }
   try {
-    console.log('Registering user...',{ username, email, password});
-    postData('http://localhost:3010/users', {
-        username,
-        email,
-        password,
-      }); 
-     if (error) {
-      console.error('Registration error:', error);
-      // Implement additional error handling as needed
-      alert('Registration error. Please try again.'); // Show user-friendly message
-      return;
+    console.log('Registering user...',{username, email, password});
+    const response = await postData('http://127.0.0.1:3010/users', {username, email, password}); 
+    // regex to check if response is a 2xx code
+    if (/^2\d{2}$/.test(response)) {
+      alert('User registered successfully');
+      redirectToLogin();
     }
-    console.log('Registration successful:', message);
-    redirectToLogin();
+    else {
+      console.error('User registration failed:', response);
+      alert('User registration failed', response);
+    }
   } catch (error) {
     console.error('Internal Server Error:', error);
     // Handle unexpected errors (e.g., network issues, server crashes)

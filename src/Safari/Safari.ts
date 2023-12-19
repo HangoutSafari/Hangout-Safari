@@ -70,9 +70,9 @@ export class Safari {
    */
   public processMouseMoveEvent( event ) {
     //calculate the pointer position in the SCREE-SPAVE in NDC (Normalized device coordinates)
-    this.mousePos.x = ((event.clientX - this.scene.renderer.domElement.offsetLeft) / this.scene.renderer.domElement.width) * 2 - 1;
-    this.mousePos.y = - ((event.clientY - this.scene.renderer.domElement.offsetTop) / this.scene.renderer.domElement.height) * 2 + 1;
- }
+    this.mousePos.x = ( event.clientX / this.scene.renderer.domElement.width ) * 2 - 1;
+		this.mousePos.y = - ( event.clientY / this.scene.renderer.domElement.height ) * 2 + 1;
+}
 
   /**
    * Renderers the scene by requesting the animation frame
@@ -81,7 +81,7 @@ export class Safari {
     if(this.canRender())
     {
       requestAnimationFrame(this.animate);
-      this.animals.checkForMouseHover(this.mousePos);
+      this.animals.checkForMouseHover(this.mousePos, this.scene.camera, this.scene);
 
       this.scene.render()
       this.update();

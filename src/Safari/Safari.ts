@@ -14,6 +14,7 @@ export class Safari {
   public animals: AnimalsGenerator;
   private mousePos: THREE.Vector2;
 
+
   constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
@@ -24,7 +25,6 @@ export class Safari {
     this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
     this.ground = new FloorGenerator();
     this.mousePos = new THREE.Vector2(0,0);
-
     this.scene.renderer.domElement.addEventListener('mousemove', this.processMouseMoveEvent);
   }
 
@@ -69,13 +69,9 @@ export class Safari {
    * Process on mouse move event and updates the cursor position
    */
   public processMouseMoveEvent( event ) {
-
-    this.mousePos.x = event.clientX ;
-    this.mousePos.y =  event.clientY;
-    // C syntax lol
-  //   console.log(event);
-  //   console.log('mouse X %d', this.mousePos.x);
-  //   console.log('mouse Y %d', this.mousePos.y);
+    //calculate the pointer position in the SCREE-SPAVE in NDC (Normalized device coordinates)
+    this.mousePos.x = ((event.clientX - this.scene.renderer.domElement.offsetLeft) / this.scene.renderer.domElement.width) * 2 - 1;
+    this.mousePos.y = - ((event.clientY - this.scene.renderer.domElement.offsetTop) / this.scene.renderer.domElement.height) * 2 + 1;
  }
 
   /**
@@ -84,9 +80,9 @@ export class Safari {
   public animate() {
     if(this.canRender())
     {
-      // console.log("rendering...");
       requestAnimationFrame(this.animate);
       this.animals.checkForMouseHover(this.mousePos);
+
       this.scene.render()
       this.update();
     }

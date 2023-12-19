@@ -23,6 +23,7 @@ export class AnimalsGenerator
 
     public checkForMouseHover(mousePos: THREE.Vector2)
     {
-        console.log(mousePos);
+        console.log('mouse X %d', mousePos.x);
+        console.log('mouse Y %d', mousePos.y);
     }
 }

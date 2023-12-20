@@ -13,11 +13,9 @@ export class AnimalsGenerator
         this.rayCaster = new THREE.Raycaster();
     }
 
-    public addAnimal(animal:Animal)
+    public addAnimal(animal:THREE.Mesh)
     {
         this.animals.add(animal);
-        // C syntax lol 
-        console.log("Animal was created", this.animals );
     }
 
     public appednInScene(scene: Scene)
@@ -29,10 +27,12 @@ export class AnimalsGenerator
     {
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
-        const colided = this.rayCaster.intersectObjects(scene.children);
+        
+        let colided = this.rayCaster.intersectObjects(this.animals.children, true);
+        
         if(colided.length>0)
         {
-            console.log(colided);
+            console.log("colided");
         } 
         
     }

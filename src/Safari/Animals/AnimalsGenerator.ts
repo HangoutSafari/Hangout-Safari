@@ -27,13 +27,12 @@ export class AnimalsGenerator
     {
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
-        
         let colided = this.rayCaster.intersectObjects(this.animals.children, true);
         
         if(colided.length>0)
         {
-            console.log("colided");
-        } 
-        
+            const intersectedAnimal = colided[0].object;
+            (intersectedAnimal as Animal).processHover();  
+        }
     }
 }

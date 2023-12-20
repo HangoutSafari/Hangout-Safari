@@ -6,9 +6,11 @@ export class Animal extends THREE.Mesh
 {
 
     public isHoveredOn: boolean
-    public constructor(path: string, position: THREE.Vector3)
+
+    public constructor(path: string, position: THREE.Vector3, name: string = "undefined animal")
     {
         super();
+        this.name = name;
         this.isHoveredOn = false;
         loadModel(path)
         .then(loadedModel => {
@@ -29,6 +31,12 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
+        
         console.log(this.name + "is hovered on");
+    }
+
+    public processHoverCanceled()
+    {
+        this.isHoveredOn = false;
     }
 }

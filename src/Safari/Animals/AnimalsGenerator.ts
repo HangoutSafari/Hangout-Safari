@@ -2,6 +2,8 @@ import  * as THREE from 'three'
 import type { Animal } from './Animal';
 import type { Scene } from '../Scene/Scene';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
+import TileSource from 'ol/source/Tile';
+let INTERSECTED = null;
 
 export class AnimalsGenerator 
 {
@@ -27,12 +29,27 @@ export class AnimalsGenerator
     {
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
-        let colided = this.rayCaster.intersectObjects(this.animals.children, true);
-        
-        if(colided.length>0)
-        {
-            const intersectedAnimal = colided[0].object;
-            (intersectedAnimal as Animal).processHover();  
+        let intersects = this.rayCaster.intersectObjects(this.animals.children, true);
+        if ( intersects.length > 0 ) {
+
+            if ( INTERSECTED != intersects[ 0 ].object ) {
+
+                if ( INTERSECTED ){
+                    INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+                } 
+
+                INTERSECTED = intersects[ 0 ].object;
+                INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+                INTERSECTED.material.emissive.setHex( 0xffff00 );
+
+            }
+
+        } else {
+
+            if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+            INTERSECTED = null;
+
         }
     }
 }

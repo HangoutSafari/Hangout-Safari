@@ -53,6 +53,7 @@ export class Safari {
    * Update elements on begining of each drawing call
    */
   public update() {
+    this.animals.checkForMouseHover(this.mousePos, this.scene.camera, this.scene);
     this.scene.update();
   }
 
@@ -80,8 +81,6 @@ export class Safari {
     if(this.canRender())
     {
       requestAnimationFrame(this.animate);
-      this.animals.checkForMouseHover(this.mousePos, this.scene.camera, this.scene);
-
       this.scene.render()
       this.update();
     }

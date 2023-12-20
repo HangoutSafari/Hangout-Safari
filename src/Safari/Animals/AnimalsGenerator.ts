@@ -16,6 +16,8 @@ export class AnimalsGenerator
     public addAnimal(animal:Animal)
     {
         this.animals.add(animal);
+        // C syntax lol 
+        console.log("Animal was created", this.animals );
     }
 
     public appednInScene(scene: Scene)
@@ -27,14 +29,11 @@ export class AnimalsGenerator
     {
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
-        const colided = this.rayCaster.intersectObjects(scene.children, false);
+        const colided = this.rayCaster.intersectObjects(scene.children);
         if(colided.length>0)
         {
-            console.log('Ahhhh Tessa');
+            console.log(colided);
         } 
-        //C syntax LOL  
-        console.log( mousePos.x);
-        console.log(mousePos.y);
-        console.clear();
+        
     }
 }

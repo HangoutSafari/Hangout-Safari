@@ -28,7 +28,6 @@ export class AnimalsGenerator
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
         const colided = this.rayCaster.intersectObjects(scene.children, false);
-        console.log(this.rayCaster.ray);
         if(colided.length>0)
         {
             console.log('Ahhhh Tessa');

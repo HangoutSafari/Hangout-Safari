@@ -13,14 +13,13 @@ export class Safari {
   public ground: FloorGenerator;
   public animals: AnimalsGenerator;
   private mousePos: THREE.Vector2;
-
+  
 
   constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
     this.animate = this.animate.bind(this);
     this.animals = new AnimalsGenerator();
-    
     this.processRezieEvent = this.processRezieEvent.bind(this);
     this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
     this.ground = new FloorGenerator();
@@ -70,9 +69,9 @@ export class Safari {
    */
   public processMouseMoveEvent( event ) {
     //calculate the pointer position in the SCREE-SPAVE in NDC (Normalized device coordinates)
-    this.mousePos.x = ( event.clientX / this.scene.renderer.domElement.width ) * 2 - 1;
-		this.mousePos.y = - ( event.clientY / this.scene.renderer.domElement.height ) * 2 + 1;
-}
+    this.mousePos.x = ( (event.clientX - this.scene.renderer.domElement.offsetLeft) / this.scene.renderer.domElement.clientWidth ) * 2 - 1;
+    this.mousePos.y = ( (event.clientY - this.scene.renderer.domElement.offsetTop) / this.scene.renderer.domElement.clientHeight ) * -2 + 1;
+  }
 
   /**
    * Renderers the scene by requesting the animation frame

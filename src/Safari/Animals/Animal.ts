@@ -36,16 +36,17 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
+        this.material.color.set( Math.random() * 0xffffff );
         
-        console.log(this.name + "is hovered on");
     }
 
     /**
      * Invoked when curor is no longer hovered on the animal
      */
     public processHoverCanceled()
-    {
+    {   
         this.isHoveredOn = false;
+        //this.material.color.set(0xffffff ); 
     }
 
     public processClickEvent()

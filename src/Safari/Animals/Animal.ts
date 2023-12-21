@@ -46,7 +46,7 @@ export class Animal extends THREE.Mesh
     public processHoverCanceled()
     {   
         this.isHoveredOn = false;
-        //this.material.color.set(0xffffff ); 
+        this.material.color.set(0xffffff ); 
     }
 
     public processClickEvent()

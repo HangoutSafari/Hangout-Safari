@@ -64,6 +64,6 @@ export class Scene extends THREE.Scene {
 
   public render()
   {
-  
+    this.renderer.render(this, this.camera);
   }
 }

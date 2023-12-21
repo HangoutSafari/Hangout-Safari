@@ -3,18 +3,28 @@ import { loadModel } from "./ModelLoader/ModelLoader";
 import { ShapeGenerator } from "./Geometry/ShapeGenerator";
 import { Scene } from "./Scene/Scene";
 import { FloorGenerator } from "./Geometry/FloorGenerator";
+import { AnimalsGenerator } from "./Animals/AnimalsGenerator";
+import { Animal } from "./Animals/Animal";
+
 
 export class Safari {
   public scene: Scene;
   public safariModel: string;
   public ground: FloorGenerator;
+  public animals: AnimalsGenerator;
+  private mousePos: THREE.Vector2;
+  
 
   constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
     this.animate = this.animate.bind(this);
+    this.animals = new AnimalsGenerator();
     this.processRezieEvent = this.processRezieEvent.bind(this);
+    this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
     this.ground = new FloorGenerator();
+    this.mousePos = new THREE.Vector2(0,0);
+    this.scene.renderer.domElement.addEventListener('mousemove', this.processMouseMoveEvent);
   }
 
   /**
@@ -24,10 +34,10 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-    // loadModel("models/savana2.glb")
-    // .then((model)=>{
-    //   this.scene.add(model);
-    // })
+    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160), 45, 0.2, "giraffe"));  
+    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), 90, 3.0, "pigeon"));  
+    this.animals.appednInScene(this.scene);
+    
     //--------------------------------------------
     // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE
     //--------------------------------------------
@@ -36,6 +46,7 @@ export class Safari {
       this.scene.lightSources[1].position,
       this.scene.lightSources[1].color
       ));
+
   }
 
 
@@ -43,6 +54,7 @@ export class Safari {
    * Update elements on begining of each drawing call
    */
   public update() {
+    this.animals.checkForMouseHover(this.mousePos, this.scene.camera, this.scene);
     this.scene.update();
   }
 
@@ -55,14 +67,22 @@ export class Safari {
   }
 
   /**
+   * Process on mouse move event and updates the cursor position
+   */
+  public processMouseMoveEvent( event ) {
+    //calculate the pointer position in the SCREE-SPAVE in NDC (Normalized device coordinates)
+    this.mousePos.x = ( (event.clientX - this.scene.renderer.domElement.offsetLeft) / this.scene.renderer.domElement.clientWidth ) * 2 - 1;
+    this.mousePos.y = ( (event.clientY - this.scene.renderer.domElement.offsetTop) / this.scene.renderer.domElement.clientHeight ) * -2 + 1;
+  }
+
+  /**
    * Renderers the scene by requesting the animation frame
    */
   public animate() {
     if(this.canRender())
     {
-      // console.log("rendering...");
       requestAnimationFrame(this.animate);
-      this.scene.renderer.render(this.scene, this.scene.camera);
+      this.scene.render()
       this.update();
     }
   }

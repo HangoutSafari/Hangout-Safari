@@ -34,7 +34,8 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160)));  
+    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160), 45, 0.2, "giraffe"));  
+    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), 90, 3.0, "pigeon"));  
     this.animals.appednInScene(this.scene);
     
     //--------------------------------------------

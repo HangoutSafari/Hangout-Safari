@@ -31,7 +31,7 @@ export class AnimalsGenerator
         //after we 
         let intersects = this.rayCaster.intersectObjects(this.animals.children, true);
         if ( intersects.length > 0 ) {
-
+            
             if ( INTERSECTED != intersects[ 0 ].object ) {
 
                 if ( INTERSECTED ){
@@ -46,10 +46,11 @@ export class AnimalsGenerator
 
         } else {
 
-            if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-
+            if ( INTERSECTED ) 
+            {
+                INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+            }
             INTERSECTED = null;
-
         }
     }
 }

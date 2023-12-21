@@ -7,7 +7,7 @@ export class Animal extends THREE.Mesh
 
     public isHoveredOn: boolean
 
-    public constructor(path: string, position: THREE.Vector3, name: string = "undefined animal")
+    public constructor(path: string, position: THREE.Vector3, rotation: number, scale: number,name: string = "undefined animal")
     {
         super();
         this.name = name;
@@ -23,11 +23,16 @@ export class Animal extends THREE.Mesh
             const translation = new THREE.Matrix4();
             translation.makeTranslation(position);
             this.applyMatrix4(translation);
-            this.scale.set(0.2,0.2,0.2);
-            this.rotateY(degToRad(40));
+            this.scale.set(scale, scale, scale);
+            this.rotateY(degToRad(rotation));
         })
+       // this.updateMatrixWorld();
+        console.log("Animal create", this);
     } 
 
+    /**
+     * Trigers when cursor is hovered over the animal
+     */
     public processHover()
     {
         this.isHoveredOn = true;
@@ -35,6 +40,9 @@ export class Animal extends THREE.Mesh
         console.log(this.name + "is hovered on");
     }
 
+    /**
+     * Invoked when curor is no longer hovered on the animal
+     */
     public processHoverCanceled()
     {
         this.isHoveredOn = false;

@@ -18,7 +18,7 @@
   }
   try {
     console.log('Registering user...',{username, email, password});
-    const response = await postData('http://127.0.0.1:3010/users', {username, email, password}); 
+    const response = await postData('http://127.0.0.1:3010/users/register', {username, email, password}); 
     // regex to check if response is a 2xx code
     if (/^2\d{2}$/.test(response)) {
       alert('User registered successfully');

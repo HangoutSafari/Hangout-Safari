@@ -13,6 +13,8 @@ export class AnimalsGenerator
     {
         this.animals = new THREE.Group();
         this.rayCaster = new THREE.Raycaster();
+        this.rayCaster.near = 0.1;
+        this.rayCaster.far = 2000;
     }
 
     public addAnimal(animal:THREE.Mesh)

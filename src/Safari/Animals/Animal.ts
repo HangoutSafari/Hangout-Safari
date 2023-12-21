@@ -26,17 +26,17 @@ export class Animal extends THREE.Mesh
             this.scale.set(scale, scale, scale);
             this.rotateY(degToRad(rotation));
         })
-       // this.updateMatrixWorld();
+        
         console.log("Animal create", this);
     } 
 
-    /**
+    /**p
      * Trigers when cursor is hovered over the animal
      */
     public processHover()
     {
         this.isHoveredOn = true;
-        
+            
         console.log(this.name + "is hovered on");
     }
 

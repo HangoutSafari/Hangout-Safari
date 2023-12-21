@@ -53,7 +53,7 @@ export class Scene extends THREE.Scene {
 
   public update(): void
   {
-    this.controls.update(0.01);
+    //this.controls.update(0.01);
   }
 
   public processResizing(): void

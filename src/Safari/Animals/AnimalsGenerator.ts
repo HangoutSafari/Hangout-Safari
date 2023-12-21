@@ -32,26 +32,22 @@ export class AnimalsGenerator
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
         let intersects = this.rayCaster.intersectObjects(this.animals.children, true);
-        if ( intersects.length > 0 ) {
-            
-            if ( INTERSECTED != intersects[ 0 ].object ) {
-
-                if ( INTERSECTED ){
-                    INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-                } 
-
-                INTERSECTED = intersects[ 0 ].object;
-                INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-                INTERSECTED.material.emissive.setHex( 0xffff00 );
-
+        if (intersects.length > 0) {
+            let hoveredAnimal = intersects[0].object as Animal;
+        
+            if (INTERSECTED !== hoveredAnimal) {
+                if (INTERSECTED) {
+                    INTERSECTED.processHoverCanceled();
+                }
+        
+                INTERSECTED = hoveredAnimal;
+                INTERSECTED.processHover();
             }
-
         } else {
-
-            if ( INTERSECTED ) 
-            {
-                INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+            if (INTERSECTED) {
+                INTERSECTED.processHoverCanceled();
             }
+        
             INTERSECTED = null;
         }
     }

@@ -26,17 +26,17 @@ export class Animal extends THREE.Mesh
             this.scale.set(scale, scale, scale);
             this.rotateY(degToRad(rotation));
         })
-        
-        console.log("Animal create", this);
+        this.processClickEvent=  this.processClickEvent.bind(this);
+        window.addEventListener('click', this.processClickEvent);
     } 
 
-    /**p
+    /**
      * Trigers when cursor is hovered over the animal
      */
     public processHover()
     {
         this.isHoveredOn = true;
-            
+        
         console.log(this.name + "is hovered on");
     }
 
@@ -46,5 +46,11 @@ export class Animal extends THREE.Mesh
     public processHoverCanceled()
     {
         this.isHoveredOn = false;
+    }
+
+    public processClickEvent()
+    {
+        if(this.isHoveredOn)
+            console.log("you have clicked on "+ this.name);
     }
 }

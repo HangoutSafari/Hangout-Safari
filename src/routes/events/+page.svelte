@@ -5,6 +5,7 @@
 
   export let data;
   console.log(data);
+  const events = data.items;
 </script>
 
 <main class="bg-[#e7e4e4]">
@@ -19,12 +20,12 @@
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
       <!-- Event cards-->
-      {#each { length: 8 } as _, i}
+      {#each events as event }
       <Eventcard
         eventImage="/images/FoodAndDrinkDesignColour.svg"
-        eventTitle="Food Lovers"
-        eventDate="November 27th"
-        eventLocation="Bibliotheek, Honney PIE Coffe, Middelburg"
+        eventTitle= {event.title}
+        eventDate= {event.date}
+        eventLocation= {event.place}
       />
       {/each}
 

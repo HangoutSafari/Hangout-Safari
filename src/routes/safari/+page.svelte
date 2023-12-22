@@ -27,7 +27,7 @@
   <div class="h-full flex flex-col w-full p-4 lg:p-10">
     <RenderingContext on:showAnimal={onAnimalSelected}/>
   </div>
-  <div class="flex">
+  <div class="hidden">
     <PopupDebug rarity ={rarity} achievedFrom={achievedFrom} name = {name} ></PopupDebug>
   </div>
 </div>

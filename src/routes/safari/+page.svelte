@@ -1,12 +1,20 @@
-ň<script>
+<script>
   import RenderingContext from "$lib/components/safariPage/renderingContext.svelte";
   import SideNavbar from "$lib/components/safariPage/sidebar.svelte";
+  import PopupDebug from "$lib/components/safariPage/popupDebug.svelte";
   import { onMount } from "svelte";
   
+  let rarity;
+  let achievedFrom;
+  let name;
+
   function onAnimalSelected(event)
   {
-    console.log(event.detail);
+    rarity = event.detail.rarity;
+    achievedFrom = event.detail.achievedFrom;
+    name = event.detail.name;
   }
+  
 
 </script>
 
@@ -18,6 +26,9 @@
   </div>
   <div class="h-full flex flex-col w-full p-4 lg:p-10">
     <RenderingContext on:showAnimal={onAnimalSelected}/>
+  </div>
+  <div class="flex">
+    <PopupDebug rarity ={rarity} achievedFrom={achievedFrom} name = {name} ></PopupDebug>
   </div>
 </div>
 

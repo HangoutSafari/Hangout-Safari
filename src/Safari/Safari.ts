@@ -5,6 +5,7 @@ import { Scene } from "./Scene/Scene";
 import { FloorGenerator } from "./Geometry/FloorGenerator";
 import { AnimalsGenerator } from "./Animals/AnimalsGenerator";
 import { Animal } from "./Animals/Animal";
+import type { AnimalEventDispatcher } from "./Animals/AnimalEventDispatcher";
 
 
 export class Safari {
@@ -15,11 +16,11 @@ export class Safari {
   private mousePos: THREE.Vector2;
   
 
-  constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
+  constructor(renderingContext: HTMLCanvasElement, safariModel: string, animalEventDispatcher: AnimalEventDispatcher) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
     this.animate = this.animate.bind(this);
-    this.animals = new AnimalsGenerator();
+    this.animals = new AnimalsGenerator(animalEventDispatcher);
     this.processRezieEvent = this.processRezieEvent.bind(this);
     this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
     this.ground = new FloorGenerator();

@@ -7,10 +7,11 @@
   let renderingContext;
 
   const eventDispatcher = createEventDispatcher();
+  const animalEventDispatcher = new AnimalEventDispatcher();
 
   onMount(() => {
     console.log(renderingContext);
-    const safari = new Safari(renderingContext, "models/savana2.glb");
+    const safari = new Safari(renderingContext, "models/savana2.glb", animalEventDispatcher);
     safari.start();
     
     document.addEventListener("keypress", function (event) {
@@ -20,7 +21,6 @@
     });
 
   });
-  const animalEventDispatcher = new AnimalEventDispatcher();
 
   animalEventDispatcher.addEventListener('showAnimal', function (event) {
     console.log("animal clicked on svelte component");

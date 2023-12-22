@@ -61,4 +61,8 @@ export class Animal extends THREE.Mesh
         }
 
     }
+
+    public setEventDisptcher(animalEventDispatcher: AnimalEventDispatcher): void{
+        this.animalEventDispatcher = animalEventDispatcher; 
+    }
 }

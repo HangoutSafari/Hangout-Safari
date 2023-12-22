@@ -6,6 +6,7 @@ import { FloorGenerator } from "./Geometry/FloorGenerator";
 import { AnimalsGenerator } from "./Animals/AnimalsGenerator";
 import { Animal } from "./Animals/Animal";
 import type { AnimalEventDispatcher } from "./Animals/AnimalEventDispatcher";
+import { RARITY } from "./Animals/Animal";
 
 
 export class Safari {
@@ -35,8 +36,8 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160), 45, 0.2, "giraffe"));  
-    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), 90, 3.0, "pigeon"));  
+    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160),"Girrafe", RARITY.rare, "Art fair",20, 0.2));  
+    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), "pigeon",RARITY.rare,"pigeon lovers", 90, 3.0));  
     this.animals.appednInScene(this.scene);
     
     //--------------------------------------------

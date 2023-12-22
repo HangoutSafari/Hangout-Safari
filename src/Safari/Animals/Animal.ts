@@ -1,19 +1,30 @@
 import * as THREE from 'three'
 import { loadModel } from '../ModelLoader/ModelLoader';
-import { degToRad } from 'three/src/math/MathUtils';
+import { degToRad, randInt } from 'three/src/math/MathUtils';
 import { AnimalEventDispatcher } from './AnimalEventDispatcher';
+
+export enum RARITY{
+    rare = "rare",
+    common = "comon",
+    uncomon = "unomon"
+}
 
 export class Animal extends THREE.Mesh
 {
-
     public isHoveredOn: boolean
+
+    private rarity: RARITY;
+
+    private event: string;
 
     private animalEventDispatcher: AnimalEventDispatcher
 
-    public constructor(path: string, position: THREE.Vector3, rotation: number, scale: number,name: string = "undefined animal")
+    public constructor(path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
         super();
         this.name = name;
+        this.rarity = rarity;
+        this.event = event;
         this.isHoveredOn = false;
         this.animalEventDispatcher = new AnimalEventDispatcher();
         loadModel(path)

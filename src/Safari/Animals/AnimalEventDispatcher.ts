@@ -4,6 +4,6 @@ import type { Animal } from './Animal';
 export class AnimalEventDispatcher extends THREE.EventDispatcher
 {
     showAnimal(animal: Animal){
-        this.dispatchEvent({type: "showAnimal",a_name: "name"})
+        this.dispatchEvent({type: "showAnimal",name: animal.name, rarity: animal.rarity, achievedFrom: animal.event } as never)
     }
 }

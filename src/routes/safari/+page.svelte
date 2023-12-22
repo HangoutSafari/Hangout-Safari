@@ -1,11 +1,11 @@
-<script>
+ň<script>
   import RenderingContext from "$lib/components/safariPage/renderingContext.svelte";
   import SideNavbar from "$lib/components/safariPage/sidebar.svelte";
   import { onMount } from "svelte";
   
   function onAnimalSelected(event)
   {
-    console.log("animal clicked");
+    console.log(event.detail);
   }
 
 </script>
@@ -17,7 +17,7 @@
     <SideNavbar />
   </div>
   <div class="h-full flex flex-col w-full p-4 lg:p-10">
-    <RenderingContext  on:showAnimal={onAnimalSelected}/>
+    <RenderingContext on:showAnimal={onAnimalSelected}/>
   </div>
 </div>
 

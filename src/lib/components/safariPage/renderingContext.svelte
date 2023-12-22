@@ -24,7 +24,7 @@
 
   animalEventDispatcher.addEventListener('showAnimal', function (event) {
     console.log("animal clicked on svelte component");
-    eventDispatcher('showAnimal', { name: event.a_name });
+    eventDispatcher('showAnimal', { name: event.name, rarity: event.rarity, achievedFrom: event.achievedFrom });
   });
 </script>
 

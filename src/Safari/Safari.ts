@@ -5,6 +5,8 @@ import { Scene } from "./Scene/Scene";
 import { FloorGenerator } from "./Geometry/FloorGenerator";
 import { AnimalsGenerator } from "./Animals/AnimalsGenerator";
 import { Animal } from "./Animals/Animal";
+import type { AnimalEventDispatcher } from "./Animals/AnimalEventDispatcher";
+import { RARITY } from "./Animals/Animal";
 
 
 export class Safari {
@@ -15,11 +17,11 @@ export class Safari {
   private mousePos: THREE.Vector2;
   
 
-  constructor(renderingContext: HTMLCanvasElement, safariModel: string) {
+  constructor(renderingContext: HTMLCanvasElement, safariModel: string, animalEventDispatcher: AnimalEventDispatcher) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
     this.animate = this.animate.bind(this);
-    this.animals = new AnimalsGenerator();
+    this.animals = new AnimalsGenerator(animalEventDispatcher);
     this.processRezieEvent = this.processRezieEvent.bind(this);
     this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
     this.ground = new FloorGenerator();
@@ -34,8 +36,8 @@ export class Safari {
     window.addEventListener('resize',this.processRezieEvent);
     this.scene.setup();
     this.ground.appednInScene(this.scene);
-    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160), 45, 0.2, "giraffe"));  
-    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), 90, 3.0, "pigeon"));  
+    this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,100,160),"Girrafe", RARITY.rare, "Art fair",20, 0.2));  
+    this.animals.addAnimal(new Animal('/models/Animals/pigeon.glb', new THREE.Vector3(80,100,160), "pigeon",RARITY.rare,"pigeon lovers", 90, 3.0));  
     this.animals.appednInScene(this.scene);
     
     //--------------------------------------------

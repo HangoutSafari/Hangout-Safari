@@ -2,21 +2,27 @@ import  * as THREE from 'three'
 import type { Animal } from './Animal';
 import type { Scene } from '../Scene/Scene';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
-import TileSource from 'ol/source/Tile';
+import type { AnimalEventDispatcher } from './AnimalEventDispatcher';
 let INTERSECTED = null;
 
 export class AnimalsGenerator 
 {
     private animals: THREE.Group;
     private rayCaster: THREE.Raycaster;
-    public constructor()
+    private animalEventDispatcher: AnimalEventDispatcher;
+
+    public constructor(animalEventDispatcher: AnimalEventDispatcher)
     {
+        this.animalEventDispatcher = animalEventDispatcher;
         this.animals = new THREE.Group();
         this.rayCaster = new THREE.Raycaster();
+        this.rayCaster.near = 0.1;
+        this.rayCaster.far = 2000;
     }
 
-    public addAnimal(animal:THREE.Mesh)
+    public addAnimal(animal:Animal)
     {
+        animal.setEventDisptcher(this.animalEventDispatcher);
         this.animals.add(animal);
     }
 
@@ -30,26 +36,22 @@ export class AnimalsGenerator
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
         let intersects = this.rayCaster.intersectObjects(this.animals.children, true);
-        if ( intersects.length > 0 ) {
-            
-            if ( INTERSECTED != intersects[ 0 ].object ) {
-
-                if ( INTERSECTED ){
-                    INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
-                } 
-
-                INTERSECTED = intersects[ 0 ].object;
-                INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-                INTERSECTED.material.emissive.setHex( 0xffff00 );
-
+        if (intersects.length > 0) {
+            let hoveredAnimal = intersects[0].object as Animal;
+        
+            if (INTERSECTED !== hoveredAnimal) {
+                if (INTERSECTED) {
+                    INTERSECTED.processHoverCanceled();
+                }
+        
+                INTERSECTED = hoveredAnimal;
+                INTERSECTED.processHover();
             }
-
         } else {
-
-            if ( INTERSECTED ) 
-            {
-                INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+            if (INTERSECTED) {
+                INTERSECTED.processHoverCanceled();
             }
+        
             INTERSECTED = null;
         }
     }

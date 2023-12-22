@@ -1,3 +1,7 @@
+<script>
+  export let currentUser;
+  export let animalCount = "NaN";
+</script>
 <div
   class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0"
 >
@@ -17,11 +21,11 @@
       alt=""
     />
     <!-- Your content goes here -->
-    <h1 class="text-[1.5rem] lg:text-[2rem] font-bold">Jane Doe</h1>
+    <h1 class="text-[1.5rem] lg:text-[2rem] font-bold">{currentUser.name}</h1>
     <p
       class="font-bold text-[1.5rem] lg:text-[1rem] mt-7 lg:mt-2 mb-3 lg:mb-auto"
     >
-      Animal count: 1245
+      Animal count: {animalCount}
     </p>
     <!-- More content if needed -->
   </div>

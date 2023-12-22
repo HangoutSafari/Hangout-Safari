@@ -1,4 +1,5 @@
 <script>
+    export let userName = "xd";
     export let profileImage;
     export let animalImage;
     export let locationObtained;
@@ -15,7 +16,7 @@
     
     <div class="flex flex-col">
 
-    <p>Jhon Doe obtained Joe!</p>
+    <p>{userName} obtained Joe!</p>
 
         <div class="flex text-sm gap-4 content-around pt-1 text-black text-opacity-40">
             <div class="flex justify-items-start">

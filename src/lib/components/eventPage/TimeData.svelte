@@ -11,4 +11,4 @@
     <div class="font-bold">{date}</div>
     <div class="separator w-[4px] h-full bg-[#ff4500] py-3"></div>
     <div class="font-bold">{startTime} - {endTime}</div>
-</div>
+</div> 

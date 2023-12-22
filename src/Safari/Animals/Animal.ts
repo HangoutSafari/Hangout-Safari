@@ -1,17 +1,21 @@
 import * as THREE from 'three'
 import { loadModel } from '../ModelLoader/ModelLoader';
-import { mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils';
 import { degToRad } from 'three/src/math/MathUtils';
+import { AnimalEventDispatcher } from './AnimalEventDispatcher';
+
 export class Animal extends THREE.Mesh
 {
 
     public isHoveredOn: boolean
+
+    private animalEventDispatcher: AnimalEventDispatcher
 
     public constructor(path: string, position: THREE.Vector3, rotation: number, scale: number,name: string = "undefined animal")
     {
         super();
         this.name = name;
         this.isHoveredOn = false;
+        this.animalEventDispatcher = new AnimalEventDispatcher();
         loadModel(path)
         .then(loadedModel => {
             const geometry = (loadedModel.scene.children[0] as THREE.Mesh).clone().geometry;
@@ -41,7 +45,7 @@ export class Animal extends THREE.Mesh
     }
 
     /**
-     * Invoked when curor is no longer hovered on the animal
+     * Invoked when cursor is no longer hovered on the animal
      */
     public processHoverCanceled()
     {   
@@ -52,6 +56,9 @@ export class Animal extends THREE.Mesh
     public processClickEvent()
     {
         if(this.isHoveredOn)
-            console.log("you have clicked on "+ this.name);
+        {
+            this.animalEventDispatcher.showAnimal(this);
+        }
+
     }
 }

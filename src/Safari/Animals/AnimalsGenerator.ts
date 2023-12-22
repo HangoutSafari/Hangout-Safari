@@ -2,7 +2,6 @@ import  * as THREE from 'three'
 import type { Animal } from './Animal';
 import type { Scene } from '../Scene/Scene';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
-import TileSource from 'ol/source/Tile';
 let INTERSECTED = null;
 
 export class AnimalsGenerator 

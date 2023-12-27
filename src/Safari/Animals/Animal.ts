@@ -39,6 +39,7 @@ export class Animal extends THREE.Mesh
             translation.makeTranslation(position);
             this.applyMatrix4(translation);
             this.scale.set(scale, scale, scale);
+            this.rotateX(degToRad(90));
             this.rotateY(degToRad(rotation));
         })
         this.processClickEvent=  this.processClickEvent.bind(this);
@@ -51,7 +52,7 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
-        this.material.color.set( Math.random() * 0xffffff );
+        (this.material as THREE.MeshBasicMaterial).color.set( Math.random() * 0xffffff );
         
     }
 
@@ -61,7 +62,7 @@ export class Animal extends THREE.Mesh
     public processHoverCanceled()
     {   
         this.isHoveredOn = false;
-        this.material.color.set(0xffffff ); 
+        (this.material as THREE.MeshBasicMaterial).color.set(0xffffff ); 
     }
 
     public processClickEvent()

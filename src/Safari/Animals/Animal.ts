@@ -52,7 +52,7 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
-        (this.material as THREE.MeshBasicMaterial).color.set( Math.random() * 0xffffff );
+        (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xFFEA00 );
         
     }
 
@@ -62,7 +62,7 @@ export class Animal extends THREE.Mesh
     public processHoverCanceled()
     {   
         this.isHoveredOn = false;
-        (this.material as THREE.MeshBasicMaterial).color.set(0xffffff ); 
+        (this.material as THREE.MeshPhongMaterial).emissive.setHex(0x00000); 
     }
 
     public processClickEvent()

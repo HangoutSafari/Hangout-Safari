@@ -11,7 +11,6 @@ export class Scene extends THREE.Scene {
   public lightSources: Array<THREE.Light> = [];
   public renderer: Renderer;
   
-  // public camera: Camera;
   public camera: OrthoCamera;
 
   public controls: Controls;
@@ -23,11 +22,14 @@ export class Scene extends THREE.Scene {
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(0, 60, 30)));
     this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(-900, 900, 0)));
     
+    console.log(renderingContext.width);
+    console.log(renderingContext.height);
+
     this.camera = new OrthoCamera(renderingContext);
-
-    this.renderer = new Renderer(renderingContext);
-
+      
     this.controls = new Controls(this.camera, renderingContext);
+    
+    this.renderer = new Renderer(renderingContext);
 
     this.background = new THREE.Color(THREE.Color.NAMES.gray);
 
@@ -53,7 +55,7 @@ export class Scene extends THREE.Scene {
 
   public update(): void
   {
-    //this.controls.update(0.01);
+    this.controls.update(0.01);
   }
 
   public processResizing(): void

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { SafariVector } from "../Math/SafariVector";
 
 export class OrthoCamera extends THREE.OrthographicCamera {
 
@@ -7,18 +8,17 @@ export class OrthoCamera extends THREE.OrthographicCamera {
 
   ) {
     super(
-    //   FOV,
-      renderingContext.clientWidth / - 2,
-      renderingContext.clientWidth / 2,
+      //FOV,
+      renderingContext.offsetWidth / -2,
+      renderingContext.offsetWidth / 2,
 
-      renderingContext.clientHeight / 2,
-      renderingContext.clientHeight / - 2,
+      renderingContext.offsetHeight /2,
+      renderingContext.offsetHeight / - 2,
 
-      -2000,
-      2000
-
+      0.01,
     );
-    this.move(2, 2, 2);
+    
+    this.position.set(0,900,-3900);
   }
 
   /**
@@ -41,13 +41,13 @@ export class OrthoCamera extends THREE.OrthographicCamera {
    */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
-    this.left = renderingContext.clientWidth / - 2;
+    this.left = -renderingContext.clientWidth / 2;
     this.right = renderingContext.clientWidth / 2;
     this.top = renderingContext.clientHeight / 2;
-    this.bottom = renderingContext.clientHeight / - 2;
+    this.bottom = -renderingContext.clientHeight / 2;
 
-    this.near = - 2000;
-    this.far = 2000;
+    this.near = 0.1;
+    this.far = 6000;
     this.updateProjectionMatrix();
   }
 }

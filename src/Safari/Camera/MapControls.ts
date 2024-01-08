@@ -8,7 +8,7 @@ export class Controls extends MapControls {
     super(camera, renderingContext);
     this.enablePan = true;
     this.enableRotate = true;
-    this.target.set(40.0, 3.0, 40.0);
+    this.target.set(0.0, 20.0, 30.0);  
     this.update(0.1);
     this.maxDistance = 240;
     this.maxPolarAngle = Math.PI / 3.2;

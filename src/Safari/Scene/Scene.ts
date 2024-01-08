@@ -26,7 +26,7 @@ export class Scene extends THREE.Scene {
     console.log(renderingContext.height);
 
     this.camera = new OrthoCamera(renderingContext);
-      
+    
     this.controls = new Controls(this.camera, renderingContext);
     
     this.renderer = new Renderer(renderingContext);
@@ -49,12 +49,16 @@ export class Scene extends THREE.Scene {
       this.add(lightSource);
     });
       
-  
+    const axesHelper = new THREE.AxesHelper( 400 );
+    this.add( axesHelper );
 
+    const helper = new THREE.CameraHelper(this.camera);
+    this.add( helper );
   }
 
   public update(): void
   {
+    this.camera.updateProjectionMatrix();
     this.controls.update(0.01);
   }
 

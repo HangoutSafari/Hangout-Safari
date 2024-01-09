@@ -1,6 +1,5 @@
 import  * as THREE from 'three'
 import { Animal } from './Animal';
-import type { Scene } from '../Scene/Scene';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
 import type { AnimalEventDispatcher } from './AnimalEventDispatcher';
 import { RARITY } from './Animal';
@@ -17,8 +16,8 @@ export class AnimalsGenerator
         this.animalEventDispatcher = animalEventDispatcher;
         this.animals = new THREE.Group();
         this.rayCaster = new THREE.Raycaster();
-        this.rayCaster.near = 0.1;
-        this.rayCaster.far = 2000;
+        this.rayCaster.near = 1;
+        this.rayCaster.far = 6000;
     }
 
     public addAnimal(animal:Animal)

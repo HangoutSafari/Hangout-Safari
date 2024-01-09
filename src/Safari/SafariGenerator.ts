@@ -20,7 +20,7 @@ export class SafariGenerator{
 
     public add(){
         if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[randInt(0, 8)],(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", randInt(0,90), 10));    
+            this.animalGenerator.addAnimal(new Animal(AnimalsModels[randInt(0, 8)],(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", 0, 10));    
             this.isFirstAnimal = false;
         }
         else{

@@ -53,7 +53,7 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
-        (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xFFEA00 );
+        (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xfdb157 );
     }
 
     /**

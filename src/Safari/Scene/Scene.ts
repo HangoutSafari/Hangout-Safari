@@ -11,7 +11,7 @@ export class Scene extends THREE.Scene {
   public lightSources: Array<THREE.Light> = [];
   public renderer: Renderer;
   
-  public camera: OrthoCamera;
+  public camera: Camera;
 
   public controls: Controls;
   public renderingContext: HTMLCanvasElement;
@@ -25,7 +25,7 @@ export class Scene extends THREE.Scene {
     console.log(renderingContext.width);
     console.log(renderingContext.height);
 
-    this.camera = new OrthoCamera(renderingContext);
+    this.camera = new Camera(renderingContext, 75, 0.1, 6000.0);
     
     this.controls = new Controls(this.camera, renderingContext);
     

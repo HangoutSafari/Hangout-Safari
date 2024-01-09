@@ -5,12 +5,10 @@ import { degToRad } from "three/src/math/MathUtils";
 export class OrthoCamera extends THREE.OrthographicCamera {
 
   constructor( renderingContext: HTMLCanvasElement ) {  
-
     const aspect =  renderingContext.offsetWidth / renderingContext.offsetHeight;
     const frustumSize = 1000;
     super( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 0.1, 9000 );
-    this.position.set(400,0,0);
-
+    this.position.set(400,0,-400);
   }
   /**
    * Moves camera into the desired coordinates

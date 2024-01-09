@@ -21,9 +21,6 @@ export class Scene extends THREE.Scene {
     super();
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(0, 60, 30)));
     this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(-900, 900, 0)));
-    
-    console.log(renderingContext.width);
-    console.log(renderingContext.height);
 
     this.camera = new Camera(renderingContext, 75, 0.1, 6000.0);
     
@@ -48,13 +45,7 @@ export class Scene extends THREE.Scene {
       }
       this.add(lightSource);
     });
-      
-    const axesHelper = new THREE.AxesHelper( 400 );
-    this.add( axesHelper );
-
-    const helper = new THREE.CameraHelper(this.camera);
-    this.add( helper );
-  }
+}
 
   public update(): void
   {

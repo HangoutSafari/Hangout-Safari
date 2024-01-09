@@ -8,10 +8,14 @@ import { Vegetation } from './Vegetation';
 import { loadModel } from '../ModelLoader/ModelLoader';
 import { Models } from '../Types/SafariModelLoadingTypes';
 
+function generateNumber(max: number) : number{
+    return Math.floor(Math.random() * max);
+}
 
 export class Chunk extends THREE.Object3D
 {
-    public constructor(index: number,position:SafariVector)
+    public randomAnimalPosition: THREE.Vector3;
+    public constructor(index: number,position:SafariVector, width: number = 500)
     {
         super();
         console.log(index);
@@ -31,5 +35,9 @@ export class Chunk extends THREE.Object3D
             model.scene.applyMatrix4(translationMatxi);
             this.add(model.scene);
         });
+        
+        this.randomAnimalPosition = new THREE.Vector3(position.x + generateNumber(width), 56, position.z + generateNumber(width)); //new THREE.Vector3(this.position.x * generateNumber(width), 0, this.position.z * generateNumber(width));
+
     }
+
 }

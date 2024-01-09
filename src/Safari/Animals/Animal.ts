@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { loadModel } from '../ModelLoader/ModelLoader';
 import { degToRad, randInt } from 'three/src/math/MathUtils';
 import { AnimalEventDispatcher } from './AnimalEventDispatcher';
+import type { AnimalModel } from '../Types/AnimalModelsPathTypes';
 
 export enum RARITY{
     rare = "rare",
@@ -19,7 +20,7 @@ export class Animal extends THREE.Mesh
 
     private animalEventDispatcher: AnimalEventDispatcher
 
-    public constructor(path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
+    public constructor(path: AnimalModel, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
         super();
         this.name = name;
@@ -53,7 +54,6 @@ export class Animal extends THREE.Mesh
     {
         this.isHoveredOn = true;
         (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xFFEA00 );
-        
     }
 
     /**

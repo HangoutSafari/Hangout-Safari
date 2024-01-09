@@ -7,6 +7,8 @@ import { AnimalsGenerator } from "./Animals/AnimalsGenerator";
 import { Animal } from "./Animals/Animal";
 import type { AnimalEventDispatcher } from "./Animals/AnimalEventDispatcher";
 import { RARITY } from "./Animals/Animal";
+import { AnimalModel } from "./Types/AnimalModelsPathTypes";
+import { SafariGenerator } from "./SafariGenerator";
 
 
 export class Safari {
@@ -15,7 +17,7 @@ export class Safari {
   public ground: FloorGenerator;
   public animals: AnimalsGenerator;
   private mousePos: THREE.Vector2;
-  
+  public safariGenerator: SafariGenerator
 
   constructor(renderingContext: HTMLCanvasElement, safariModel: string, animalEventDispatcher: AnimalEventDispatcher) {
     this.scene = new Scene(renderingContext);    
@@ -27,6 +29,7 @@ export class Safari {
     this.ground = new FloorGenerator();
     this.mousePos = new THREE.Vector2(0,0);
     this.scene.renderer.domElement.addEventListener('mousemove', this.processMouseMoveEvent);
+    this.safariGenerator = new SafariGenerator(animalEventDispatcher);
   }
 
   /**
@@ -34,6 +37,7 @@ export class Safari {
    */
   public setup() {
     window.addEventListener('resize',this.processRezieEvent);
+
     //--------------------------------------------
     // RENDER SPHERE WHERE IS LIGHT SUPPOSED TO BE
     //--------------------------------------------
@@ -43,20 +47,21 @@ export class Safari {
       this.scene.lightSources[1].color
       ));
       
-      this.animals.addAnimal(new Animal('/models/Animals/crocodile.glb', new THREE.Vector3(50,43,140), "Crocodile",RARITY.rare,"Party", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/deer.glb', new THREE.Vector3(50,43,120), "Deer",RARITY.rare,"Music", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/elephant.glb', new THREE.Vector3(50,43,30), "Elephant",RARITY.rare,"Karaoke", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/frog.glb', new THREE.Vector3(50,43,10), "Frog",RARITY.rare,"Quiz", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/hippo.glb', new THREE.Vector3(50,43,-20), "Hippo",RARITY.rare,"Stand-up", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/lion.glb', new THREE.Vector3(50,43,-60), "Lion",RARITY.rare,"Koncert", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/monkey.glb', new THREE.Vector3(-90,43,-60), "Monkey",RARITY.rare,"Blind date", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/ostrich.glb', new THREE.Vector3(-90,43,-30), "Ostrich",RARITY.rare,"IT conference", 0, 3.0));
-      this.animals.addAnimal(new Animal('/models/Animals/rabbit.glb', new THREE.Vector3(-90,43,0), "Rabbit",RARITY.rare,"IT conference", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,50,160),"Girrafe", RARITY.rare, "Art fair",0, 4.2));  
-      this.animals.appednInScene(this.scene);
+      //this.animals.addAnimal(new Animal(AnimalModel.CROCODILE, new THREE.Vector3(720,43,140), "Crocodile",RARITY.rare,"Party", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.DEER, new THREE.Vector3(50,43,120), "Deer",RARITY.rare,"Music", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.ELEPHANT, new THREE.Vector3(50,43,30), "Elephant",RARITY.rare,"Karaoke", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.HIPPO, new THREE.Vector3(50,43,-20), "Hippo",RARITY.rare,"Stand-up", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.LION, new THREE.Vector3(50,43,-60), "Lion",RARITY.rare,"Koncert", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.MONKEY, new THREE.Vector3(-90,43,-60), "Monkey",RARITY.rare,"Blind date", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.OSTRICH, new THREE.Vector3(-90,43,-30), "Ostrich",RARITY.rare,"IT conference", 0, 3.0));
+      //this.animals.addAnimal(new Animal(AnimalModel.RABBIT, new THREE.Vector3(-90,43,0), "Rabbit",RARITY.rare,"IT conference", 0, 3.0));  
+      //this.animals.addAnimal(new Animal(AnimalModel.GIRRAFE, new THREE.Vector3(50,50,160),"Girrafe", RARITY.rare, "Art fair",0, 4.2));  
+      //this.animals.appednInScene(this.scene);
+      //this.ground.appednInScene(this.scene);
       
+      this.safariGenerator.appendInScene(this.scene);
+
       this.scene.setup();
-      this.ground.appednInScene(this.scene);
       
       
     }
@@ -66,7 +71,7 @@ export class Safari {
    * Update elements on begining of each drawing call
    */
   public update() {
-    this.animals.checkForMouseHover(this.mousePos, this.scene.camera, this.scene);
+    this.safariGenerator.processMouseMovement(this.mousePos, this.scene.camera, this.scene);
     this.scene.update();
   }
 

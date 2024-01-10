@@ -9,7 +9,7 @@ let INTERSECTED = null;
 
 export class AnimalsGenerator 
 {
-    private animals: THREE.Group;
+    public animals: THREE.Group;
     private rayCaster: THREE.Raycaster;
     private animalEventDispatcher: AnimalEventDispatcher;
 

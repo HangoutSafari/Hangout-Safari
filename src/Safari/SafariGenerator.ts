@@ -1,4 +1,4 @@
-import * as THREE from 'three'
+import type * as THREE from 'three';
 import { FloorGenerator } from './Geometry/FloorGenerator'
 import { AnimalsGenerator } from './Animals/AnimalsGenerator'
 import type { AnimalEventDispatcher } from './Animals/AnimalEventDispatcher';
@@ -8,6 +8,7 @@ import { AnimalsModels } from './Types/AnimalModelsPathTypes';
 import { randInt } from 'three/src/math/MathUtils';
 import type { Camera } from './Camera/Camera';
 import type { Chunk } from './Chunk/Chunk';
+import type { element } from 'svelte/internal';
 
 export class SafariGenerator{
     private animalGenerator: AnimalsGenerator;
@@ -17,7 +18,7 @@ export class SafariGenerator{
         this.animalGenerator = new AnimalsGenerator(animalEventDispatcher);
         this.floorGenerator = new FloorGenerator(); 
     }
-
+    
     public add(){
         const index = randInt(0, 8);
         if(this.isFirstAnimal) {
@@ -35,8 +36,14 @@ export class SafariGenerator{
         this.floorGenerator.appednInScene(scene);
         this.animalGenerator.appednInScene(scene);
     }
-
+    
     public processMouseMovement(mousePos: THREE.Vector2, camera: Camera){
         this.animalGenerator.checkForMouseHover(mousePos, camera)
+    }
+    
+    public update(){
+        this.animalGenerator.animals.children.forEach(element=> {
+            (element as Animal).update();
+        });
     }
 }  

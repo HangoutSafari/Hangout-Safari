@@ -31,6 +31,7 @@
   <div class="hidden">
     <PopupDebug rarity ={rarity} achievedFrom={achievedFrom} name = {name} ></PopupDebug>
   </div>
+
 </div>
 
 <style>

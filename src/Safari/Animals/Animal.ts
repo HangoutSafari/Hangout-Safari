@@ -81,10 +81,33 @@ export class Animal extends THREE.Mesh
         this.animalEventDispatcher = animalEventDispatcher; 
     }
 
+    public lsd_update(){
+        this.animationScale += 0.08;
+
+        const jumpHeight = 5.5;
+        const verticalOffset = Math.min((Math.sin(this.animationScale) * jumpHeight - 2), jumpHeight);
+      
+        // Apply vertical offset to scale
+        this.scale.setScalar(20 + verticalOffset);
+      
+        // Rotate the object during the jump
+        const rotationSpeed = 0.1;
+        this.rotation.z += rotationSpeed;
+        this.rotation.x += rotationSpeed;
+        this.rotation.y += rotationSpeed;
+
+        // Change the color during the jump (assuming the object has a material with a color property)
+        const colorVariation = Math.abs(Math.sin(this.animationScale * 0.5)); // Adjust the factor for different color variations
+        this.material.color.setRGB(colorVariation, 1 - colorVariation, 1); // Adjust the color properties as needed
+    }
+
     public update(){
-        if(this.animationScale <= 1.0){
-            this.animationScale += 0.1;
-            this.scale.setScalar(this.animationScale);
-        }
+        this.animationScale += 0.08;
+
+        const jumpHeight = 5.5;
+        const verticalOffset = Math.min(Math.abs(Math.sin(this.animationScale) * jumpHeight - 2), jumpHeight);
+      
+        // Apply vertical offset to scale
+        this.scale.setScalar(1 + verticalOffset);
     }
 }

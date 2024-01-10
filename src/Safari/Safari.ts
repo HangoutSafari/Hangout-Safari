@@ -51,6 +51,7 @@ export class Safari {
    */
   public update() {
     this.safariGenerator.processMouseMovement(this.mousePos, this.scene.camera);
+    this.safariGenerator.update();
     this.scene.update();
   }
 

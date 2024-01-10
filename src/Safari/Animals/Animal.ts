@@ -41,7 +41,7 @@ export class Animal extends THREE.Mesh
             this.applyMatrix4(translation);
             this.scale.set(scale, scale, scale);
             this.rotateX(degToRad(90));
-            this.rotateY(degToRad(rotation));
+            this.rotateZ(degToRad(rotation));
         })
         this.processClickEvent=  this.processClickEvent.bind(this);
         window.addEventListener('click', this.processClickEvent);

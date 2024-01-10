@@ -16,6 +16,8 @@ export class Animal extends THREE.Mesh
 
     private rarity: RARITY;
 
+    private animationScale :number;
+
     private event: string;
 
     private animalEventDispatcher: AnimalEventDispatcher
@@ -27,6 +29,7 @@ export class Animal extends THREE.Mesh
         this.rarity = rarity;
         this.event = event;
         this.isHoveredOn = false;
+        this.animationScale = scale;
         this.animalEventDispatcher = new AnimalEventDispatcher();
         loadModel(path)
         .then(loadedModel => {
@@ -39,7 +42,7 @@ export class Animal extends THREE.Mesh
             const translation = new THREE.Matrix4();
             translation.makeTranslation(position);
             this.applyMatrix4(translation);
-            this.scale.set(scale, scale, scale);
+            this.scale.setScalar(scale);
             this.rotateX(degToRad(90));
             this.rotateZ(degToRad(rotation));
         })
@@ -76,5 +79,12 @@ export class Animal extends THREE.Mesh
 
     public setEventDisptcher(animalEventDispatcher: AnimalEventDispatcher): void{
         this.animalEventDispatcher = animalEventDispatcher; 
+    }
+
+    public update(){
+        if(this.animationScale <= 1.0){
+            this.animationScale += 0.1;
+            this.scale.setScalar(this.animationScale);
+        }
     }
 }

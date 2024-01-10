@@ -43,7 +43,7 @@ export class Chunk extends THREE.Object3D
            // this.add(boundingBoxes);
         });
         console.log("Forbidend positions on the chunk are ")
-        this.randomAnimalPosition = new THREE.Vector3(position.x + generateNumber(200), 46, position.z + generateNumber(200)); //new THREE.Vector3(this.position.x * generateNumber(width), 0, this.position.z * generateNumber(width));
+        this.randomAnimalPosition = new THREE.Vector3(position.x + generateNumber(200), 40, position.z + generateNumber(200)); //new THREE.Vector3(this.position.x * generateNumber(width), 0, this.position.z * generateNumber(width));
 
     }
 

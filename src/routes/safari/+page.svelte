@@ -13,6 +13,9 @@
     rarity = event.detail.rarity;
     achievedFrom = event.detail.achievedFrom;
     name = event.detail.name;
+
+    // Popup Location
+    console.log(event);
   }
   
 

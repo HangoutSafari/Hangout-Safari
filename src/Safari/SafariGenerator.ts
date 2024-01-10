@@ -19,14 +19,15 @@ export class SafariGenerator{
     }
 
     public add(){
+        const index = randInt(0, 8);
         if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[randInt(0, 8)],(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", 0, 10));    
+            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", 0, AnimalsModels[index].scale));    
             this.isFirstAnimal = false;
         }
         else{
             const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
-            const newAnimalPostion = new THREE.Vector3(animalPosition.x, 20, animalPosition.z);
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[randInt(0, 8)],newAnimalPostion, "Ranom animal string", RARITY.common, "random", 0, 10));    
+            const newAnimal = new Animal(AnimalsModels[index].model,animalPosition, "Ranom animal string", RARITY.common, "random", 0,  AnimalsModels[index].scale)
+            this.animalGenerator.addAnimal(newAnimal);    
         }
     }
 
@@ -38,4 +39,4 @@ export class SafariGenerator{
     public processMouseMovement(mousePos: THREE.Vector2, camera: Camera){
         this.animalGenerator.checkForMouseHover(mousePos, camera)
     }
-}
+}  

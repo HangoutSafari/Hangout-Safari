@@ -11,18 +11,22 @@ export enum AnimalModel{
     GIRRAFE = '/models/Animals/giraffe.glb'
 }
 
+
 type IndexAnimal = {
-    [key: number]: AnimalModel
+    [key: number]: {
+        model: AnimalModel,
+        scale: number
+    }
 }
 
 export const AnimalsModels: IndexAnimal = {
-    0: AnimalModel.CROCODILE,
-    1: AnimalModel.DEER,
-    2: AnimalModel.ELEPHANT,
-    3: AnimalModel.HIPPO,
-    4: AnimalModel.LION,
-    5: AnimalModel.MONKEY,
-    6: AnimalModel.OSTRICH,
-    7: AnimalModel.RABBIT,
-    8: AnimalModel.GIRRAFE
+    0: {model:AnimalModel.CROCODILE, scale:2},
+    1: {model:AnimalModel.DEER, scale: 2},
+    2: {model:AnimalModel.ELEPHANT, scale: 3},
+    3: {model:AnimalModel.HIPPO, scale: 3},
+    4: {model:AnimalModel.LION, scale: 2.5},
+    5: {model:AnimalModel.MONKEY, scale: 2},
+    6: {model:AnimalModel.OSTRICH, scale:2.8},
+    7: {model:AnimalModel.RABBIT, scale:1.2},
+    8: {model:AnimalModel.GIRRAFE, scale:4}
 }

@@ -27,20 +27,23 @@ export class Chunk extends THREE.Object3D
         .then(model =>{
             const translationMatxi = new THREE.Matrix4();
             translationMatxi.makeTranslation(position);
+            let boundingBoxes = new THREE.Group();
             model.scene.traverse(child =>{
                 child.castShadow = true;
                 child.receiveShadow = true;
-                this.forbidenPositions.push(child.position);
-
-            });
+                boundingBoxes.add(new THREE.BoxHelper( child, 0xffff00 ))
+            }); 
             model.scene.position.set(0,0,0);
             model.scene.scale.set(2.4, 2.4, 2.4);
             model.scene.applyMatrix4(translationMatxi);
+            boundingBoxes.scale.set(2.4, 2.4, 2.4);
+            boundingBoxes.applyMatrix4(translationMatxi);
+            
             this.add(model.scene);
+           // this.add(boundingBoxes);
         });
         console.log("Forbidend positions on the chunk are ")
-        console.log(this.forbidenPositions);
-        this.randomAnimalPosition = position;//new THREE.Vector3(position.x + generateNumber(width), 56, position.z + generateNumber(width)); //new THREE.Vector3(this.position.x * generateNumber(width), 0, this.position.z * generateNumber(width));
+        this.randomAnimalPosition = new THREE.Vector3(position.x + generateNumber(200), 46, position.z + generateNumber(200)); //new THREE.Vector3(this.position.x * generateNumber(width), 0, this.position.z * generateNumber(width));
 
     }
 

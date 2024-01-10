@@ -13,6 +13,7 @@
     rarity = event.detail.rarity;
     achievedFrom = event.detail.achievedFrom;
     name = event.detail.name;
+    console.log(event)
   }
   
 

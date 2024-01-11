@@ -12,14 +12,14 @@ export class Safari {
   public animals: AnimalsGenerator;
   private mousePos: THREE.Vector2;
   public safariGenerator: SafariGenerator
-
+  public isLSDUpdateON: boolean;
   constructor(renderingContext: HTMLCanvasElement, safariModel: string, animalEventDispatcher: AnimalEventDispatcher) {
     this.scene = new Scene(renderingContext);    
     this.safariModel = safariModel;
     this.animals = new AnimalsGenerator(animalEventDispatcher);
     this.mousePos = new THREE.Vector2(0,0);
     this.safariGenerator = new SafariGenerator(animalEventDispatcher);
-    
+    this.isLSDUpdateON = false;
     this.animate = this.animate.bind(this);
     this.processRezieEvent = this.processRezieEvent.bind(this);
     this.processMouseMoveEvent = this.processMouseMoveEvent.bind(this);
@@ -51,7 +51,7 @@ export class Safari {
    */
   public update() {
     this.safariGenerator.processMouseMovement(this.mousePos, this.scene.camera);
-    this.safariGenerator.update();
+    this.safariGenerator.update(this.isLSDUpdateON);
     this.scene.update();
   }
 

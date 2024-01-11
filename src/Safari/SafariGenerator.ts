@@ -22,12 +22,12 @@ export class SafariGenerator{
     public add(){
         const index = randInt(0, 8);
         if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", AnimalsModels[index].rotation, AnimalsModels[index].scale));    
+            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", AnimalsModels[index].rotation, AnimalsModels[index].scale));    
             this.isFirstAnimal = false;
         }
         else{
             const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
-            const newAnimal = new Animal(AnimalsModels[index].model,animalPosition, "Ranom animal string", RARITY.common, "random", AnimalsModels[index].rotation,  AnimalsModels[index].scale)
+            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, "Ranom animal string", RARITY.common, "random", AnimalsModels[index].rotation,  AnimalsModels[index].scale)
             this.animalGenerator.addAnimal(newAnimal);    
         }
     }

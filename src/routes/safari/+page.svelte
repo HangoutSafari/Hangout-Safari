@@ -8,6 +8,7 @@
   let rarity;
   let achievedFrom;
   let name;
+  let image;
   let animalSelected = false;
 
   function onAnimalSelected(event) {
@@ -17,6 +18,7 @@
       rarity = event.detail.rarity;
       achievedFrom = event.detail.achievedFrom;
       name = event.detail.name;
+      image = event.detail.image;
       animalSelected = true;
     }
   }
@@ -31,7 +33,7 @@
     
     {#if animalSelected}
       <div class="absolute text-center">
-        <Popup rarity={rarity} achievedFrom={achievedFrom} name={name}></Popup>
+        <Popup rarity={rarity} achievedFrom={achievedFrom} name={name} image={image}></Popup>
       </div>
     {/if}
     

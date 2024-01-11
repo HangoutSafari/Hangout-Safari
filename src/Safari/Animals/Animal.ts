@@ -20,13 +20,16 @@ export class Animal extends THREE.Mesh
 
     private event: string;
 
+    private imagePath: string;
+
     private animalEventDispatcher: AnimalEventDispatcher
 
     private initialScale: number;
-
-    public constructor(path: AnimalModel, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
+  
+    public constructor(imagePath: string, path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
         super();
+        this.imagePath = imagePath;
         this.name = name;
         this.rarity = rarity;
         this.event = event;

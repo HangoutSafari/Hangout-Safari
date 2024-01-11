@@ -22,12 +22,15 @@ export class Animal extends THREE.Mesh
 
     private animalEventDispatcher: AnimalEventDispatcher
 
+    private initialScale: number;
+
     public constructor(path: AnimalModel, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
         super();
         this.name = name;
         this.rarity = rarity;
         this.event = event;
+        this.initialScale = scale;
         this.isHoveredOn = false;
         this.animationScale = scale;
         this.animalEventDispatcher = new AnimalEventDispatcher();
@@ -102,12 +105,16 @@ export class Animal extends THREE.Mesh
     }
 
     public update(){
-        this.animationScale += 0.08;
+        const minSize = Math.floor(this.initialScale/2);
+        let K = 3.8;
+        let a = 3.6;
+        let x = this.animationScale += 0.08;
+        let b = 2.3;
 
-        const jumpHeight = 5.5;
-        const verticalOffset = Math.min(Math.abs(Math.sin(this.animationScale) * jumpHeight - 2), jumpHeight);
-      
+
+        const verticalOffset = Math.abs(a * Math.cos(x/b) + K)
+        
         // Apply vertical offset to scale
-        this.scale.setScalar(1 + verticalOffset);
+        this.scale.setScalar(this.initialScale - verticalOffset);
     }
 }

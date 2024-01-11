@@ -16,7 +16,7 @@
     
     document.addEventListener("keypress", function (event) {
       if (event.keyCode == 13) {
-        safari.ground.addChunk();
+        safari.safariGenerator.add();
       }
     });
 
@@ -24,10 +24,14 @@
 
   animalEventDispatcher.addEventListener('showAnimal', function (event) {
     console.log("animal clicked on svelte component");
-    eventDispatcher('showAnimal', { name: event.name, rarity: event.rarity, achievedFrom: event.achievedFrom });
+    eventDispatcher('showAnimal', { name: event.name, rarity: event.rarity, achievedFrom: event.achievedFrom, image: event.image});
   });
 </script>
 
 <div id="dimentionHelper" class="w-full lg:w-[90%] h-full lg:h-full border-red-400 self-center flex flex-col items-center">
   <canvas class="w-full h-full rounded-md shadow-xl" bind:this={renderingContext}></canvas>
+</div>
+
+<div>
+  <input id="lsdMode" type="checkbox">
 </div>

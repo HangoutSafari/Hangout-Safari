@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { loadModel } from '../ModelLoader/ModelLoader';
 import { degToRad, randInt } from 'three/src/math/MathUtils';
 import { AnimalEventDispatcher } from './AnimalEventDispatcher';
+import type { AnimalModel } from '../Types/AnimalModelsPathTypes';
 
 export enum RARITY{
     rare = "rare",
@@ -15,17 +16,26 @@ export class Animal extends THREE.Mesh
 
     private rarity: RARITY;
 
+    private animationScale :number;
+
     private event: string;
+
+    private imagePath: string;
 
     private animalEventDispatcher: AnimalEventDispatcher
 
-    public constructor(path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
+    private initialScale: number;
+  
+    public constructor(imagePath: string, path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
         super();
+        this.imagePath = imagePath;
         this.name = name;
         this.rarity = rarity;
         this.event = event;
+        this.initialScale = scale;
         this.isHoveredOn = false;
+        this.animationScale = scale;
         this.animalEventDispatcher = new AnimalEventDispatcher();
         loadModel(path)
         .then(loadedModel => {
@@ -38,9 +48,9 @@ export class Animal extends THREE.Mesh
             const translation = new THREE.Matrix4();
             translation.makeTranslation(position);
             this.applyMatrix4(translation);
-            this.scale.set(scale, scale, scale);
+            this.scale.setScalar(scale);
             this.rotateX(degToRad(90));
-            this.rotateY(degToRad(rotation));
+            this.rotateZ(degToRad(rotation));
         })
         this.processClickEvent=  this.processClickEvent.bind(this);
         window.addEventListener('click', this.processClickEvent);
@@ -52,8 +62,7 @@ export class Animal extends THREE.Mesh
     public processHover()
     {
         this.isHoveredOn = true;
-        (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xFFEA00 );
-        
+        (this.material as THREE.MeshPhongMaterial).emissive.setHex( 0xfdb157 );
     }
 
     /**
@@ -76,5 +85,39 @@ export class Animal extends THREE.Mesh
 
     public setEventDisptcher(animalEventDispatcher: AnimalEventDispatcher): void{
         this.animalEventDispatcher = animalEventDispatcher; 
+    }
+
+    public lsd_update(){
+        this.animationScale += 0.08;
+
+        const jumpHeight = 5.5;
+        const verticalOffset = Math.min((Math.sin(this.animationScale) * jumpHeight - 2), jumpHeight);
+      
+        // Apply vertical offset to scale
+        this.scale.setScalar(20 + verticalOffset);
+      
+        // Rotate the object during the jump
+        const rotationSpeed = 0.1;
+        this.rotation.z += rotationSpeed;
+        this.rotation.x += rotationSpeed;
+        this.rotation.y += rotationSpeed;
+
+        // Change the color during the jump (assuming the object has a material with a color property)
+        const colorVariation = Math.abs(Math.sin(this.animationScale * 0.5)); // Adjust the factor for different color variations
+        this.material.color.setRGB(colorVariation, 1 - colorVariation, 1); // Adjust the color properties as needed
+    }
+
+    public update(){
+        const minSize = Math.floor(this.initialScale/2);
+        let K = 3.8;
+        let a = this.initialScale / 8.7;
+        let x = this.animationScale += 0.08;
+        let b = 1.3;
+
+
+        const offset = Math.abs(a * Math.cos(x/b) + K)
+        
+        // Apply vertical offset to scale
+        this.scale.setScalar((this.initialScale + offset)/2);
     }
 }

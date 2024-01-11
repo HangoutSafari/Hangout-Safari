@@ -3,6 +3,8 @@ import { ShapeGenerator } from './ShapeGenerator';
 import type { Scene } from '../Scene/Scene';
 import { SafariVector } from '../Math/SafariVector';
 import { Chunk } from '../Chunk/Chunk';
+import { AnimalsGenerator } from '../Animals/AnimalsGenerator';
+import type { AnimalEventDispatcher } from '../Animals/AnimalEventDispatcher';
 
 export class FloorGenerator
 {
@@ -17,8 +19,6 @@ export class FloorGenerator
     {
         this.dimensions = 500;
         this.chunks = new THREE.Group();
-        this.chunks.castShadow = true;
-        this.chunks.receiveShadow = true;
         this.x = new THREE.Vector3( this.dimensions, 0, 0);
         this.z = new THREE.Vector3(0,0,this.dimensions);
         this.renderedChunks = 0;
@@ -33,18 +33,21 @@ export class FloorGenerator
     /**
      * Adds chunk to the ground
      */
-    public addChunk():void 
+    public addChunk():Chunk 
     {
         if(this.renderedChunks <= 9){
-                const index = this.renderedChunks + 1;
-                const newChunk = new Chunk(index,this.chunksPositions[this.renderedChunks])
-                newChunk.castShadow = true;
-                newChunk.receiveShadow = true;
-                this.chunks.add(newChunk);
-                this.renderedChunks++
+            const index = this.renderedChunks + 1;
+            console.log("adding chunks");
+            const newChunk = new Chunk(index,this.chunksPositions[this.renderedChunks])
+            newChunk.castShadow = true;
+            newChunk.receiveShadow = true;
+            this.chunks.add(newChunk);
+            this.renderedChunks++
+            return newChunk;
         }
         else{
             alert('maximum size of the safari reached');
+            return null;
         }
     }
 

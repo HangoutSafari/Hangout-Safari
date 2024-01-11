@@ -3,11 +3,13 @@ import { Animal } from './Animal';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
 import type { AnimalEventDispatcher } from './AnimalEventDispatcher';
 import { RARITY } from './Animal';
+import type { Scene } from '../Scene/Scene';
 let INTERSECTED = null;
+
 
 export class AnimalsGenerator 
 {
-    private animals: THREE.Group;
+    public animals: THREE.Group;
     private rayCaster: THREE.Raycaster;
     private animalEventDispatcher: AnimalEventDispatcher;
 
@@ -31,19 +33,19 @@ export class AnimalsGenerator
         scene.add(this.animals);
     }
 
-    public checkForMouseHover(mousePos: THREE.Vector2, camera:OrthoCamera, scene: Scene)
+    public checkForMouseHover(mousePos: THREE.Vector2, camera:THREE.Camera)
     {
         this.rayCaster.setFromCamera(mousePos, camera);
         //after we 
-        let intersects = this.rayCaster.intersectObjects(this.animals.children, true);
-        if (intersects.length > 0) {
-            let hoveredAnimal = intersects[0].object as Animal;
+        let colided = this.rayCaster.intersectObjects(this.animals.children, true);
+        if (colided.length > 0) {
+            let hoveredAnimal = colided[0].object as Animal;
         
             if (INTERSECTED !== hoveredAnimal) {
                 if (INTERSECTED) {
                     INTERSECTED.processHoverCanceled();
                 }
-        
+    
                 INTERSECTED = hoveredAnimal;
                 INTERSECTED.processHover();
             }

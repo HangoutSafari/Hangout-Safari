@@ -11,29 +11,32 @@
   };
 
   const register = async () => {
-  if (password !== confirmPassword) {
-    console.error('Passwords do not match');
-    alert('Passwords do not match');
-    return;
-  }
-  try {
-    console.log('Registering user...',{username, email, password});
-    const response = await postData('http://127.0.0.1:3010/auth/register', {username, email, password}); 
-    // regex to check if response is a 2xx code
-    if (/^2\d{2}$/.test(response)) {
-      alert('User registered successfully');
-      redirectToLogin();
+    if (password !== confirmPassword) {
+      console.error("Passwords do not match");
+      alert("Passwords do not match");
+      return;
     }
-    else {
-      console.error('User registration failed:', response);
-      alert('User registration failed', response);
+    try {
+      console.log("Registering user...", { username, email, password });
+      const response = await postData("http://localhost:3010/auth/register", {
+        username,
+        email,
+        password,
+      });
+      // regex to check if response is a 2xx code
+      if (/^2\d{2}$/.test(response)) {
+        alert("User registered successfully");
+        redirectToLogin();
+      } else {
+        console.error("User registration failed:", response);
+        alert("User registration failed", response);
+      }
+    } catch (error) {
+      console.error("Internal Server Error:", error);
+      // Handle unexpected errors (e.g., network issues, server crashes)
+      alert("Internal Server Error. Please try again later."); // Show user-friendly message
     }
-  } catch (error) {
-    console.error('Internal Server Error:', error);
-    // Handle unexpected errors (e.g., network issues, server crashes)
-    alert('Internal Server Error. Please try again later.'); // Show user-friendly message
-  }
-};
+  };
   export function handleInputKeydown(e, index) {
     const focusableInputs = document.querySelectorAll('input');
     const currentIndex = index;

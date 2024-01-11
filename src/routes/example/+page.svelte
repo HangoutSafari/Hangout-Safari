@@ -1,4 +1,5 @@
 <script>
+  import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   // data is the data from the page.server.js
   // export let data;
@@ -9,6 +10,7 @@
       credentials: "include",
     });
     const response = await request.json();
+    if (response.status == 500) goto("/login");
     return { message: `data from the server ${response}` };
   }
 </script>

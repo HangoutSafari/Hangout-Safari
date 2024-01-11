@@ -43,7 +43,7 @@ export class SafariGenerator{
     
     public update(){
         this.animalGenerator.animals.children.forEach(element=> {
-            //(element as Animal).update();
+            (element as Animal).update();
         });
     }
 }  

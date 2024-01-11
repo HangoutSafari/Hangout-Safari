@@ -110,14 +110,14 @@ export class Animal extends THREE.Mesh
     public update(){
         const minSize = Math.floor(this.initialScale/2);
         let K = 3.8;
-        let a = 3.6;
+        let a = this.initialScale / 8.7;
         let x = this.animationScale += 0.08;
-        let b = 2.3;
+        let b = 1.3;
 
 
-        const verticalOffset = Math.abs(a * Math.cos(x/b) + K)
+        const offset = Math.abs(a * Math.cos(x/b) + K)
         
         // Apply vertical offset to scale
-        this.scale.setScalar(this.initialScale - verticalOffset);
+        this.scale.setScalar((this.initialScale + offset)/2);
     }
 }

@@ -25,6 +25,10 @@ export class Animal extends THREE.Mesh
     private animalEventDispatcher: AnimalEventDispatcher
 
     private initialScale: number;
+    
+    private initialRotations: THREE.Vector3;
+
+    private initialPosition: THREE.Vector3;
   
     public constructor(imagePath: string, path: string, position: THREE.Vector3, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event",rotation: number = 0, scale: number = 1)
     {
@@ -37,6 +41,8 @@ export class Animal extends THREE.Mesh
         this.isHoveredOn = false;
         this.animationScale = scale;
         this.animalEventDispatcher = new AnimalEventDispatcher();
+        this.initialPosition = new THREE.Vector3();
+        this.initialRotations = new THREE.Vector3();
         loadModel(path)
         .then(loadedModel => {
             const geometry = (loadedModel.scene.children[0] as THREE.Mesh).clone().geometry;
@@ -44,7 +50,7 @@ export class Animal extends THREE.Mesh
             this.castShadow = true;
             this.geometry = geometry;
             this.material = material;
-
+            
             const translation = new THREE.Matrix4();
             translation.makeTranslation(position);
             this.applyMatrix4(translation);
@@ -52,6 +58,13 @@ export class Animal extends THREE.Mesh
             this.rotateX(degToRad(90));
             this.rotateZ(degToRad(rotation));
         })
+
+        this.initialRotations.x = this.rotation.x;
+        this.initialRotations.y = this.rotation.y;
+        this.initialRotations.z = this.rotation.z;
+
+        this.initialPosition = this.position;
+
         this.processClickEvent=  this.processClickEvent.bind(this);
         window.addEventListener('click', this.processClickEvent);
     } 
@@ -102,9 +115,9 @@ export class Animal extends THREE.Mesh
         this.rotation.x += rotationSpeed;
         this.rotation.y += rotationSpeed;
 
-        // Change the color during the jump (assuming the object has a material with a color property)
         const colorVariation = Math.abs(Math.sin(this.animationScale * 0.5)); // Adjust the factor for different color variations
         this.material.color.setRGB(colorVariation, 1 - colorVariation, 1); // Adjust the color properties as needed
+    
     }
 
     public update(){

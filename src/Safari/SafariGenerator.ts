@@ -8,7 +8,8 @@ import { AnimalsModels } from './Types/AnimalModelsPathTypes';
 import { randInt } from 'three/src/math/MathUtils';
 import type { Camera } from './Camera/Camera';
 import type { Chunk } from './Chunk/Chunk';
-import type { element } from 'svelte/internal';
+
+
 
 export class SafariGenerator{
     private animalGenerator: AnimalsGenerator;
@@ -41,9 +42,9 @@ export class SafariGenerator{
         this.animalGenerator.checkForMouseHover(mousePos, camera)
     }
     
-    public update(){
+    public update(isLSDUpdateON: boolean = false){
         this.animalGenerator.animals.children.forEach(element=> {
-            (element as Animal).update();
+            isLSDUpdateON ? (element as Animal).lsd_update() : (element as Animal).update() ;
         });
     }
 }  

@@ -10,9 +10,16 @@
   const animalEventDispatcher = new AnimalEventDispatcher();
 
   onMount(() => {
+
     console.log(renderingContext);
     const safari = new Safari(renderingContext, "models/savana2.glb", animalEventDispatcher);
     safari.start();
+
+    const lsdCheckbox = document.getElementById("lsdMode");
+
+    lsdCheckbox.addEventListener("change", function (event) {
+      safari.isLSDUpdateON = event.target.checked;
+    });
     
     document.addEventListener("keypress", function (event) {
       if (event.keyCode == 13) {
@@ -33,5 +40,5 @@
 </div>
 
 <div>
-  <input id="lsdMode" type="checkbox">
+  <input id="lsdMode" type="checkbox" class="opacity-10">
 </div>

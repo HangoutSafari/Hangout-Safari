@@ -57,13 +57,7 @@ export class AnimalsGenerator
             INTERSECTED = null;
         }
     }
-
-    public loadAnimals(paths: Array<string>, name: string = "undefined animal", rarity:RARITY = RARITY.common, event: string = "unknown event") {
-        paths.forEach(path=>{
-            this.addAnimal(new Animal(path, this.generatePosition(), name, rarity, event));
-        })
-    }
-
+    
     private generatePosition(): THREE.Vector3
     {
         return new THREE.Vector3(0,0,0);

@@ -19,9 +19,6 @@
 
     lsdCheckbox.addEventListener("change", function (event) {
       safari.isLSDUpdateON = event.target.checked;
-      if(event.target.checked){
-        safari.resetAnimal();
-      }
     });
     
     document.addEventListener("keypress", function (event) {
@@ -43,5 +40,5 @@
 </div>
 
 <div>
-  <input id="lsdMode" type="checkbox">
+  <input id="lsdMode" type="checkbox" class="opacity-10">
 </div>

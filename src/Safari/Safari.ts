@@ -43,16 +43,16 @@ export class Safari {
       this.scene.lightSources[1].color
       ));
       
-      this.animals.addAnimal(new Animal('/models/Animals/crocodile.glb', new THREE.Vector3(50,43,140), "Crocodile",RARITY.rare,"Party", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/deer.glb', new THREE.Vector3(50,43,120), "Deer",RARITY.rare,"Music", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/elephant.glb', new THREE.Vector3(50,43,30), "Elephant",RARITY.rare,"Karaoke", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/frog.glb', new THREE.Vector3(50,43,10), "Frog",RARITY.rare,"Quiz", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/hippo.glb', new THREE.Vector3(50,43,-20), "Hippo",RARITY.rare,"Stand-up", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/lion.glb', new THREE.Vector3(50,43,-60), "Lion",RARITY.rare,"Koncert", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/monkey.glb', new THREE.Vector3(-90,43,-60), "Monkey",RARITY.rare,"Blind date", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/ostrich.glb', new THREE.Vector3(-90,43,-30), "Ostrich",RARITY.rare,"IT conference", 0, 3.0));
-      this.animals.addAnimal(new Animal('/models/Animals/rabbit.glb', new THREE.Vector3(-90,43,0), "Rabbit",RARITY.rare,"IT conference", 0, 3.0));  
-      this.animals.addAnimal(new Animal('/models/Animals/giraffe.glb', new THREE.Vector3(50,50,160),"Girrafe", RARITY.rare, "Art fair",0, 4.2));  
+      this.animals.addAnimal(new Animal('images/modelImages/crocodile.png', '/models/Animals/crocodile.glb', new THREE.Vector3(50,43,140), "Crocodile",RARITY.rare,"Party", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/deer.png', '/models/Animals/deer.glb', new THREE.Vector3(50,43,120), "Deer",RARITY.rare,"Music", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/elephant.png', '/models/Animals/elephant.glb', new THREE.Vector3(50,43,30), "Elephant",RARITY.rare,"Karaoke", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/frog.png', '/models/Animals/frog.glb', new THREE.Vector3(50,43,10), "Frog",RARITY.rare,"Quiz", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/hippo.png', '/models/Animals/hippo.glb', new THREE.Vector3(50,43,-20), "Hippo",RARITY.rare,"Stand-up", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/lion.png', '/models/Animals/lion.glb', new THREE.Vector3(50,43,-60), "Lion",RARITY.rare,"Koncert", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/monkey.png', '/models/Animals/monkey.glb', new THREE.Vector3(-90,43,-60), "Monkey",RARITY.rare,"Blind date", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/ostrich.png', '/models/Animals/ostrich.glb', new THREE.Vector3(-90,43,-30), "Ostrich",RARITY.rare,"IT conference", 0, 3.0));
+      this.animals.addAnimal(new Animal('images/modelImages/rabbit.png', '/models/Animals/rabbit.glb', new THREE.Vector3(-90,43,0), "Rabbit",RARITY.rare,"IT conference", 0, 3.0));  
+      this.animals.addAnimal(new Animal('images/modelImages/giraffe.png', '/models/Animals/giraffe.glb', new THREE.Vector3(50,50,160),"Girrafe", RARITY.rare, "Art fair",0, 4.2));  
       this.animals.appednInScene(this.scene);
       
       this.scene.setup();

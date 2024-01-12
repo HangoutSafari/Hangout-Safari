@@ -32,7 +32,7 @@
     <RenderingContext on:showAnimal={onAnimalSelected}/>
     
     {#if animalSelected}
-      <div class="absolute text-center">
+      <div class="absolute text-center w-[80%] sm:w-full">
         <Popup rarity={rarity} achievedFrom={achievedFrom} name={name} image={image}></Popup>
       </div>
     {/if}

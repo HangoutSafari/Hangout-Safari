@@ -14,8 +14,7 @@
 
 <div class="inline-block">
     <div
-      class="flex flex-col bg-gray-200 items-center content-center h-[14rem] lg:h-auto lg:w-[15rem] rounded-xl p-3 gap-1 font-Jaldi drop-shadow-lg"
-    >
+      class="flex flex-col bg-gray-200 items-center content-center h-[14rem] lg:h-auto lg:w-[15rem] rounded-xl p-3 gap-1 font-Jaldi drop-shadow-lg">
       <div class="flex items-center content-center gap-3">
         
         <button on:click={closePopup} class="close-button text-red-600">
@@ -33,7 +32,7 @@
         <i class="fa-solid fa-pen text-gray-400"></i>
 
       </div>
-      <img class="h-[5rem] lg:h-auto" src={image} alt="" />
+      <img class="h-[5rem] lg:h-auto" src={image} alt=""/>
       <div class="flex flex-col gap-0 items-center">
         <p class=" mb-0 pb-0 font-bold text-[1rem] lg:text-base">Achieved from:</p>
         <p class=" pt-0 mt-0 text-[0.8em] lg:text-base">{achievedFrom}</p>

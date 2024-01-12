@@ -5,7 +5,7 @@ import * as THREE from "three";
 export class AmbientLight extends THREE.AmbientLight {
   constructor(lColor: number, lStrenght: number, isCastingShadows: boolean, lPosition: THREE.Vector3) {
     super(lColor, lStrenght);
-    this.castShadow = isCastingShadows;
+    this.castShadow = false;
     this.moveToPositionV(lPosition);
   }
 
@@ -32,6 +32,7 @@ export class AmbientLight extends THREE.AmbientLight {
         this.position.x + x,
         this.position.y + y,
         this.position.z + z
+        
       );
     }
 }

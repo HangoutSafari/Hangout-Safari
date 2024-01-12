@@ -43,12 +43,17 @@ export class ShapeGenerator {
     position: THREE.Vector3,
     gColor: THREE.Color 
   ): THREE.Mesh {
+    const texture = new THREE.TextureLoader().load("/textures/light.jpeg");
+    texture.offset.x = -0.1;
+    texture.offset.y = 0.2;
     const geometry = new THREE.SphereGeometry(4);
-    const mat = new THREE.MeshBasicMaterial({color: gColor});
+    const mat = new THREE.MeshBasicMaterial({map: texture });
     const sphere = new THREE.Mesh(geometry, mat);
     sphere.translateX(position.x);
     sphere.translateY(position.y);
     sphere.translateZ(position.z);
+
+    sphere.scale.addScalar(1);
     return sphere;
   }
 }

@@ -44,7 +44,6 @@ export class Scene extends THREE.Scene {
         console.log("aded light source");
       }
       this.add(lightSource);
-      this.add(new THREE.AxesHelper(9000));
     });
 }
 

@@ -67,7 +67,11 @@ export class Animal extends THREE.Mesh
 
         this.processClickEvent=  this.processClickEvent.bind(this);
         window.addEventListener('click', this.processClickEvent);
-    } 
+    }
+
+    public setCustomName(name: string) {
+        this.name = name;
+    }
 
     /**
      * Trigers when cursor is hovered over the animal

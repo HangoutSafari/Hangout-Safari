@@ -10,7 +10,7 @@
       class="flex flex-col bg-gray-200 items-center content-center h-[14rem] lg:h-auto lg:w-[15rem] rounded-xl p-3 gap-1 font-Jaldi drop-shadow-lg"
     >
       <div class="flex items-center content-center gap-3">
-        <p class="font-bold drop-shadow-md text-white text-[2rem] lg:text-2xl">{name}</p>
+        <p class="font-bold drop-shadow-md text-white text-[1rem] lg:text-2xl">{name}</p>
         <img class=" w-[1rem] lg:w-[12px] lg:h-[12px]" src="/images/edit.png" alt="" />
       </div>
       <img class="h-[5rem] lg:h-auto" src={image} alt="" />

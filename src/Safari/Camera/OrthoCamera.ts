@@ -1,26 +1,15 @@
 import * as THREE from "three";
+import { SafariVector } from "../Math/SafariVector";
+import { degToRad } from "three/src/math/MathUtils";
 
 export class OrthoCamera extends THREE.OrthographicCamera {
 
-  constructor(
-    renderingContext: HTMLCanvasElement,
-
-  ) {
-    super(
-    //   FOV,
-      renderingContext.clientWidth / - 2,
-      renderingContext.clientWidth / 2,
-
-      renderingContext.clientHeight / 2,
-      renderingContext.clientHeight / - 2,
-
-      -2000,
-      2000
-
-    );
-    this.move(2, 2, 2);
+  constructor( renderingContext: HTMLCanvasElement ) {  
+    const aspect =  renderingContext.offsetWidth / renderingContext.offsetHeight;
+    const frustumSize = 1000;
+    super( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 0.1, 9000 );
+    this.position.set(400,0,-400);
   }
-
   /**
    * Moves camera into the desired coordinates
    * @param x position on x
@@ -41,13 +30,14 @@ export class OrthoCamera extends THREE.OrthographicCamera {
    */
   public handleResizing(renderingContext: HTMLCanvasElement)
   {
-    this.left = renderingContext.clientWidth / - 2;
-    this.right = renderingContext.clientWidth / 2;
-    this.top = renderingContext.clientHeight / 2;
-    this.bottom = renderingContext.clientHeight / - 2;
-
-    this.near = - 2000;
-    this.far = 2000;
+    const aspect =  renderingContext.clientWidth / renderingContext.clientHeight;
+    const frustumSize = 3190;
+    this.left =  frustumSize * aspect / - 2;
+    this.right=  frustumSize * aspect / 2;
+    this.top =  frustumSize / 2;
+    this.bottom = frustumSize / - 2; 
+    this.near = 0.1;
+    this.far =  9000;
     this.updateProjectionMatrix();
   }
 }

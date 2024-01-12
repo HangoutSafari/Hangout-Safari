@@ -11,8 +11,7 @@ export class Scene extends THREE.Scene {
   public lightSources: Array<THREE.Light> = [];
   public renderer: Renderer;
   
-  // public camera: Camera;
-  public camera: OrthoCamera;
+  public camera: Camera;
 
   public controls: Controls;
   public renderingContext: HTMLCanvasElement;
@@ -22,12 +21,12 @@ export class Scene extends THREE.Scene {
     super();
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(0, 60, 30)));
     this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(-900, 900, 0)));
+
+    this.camera = new Camera(renderingContext, 75, 0.1, 6000.0);
     
-    this.camera = new OrthoCamera(renderingContext);
-
-    this.renderer = new Renderer(renderingContext);
-
     this.controls = new Controls(this.camera, renderingContext);
+    
+    this.renderer = new Renderer(renderingContext);
 
     this.background = new THREE.Color(THREE.Color.NAMES.gray);
 
@@ -46,13 +45,11 @@ export class Scene extends THREE.Scene {
       }
       this.add(lightSource);
     });
-      
-  
-
-  }
+}
 
   public update(): void
   {
+    this.camera.updateProjectionMatrix();
     this.controls.update(0.01);
   }
 
@@ -64,6 +61,6 @@ export class Scene extends THREE.Scene {
 
   public render()
   {
-  
+    this.renderer.render(this, this.camera);
   }
 }

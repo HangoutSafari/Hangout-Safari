@@ -5,7 +5,7 @@
   export let header;
 </script>
 
-<main class="sm:h-full w-full">
+<main class="sm:h-full w-full mt-6 lg:mt-0">
   <!-- Sidebar -->
   <aside
     class="font-sans w-full sm:h-full mr-4 bg-[#D9D9D9] text-gray-200 flex flex-col drop-shadow-lg"
@@ -29,7 +29,7 @@
         
       </label>
     </div>
-    <div class="flex flex-col h-[full] gap-3 overflow-y-auto overflow-x-clip items-center ">
+    <div class="flex flex-row h-[full] lg:flex-col mt-7 lg:mt-0 sm:w-full gap-3 overflow-y-none overflow-x-auto md:overflow-y-none md:overflow-x-auto lg:overflow-x-cip lg:overflow-y-auto items-center ">
   
       <SideBarItem/>
       <SideBarItem/>

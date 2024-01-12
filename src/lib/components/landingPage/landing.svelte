@@ -20,7 +20,7 @@
         <p class="text-xl lg:text-2xl text-center md:text-left">Attend events, earn adorable safari animals, and make lasting connections. Your cure to social anxiety!</p>
         <hr class="border border-t-4 mt-6 md:my-7 border-gray-400 w-[50%] rounded mx-auto md:mx-0" />
         <div class="flex justify-center mt-8">
-            <button class="bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:scale-110 text-white text-xl lg:text-2xl font-bold py-5 px-7 lg:py-6 lg:px-9 rounded-md hidden md:block">
+            <button class="bg-gradient-to-r from-[#F34439] to-[#FF8D07] hover:scale-110 hover:duration-100 text-white text-xl lg:text-2xl font-bold py-5 px-7 lg:py-6 lg:px-9 rounded-md hidden md:block">
                 <a href="/register">Start Your Journey Now!</a>
             </button>
         </div>

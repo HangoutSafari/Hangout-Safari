@@ -6,8 +6,8 @@ import type { AnimalModel } from '../Types/AnimalModelsPathTypes.ts';
 
 export enum RARITY{
     rare = "rare",
-    common = "comon",
-    uncommon = "unomon",
+    common = "common",
+    uncommon = "uncommon",
     epic = "epic"
 }
 

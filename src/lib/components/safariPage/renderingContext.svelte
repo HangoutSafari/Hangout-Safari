@@ -23,7 +23,7 @@
     });
     
     availableAnimals.forEach((animal)=>{
-      safari.safariGenerator.add(animal.model_id);
+      safari.safariGenerator.add(animal.model_id, animal.title);
     })
     });
 

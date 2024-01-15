@@ -4,6 +4,7 @@
     export let locationObtained: string;
     export let dateObtained: string;
     export let name: string;
+
 </script>
 
 <div

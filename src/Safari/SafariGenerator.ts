@@ -19,15 +19,15 @@ export class SafariGenerator{
         this.floorGenerator = new FloorGenerator(); 
     }
     
-    public add(animalIndex: number){
+    public add(animalIndex: number, acheivedFrom: string){
         const index = animalIndex;
         if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, "ranodm", AnimalsModels[index].rotation, AnimalsModels[index].scale));    
+            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation, AnimalsModels[index].scale));    
             this.isFirstAnimal = false;
         }
         else{
             const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
-            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, "random", AnimalsModels[index].rotation,  AnimalsModels[index].scale)
+            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation,  AnimalsModels[index].scale)
             this.animalGenerator.addAnimal(newAnimal);    
         }
     }

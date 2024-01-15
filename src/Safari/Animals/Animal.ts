@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { loadModel } from '../ModelLoader/ModelLoader';
 import { degToRad, randInt } from 'three/src/math/MathUtils';
 import { AnimalEventDispatcher } from './AnimalEventDispatcher';
-import type { AnimalModel } from '../Types/AnimalModelsPathTypes';
+import type { AnimalModel } from '../Types/AnimalModelsPathTypes.ts';
 
 export enum RARITY{
     rare = "rare",

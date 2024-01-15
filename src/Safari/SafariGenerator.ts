@@ -4,7 +4,7 @@ import { AnimalsGenerator } from './Animals/AnimalsGenerator'
 import type { AnimalEventDispatcher } from './Animals/AnimalEventDispatcher';
 import type { Scene } from './Scene/Scene';
 import { Animal, RARITY } from './Animals/Animal';
-import { AnimalModel, AnimalsModels } from './Types/AnimalModelsPathTypes';
+import { AnimalModel, AnimalsModels } from './Types/AnimalModelsPathTypes.ts';
 import { randInt } from 'three/src/math/MathUtils';
 import type { Camera } from './Camera/Camera';
 import type { Chunk } from './Chunk/Chunk';

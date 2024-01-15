@@ -1,11 +1,14 @@
 export const load = async (serverLoadEvent) => {
   try {
     const { fetch } = serverLoadEvent;
-    const res = await fetch(`http://localhost:3010/animals/auth`, {
+
+    const res = await fetch(`http://localhost:3010/animals/auth/full`, {
         credentials: "include"  
     });
-    const items = await res.json();
-    return { items };
+
+    const animals = await res.json();
+    return { animals };
+
   } catch (error) {
     return {
       error,

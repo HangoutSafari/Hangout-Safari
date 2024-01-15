@@ -1,8 +1,11 @@
-<script>
+<script lang="ts">
+  import { AnimalsModels } from "../../../Safari/Types/AnimalModelsPathTypes";
   import Header from "../events/header.svelte";
   import SideBarItem from "./SideBarItem.svelte"
 
-  export let header;
+
+  export let header: string;
+  export let animals = [];
 </script>
 
 <main class="sm:h-full w-full mt-6 lg:mt-0">
@@ -30,43 +33,11 @@
       </label>
     </div>
     <div class="flex flex-row h-[full] lg:flex-col mt-7 lg:mt-0 sm:w-full gap-3 overflow-y-none overflow-x-auto md:overflow-y-none md:overflow-x-auto lg:overflow-x-cip lg:overflow-y-auto items-center ">
-  
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
-      <SideBarItem/>
+      {#each animals as animal }
+      <SideBarItem 
+        name={AnimalsModels[animal.id].name}
+         animalImage={AnimalsModels[animal.id].imagePath}/>
+      {/each}
     </div>
   </aside>
 </main>

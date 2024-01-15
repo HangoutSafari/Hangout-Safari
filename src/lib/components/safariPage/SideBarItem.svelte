@@ -33,7 +33,7 @@
             <div class="flex justify-items-end">
                 <div class="flex">
                     <i class=" mr-2 fa-solid fa-location-dot" />
-                    <p>{dateObtained}</p>
+                    <p>{locationObtained}</p>
                 </div>
             </div>
         </div>

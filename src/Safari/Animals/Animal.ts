@@ -7,7 +7,8 @@ import type { AnimalModel } from '../Types/AnimalModelsPathTypes.ts';
 export enum RARITY{
     rare = "rare",
     common = "comon",
-    uncomon = "unomon"
+    uncommon = "unomon",
+    epic = "epic"
 }
 
 export class Animal extends THREE.Mesh
@@ -120,7 +121,7 @@ export class Animal extends THREE.Mesh
         this.rotation.y += rotationSpeed;
 
         const colorVariation = Math.abs(Math.sin(this.animationScale * 0.5)); // Adjust the factor for different color variations
-        this.material.color.setRGB(colorVariation, 1 - colorVariation, 1); // Adjust the color properties as needed
+        (this.material as THREE.MeshBasicMaterial).color.setRGB(colorVariation, 1 - colorVariation, 1); // Adjust the color properties as needed
     
     }
 

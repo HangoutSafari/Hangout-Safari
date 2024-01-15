@@ -7,10 +7,6 @@
 
   
   export let data;
-  onMount(()=>{
-    console.log("animals");
-    console.log(data);
-  });
 
   let rarity;
   let achievedFrom;

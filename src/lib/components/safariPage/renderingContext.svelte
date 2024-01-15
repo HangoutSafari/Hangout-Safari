@@ -23,7 +23,7 @@
     });
     
     availableAnimals.forEach((animal)=>{
-      safari.safariGenerator.add(animal.id);
+      safari.safariGenerator.add(animal.model_id);
     })
     });
 
@@ -40,7 +40,3 @@
 <div>
   <input id="lsdMode" type="checkbox" class="opacity-10">
 </div>
-
-<div class="hidden">
-
-</div>;

@@ -35,8 +35,10 @@
     <div class="flex flex-row h-[full] lg:flex-col mt-7 lg:mt-0 sm:w-full gap-3 overflow-y-none overflow-x-auto md:overflow-y-none md:overflow-x-auto lg:overflow-x-cip lg:overflow-y-auto items-center ">
       {#each animals as animal }
       <SideBarItem 
-        name={AnimalsModels[animal.id].name}
-         animalImage={AnimalsModels[animal.id].imagePath}/>
+          name={AnimalsModels[animal.model_id].name}
+          animalImage={AnimalsModels[animal.model_id].imagePath}
+          locationObtained={animal.title}
+          dateObtained = {animal.attended_at} />
       {/each}
     </div>
   </aside>

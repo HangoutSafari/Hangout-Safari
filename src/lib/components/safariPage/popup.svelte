@@ -49,14 +49,13 @@
         
         <div>
           <input
-          class="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+          class="text-center bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"
           placeholder={name}
           required
+          disabled
           on:click|stopPropagation
           />
         </div>
-        <i class="fa-solid fa-pen text-gray-400"></i>
-
       </div>
       <img class="h-[5rem] lg:h-auto" src={image} alt=""/>
       <div class="flex flex-col gap-0 items-center">

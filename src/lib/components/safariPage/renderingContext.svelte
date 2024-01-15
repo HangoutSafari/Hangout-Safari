@@ -3,6 +3,7 @@
   import { createEventDispatcher } from "svelte";
   import { onMount } from "svelte";
   import { AnimalEventDispatcher } from "../../../Safari/Animals/AnimalEventDispatcher";
+  import Popup from "$lib/components/safariPage/popup.svelte";
 
   let renderingContext;
 
@@ -26,7 +27,6 @@
         safari.safariGenerator.add();
       }
     });
-
   });
 
   animalEventDispatcher.addEventListener('showAnimal', function (event) {
@@ -42,3 +42,7 @@
 <div>
   <input id="lsdMode" type="checkbox" class="opacity-10">
 </div>
+
+<div class="hidden">
+
+</div>;

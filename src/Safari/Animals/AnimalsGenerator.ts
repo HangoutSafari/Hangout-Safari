@@ -1,5 +1,5 @@
 import  * as THREE from 'three'
-import { Animal } from './Animal';
+import type { Animal } from './Animal';
 import type { OrthoCamera } from '../Camera/OrthoCamera';
 import type { AnimalEventDispatcher } from './AnimalEventDispatcher';
 import { RARITY } from './Animal';

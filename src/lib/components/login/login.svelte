@@ -53,11 +53,12 @@
           on:click={() => (underlined[0] = false)}
           on:blur={() => (underlined[0] = true)}
           on:keydown={(e) => handleInputKeydown(e, 0)}
-          type="text"
+          type="email"
           class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
           placeholder="E-mail"
           bind:value={email}
           required
+          autofill="email"
         />
         {#if underlined[0]}
           <hr class="border-2 rounded border-orange-400" />

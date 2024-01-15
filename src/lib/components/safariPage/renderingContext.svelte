@@ -5,8 +5,8 @@
   import { AnimalEventDispatcher } from "../../../Safari/Animals/AnimalEventDispatcher";
   import Popup from "$lib/components/safariPage/popup.svelte";
 
+  export let availableAnimals = []; 
   let renderingContext;
-
   const eventDispatcher = createEventDispatcher();
   const animalEventDispatcher = new AnimalEventDispatcher();
 
@@ -22,12 +22,10 @@
       safari.isLSDUpdateON = event.target.checked;
     });
     
-    document.addEventListener("keypress", function (event) {
-      if (event.keyCode == 13) {
-        safari.safariGenerator.add();
-      }
+    availableAnimals.forEach((animal)=>{
+      safari.safariGenerator.add(animal.model_id, animal.title);
+    })
     });
-  });
 
   animalEventDispatcher.addEventListener('showAnimal', function (event) {
     console.log("animal clicked on svelte component");
@@ -42,7 +40,3 @@
 <div>
   <input id="lsdMode" type="checkbox" class="opacity-10">
 </div>
-
-<div class="hidden">
-
-</div>;

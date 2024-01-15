@@ -36,7 +36,7 @@
     <SideNavbar header="Animals" animals={data.animals} />
   </div>
   <div class="h-full flex flex-col justify-center items-center w-full p-4 lg:p-10">
-    <RenderingContext on:showAnimal={onAnimalSelected}/>
+    <RenderingContext on:showAnimal={onAnimalSelected} availableAnimals={data.animals}/>
     
     {#if animalSelected}
       <div class="absolute text-center w-[80%] sm:w-full">

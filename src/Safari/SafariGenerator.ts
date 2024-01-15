@@ -19,8 +19,8 @@ export class SafariGenerator{
         this.floorGenerator = new FloorGenerator(); 
     }
     
-    public add(){
-        const index = Math.floor(Math.random()*8);
+    public add(animalIndex: number){
+        const index = animalIndex;
         if(this.isFirstAnimal) {
             this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, "ranodm", AnimalsModels[index].rotation, AnimalsModels[index].scale));    
             this.isFirstAnimal = false;

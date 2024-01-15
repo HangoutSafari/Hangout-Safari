@@ -1,4 +1,5 @@
 <script>
+    export let eventCategory;
     export let eventImage;
     export let eventTitle;
     export let eventDate;
@@ -27,7 +28,7 @@
 
 </script>
 
-<a href="/events/1">
+<a href="/events/1" data-category_id={eventCategory}>
     <div class=" flex flex-col lg:shrink-0 items-center gap-2 drop-shadow-lg bg-slate-100 rounded-lg transition ease-in-out delay-150 hover:scale-110">
     
         <!-- Image inside card-->

@@ -33,5 +33,4 @@ export const AnimalsModels: IndexAnimal = {
     7: { model: AnimalModel.RABBIT, scale: 1.2, rotation: Math.random() * 360, imagePath: "images/modelImages/rabbit.png"  },
     8: { model: AnimalModel.GIRRAFE, scale: 4, rotation: Math.random() * 360, imagePath: "images/modelImages/giraffe.png"  },
     9: { model: AnimalModel.FROG, scale: 1, rotation: Math.random() * 360, imagePath: "images/modelImages/frog.png"  },
-
 }

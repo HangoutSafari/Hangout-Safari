@@ -4,7 +4,14 @@
   import PopupDebug from "$lib/components/safariPage/popupDebug.svelte";
   import Popup from "$lib/components/safariPage/popup.svelte";
   import { onMount } from "svelte";
+
   
+  export let data;
+  onMount(()=>{
+    console.log("animals");
+    console.log(data);
+  });
+
   let rarity;
   let achievedFrom;
   let name;

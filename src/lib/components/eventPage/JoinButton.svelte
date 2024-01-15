@@ -8,6 +8,6 @@
     }
 </style>
 
-<button class="join-btn bg-gradient-to-r from-[#f34439] to-[#ff8d07] rounded-full text-white px-14 py-3 font-bold text-xl uppercase cursor-pointer shadow-[0_4px_6px_rgba(117,106,106,0.8)] transition-all duration-300 ease-in-out" on:click={() => console.log("Join button clicked")}>
+<button class="join-btn bg-gradient-to-r from-[#f34439] to-[#ff8d07] rounded-full text-white px-14 py-3 font-bold text-xl uppercase cursor-pointer shadow-[0_4px_6px_rgba(117,106,106,0.8)] transition-all duration-300 ease-in-out">
     JOIN
 </button>

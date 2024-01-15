@@ -22,14 +22,13 @@
        "But don't worry, you can find plenty of other things on our homepage."}
     </p>
   
-    <a href="/" 
+    <a href="/safari" 
        class="{status === 500 ? 'bg-blue-500 hover:bg-blue-600 active:bg-blue-700' :
                status === 403 ? 'bg-red-500 hover:bg-red-600 active:bg-red-700' :
                'bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 active:from-pink-700 active:to-orange-700'} rounded-full text-white px-7 py-3 font-bold text-lg md:text-xl uppercase shadow-lg transition duration-300 ease-in-out pulse">
       Back Home
     </a>
   </div>
-  
   
   <style>
     @keyframes pulse {

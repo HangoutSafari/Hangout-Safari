@@ -27,21 +27,29 @@
 </script>
 
 <div class="w-[80%] mx-auto my-2 py-8">
-  <h1 class="text-2xl font-bold mb-10">Create an event</h1>
+  <h1 class="text-2xl font-bold mb-8">Create an event</h1>
 
-  <div
-    class="w-[90%] md:grid md:grid-cols-3 md:grid-rows-5 md:grid-flow-row md:gap flex flex-col gap-4 -8 mx-auto"
-  >
+  <div class="w-[90%] md:grid md:grid-cols-3 md:grid-rows-5 md:gap-x-8 md:gap-y-8 flex flex-col gap-4 mx-auto">
     <FormTitle class="2xl:w-[350px]" />
     <FormTime id="time-start" class="2xl:w-[350px]" />
     <FormTime id="time-end" class="2xl:w-[350px]" />
 
-    <FormDescription class="row-span-2 2xl:w-[350px]" />
+    <FormDescription class="row-span-1 2xl:w-[350px]" />
 
     <FormAddress class="2xl:w-[350px] relative" />
     <FormDate class="2xl:w-[350px]" />
 
     <Map class="min-h-[200px] 2xl:min-h-[0] min-w-full row-span-3 col-span-2" />
-    <FormImage class="2xl:w-[350px] row-span-2 " />
+    <FormImage class="2xl:w-[350px] row-span-2 row-start-3" />
+    <div class="flex justify-start ml-8 items-center md:col-span-1 md:row-start-5">
+      <a href="/events" class="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-9 rounded-xl transition duration-300 ease-in-out hover:scale-110">
+        Cancel
+      </a>  
+      <button
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-9 rounded-xl ml-10 transition duration-300 ease-in-out hover:scale-110">
+        Create 
+      </button>  
+    </div>
+       
   </div>
 </div>

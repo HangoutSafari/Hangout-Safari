@@ -10,12 +10,24 @@
     import MapLabel from "$lib/components/eventPage/MapLabel.svelte";
     import TimeLabel from "$lib/components/eventPage/TimeLabel.svelte";
     import Map from "$lib/components/eventPage/Map.svelte";
+    import DeleteButton from "$lib/components/eventPage/DeleteButton.svelte";
+    import LastEdited from "$lib/components/eventPage/LastEdited.svelte";
+    import DateCreated from "$lib/components/eventPage/DateCreated.svelte";
+    import EditButton from "$lib/components/eventPage/EditButton.svelte";
 
     export let data;
     console.log(data);
 </script>
 
 <main class="min-h-screen flex flex-col lg:mt-0 mt-4">
+    <div class="flex items-center justify-between ">
+        <DateCreated />
+        <LastEdited />
+        <div>
+            <EditButton />
+            <DeleteButton />
+        </div>
+    </div>
     <div class="flex flex-grow bg-[url('/images/FoodAndDrinkDesignColour.svg')] bg-center flex-col items-center justify-center w-full relative">
         <div class="flex flex-col items-center gap-5 mt-60 mb-8 lg:mb-0">
             <TitleLabel />

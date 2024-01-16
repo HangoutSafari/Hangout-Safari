@@ -1,6 +1,16 @@
 <script>
+    import { lastClickedCategoryId, shouldShowAllEvents } from "../../../routes/events/store";
     import Category from "./category.svelte";
     import Header from "./header.svelte";
+
+    export let categories;
+    console.log(categories);
+
+    function resetAndShowEvent() {
+      lastClickedCategoryId.set(0);
+      shouldShowAllEvents.set(true); 
+    }
+
   </script>
   
   <main class="font-sans bg-[#F2F2F2]">
@@ -10,6 +20,8 @@
     >
       <!-- Header name -->
       <Header text="Categories" />
+
+      <button on:click={resetAndShowEvent} class="text-gray-500 pl-5 m-2 lg:m-0 sm:pl-10 flex overflow-x-auto gap-4 flex-row sm:items-right sm:space-y-7 sm:gap-0">Show All</button>
   
       <!-- Search bar-->
       <label
@@ -26,13 +38,12 @@
       </label>
   
       <!-- Event categories -->
-      <ul
-        class="pl-5 m-2 lg:m-0 sm:pl-0 flex overflow-x-auto gap-4 flex-row sm:flex-col sm:items-center sm:space-y-7 sm:gap-0"
-      >
-        <Category icon="fas fa-futbol" text="Sports" />
-        <Category icon="fas fa-music" text="Music" />
-        <Category icon="fas fa-palette" text="Arts" />
-        <Category icon="fas fa-puzzle-piece" text="Games" />
+      <ul class="pl-5 m-2 lg:m-0 sm:pl-0 flex overflow-x-auto gap-4 flex-row sm:flex-col sm:items-center sm:space-y-7 sm:gap-0">
+      {#each categories as category}
+        <Category icon={category.category_icon} text={category.category_name} id={category.id} />
+      {/each}
+
+
       </ul>
     </aside>
   

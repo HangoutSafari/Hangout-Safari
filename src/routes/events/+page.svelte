@@ -1,6 +1,8 @@
 <script>
   import SideNavBar from "$lib/components/events/sidebar.svelte";
   import Eventcard from "$lib/components/events/eventcard.svelte";
+  import { lastClickedCategoryId, shouldShowAllEvents } from "./store.js";
+
 
   import { goto } from '$app/navigation';
   
@@ -9,12 +11,15 @@
   }
 
   export let data;
-  console.log(data);
+
+  let events = data.events;
+  let categories = data.categories;
+  console.log(events);
 </script>
 
 <main class="bg-[#e7e4e4] xs:mt-3">
   <div class="z-[51] sticky top-0">
-    <SideNavBar />
+    <SideNavBar categories={categories} />
   </div>
 
   <!-- Main Content on page-->
@@ -30,13 +35,26 @@
 
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
       <!-- Event cards-->
-      {#each { length: 8 } as _, i}
-        <Eventcard
-          eventImage="/images/FoodAndDrinkDesignColour.svg"
-          eventTitle="Food Lovers"
-          eventDate="November 27th"
-          eventLocation="Bibliotheek, Honney PIE Coffe, Middelburg"
-        />
+      {#each events as event}
+      {#if $shouldShowAllEvents}
+      <Eventcard
+        eventCategory={event.category_id}
+        eventImage={event.image_path}
+        eventTitle={event.title}
+        eventDate={event.date}
+        eventLocation={event.address}
+      />
+      {:else}
+      {#if event.category_id == $lastClickedCategoryId}
+      <Eventcard
+      eventCategory={event.category_id}
+      eventImage={event.image_path}
+      eventTitle={event.title}
+      eventDate={event.date}
+      eventLocation={event.address}
+      />
+      {/if}
+      {/if}
       {/each}
     </div>
   </div>

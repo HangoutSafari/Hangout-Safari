@@ -20,37 +20,39 @@
 </script>
 
 <button
-    class="flex flex-row justify-items-center shadow-lg p-2 md:container w-full lg:w-[90%] rounded-2xl bg-white hover:scale-110 duration-150 hover:cursor-grab"
+    class="flex flex-row justify-items-center shadow-lg p-4 md:container w-full lg:w-[90%] rounded-2xl bg-white hover:scale-110 duration-150 hover:cursor-grab"
     on:click={sideBarItemClicked}
     >
-    <div class="flex flex-col w-[120px] lg:w-[160px] h-[80px] lg:h-[100px] shadow-lg">
+    <div class="flex flex-col w-[120px] lg:w-1/3 h-[80px] lg:h-[100px] shadow-lg">
         <div />
         <img
             src="{animalImage}"
             alt="Profile Image"
-            class="w-full bg-orange-400 rounded-lg p-1 h-full align-bottom"
+            class="w-full object-contain bg-orange-400 rounded-lg p-1 h-full align-bottom"
         />
     </div>
-    <div class="hidden lg:flex flex-col ml-10 ">
-        <h2 class="text-2xl text-gray-400">{name}</h2>
-        <div
-            class="flex text-sm gap-2 content-around pt-1 text-black text-opacity-40"
-        >
-            <div class="flex justify-items-start">
-                <div class="flex">
-                    <i class="mr-2 fa-solid fa-calendar" />
-                    <p class="">{dateObtained}</p>
+    <div class="hidden flex-col lg:flex lg:flex-col ml-10 items-center w-2/3">
+        <div class="flex flex-col w-full justify-start">
+            <h2 class="text-2xl w-full text-left text-gray-400">{name}</h2>
+            <div
+                class="flex text-sm gap-2 content-around pt-1 text-black text-opacity-40"
+            >
+                <div class="flex justify-items-start">
+                    <div class="flex">
+                        <i class="mr-2 fa-solid fa-calendar" />
+                        <p class="">{dateObtained}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flex text-sm gap-2 content-around pt-1 text-black text-opacity-40">
-            <div class="flex justify-items-end">
-                <div class="flex">
-                    <i class=" mr-2 fa-solid fa-location-dot" />
-                    <p>{locationObtained}</p>
+            <div class="flex text-sm gap-2 content-around pt-1 text-black text-opacity-40">
+                <div class="flex justify-items-end">
+                    <div class="flex">
+                        <i class=" mr-2 fa-solid fa-location-dot" />
+                        <p>{locationObtained}</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>    
     </div>
 </button>

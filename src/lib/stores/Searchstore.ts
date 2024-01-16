@@ -8,7 +8,6 @@ export const createSearchStore = (data)=>{
     })
 
     return {
-        writable,
         set, 
         update,
         subscribe

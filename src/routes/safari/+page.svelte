@@ -7,7 +7,7 @@
 
   
   export let data;
-
+  console.log(data);
   let rarity;
   let achievedFrom;
   let name;

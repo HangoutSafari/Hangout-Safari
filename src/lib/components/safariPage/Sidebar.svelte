@@ -11,12 +11,12 @@
 
   const searchData = animals.map((animal)=>({
     ...animal,
-    searchProperties: `${AnimalsModels[animal.model_id].name} ${animal.animal_name}`
+    searchProperties: `${AnimalsModels[animal.model_id].name} ${animal.animal_name} `
   }));
 
+  console.log(searchData);
   const searachStore = createSearchStore(searchData);
 
-  console.log(searachStore);
 
   const unsubscribe = searachStore.subscribe((input)=> searchHandler(input));
 

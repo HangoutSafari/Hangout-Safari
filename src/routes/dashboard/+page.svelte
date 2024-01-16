@@ -9,7 +9,7 @@
 
 <!-- <meta name="viewport" content="" /> -->
 
-<div class="grid sm:flex justify-between pt-4">
+<div class="grid sm:flex items-center justify-between pt-4">
   
   <div class="drop-shadow-lg order-2 sm:order-none w-[390px] sm:pl-4">
     <FeedContainer />

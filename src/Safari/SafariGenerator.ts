@@ -1,4 +1,4 @@
-import type * as THREE from 'three';
+import * as THREE from 'three';
 import { FloorGenerator } from './Geometry/FloorGenerator'
 import { AnimalsGenerator } from './Animals/AnimalsGenerator'
 import type { AnimalEventDispatcher } from './Animals/AnimalEventDispatcher';
@@ -8,7 +8,7 @@ import { AnimalModel, AnimalsModels } from './Types/AnimalModelsPathTypes.ts';
 import { randInt } from 'three/src/math/MathUtils';
 import type { Camera } from './Camera/Camera';
 import type { Chunk } from './Chunk/Chunk';
-
+import { generateNumber } from './Chunk/Chunk';
 
 export class SafariGenerator{
     private animalGenerator: AnimalsGenerator;
@@ -21,14 +21,26 @@ export class SafariGenerator{
     
     public add(animalIndex: number, acheivedFrom: string){
         const index = animalIndex;
-        if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation, AnimalsModels[index].scale));    
-            this.isFirstAnimal = false;
+        if(this.floorGenerator.chunks.children.length < 9){
+            if(this.isFirstAnimal) {
+                this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation, AnimalsModels[index].scale));    
+                this.isFirstAnimal = false;
+            }
+            else{
+                const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
+                const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation,  AnimalsModels[index].scale)
+                this.animalGenerator.addAnimal(newAnimal);    
+            }
         }
         else{
-            const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
-            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation,  AnimalsModels[index].scale)
-            this.animalGenerator.addAnimal(newAnimal);    
+            console.log("out of bounds animal generated");
+            const ranodmAnimalPosition = (((this.floorGenerator.chunks.children[generateNumber(9)] as Chunk).randomAnimalPosition ) as THREE.Vector3);
+
+            const newAnimalPosition = new THREE.Vector3(ranodmAnimalPosition.x-generateNumber(100), ranodmAnimalPosition.y, ranodmAnimalPosition.z+generateNumber(150))
+
+            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,newAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation,  AnimalsModels[index].scale)
+            console.log(newAnimal);
+            this.animalGenerator.addAnimal(newAnimal);
         }
     }
 

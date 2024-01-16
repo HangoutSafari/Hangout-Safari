@@ -6,19 +6,19 @@
     
     <div>
         <h1 class="pb-2">Upcoming Events</h1>
-        <div class="sm:h-1.5 sm:bg-gradient-to-r sm:from-yellow-400 sm:to-red-500"></div>
+        <div class="md:h-1.5 md:bg-gradient-to-r md:from-yellow-400 md:to-red-500"></div>
 
     </div>
 
 </div>
 
-<div class="sm:h-[566px] bg-white rounded-b-2xl">
+<div class="md:h-[566px] bg-white rounded-b-2xl">
 
-    <div class="sm:h-[546px] sm:overflow-y-auto ">
+    <div class="md:h-[546px] md:overflow-y-auto ">
     
-        <div class="pt-4 sm:pt-0 flex flex-row sm:block overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-scroll px-4 pb-4 sm:rounded-b-2xl bg-white">
+        <div class="pt-4 md:pt-0 flex flex-row md:block overflow-x-scroll md:overflow-x-hidden md:overflow-y-scroll px-4 pb-4 md:rounded-b-2xl bg-white">
             {#each { length: 3 } as _, i}
-                <div class="sm:pt-6 px-4">
+                <div class="md:pt-6 px-4">
                     <Eventcard
                         eventImage="/zelda.jpeg"
                         eventTitle="ART FAIR"

@@ -1,7 +1,7 @@
 <script>
   import SideNavBar from "$lib/components/events/sidebar.svelte";
   import Eventcard from "$lib/components/events/eventcard.svelte";
-  import { lastClickedCategoryId, shouldShowAllEvents } from "./store.js";
+  import { lastClickedCategoryId, shouldShowAllEvents, textOfSearchField } from "./store.js";
 
 
   import { goto } from '$app/navigation';
@@ -9,12 +9,10 @@
   function navigateToCreateEvent() {
     goto('/events/create');
   }
-
   export let data;
 
   let events = data.events;
   let categories = data.categories;
-  console.log(events);
 </script>
 
 <main class="bg-[#e7e4e4] xs:mt-3">
@@ -36,6 +34,7 @@
     <div class="grid grid-cols-2 2xl:grid-cols-3 gap-8">
       <!-- Event cards-->
       {#each events as event}
+      {#if event.title.toUpperCase().toLowerCase().includes($textOfSearchField.toLocaleUpperCase().toLocaleLowerCase())}
       {#if $shouldShowAllEvents}
       <Eventcard
         eventCategory={event.category_id}
@@ -53,6 +52,7 @@
       eventDate={event.date}
       eventLocation={event.address}
       />
+      {/if}
       {/if}
       {/if}
       {/each}

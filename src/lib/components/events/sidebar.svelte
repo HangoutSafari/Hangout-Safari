@@ -1,11 +1,14 @@
 <script>
-    import { lastClickedCategoryId, shouldShowAllEvents } from "../../../routes/events/store";
+    import { setInputToStore } from "../../../routes/events/search";
+    import { lastClickedCategoryId, shouldShowAllEvents, textOfSearchField } from "../../../routes/events/store";
     import Category from "./category.svelte";
     import Header from "./header.svelte";
+  
 
     export let categories;
-    console.log(categories);
+  let searchTerm = $textOfSearchField;
 
+   
     function resetAndShowEvent() {
       lastClickedCategoryId.set(0);
       shouldShowAllEvents.set(true); 
@@ -30,6 +33,8 @@
       >
         <i class="fas fa-search mx-2" />
         <input
+        bind:value={searchTerm}
+        on:input={(event) =>setInputToStore(event,searchTerm)}
           type="text"
           id="search"
           placeholder="Search..."

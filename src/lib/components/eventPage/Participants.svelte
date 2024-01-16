@@ -1,4 +1,18 @@
 <script>
+import { onMount } from 'svelte';
+// import { load } from '$routes/events/+page.server.js';
+
+let data;
+
+onMount(async () => {
+    const result = await load();
+    if (result.error) {
+        console.error(result.error);
+    } else {
+        data = result.events;
+    }
+});
+console.log(data);
     let participants = [
         { name: 'Amy Johnson' },
         { name: 'Amy Johnson' },

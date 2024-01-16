@@ -59,7 +59,6 @@ export class Safari {
    * Process on rezies event and updates the dimensions of canvas
    */
   public processRezieEvent(){
-    console.log('resizing...');
     this.scene.processResizing();
   }
 
@@ -86,7 +85,6 @@ export class Safari {
 
   public start() {
     this.setup();
-    console.log(this.scene);
     this.animate();
   }
 

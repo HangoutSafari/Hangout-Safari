@@ -4,11 +4,10 @@ import { AnimalsGenerator } from './Animals/AnimalsGenerator'
 import type { AnimalEventDispatcher } from './Animals/AnimalEventDispatcher';
 import type { Scene } from './Scene/Scene';
 import { Animal, RARITY } from './Animals/Animal';
-import { AnimalsModels } from './Types/AnimalModelsPathTypes';
+import { AnimalModel, AnimalsModels } from './Types/AnimalModelsPathTypes.ts';
 import { randInt } from 'three/src/math/MathUtils';
 import type { Camera } from './Camera/Camera';
 import type { Chunk } from './Chunk/Chunk';
-
 
 
 export class SafariGenerator{
@@ -20,15 +19,15 @@ export class SafariGenerator{
         this.floorGenerator = new FloorGenerator(); 
     }
     
-    public add(){
-        const index = 9;
+    public add(animalIndex: number, acheivedFrom: string){
+        const index = animalIndex;
         if(this.isFirstAnimal) {
-            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, "Ranom animal string", RARITY.common, "ranodm", AnimalsModels[index].rotation, AnimalsModels[index].scale));    
+            this.animalGenerator.addAnimal(new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,(this.floorGenerator.chunks.children[0] as Chunk).randomAnimalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation, AnimalsModels[index].scale));    
             this.isFirstAnimal = false;
         }
         else{
             const animalPosition = this.floorGenerator.addChunk().randomAnimalPosition;
-            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, "Ranom animal string", RARITY.common, "random", AnimalsModels[index].rotation,  AnimalsModels[index].scale)
+            const newAnimal = new Animal(AnimalsModels[index].imagePath, AnimalsModels[index].model,animalPosition, AnimalsModels[index].name, AnimalsModels[index].rarity, acheivedFrom, AnimalsModels[index].rotation,  AnimalsModels[index].scale)
             this.animalGenerator.addAnimal(newAnimal);    
         }
     }

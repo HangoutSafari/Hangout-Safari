@@ -4,6 +4,32 @@
     export let achievedFrom;
     export let image;
 
+    let textColor = "";
+
+    switch (rarity) {
+  case "common":
+    // black
+    textColor = "bg-black";
+    break;
+  case "epic":
+    // purple
+    textColor = "bg-gradient-to-br from-[#C51FFF] to-[#FF00E5]";
+    break;
+  case "uncommon":
+    // green
+    textColor = "bg-gradient-to-br from-[#0ee006] to-[#28ff5e]";
+    break;
+  case "rare":
+    // blue
+    textColor = "bg-gradient-to-br from-[#04daeb] to-[#0eb6d1]";
+    break;
+  default:
+    // Handle cases where rarity is not one of the expected values
+    textColor = "bg-black"; // Replace with your default color
+    break;
+}
+    console.log(rarity);
+
     function closePopup() {
     // Check if the event target is the close button before dispatching the closePopup event
     if (event.target.classList.contains('close-button')) {
@@ -23,14 +49,13 @@
         
         <div>
           <input
-          class="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+          class="text-center bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"
           placeholder={name}
           required
+          disabled
           on:click|stopPropagation
           />
         </div>
-        <i class="fa-solid fa-pen text-gray-400"></i>
-
       </div>
       <img class="h-[5rem] lg:h-auto" src={image} alt=""/>
       <div class="flex flex-col gap-0 items-center">
@@ -38,7 +63,7 @@
         <p class=" pt-0 mt-0 text-[0.8em] lg:text-base">{achievedFrom}</p>
       </div>
       <p
-        class="text-[1rem] lg:text-2xl font-bold inline-block text-transparent bg-clip-text bg-gradient-to-br from-[#C51FFF] to-[#FF00E5]">
+        class="text-[1rem] lg:text-2xl font-bold inline-block text-transparent bg-clip-text shadow-2xl {textColor}">
         {rarity}
       </p>
     </div>

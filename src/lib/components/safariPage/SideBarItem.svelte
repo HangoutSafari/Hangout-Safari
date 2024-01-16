@@ -40,7 +40,7 @@
                 <div class="flex justify-items-start">
                     <div class="flex">
                         <i class="mr-2 fa-solid fa-calendar" />
-                        <p class="">{dateObtained}</p>
+                        <p class="text-ellipsis">{dateObtained}</p>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div class="flex justify-items-end">
                     <div class="flex">
                         <i class=" mr-2 fa-solid fa-location-dot" />
-                        <p>{locationObtained}</p>
+                        <p class="text-ellipsis">{locationObtained}</p>
                     </div>
                 </div>
             </div>

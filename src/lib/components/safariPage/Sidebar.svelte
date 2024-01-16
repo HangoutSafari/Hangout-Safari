@@ -38,7 +38,9 @@
           name={AnimalsModels[animal.model_id].name}
           animalImage={AnimalsModels[animal.model_id].imagePath}
           locationObtained={animal.title}
-          dateObtained = {animal.attended_at} />
+          dateObtained = {animal.attended_at} 
+          rarity = {AnimalsModels[animal.model_id].rarity}
+          on:sideBarItemClicked/>
       {/each}
     </div>
   </aside>

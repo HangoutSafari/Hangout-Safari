@@ -1,21 +1,34 @@
 <script lang="ts">
-    export let profileImage;
+    import {createEventDispatcher} from 'svelte'
+
     export let animalImage: string;
     export let locationObtained: string;
     export let dateObtained: string;
+    export let rarity: string;
     export let name: string;
 
+    const dispatcher = createEventDispatcher();
+
+    function sideBarItemClicked(){
+        dispatcher("sideBarItemClicked",{
+            name: name,
+            achievedFrom: locationObtained,
+            image: animalImage,
+            rarity: rarity
+        });
+    }
 </script>
 
-<div
+<button
     class="flex flex-row justify-items-center shadow-lg p-2 md:container w-full lg:w-[90%] rounded-2xl bg-white hover:scale-110 duration-150 hover:cursor-grab"
->
-    <div class="flex flex-col w-[130px] lg:w-[160px] h-[80px] lg:h-[100px] shadow-lg">
+    on:click={sideBarItemClicked}
+    >
+    <div class="flex flex-col w-[120px] lg:w-[160px] h-[80px] lg:h-[100px] shadow-lg">
         <div />
         <img
             src="{animalImage}"
             alt="Profile Image"
-            class="h-12 bg-orange-400 rounded-lg p-1 h-full "
+            class="w-full bg-orange-400 rounded-lg p-1 h-full align-bottom"
         />
     </div>
     <div class="hidden lg:flex flex-col ml-10 ">
@@ -40,4 +53,4 @@
         </div>
 
     </div>
-</div>
+</button>

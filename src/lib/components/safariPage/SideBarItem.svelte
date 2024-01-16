@@ -20,7 +20,7 @@
 </script>
 
 <button
-    class="flex flex-row justify-items-center shadow-lg p-4 md:container w-full lg:w-[90%] rounded-2xl bg-white hover:scale-110 duration-150 hover:cursor-grab"
+    class="flex flex-row justify-items-center shadow-lg p-2 md:container w-full lg:w-[90%] rounded-2xl bg-white hover:scale-110 duration-150 hover:cursor-grab"
     on:click={sideBarItemClicked}
     >
     <div class="flex flex-col w-[120px] lg:w-1/3 h-[80px] lg:h-[100px] shadow-lg">

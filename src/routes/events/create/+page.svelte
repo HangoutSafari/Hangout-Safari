@@ -41,15 +41,15 @@
 
     <Map class="min-h-[200px] 2xl:min-h-[0] min-w-full row-span-3 col-span-2" />
     <FormImage class="2xl:w-[350px] row-span-2 row-start-3" />
-    <div class="flex justify-start ml-8 items-center md:col-span-1 md:row-start-5">
-      <a href="/events" class="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-9 rounded-xl transition duration-300 ease-in-out hover:scale-110">
+    <div class="flex justify-start xl:ml-8 items-center md:col-span-1 xs:row-start-5">
+      <a href="/events" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 md:py-3 md:px-7 rounded-xl transition duration-300 ease-in-out hover:scale-110">
         Cancel
       </a>  
       <button
-        class="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-9 rounded-xl ml-10 transition duration-300 ease-in-out hover:scale-110">
+        class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 md:py-3 md:px-7 rounded-xl ml-4 xl:ml-10 transition duration-300 ease-in-out hover:scale-110">
         Create 
       </button>  
-    </div>
-       
+    </div>      
   </div>
 </div>
+

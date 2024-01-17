@@ -24,9 +24,9 @@
 
     <div class="md:h-[546px] md:overflow-y-auto ">
     
-        <div class="pt-4 sm:pt-0 flex flex-row sm:block overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-scroll px-4 pb-4 sm:rounded-b-2xl bg-white">
+        <div class="pt-4 md:pt-0 flex flex-row md:block overflow-x-scroll md:overflow-x-hidden md:overflow-y-scroll px-4 pb-4 md:rounded-b-2xl bg-white">
             {#each eventsByDate as userEvent }
-                <div class="sm:pt-6 px-4">
+                <div class="md:pt-6 px-4">
                     <Eventcard
                         eventImage={userEvent.image_path}
                         eventTitle={userEvent.title}

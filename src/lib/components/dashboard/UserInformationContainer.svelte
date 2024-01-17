@@ -37,11 +37,11 @@
 <div class="p-4 sm:p-0">
     <ProfileCard userName = {currentUser.username} animalCount = {currentUser.count} profileImage = {currentUser.image_url}/>
 
-    <div class="flex-col flex justify-center items-center pt-3">
+    <div class="flex justify-center pt-3">
 
         <div class="bg-white w-full  rounded-xl drop-shadow-lg">
             <div class="flex justify-center">
-                <div class="text-black ml text-opacity-70">
+                <div class="text-black text-opacity-70">
                     <div class="flex pt-4 text-lg lg:text-xl">
                         <i class="fa-solid fa-calendar w-6 h-6" /> <!-- Add a fixed width and height to the icon -->
                         <p class="pl-2">Joined {formattedDate}</p>
@@ -54,16 +54,16 @@
                 </div>
             </div>
 
-            <div class="flex justify-center pt-6">
-                <h1 class="font-bold text-base pr-6">Favorite Events</h1>
-                <div class="flex items-center text-white h-12 w-12 bg-orange-400 rounded-lg p-1">
+            <div class="flex justify-center text-lg lg:text-xl pt-6">
+                <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Events</h1>
+                <div class="flex items-center text-white h-14 w-14 bg-orange-400 rounded-lg mr-2 p-2">
                     <i class="{favoriteEvent} fa-2xl"></i>
                 </div>
             </div>
 
             <div class="flex justify-center pt-4">
-                <h1 class="font-bold text-base pr-6">Latest Animal</h1>
-                <div class="h-12 w-12 scale-125">
+                <h1 class="font-bold text-base mt-2 ml-2 pr-6">Latest Animal</h1>
+                <div class="h-14 w-14 mr-2 scale-125">
                     <img
                         src={AnimalsModels[animalsByDate[0].model_id].imagePath}
                         alt="Profile Image"

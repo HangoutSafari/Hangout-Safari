@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0">
+  class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-16 sm:p-24 md:p-6 lg:p-0 mt-2 md:mt-0">
   <div class="absolute inset-0 overflow-hidden rounded-xl">
     <img
       class="w-full h-full object-cover object-center blur-[8px] brightness-75"
@@ -23,7 +23,7 @@
       alt=""
     />
     <!-- Your content goes here -->
-    <h1 class="text-[1.5rem] lg:text-[2rem] font-bold">{userName}</h1>
+    <h1 class="text-[2rem] font-bold">{userName}</h1>
     <p
       class="font-bold text-[1.5rem] lg:text-[1rem] mt-7 lg:mt-2 mb-3 lg:mb-auto">
       Animal count: {animalCount}

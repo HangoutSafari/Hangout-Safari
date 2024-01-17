@@ -1,6 +1,4 @@
 <script>
-    import RenderingContext from "../safariPage/renderingContext.svelte";
-
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');

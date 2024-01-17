@@ -21,20 +21,19 @@
 
 <div class="flex flex-col md:flex-row items-center justify-between background pt-4">
   
-  <div class="drop-shadow-lg order-2 sm:order-none w-[390px] sm:pl-4">
-    <FeedContainer
-    users = {users} currentuser = {currentUser[0]}
+  <div class="drop-shadow-lg order-2 align-middle items-center mt-4 md:mt-0 md:order-none w-[390px] md:p-2 md:pl-2">
+      <FeedContainer
+      users = {users} currentuser = {currentUser[0]}
      />
   </div>
   
-  <div class="order-3 sm:order-none sm:flex justify-center">
+  <div class="order-3 md:order-none md:p-2 justify-center">
     <UserInformationContainer currentUser = {currentUser[0]} currentLatestAnimal = {userLatestAnimal}/>
   </div>
 
-  <div class="order-1 drop-shadow-lg sm:order-none overflow-x-auto w-full sm:w-[390px] sm:pr-4">
+  <div class="order-1 drop-shadow-lg md:order-none w-full overflow-x-auto md:w-[390px] md:p-2 md:pr-2">
     <UpcomingContainer userEvents = {userEvents}/>
   </div>
-  
 </div>
 
 <style>

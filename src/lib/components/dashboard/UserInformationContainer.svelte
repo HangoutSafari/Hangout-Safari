@@ -1,13 +1,24 @@
 <script>
     import ProfileCard from "../profilePage/profileCard.svelte";
+
+    function delteCookies(){
+    const cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
 </script>
 
 <div class="p-4 sm:p-0">
     <ProfileCard />
 
-    <div class="flex justify-center pt-3">
+    <div class="flex-col flex justify-center items-center pt-3">
 
-        <div class="bg-white w-full h-60 rounded-xl drop-shadow-lg">
+        <div class="bg-white w-full  rounded-xl drop-shadow-lg">
             <div class="flex justify-center">
                 <div class="text-black ml text-opacity-70">
                     <div class="flex pt-4 text-lg lg:text-xl">
@@ -38,10 +49,21 @@
                         class=" bg-orange-400 rounded-lg p-1">
                 </div>
             </div>
+            <div class="lg:hidden flex justify-center w-full items-center  self-center  my-2">
 
+                <a
+                  on:click={delteCookies}
+                  href="/login"
+                  class=" text-white  bg-red-700 rounded-lg p-2 hover:scale-105 duration-100"
+                >
+                  Logout    
+                </a>
+                
+            </div>
+            
         </div>
-
+        
     </div>
-
+    
 </div>
 

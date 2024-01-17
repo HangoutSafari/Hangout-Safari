@@ -1,5 +1,6 @@
 <script>
   import "../app.css";
+  import {page} from "$app/stores"
   import Navbar from "$lib/components/layout/navbar.svelte";
   ("../lib/components/layout/navbar.svelte");
 </script>
@@ -16,10 +17,11 @@
     <div class="z-50 sm:sticky top-0 bg-white-500"></div>
 
   <div class="background h-full">
-
-    <div class="z-50 sticky top-0 bg-white-500">
-      <Navbar />
-    </div>
+{#if !($page.url.pathname == "/login" || $page.url.pathname == "/register")}  
+<div class="z-50 sticky top-0 bg-white-500">
+  <Navbar />
+</div>
+{/if}
     <slot />
   </div>
 </div>

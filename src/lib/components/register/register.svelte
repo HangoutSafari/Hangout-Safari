@@ -69,6 +69,7 @@
               type="text"
               class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400 "
               placeholder="Username"
+              autocomplete="name"
             />
             {#if underlined[0]}
              <hr class="border-2 rounded border-orange-400" />
@@ -86,6 +87,7 @@
             type="email"
             class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400"
             placeholder="E-mail"
+            autocomplete="email"
           />
           {#if underlined[1]}
            <hr class="border-2 rounded border-orange-400" />

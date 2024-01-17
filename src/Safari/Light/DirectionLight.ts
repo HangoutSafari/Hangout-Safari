@@ -13,7 +13,7 @@ export class DirectionLight extends THREE.DirectionalLight {
    * @param lPosition postiion of the light
    */
   constructor(
-    lColor: number,
+    lColor: number ,
     lStrength: number,
     isCastingShadows: boolean,
     lPosition: THREE.Vector3
@@ -55,3 +55,4 @@ export class DirectionLight extends THREE.DirectionalLight {
     );
   }
 }
+

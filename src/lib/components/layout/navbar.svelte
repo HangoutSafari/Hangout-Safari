@@ -27,11 +27,11 @@
       <div class="md:order-3 order-2">
         <a
           href="/dashboard"
-          class="font-semibold order-1 py-1 background text-black rounded-full md:mr-1 hover:px-3 hover:py-4 duration-300 ease-in-out"
+          class="font-semibold order-1 py-1 background text-black rounded-full md:mr-1 duration-300 ease-in-out"
         >
           <i
             class:shadow={$page.url.pathname == "/dashboard"}
-            class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white sm:mr-8"
+            class="fa-solid fa-user p-2 text-2xl rounded-full bg-black text-white md:mr-8"
           />
         </a>
       </div>

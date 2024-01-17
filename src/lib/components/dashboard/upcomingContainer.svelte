@@ -1,5 +1,13 @@
 <script>
     import Eventcard from "../events/eventcard.svelte";
+
+    export let userEvents;
+
+    let eventsByDate = userEvents.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+    });
+
+    
 </script>
 
 <div class="flex justify-center rounded-t-2xl pt-4 text-2xl bg-white border-b border-slate-300">
@@ -17,13 +25,13 @@
     <div class="sm:h-[546px] sm:overflow-y-auto ">
     
         <div class="pt-4 sm:pt-0 flex flex-row sm:block overflow-x-scroll sm:overflow-x-hidden sm:overflow-y-scroll px-4 pb-4 sm:rounded-b-2xl bg-white">
-            {#each { length: 3 } as _, i}
+            {#each eventsByDate as userEvent }
                 <div class="sm:pt-6 px-4">
                     <Eventcard
-                        eventImage="/zelda.jpeg"
-                        eventTitle="ART FAIR"
-                        eventDate="December 12th - 20th"
-                        eventLocation="Bibliotheek, Middelburg"
+                        eventImage={userEvent.image_path}
+                        eventTitle={userEvent.title}
+                        eventDate={userEvent.date}
+                        eventLocation={userEvent.address}
                         buttonText="View"
                         buttonColor = 'bg-green-500';
                     />

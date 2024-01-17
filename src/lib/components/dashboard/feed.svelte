@@ -8,6 +8,13 @@
     export let userName;
     export let animalName;
 
+    let createdDate = new Date(dateObtained);
+    dateObtained = createdDate.toLocaleDateString("nl-NL", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    });
+
     export let rarity;
 
     let textColor = "";
@@ -34,7 +41,6 @@
             textColor = "bg-black"; // Replace with your default color
             break;
     }
-    console.log(rarity);
 
 </script>
 

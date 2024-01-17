@@ -3,6 +3,7 @@
   import { AnimalsModels } from "../../../Safari/Types/AnimalModelsPathTypes";
 
   export let users;
+  export let currentuser
 
 </script>
 
@@ -14,10 +15,11 @@
   </div>
 </div>
 
-<div class="bg-white p-4 rounded-b-2xl">
+<div class="sm:h-[566px] bg-white p-4 rounded-b-2xl">
 
   <div>
       {#each users as user}
+      {#if currentuser.username != user.username}
         <Feed 
         profileImage = "/images/profileImage.jpg"
         animalImage = {AnimalsModels[user.model_id].imagePath}
@@ -27,6 +29,7 @@
         animalName = {user.animal_name}
         rarity = {AnimalsModels[user.model_id].rarity}
         />
+        {/if}
       {/each}
   </div>
 </div>

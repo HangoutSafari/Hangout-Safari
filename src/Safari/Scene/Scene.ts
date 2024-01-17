@@ -6,7 +6,7 @@ import { Camera } from "../Camera/Camera";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { OrthoCamera } from "../Camera/OrthoCamera";
 import { Controls } from "../Camera/MapControls";
-export class Scene extends THREE.Scene {
+export class  Scene extends THREE.Scene {
 
   public lightSources: Array<THREE.Light> = [];
   public renderer: Renderer;
@@ -20,7 +20,7 @@ export class Scene extends THREE.Scene {
   constructor(renderingContext: HTMLCanvasElement) {
     super();
     this.lightSources.push(new AmbientLight(THREE.Color.NAMES.whitesmoke, 0.6, true, new THREE.Vector3(0, 60, 30)));
-    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.whitesmoke,10,true,new THREE.Vector3(-900, 900, 0)));
+    this.lightSources.push(new DirectionLight(THREE.Color.NAMES.white,10,true,new THREE.Vector3(-900, 900, 0)));
 
     this.camera = new Camera(renderingContext, 75, 0.1, 6000.0);
     

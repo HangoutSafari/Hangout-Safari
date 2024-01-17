@@ -1,4 +1,5 @@
 <script>
+    import {createEventDispatcher} from "svelte"
     export let name;
     export let rarity;
     export let achievedFrom;
@@ -30,12 +31,11 @@
 }
     console.log(rarity);
 
+    const dispatch = createEventDispatcher();
+
     function closePopup() {
-    // Check if the event target is the close button before dispatching the closePopup event
-    if (event.target.classList.contains('close-button')) {
       dispatch("closePopup");
     }
-  }
 </script>
 
 <div class="inline-block">

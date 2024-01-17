@@ -14,7 +14,7 @@
         <button class="top-3/4 left-1/2 transform -translate-y-3/4 -translate-x-1/2 bg-green-800 text-white font-bold px-[10px] py-2 sm:py-3 sm:px-4 rounded-md absolute md:collapse ">
             <a href="/register">Start Your Journey Now!</a>
         </button>
-        <img class="rounded-3xl w-[95%] h-[98%] md:h-[90%] md:w-[75%] mx-auto" src="/images/landing_safari2.png" alt=""> 
+        <img class="rounded-3xl w-[95%] h-[98%] md:h-[90%] md:w-[75%] mx-auto" src="/images/landing_safari.png" alt=""> 
     </div>
     <div class="md:ml-16 md:order-1 ml-5 mr-5 mt-0 md:mt-7 ">
         <h1 class="font-mochiy-pop-one font-normal md:text-left text-center text-3xl lg:text-4xl mt-6">Discover Your Social Side!</h1>

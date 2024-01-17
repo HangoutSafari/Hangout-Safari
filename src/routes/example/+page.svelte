@@ -2,8 +2,8 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   // data is the data from the page.server.js
-  // export let data;
-  // console.log(data);
+  export let data;
+  console.log(data.animals);
 
   onMount(async () => {
     console.log(await getSession());
@@ -18,16 +18,19 @@
     return response;
   }
   async function getEvents() {
-    const request = await fetch("http://localhost:3010/events/auth/", {
+    const request = await fetch("http://localhost:3010/animals/auth/full", {
       credentials: "include",
     });
     const response = await request.json();
     return response;
   }
   async function getChosenEvent(id) {
-    const request = await fetch(`http://localhost:3010/events/auth/${id}`, {
-      credentials: "include",
-    });
+    const request = await fetch(
+      `http://localhost:3010/events/free/15/participants`,
+      {
+        credentials: "include",
+      }
+    );
     const response = await request.json();
     return response;
   }

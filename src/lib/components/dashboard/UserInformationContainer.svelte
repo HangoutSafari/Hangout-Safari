@@ -22,23 +22,32 @@
     console.log(formattedDate)
     console.log(currentUser.location);
 
+    function delteCookies(){
+    const cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
 </script>
 
 <div class="p-4 sm:p-0">
     <ProfileCard userName = {currentUser.username} animalCount = {currentUser.count} profileImage = {currentUser.image_url}/>
 
-    <div class="flex justify-center pt-3">
+    <div class="flex-col flex justify-center items-center pt-3">
 
-        <div class="bg-white w-2/3 h-60 rounded-xl drop-shadow-lg">
-
+        <div class="bg-white w-full  rounded-xl drop-shadow-lg">
             <div class="flex justify-center">
-                <div class="text-black text-opacity-70">
-                    <div class="flex pt-4">
+                <div class="text-black ml text-opacity-70">
+                    <div class="flex pt-4 text-lg lg:text-xl">
                         <i class="fa-solid fa-calendar w-6 h-6" /> <!-- Add a fixed width and height to the icon -->
                         <p class="pl-2">Joined {formattedDate}</p>
                     </div>
     
-                    <div class="flex pt-4">
+                    <div class="flex pt-4 text-lg lg:text-xl">
                         <i class="fa-solid fa-location-dot w-6 h-6" /> <!-- Add a fixed width and height to the icon -->
                         <p class="pl-2">Location {currentUser.location}</p>
                     </div>
@@ -61,10 +70,21 @@
                         class=" bg-orange-400 rounded-lg p-1">
                 </div>
             </div>
+            <div class="lg:hidden flex justify-center w-full items-center  self-center  my-2">
 
+                <a
+                  on:click={delteCookies}
+                  href="/login"
+                  class=" text-white  bg-red-700 rounded-lg p-2 hover:scale-105 duration-100"
+                >
+                  Logout    
+                </a>
+                
+            </div>
+            
         </div>
-
+        
     </div>
-
+    
 </div>
 

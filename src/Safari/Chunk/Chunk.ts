@@ -8,7 +8,7 @@ import { Vegetation } from './Vegetation';
 import { loadModel } from '../ModelLoader/ModelLoader';
 import { Models } from '../Types/SafariModelLoadingTypes';
 
-function generateNumber(max: number) : number{
+export function generateNumber(max: number) : number{
     return Math.floor(Math.random() * max);
 }
 

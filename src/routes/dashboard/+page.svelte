@@ -2,7 +2,6 @@
   import UserInformationContainer from "$lib/components/dashboard/UserInformationContainer.svelte";
   import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
   import UpcomingContainer from "$lib/components/dashboard/upcomingContainer.svelte";
- 
 
   export let data;
   let users = data.users;
@@ -15,11 +14,12 @@
  
   console.log(users);
 
+  import InformationCard from "$lib/components/profilePage/informationCard.svelte";
+  // export let data: PageData;
+
 </script>
 
-<!-- <meta name="viewport" content="" /> -->
-
-<div class="grid sm:flex items-center justify-between pt-4">
+<div class="flex flex-col md:flex-row items-center justify-between background pt-4">
   
   <div class="drop-shadow-lg order-2 sm:order-none w-[390px] sm:pl-4">
     <FeedContainer

@@ -28,15 +28,12 @@
 
       // regex to check if response is a 2xx code
       if (/^2\d{2}$/.test(response.status)) {
-        alert("User logged successfully");
-        redirectToProfile();
+          redirectToProfile();
       } else {
         console.error("User login failed:", response);
-        alert("User login failed", response);
       }
     } catch (error) {
       console.error("Internal Server Error:", error);
-      alert("Internal Server Error. Please try again later."); // Show user-friendly message
     }
   };
 </script>

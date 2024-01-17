@@ -10,7 +10,7 @@
     switch (rarity) {
   case "common":
     // black
-    textColor = "bg-black";
+    textColor = "bg-gray-400";
     break;
   case "epic":
     // purple

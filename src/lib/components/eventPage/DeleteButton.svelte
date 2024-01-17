@@ -5,7 +5,7 @@
    }
 </script>
 
-<button class=" text-white mr-2 bg-red-500 px-10 py-2 md:px-14 md:py-3 font-bold text-xl mb-1 md:mb-3 uppercase cursor-pointer shadow-[0_4px_6px_rgba(117,106,106,0.8)] transition-all duration-300 ease-in-out" on:click={handleClick}>
+<button class=" text-white mr-2 bg-red-500 rounded-xl px-7 py-2 md:px-10 md:py-3 font-bold text-xl mb-1 md:mb-3 md:mr-4 uppercase cursor-pointer shadow-[0_4px_6px_rgba(117,106,106,0.8)] transition-all duration-300 ease-in-out" on:click={handleClick}>
    DELETE
 </button>
 

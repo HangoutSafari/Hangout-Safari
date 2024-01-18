@@ -16,11 +16,8 @@
   let latValue;
 
   address.subscribe(async (value) => {
-    console.log(
-      `https://geocode.xyz/${value}?geoit=json&auth=180705050001809255650x22389&region=NL`
-    );
     const promise = await fetch(
-      `https://geocode.xyz/${value}?geoit=json&auth=180705050001809255650x22389&region=NL`
+      `https://geocode.xyz/${value}?geoit=json&auth=344333920058688765385x40918&region=NL`
     );
 
     const response = promise.json();

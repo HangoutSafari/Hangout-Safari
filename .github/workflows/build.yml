@@ -41,7 +41,7 @@ jobs:
     - run: echo "Tests have passed ✅"
 
     - run: echo "Running linters"
-    - run: npm run lint
+    - run: npm run format
 
     - name: Get latest commit message
       id: get_commit_message

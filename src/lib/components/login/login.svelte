@@ -17,7 +17,7 @@
   const login = async () => {
     try {
       console.log("Login user...", { email, password });
-      const response = await fetch("http://localhost:3010/auth/login", {
+      const response = await fetch("http://apigateway:3010/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

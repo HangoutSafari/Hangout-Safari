@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - run: echo github.event_name
+      - run: echo $github.event_name
       - run: echo "Installing dependencies ⏬"
       - run: npm ci
       - run: echo $PATH

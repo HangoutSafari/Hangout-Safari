@@ -20,6 +20,8 @@ jobs:
       - run: echo "Starting tests 🧪"
       - run: npm run test
       - run: echo "Tests have passed ✅"
+      - run: echo "Running linters "
+      - run: npm run lint
       - name: Push changes
         if: success() # Only run if lint and build steps succeed
         run: |

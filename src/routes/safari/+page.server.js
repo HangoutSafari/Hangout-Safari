@@ -6,7 +6,7 @@ export const load = async (serverLoadEvent) => {
   try {
     const { fetch } = serverLoadEvent;
 
-    const res = await fetch(`http://localhost:3010/animals/auth/full`, {
+    const res = await fetch(`http://apigateway:3010/animals/auth/full`, {
       credentials: "include",
     });
 

@@ -84,5 +84,5 @@
   <button class="py-2 px-4 bg-white border-2" on:click={editEvent}>EDIT</button>
   <button class="py-2 px-4 bg-white border-2" on:click={deleteEvent}
     >DELETE</button -->
-  >
+  <!-- > -->
 </div>

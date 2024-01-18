@@ -1,6 +1,6 @@
 export async function load({ params }) {
   try {
-    let res = await fetch(`http://localhost:3010/events/free/${params.slug}`);
+    let res = await fetch(`http://apigateway:3010/events/free/${params.slug}`);
     const event = await res.json();
     return event;
   } catch (error) {
@@ -17,7 +17,7 @@ export const actions = {
     obj["category_id"] = 3;
     console.log(obj);
     const req = await fetch(
-      `http://localhost:3010/events/auth/${params.slug}`,
+      `http://apigateway:3010/events/auth/${params.slug}`,
       {
         method: "PUT",
         headers: {

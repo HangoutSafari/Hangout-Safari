@@ -30,10 +30,10 @@
       if (/^2\d{2}$/.test(response.status)) {
           redirectToProfile();
       } else {
-        console.error("User login failed:", response);
+        console.log("User login failed:", response);
       }
     } catch (error) {
-      console.error("Internal Server Error:", error);
+      console.log("Internal Server Error:", error);
     }
   };
 </script>

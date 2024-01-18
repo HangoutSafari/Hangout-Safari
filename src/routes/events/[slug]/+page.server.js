@@ -2,9 +2,9 @@ import { redirect } from "@sveltejs/kit";
 
 export async function load({ params, fetch }) {
   try {
-    let res = await fetch(`http://localhost:3010/events/free/${params.slug}`);
+    let res = await fetch(`http://apigateway:3010/events/free/${params.slug}`);
     const event = await res.json();
-    res = await fetch(`http://localhost:3010/events/auth/`, {
+    res = await fetch(`http://apigateway:3010/events/auth/`, {
       credentials: "include",
     });
 
@@ -26,7 +26,7 @@ export async function load({ params, fetch }) {
 export const actions = {
   delete: async ({ request, cookies, fetch, params }) => {
     const req = await fetch(
-      `http://localhost:3010/events/auth/${params.slug}`,
+      `http://apigateway:3010/events/auth/${params.slug}`,
       {
         method: "DELETE",
         headers: {
@@ -42,7 +42,7 @@ export const actions = {
     const info = {};
     eventInfo.forEach((value, key) => (info[key] = value));
     info["event_id"] = params.slug;
-    const req = await fetch(`http://localhost:3010/events/auth/subscribe`, {
+    const req = await fetch(`http://apigateway:3010/events/auth/subscribe`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const actions = {
       }`,
     };
     const req = await fetch(
-      `http://localhost:3010/events/auth/attend/${params.slug}`,
+      `http://apigateway:3010/events/auth/attend/${params.slug}`,
       {
         method: "PUT",
         headers: {

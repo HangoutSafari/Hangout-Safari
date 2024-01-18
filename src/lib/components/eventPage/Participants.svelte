@@ -9,7 +9,7 @@
   });
   async function getParticipants(id) {
     const request = await fetch(
-      `http://localhost:3010/events/free/${id}/participants`,
+      `http://apigateway:3010/events/free/${id}/participants`,
       {
         credentials: "include",
       }

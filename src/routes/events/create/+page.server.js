@@ -5,7 +5,7 @@ export const actions = {
     const obj = {};
     data.forEach((value, key) => (obj[key] = value));
     obj["category_id"] = 3;
-    const req = await fetch(`http://localhost:3010/events/auth/`, {
+    const req = await fetch(`http://apigateway:3010/events/auth/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

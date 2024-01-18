@@ -18,7 +18,7 @@
     }
     try {
       console.log("Registering user...", { username, email, password });
-      const response = await postData("http://localhost:3010/auth/register", {
+      const response = await postData("http://apigateway:3010/auth/register", {
         username,
         email,
         password,

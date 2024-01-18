@@ -52,7 +52,7 @@
     </div>
 
     <div class="flex flex-col">
-        <p>{userName} obtained {animalName}</p>
+        <p><strong>{userName}</strong> obtained <span class="{textColor} font-extrabold inline-block text-transparent bg-clip-text">{animalName}</span></p>
 
         <div
             class="flex text-sm gap-4 content-around pt-1 text-black text-opacity-40"
@@ -73,11 +73,11 @@
         </div>
     </div>
     <div>
-        <div class="w-20 scale-75">
+        <div class="w-20 scale-100">
             <img
                 src={animalImage}
                 alt="Profile Image"
-                class="h-12 rounded-lg w-full h-full {textColor}"
+                class="h-12 rounded-lg w-full h-full"
             />
         </div>
     </div>

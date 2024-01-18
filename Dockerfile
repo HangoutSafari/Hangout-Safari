@@ -1,13 +1,12 @@
-FROM node:12 AS build
+FROM node:18.9.0
 
-WORKDIR /app
-
-COPY package.json ./
-COPY package-lock.json ./
+ENV NODE_ENV development
+WORKDIR /usr/src/app
+COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
-COPY . ./
-RUN npm run build
-Run npm audit fix
+RUN npm audit fix
 
-FROM nginx:1.19-alpine
-COPY --from=build /app/public /usr/share/nginx/html
+COPY . .
+
+EXPOSE 3000
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

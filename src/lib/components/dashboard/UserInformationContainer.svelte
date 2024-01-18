@@ -65,10 +65,13 @@
                 <h1 class="font-bold text-base mt-2 ml-2 pr-6">Latest Animal</h1>
                 <div class="h-14 w-14 mr-2 scale-150">
                     {#if currentUser.count != 0}
+                    <a href="/safari">
+
                     <img
                     src={AnimalsModels[animalsByDate[0].model_id].imagePath}
                     alt="Profile Image"
                     class="p-1">
+                    </a>
                     {/if}
                 </div>
             </div>

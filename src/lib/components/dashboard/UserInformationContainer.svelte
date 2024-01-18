@@ -78,7 +78,7 @@
             <div class="lg:hidden flex justify-center w-full items-center  self-center  my-2">
 
                 <a
-                  on:click={delteCookies}
+                  on:click={delteCookies}                          
                   href="/login"
                   class=" text-white  bg-red-700 rounded-lg p-2 hover:scale-105 duration-100"
                 >

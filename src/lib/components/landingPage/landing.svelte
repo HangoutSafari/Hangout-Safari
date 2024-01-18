@@ -1,4 +1,5 @@
 <script>
+
 </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
@@ -6,7 +7,23 @@
       font-family: 'Mochiy Pop One', sans-serif;
     }
 </style>
+<div>
+    <div class="relative logo-container md:block hidden ml-8 lg:flex lg:flex-col lg:items-center">
+        <a href="/" class="flex items-center">
+          <img
+            src="/images/logo.jpg"
+            alt="Logo"
+            class="rounded-tr-[40px] rounded-br-[40px] rounded-bl-[40px] object-cover w-16 h-16"
+          />
+          <span class="ml-4 font-bold text-2xl">Safari Hangout</span>
+        </div>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <dotlottie-player src="https://lottie.host/263ca2be-7002-4b53-b3ac-7581f568f55e/JTpVhmX330.json" background="transparent" speed="1" class="w-full h-full z-[-50];" loop autoplay></dotlottie-player>
+</div>
+
 <div class="grid md:grid-cols-2 grid-cols-1 md:pt-4 pt-5 background">
+    
+    
     <div class="md:order-2 relative">
         <h1 class="md:collapse sm:text-3xl text-[21px] text-white text-center absolute z-10 top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2">Safari Hangout</h1>
         <button class="top-3/4 left-1/2 transform -translate-y-3/4 -translate-x-1/2 bg-green-800 text-white font-bold px-[10px] py-2 sm:py-3 sm:px-4 rounded-md absolute md:collapse ">

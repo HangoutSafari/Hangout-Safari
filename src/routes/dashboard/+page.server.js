@@ -22,6 +22,7 @@ export const load = async (serverLoadEvent) => {
     });
     const userEvents = await res.json();
 
+
     return { users, user, userEvents, userLatestAnimal };
   } catch (error) {
     return {

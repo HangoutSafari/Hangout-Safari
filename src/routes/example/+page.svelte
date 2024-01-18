@@ -2,8 +2,6 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   // data is the data from the page.server.js
-  export let data;
-  console.log(data.animals);
 
   onMount(async () => {
     console.log(await getSession());
@@ -11,14 +9,14 @@
     console.log(await getChosenEvent(4));
   });
   async function getSession() {
-    const request = await fetch("http://localhost:3010/auth/session", {
+    const request = await fetch("http://apigateway:3010/auth/session", {
       credentials: "include",
     });
     const response = await request.json();
     return response;
   }
   async function getEvents() {
-    const request = await fetch("http://localhost:3010/animals/auth/full", {
+    const request = await fetch("http://apigateway:3010/animals/auth/full", {
       credentials: "include",
     });
     const response = await request.json();
@@ -26,7 +24,7 @@
   }
   async function getChosenEvent(id) {
     const request = await fetch(
-      `http://localhost:3010/events/free/15/participants`,
+      `http://apigateway:3010/events/free/15/participants`,
       {
         credentials: "include",
       }
@@ -40,7 +38,7 @@
       title: "Trying posting s events",
       host_id: "71e2b448-211d-4f58-81a9-3c3efc8f856d",
     };
-    const request = await fetch(`http://localhost:3010/events/auth/`, {
+    const request = await fetch(`http://apigateway:3010/events/auth/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +55,7 @@
       category_id: 1,
       title: "Trying editing events",
     };
-    const request = await fetch(`http://localhost:3010/events/auth/6`, {
+    const request = await fetch(`http://apigateway:3010/events/auth/6`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +68,7 @@
   }
 
   async function deleteEvent() {
-    const request = await fetch(`http://localhost:3010/events/auth/6`, {
+    const request = await fetch(`http://apigateway:3010/events/auth/6`, {
       method: "DELETE",
       credentials: "include",
     });

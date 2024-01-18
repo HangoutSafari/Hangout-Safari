@@ -30,7 +30,7 @@
             break;
         case "uncommon":
             // green
-            textColor = "bg-gradient-to-br from-[#0ee006] to-[#28ff5e]";
+            textColor =  "bg-gradient-to-br from-[#0ee006] to-[#28ff5e]";
             break;
         case "rare":
             // blue

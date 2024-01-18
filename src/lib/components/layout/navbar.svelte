@@ -53,7 +53,7 @@
         >
           <i
             class:shadow={$page.url.pathname == "/dashboard"}
-            class="fa-solid fa-house p-2 text-2xl rounded-full bg-black text-white md:mr-8"
+            class="fa-solid fa-house p-2 text-2xl rounded-full hover:p-4 duration-150 bg-black text-white md:mr-8"
           />
         </a>
        

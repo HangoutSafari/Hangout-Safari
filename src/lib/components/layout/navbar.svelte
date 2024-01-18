@@ -17,7 +17,7 @@
 <nav class="backdrop-blur pt-4 pb-4">
   <div class="flex flex-row md:justify-between justify-center">
     <div class="logo-container md:block hidden ml-8 lg:flex lg:flex-col lg:items-center">
-      <a href="/" class="flex items-center">
+      <a href="/dashboard" class="flex items-center">
         <img
           src="/images/logo.jpg"
           alt="Logo"
@@ -28,7 +28,7 @@
           <a
             on:click={delteCookies}
             href="/login"
-            class=" text-red-400  "
+            class=" text-red-400 hover:text-lg duration-150"
           >
             Logout
           </a>

@@ -3,6 +3,10 @@
   import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
   import UpcomingContainer from "$lib/components/dashboard/upcomingContainer.svelte";
 
+  onMount(()=>{
+    document.body.style.cursor = "auto"
+  })
+
   export let data;
   let users = data.users;
 
@@ -13,6 +17,7 @@
   let userLatestAnimal = data.userLatestAnimal;
 
   import InformationCard from "$lib/components/profilePage/informationCard.svelte";
+    import { onMount } from "svelte";
   // export let data: PageData;
 </script>
 
@@ -24,14 +29,12 @@
   >
     <FeedContainer {users} currentuser={currentUser[0]} />
   </div>
-<a href="/safari">
   <div class="order-3 md:order-none md:p-2 justify-center">
     <UserInformationContainer
       currentUser={currentUser[0]}
       currentLatestAnimal={userLatestAnimal}
     />
   </div>
-</a>
 
   <div
     class="order-1 drop-shadow-lg md:order-none w-full overflow-x-auto md:w-[390px] md:p-2 md:pr-2"

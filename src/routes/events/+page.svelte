@@ -8,6 +8,7 @@
   } from "./store.js";
 
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
   function navigateToCreateEvent() {
     goto("/events/create");
@@ -66,6 +67,9 @@
     </div>
   </div>
 
+  <!-- Scrollbar -->
+  <!-- Scrollbar -->
+  <!-- Scrollbar -->
   <!-- Scrollbar -->
   <!-- Scrollbar -->
   <!-- Scrollbar -->

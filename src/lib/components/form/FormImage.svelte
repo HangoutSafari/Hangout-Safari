@@ -1,8 +1,10 @@
 <script>
+  import { image_path } from "../../../routes/events/create/store";
+
   let underlined = true;
-  let src;
+
   function changeImage(event) {
-    src = URL.createObjectURL(event.target.files[0]);
+    image_path.set(URL.createObjectURL(event.target.files[0]));
   }
 </script>
 
@@ -28,6 +30,6 @@
     {/if}
   </div>
   <div>
-    <img {src} class="h-[200px] w-full" alt=""/>
+    <img src={$image_path} class="h-[200px] w-full" alt="" />
   </div>
 </div>

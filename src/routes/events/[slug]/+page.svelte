@@ -15,38 +15,48 @@
   import LastEdited from "$lib/components/eventPage/LastEdited.svelte";
   import DateCreated from "$lib/components/eventPage/DateCreated.svelte";
   import EditButton from "$lib/components/eventPage/EditButton.svelte";
+  import { image_path } from "../create/store.js";
+  import AttendButton from "$lib/components/eventPage/AttendButton.svelte";
 
-  export let data = null;
-  let pictureDiv = null;
+  export let data;
+  const isSubscribed = data.isSubscribed;
 
+  // console.log(data);
+  // const isSubscribed = data.isSubscribed;
+  // data = data.event;
+  image_path.set(data.event.image_path);
   $: {
-    if (pictureDiv) {
-      pictureDiv.classList.add(`bg-[url("${data.image_path}")]`);
-    }
-    if (data) {
-      lat.set(data.lat);
-      long.set(data.long);
+    if (data.event) {
+      lat.set(data.event.lat);
+      long.set(data.event.long);
     }
   }
-  console.log(data);
 </script>
 
 <main class="min-h-screen flex flex-col lg:mt-0 mt-4">
-  <div class="flex items-center justify-between">
-    <DateCreated created_at={data.created_at} />
-    <LastEdited edited_at={data.edited_at} />
-    <div>
-      <EditButton eventId={data.id} />
-      <DeleteButton eventId={data.id} />
+  {#if data.user.id == data.event.host_id}
+    <div class="flex items-center justify-between">
+      <DateCreated created_at={data.event.created_at} />
+      <LastEdited edited_at={data.event.edited_at} />
+      <div>
+        <EditButton eventId={data.event.id} />
+        <DeleteButton />
+      </div>
     </div>
-  </div>
+  {/if}
   <div
-    bind:this={pictureDiv}
+    style="background-image: url({$image_path});"
     class="flex flex-grow bg-center flex-col items-center justify-center w-full relative"
   >
     <div class="flex flex-col items-center gap-5 mt-60 mb-8 lg:mb-0">
-      <TitleLabel title={data.title} />
-      <JoinButton eventId={data.id} />
+      <TitleLabel title={data.event.title} />
+      {#if data.user.id != data.event.host_id}
+        {#if !isSubscribed}
+          <JoinButton userId={data.user.id} />
+        {:else}
+          <AttendButton />
+        {/if}
+      {/if}
     </div>
     <HostLabel
       class="absolute bottom-[-20%] translate-y-[-80%] left-0 ml-4 mm:ml-12"
@@ -59,7 +69,7 @@
       class="flex flex-col items-center justify-start p-4 gap-3 flex-1 mt-9 ml-0 lg:ml-7 mm:mt-2 xs:mt-10"
     >
       <ParticipantsLabel />
-      <Participants eventId={data.id} />
+      <Participants eventId={data.event.id} />
     </div>
     <div
       class="flex flex-col items-center justify-start p-4 gap-1 flex-1 mt-9 xs:mt-1"
@@ -67,8 +77,8 @@
       <DescriptionLabel class="w-full" />
       <Description
         class="w-full mb-6 sm:mb-4"
-        description={data.description}
-        address={data.address}
+        description={data.event.description}
+        address={data.event.address}
       />
       <div class="block sm:hidden w-full h-4" />
       <div
@@ -77,9 +87,9 @@
         <TimeLabel class="w-full text-center sm:basis-2/6 sm:text-left" />
         <TimeData
           class="w-full text-center sm:basis-4/6 sm:text-left"
-          startTime={data.time_start}
-          endTime={data.time_end}
-          date={data.date}
+          startTime={data.event.time_start}
+          endTime={data.event.time_end}
+          date={data.event.date}
         />
       </div>
     </div>

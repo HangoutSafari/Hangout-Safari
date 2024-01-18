@@ -25,7 +25,8 @@ jobs:
       - run: echo "Running linters "
       - run: npm run format
       - name: Push changes
-        if: success() # Only run if lint and build steps succeed
+        run: echo github.event_name
+        if: success() && github.event_name != 'push-from-workflow'
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"

@@ -32,4 +32,3 @@ jobs:
           git add .
           git commit -m "Linted and built code"
           git push
-

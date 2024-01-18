@@ -24,7 +24,7 @@ jobs:
       - run: npm run test
       - run: echo "Tests have passed ✅"
       - run: echo "Running linters "
-      - run: npm run format
+      - run: npm run lint
       - name: Push changes
         if: success() && github.event_name != 'push-from-workflow'
         run: |

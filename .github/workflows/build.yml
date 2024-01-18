@@ -43,11 +43,10 @@ jobs:
 
       - name: Get latest commit message
         id: get_commit_message
-        run: echo "{message}={$(git log -1 --pretty=%B)}" >> $GITHUB_STATE
-        #run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
+        run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
 
       - name: Push changes
-        if: success() && !contains($GITHUB_STATE.message, 'BuildWorkflow')
+        if: success() && !contains(steps.get_commit_message.outputs.message, 'BuildWorkflow')
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"

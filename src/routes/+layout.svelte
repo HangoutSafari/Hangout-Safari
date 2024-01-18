@@ -20,7 +20,7 @@
   <div class="z-50 sm:sticky top-0 bg-white-500" />
 
   <div class="background h-full">
-    {#if !($page.url.pathname == "/login" || $page.url.pathname == "/register")}
+    {#if !($page.url.pathname == "/login" || $page.url.pathname == "/register" || $page.url.pathname == "/")}
       <div class="z-50 sticky top-0 bg-white-500">
         <!-- <Navbar /> -->
       </div>

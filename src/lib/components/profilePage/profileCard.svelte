@@ -18,7 +18,7 @@
   <div
     class="w-full z-10 text-white text-center content-center self-center justify-self-center">
     <img
-      class="w-auto h-[10rem] lg:h-[15rem] lg:w-[15rem] mt-4 rounded-full mx-auto lg:mt-[-1rem] mb-5"
+      class="w-auto h-[10rem] lg:h-[15rem] lg:w-[15rem] mt-1 rounded-full mx-auto lg:mt-0 mb-5"
       src="{profileImage== null ? "/images/placeholderImage.jpg" : profileImage}"
       alt=""
     />

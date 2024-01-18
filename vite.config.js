@@ -22,4 +22,5 @@ export default defineConfig({
         ]
       : ["node_modules"],
   },
+  server:{port:3000}
 });

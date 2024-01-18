@@ -59,14 +59,14 @@
         >
             <div class="flex justify-items-start">
                 <div class="flex w-20">
-                    <i class="mr-2 fa-solid fa-calendar" />
+                    <i class="mr-2 fa-solid fa-location-dot fa-calendar" />
                     <p class="truncate">{locationObtained}</p>
                 </div>
             </div>
 
             <div class="flex justify-items-end">
                 <div class="flex">
-                    <i class="mr-2 fa-solid fa-location-dot" />
+                    <i class="mr-2 fa-solid fa-calendar" />
                     <p class="">{dateObtained}</p>
                 </div>
             </div>

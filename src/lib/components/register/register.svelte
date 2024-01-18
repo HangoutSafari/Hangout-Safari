@@ -25,7 +25,6 @@
       });
       // regex to check if response is a 2xx code
       if (/^2\d{2}$/.test(response)) {
-        alert("User registered successfully");
         redirectToLogin();
       } else {
         console.error("User registration failed:", response);

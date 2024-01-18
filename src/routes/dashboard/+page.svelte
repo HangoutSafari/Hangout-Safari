@@ -35,9 +35,7 @@
   <div
     class="order-1 drop-shadow-lg md:order-none w-full overflow-x-auto md:w-[390px] md:p-2 md:pr-2"
   >
-  {#if userEvents != null}
   <UpcomingContainer {userEvents} />
-  {/if}
   </div>
 </div>
 

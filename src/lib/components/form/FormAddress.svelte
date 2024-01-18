@@ -10,7 +10,7 @@
     timeoutId = null;
     let streetname = value;
     const promise = await fetch(
-      `https://geocode.xyz/?geoit=json&auth=180705050001809255650x22389&region=NL&streetname=${streetname}&cityname=${select.value}`
+      `https://geocode.xyz/?geoit=json&auth=344333920058688765385x40918&region=NL&streetname=${streetname}&cityname=${select.value}`
     );
     const response = await promise.json();
     $suggestions = [...Object.keys(response.standard.street)];

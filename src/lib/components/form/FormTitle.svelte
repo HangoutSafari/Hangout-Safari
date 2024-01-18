@@ -12,6 +12,7 @@
     on:click={() => (underlined = false)}
     type="text"
     id="title"
+    name="title"
     {value}
     placeholder="Title"
     class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400 bg-transparent"

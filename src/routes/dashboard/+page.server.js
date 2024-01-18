@@ -2,11 +2,10 @@ import { checkSession } from "../../session.js";
 
 export const load = async (serverLoadEvent) => {
   const session = await checkSession(serverLoadEvent);
-
   try {
     const { fetch } = serverLoadEvent;
     let res = await fetch(
-      `http://localhost:3010/users/dashboards/${session.user}/`
+      `http://localhost:3010/users/dashboards/${await session.user.id}/`
     );
     const user = await res.json();
 

@@ -8,6 +8,7 @@
   />
   <textarea
     id="description"
+    name="description"
     rows="4"
     class="w-full px-7 py-2 outline-none ring ring-orange-400"
   >

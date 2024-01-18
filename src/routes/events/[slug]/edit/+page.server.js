@@ -1,3 +1,5 @@
+import { redirect } from "@sveltejs/kit";
+
 export async function load({ params }) {
   try {
     let res = await fetch(`http://localhost:3010/events/free/${params.slug}`);
@@ -27,7 +29,6 @@ export const actions = {
         credentials: "include",
       }
     );
-    console.log(await req.json());
-    return { success: "The post was sucessfully edited" };
+    if (req.status == 200) throw redirect(303, `/events/${params.slug}`);
   },
 };

@@ -1,3 +1,5 @@
+import { redirect } from "@sveltejs/kit";
+
 /** @type {import('./$types').Actions} */
 export const actions = {
   default: async ({ request, cookies, fetch }) => {
@@ -13,6 +15,7 @@ export const actions = {
       body: JSON.stringify(obj),
       credentials: "include",
     });
-    return { success: "The post was sucessfully created" };
+    if (req.status == 200)
+      throw redirect(303, `/events/${(await req.json())[0]["id"]}`);
   },
 };

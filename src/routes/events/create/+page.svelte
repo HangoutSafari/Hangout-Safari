@@ -22,7 +22,6 @@
 
     const response = promise.json();
     const geoData = await response;
-    console.log(geoData);
     lat.set(geoData.latt);
     long.set(geoData.longt);
     addressValue = $address;

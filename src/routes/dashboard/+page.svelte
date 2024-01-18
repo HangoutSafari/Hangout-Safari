@@ -16,6 +16,8 @@
 
   let userLatestAnimal = data.userLatestAnimal;
 
+  console.log(currentUser);
+
   import InformationCard from "$lib/components/profilePage/informationCard.svelte";
     import { onMount } from "svelte";
   // export let data: PageData;

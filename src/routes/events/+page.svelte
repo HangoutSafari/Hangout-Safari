@@ -55,6 +55,7 @@
             />
           {:else if event.category_id == $lastClickedCategoryId}
             <Eventcard
+              eventId={event.id}
               eventCategory={event.category_id}
               eventImage={event.image_path}
               eventTitle={event.title}
@@ -67,6 +68,7 @@
     </div>
   </div>
 
+  <!-- Scrollbar -->
   <!-- Scrollbar -->
   <!-- Scrollbar -->
   <!-- Scrollbar -->

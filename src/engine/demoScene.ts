@@ -7,7 +7,7 @@ import { construct_svelte_component } from "svelte/internal";
 
 export default class DemoScene {
   public start(): void {
-    const lightColor = 0xfdb813;
+    const lightColor = 0xfdb812;
     const gltfLoader = new GLTFLoader();
 
     if (browser) {

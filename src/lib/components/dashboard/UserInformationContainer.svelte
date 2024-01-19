@@ -18,9 +18,6 @@
     day: "2-digit",
   });
 
-  console.log(formattedDate);
-  console.log(currentUser.location);
-
   function delteCookies() {
     const cookies = document.cookie.split(";");
 
@@ -36,7 +33,7 @@
 <div class="p-4 sm:p-0">
   <ProfileCard
     userName={currentUser.username}
-    animalCount={currentUser.count}
+    animalCount={currentUser.animals_gathered}
     profileImage={currentUser.image_url}
   />
 
@@ -47,19 +44,19 @@
           <div class="flex pt-4 text-lg lg:text-xl">
             <i class="fa-solid fa-calendar w-6 h-6" />
             <!-- Add a fixed width and height to the icon -->
-            <p class="pl-2">Joined {formattedDate}</p>
+            <p class="pl-2">Joined: {formattedDate}</p>
           </div>
 
           <div class="flex pt-4 text-lg lg:text-xl">
             <i class="fa-solid fa-location-dot w-6 h-6" />
             <!-- Add a fixed width and height to the icon -->
-            <p class="pl-2">Location {currentUser.location}</p>
+            <p class="pl-2">Events attended: {currentUser.events_attended}</p>
           </div>
         </div>
       </div>
 
       <div class="flex justify-center text-lg lg:text-xl pt-6">
-        <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Events</h1>
+        <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Category</h1>
         <div
           class="flex items-center text-white h-14 w-14 bg-orange-400 rounded-lg mr-2 p-2"
         >

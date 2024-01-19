@@ -20,7 +20,7 @@
 
 <div class="sm:h-[566px] bg-white p-4 rounded-b-2xl">
   <div>
-    {#each {length: 6} as _, i}
+    {#each { length: 6 } as _, i}
       <Feed
         profileImage="/images/profileImage.jpg"
         animalImage={AnimalsModels[users[i].model_id].imagePath}

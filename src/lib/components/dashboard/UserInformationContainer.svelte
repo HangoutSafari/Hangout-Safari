@@ -56,19 +56,19 @@
       </div>
 
       {#if currentUser.events_attended != 0}
-      <div class="flex text-lg lg:text-xl pt-6 md:px-20 px-12">
-        <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Category</h1>
-        <div
-          class="flex items-center text-white h-14 w-14 bg-orange-400 rounded-lg mr-2 p-2"
-        >
-          <i class="{favoriteEvent} fa-2xl" />
+        <div class="flex text-lg lg:text-xl pt-6 md:px-20 px-12">
+          <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Category</h1>
+          <div
+            class="flex items-center text-white h-14 w-14 bg-orange-400 rounded-lg mr-2 p-2"
+          >
+            <i class="{favoriteEvent} fa-2xl" />
+          </div>
         </div>
-      </div>
       {/if}
       {#if currentUser.animals_gathered != 0}
-      <div class="flex pt-4 md:px-20 px-12">
-        <h1 class="font-bold text-base mt-2 ml-2 pr-14">Latest Animal</h1>
-        <div class="h-14 w-14 mr-2 scale-150">
+        <div class="flex pt-4 md:px-20 px-12">
+          <h1 class="font-bold text-base mt-2 ml-2 pr-14">Latest Animal</h1>
+          <div class="h-14 w-14 mr-2 scale-150">
             <a href="/safari">
               <img
                 src={AnimalsModels[animalsByDate[0].model_id].imagePath}
@@ -76,8 +76,8 @@
                 class="p-1"
               />
             </a>
+          </div>
         </div>
-      </div>
       {/if}
       <div
         class="lg:hidden flex justify-center w-full items-center self-center my-2"

@@ -48,14 +48,14 @@
           </div>
 
           <div class="flex pt-4 text-lg lg:text-xl">
-            <i class="fa-solid fa-location-dot w-6 h-6" />
+            <i class="fa-solid fa-user-group w-6 h-6" />
             <!-- Add a fixed width and height to the icon -->
             <p class="pl-2">Events attended: {currentUser.events_attended}</p>
           </div>
         </div>
       </div>
 
-      <div class="flex justify-center text-lg lg:text-xl pt-6">
+      <div class="flex text-lg lg:text-xl pt-6 md:px-20 px-12">
         <h1 class="font-bold text-base mt-2 ml-2 pr-6">Favorite Category</h1>
         <div
           class="flex items-center text-white h-14 w-14 bg-orange-400 rounded-lg mr-2 p-2"
@@ -64,8 +64,8 @@
         </div>
       </div>
 
-      <div class="flex justify-center pt-4">
-        <h1 class="font-bold text-base mt-2 ml-2 pr-6">Latest Animal</h1>
+      <div class="flex pt-4 md:px-20 px-12">
+        <h1 class="font-bold text-base mt-2 ml-2 pr-14">Latest Animal</h1>
         <div class="h-14 w-14 mr-2 scale-150">
           {#if currentUser.count != 0}
             <a href="/safari">

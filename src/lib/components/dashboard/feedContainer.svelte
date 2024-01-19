@@ -4,6 +4,9 @@
 
   export let users;
   export let currentuser;
+
+  users = users.filter((user) => user.username != currentuser.username);
+  console.log(users);
 </script>
 
 <div
@@ -17,18 +20,16 @@
 
 <div class="sm:h-[566px] bg-white p-4 rounded-b-2xl">
   <div>
-    {#each users as user}
-      {#if currentuser.username != user.username}
-        <Feed
-          profileImage="/images/profileImage.jpg"
-          animalImage={AnimalsModels[user.model_id].imagePath}
-          dateObtained={user.attended_at}
-          locationObtained={user.title}
-          userName={user.username}
-          animalName={user.animal_name}
-          rarity={AnimalsModels[user.model_id].rarity}
-        />
-      {/if}
+    {#each {length: 6} as _, i}
+      <Feed
+        profileImage="/images/profileImage.jpg"
+        animalImage={AnimalsModels[users[i].model_id].imagePath}
+        dateObtained={users[i].attended_at}
+        locationObtained={users[i].title}
+        userName={users[i].username}
+        animalName={users[i].animal_name}
+        rarity={AnimalsModels[users[i].model_id].rarity}
+      />
     {/each}
   </div>
 </div>

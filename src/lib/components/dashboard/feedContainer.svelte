@@ -22,7 +22,7 @@
   <div>
     {#each { length: 6 } as _, i}
       <Feed
-        profileImage="/images/profileImage.jpg"
+        profileImage={users[i].image_url}
         animalImage={AnimalsModels[users[i].model_id].imagePath}
         dateObtained={users[i].attended_at}
         locationObtained={users[i].title}

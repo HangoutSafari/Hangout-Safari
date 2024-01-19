@@ -27,8 +27,8 @@ export class Scene extends THREE.Scene {
     );
     this.lightSources.push(
       new DirectionLight(
-        THREE.Color.NAMES.white,
-        10,
+        THREE.Color.NAMES.lightgoldenrodyellow,
+        12,
         true,
         new THREE.Vector3(-900, 900, 0)
       )

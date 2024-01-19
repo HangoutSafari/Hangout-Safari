@@ -3,6 +3,11 @@
   export let animalCount;
 
   export let profileImage;
+
+  if (animalCount === undefined) {
+    animalCount = 0;
+  }
+
 </script>
 
 <div

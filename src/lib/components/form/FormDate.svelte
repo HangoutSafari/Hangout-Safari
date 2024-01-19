@@ -13,6 +13,7 @@
     on:click={() => (underlined = false)}
     type="date"
     id="date"
+    name="date"
     {value}
     class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400 bg-transparent"
   />

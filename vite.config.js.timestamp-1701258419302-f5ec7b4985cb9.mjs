@@ -4,10 +4,8 @@ import { defineConfig } from "file:///D:/School%20programing/Safari/Hangout-Safa
 var vite_config_default = defineConfig({
   plugins: [sveltekit()],
   test: {
-    include: ["src/**/*.{test,spec}.{js,ts}"]
-  }
+    include: ["src/**/*.{test,spec}.{js,ts}"],
+  },
 });
-export {
-  vite_config_default as default
-};
+export { vite_config_default as default };
 //# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJEOlxcXFxTY2hvb2wgcHJvZ3JhbWluZ1xcXFxTYWZhcmlcXFxcSGFuZ291dC1TYWZhcmlcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIkQ6XFxcXFNjaG9vbCBwcm9ncmFtaW5nXFxcXFNhZmFyaVxcXFxIYW5nb3V0LVNhZmFyaVxcXFx2aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vRDovU2Nob29sJTIwcHJvZ3JhbWluZy9TYWZhcmkvSGFuZ291dC1TYWZhcmkvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBzdmVsdGVraXQgfSBmcm9tIFwiQHN2ZWx0ZWpzL2tpdC92aXRlXCI7XHJcbmltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gXCJ2aXRlc3QvY29uZmlnXCI7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoe1xyXG4gIHBsdWdpbnM6IFtzdmVsdGVraXQoKV0sXHJcbiAgdGVzdDoge1xyXG4gICAgaW5jbHVkZTogW1wic3JjLyoqLyoue3Rlc3Qsc3BlY30ue2pzLHRzfVwiXSxcclxuICB9LFxyXG59KTtcclxuIl0sCiAgIm1hcHBpbmdzIjogIjtBQUEwVCxTQUFTLGlCQUFpQjtBQUNwVixTQUFTLG9CQUFvQjtBQUU3QixJQUFPLHNCQUFRLGFBQWE7QUFBQSxFQUMxQixTQUFTLENBQUMsVUFBVSxDQUFDO0FBQUEsRUFDckIsTUFBTTtBQUFBLElBQ0osU0FBUyxDQUFDLDhCQUE4QjtBQUFBLEVBQzFDO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K

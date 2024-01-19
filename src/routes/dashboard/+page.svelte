@@ -2,27 +2,45 @@
   import UserInformationContainer from "$lib/components/dashboard/UserInformationContainer.svelte";
   import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
   import UpcomingContainer from "$lib/components/dashboard/upcomingContainer.svelte";
+
+  onMount(() => {
+    document.body.style.cursor = "auto";
+  });
+
+  export let data;
+  let users = data.users;
+
+  let currentUser = data.user;
+
+  let userEvents = data.userEvents;
+
+  let userLatestAnimal = data.userLatestAnimal;
+
   import InformationCard from "$lib/components/profilePage/informationCard.svelte";
-  import type { PageData } from "./$types";
+  import { onMount } from "svelte";
   // export let data: PageData;
 </script>
 
-<!-- <meta name="viewport" content="" /> -->
+<div
+  class="flex flex-col md:flex-row items-center justify-between background pt-4"
+>
+  <div
+    class="drop-shadow-lg order-2 align-middle items-center mt-4 md:mt-0 md:order-none w-[390px] md:p-2 md:pl-2"
+  >
+    <FeedContainer {users} currentuser={currentUser[0]} />
+  </div>
+  <div class="order-3 md:order-none md:p-2 justify-center">
+    <UserInformationContainer
+      currentUser={currentUser[0]}
+      currentLatestAnimal={userLatestAnimal}
+    />
+  </div>
 
-<div class="grid sm:flex justify-between pt-4">
-  
-  <div class="drop-shadow-lg order-2 sm:order-none w-[390px] sm:pl-4">
-    <FeedContainer />
+  <div
+    class="order-1 drop-shadow-lg md:order-none w-full overflow-x-auto md:w-[390px] md:p-2 md:pr-2"
+  >
+    <UpcomingContainer {userEvents} />
   </div>
-  
-  <div class="order-3 sm:order-none sm:flex justify-center">
-    <UserInformationContainer />
-  </div>
-
-  <div class="order-1 drop-shadow-lg sm:order-none overflow-x-auto w-full sm:w-[390px] sm:pr-4">
-    <UpcomingContainer />
-  </div>
-  
 </div>
 
 <style>

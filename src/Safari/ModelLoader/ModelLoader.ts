@@ -40,5 +40,3 @@ export function loadMeshes(
 
   return loadedMeshes;
 }
-
-

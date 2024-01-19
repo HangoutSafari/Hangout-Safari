@@ -13,7 +13,7 @@
   }
 
   if (profileImage === null || profileImage === "") {
-    profileImage = "/images/profileImage.jpg"
+    profileImage = "/images/profileImage.jpg";
   }
 
   let createdDate = new Date(dateObtained);

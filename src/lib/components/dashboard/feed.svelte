@@ -1,12 +1,17 @@
 <script>
   import { AnimalsModels } from "../../../Safari/Types/AnimalModelsPathTypes";
 
-  export let profileImage;
-  export let animalImage;
-  export let locationObtained;
-  export let dateObtained;
-  export let userName;
-  export let animalName;
+    export let profileImage;
+    export let animalImage;
+    export let locationObtained;
+    export let dateObtained;
+    export let userName;
+    export let animalName;
+    let trunkatedUserName=userName;
+    // console.log(userName.length)
+    if(userName.length>=7){
+       trunkatedUserName = userName.substring(0,6) + "..."
+    }
 
   let createdDate = new Date(dateObtained);
   dateObtained = createdDate.toLocaleDateString("nl-NL", {
@@ -50,24 +55,25 @@
     <img src={profileImage} alt="Profile Image" class="h-16 rounded-full" />
   </div>
 
-  <div class="flex flex-col">
-    <p>
-      <strong>{userName}</strong> obtained
-      <span
-        class="{textColor} font-extrabold inline-block text-transparent bg-clip-text"
-        >{animalName}</span
-      >
-    </p>
 
-    <div
-      class="flex text-sm gap-4 content-around pt-1 text-black text-opacity-40"
-    >
-      <div class="flex justify-items-start">
-        <div class="flex w-20">
-          <i class="mr-2 fa-solid fa-location-dot fa-calendar" />
-          <p class="truncate">{locationObtained}</p>
+    <div class="flex flex-col">
+        <div class="flex flex-col">
+            <div>
+                <span class="font-bold">{trunkatedUserName}</span> 
+        
+            <span>obtained</span>
+            
+                <span class="{textColor} font-extrabold inline-block text-transparent bg-clip-text">{animalName}</span>
+            </div>
         </div>
-      </div>
+
+        <div class="flex text-sm gap-4 content-around pt-1 text-black text-opacity-40">
+            <div class="flex justify-items-start">
+                <div class="flex w-20">
+                    <i class="mr-2 fa-solid fa-location-dot" />
+                    <p class="truncate">{locationObtained}</p>
+                </div>
+            </div>
 
       <div class="flex justify-items-end">
         <div class="flex">

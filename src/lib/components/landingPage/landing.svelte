@@ -31,8 +31,10 @@
   </div>
 </div>
 
-<div class=" grid static md:relative z md:grid-cols-2 grid-cols-1 md:pt-0 mt-0 md:mt-[-15px] lg:mt-[-50px] pt-5 background">
-    <div class="md:order-2 relative">
+<div
+  class=" grid static md:relative z md:grid-cols-2 grid-cols-1 md:pt-0 mt-0 md:mt-[-15px] lg:mt-[-50px] pt-5 background"
+>
+  <div class="md:order-2 relative">
     <h1
       class="md:collapse sm:text-3xl text-[21px] text-white text-center absolute z-10 top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2"
     >

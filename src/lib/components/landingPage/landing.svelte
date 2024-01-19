@@ -75,20 +75,24 @@
       </button>
     </div>
     <div class="flex mb-5 md:mb-0 md:my-3 justify-center md:mt-6 lg:mt-12">
-        <div class="grid grid-cols-2 gap-16 md:gap-32">
-            <div class="w-24 md:w-32 h-16 md:h-20  bg-slate-300 shadow-lg rounded-md flex items-center justify-center">
-                <div class="text-center"> 
-                    <p class=" font-mono font-semibold text-lg md:text-xl">1000+</p>
-                    <p class="font-medium text-md md:text-lg">Active Users</p>
-                </div>
-            </div>
-            <div class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center">
-                <div class="text-center"> 
-                    <p class=" font-mono font-semibold text-lg md:text-xl">80+</p>
-                    <p class="font-medium text-md md:text-lg">Events</p>
-                </div>
-            </div>
+      <div class="grid grid-cols-2 gap-16 md:gap-32">
+        <div
+          class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center"
+        >
+          <div class="text-center">
+            <p class=" font-mono font-semibold text-lg md:text-xl">1000+</p>
+            <p class="font-medium text-md md:text-lg">Active Users</p>
+          </div>
         </div>
+        <div
+          class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center"
+        >
+          <div class="text-center">
+            <p class=" font-mono font-semibold text-lg md:text-xl">80+</p>
+            <p class="font-medium text-md md:text-lg">Events</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

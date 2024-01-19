@@ -1,5 +1,12 @@
+<script>
+  export let userName;
+  export let animalCount;
+
+  export let profileImage;
+</script>
+
 <div
-  class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-0 m-0"
+  class="relative safari-bg flex w-full lg:w-[25rem] lg:h-[22rem] drop-shadow-2xl p-16 sm:p-24 md:p-6 lg:p-0 mt-2 md:mt-0"
 >
   <div class="absolute inset-0 overflow-hidden rounded-xl">
     <img
@@ -12,16 +19,16 @@
     class="w-full z-10 text-white text-center content-center self-center justify-self-center"
   >
     <img
-      class=" w-auto h-[10rem] lg:h-[15rem] lg:w-[15rem] mt-1 rounded-full mx-auto lg:mt-[-1rem] mb-5"
-      src="/images/profileImage.jpg"
+      class="w-auto h-[10rem] lg:h-[15rem] lg:w-[15rem] mt-1 rounded-full mx-auto lg:mt-0 mb-5"
+      src={profileImage == null ? "/images/placeholderImage.jpg" : profileImage}
       alt=""
     />
     <!-- Your content goes here -->
-    <h1 class="text-[1.5rem] lg:text-[2rem] font-bold">Jane Doe</h1>
+    <h1 class="text-[2rem] font-bold">{userName}</h1>
     <p
       class="font-bold text-[1.5rem] lg:text-[1rem] mt-7 lg:mt-2 mb-3 lg:mb-auto"
     >
-      Animal count: 1245
+      Animal count: {animalCount}
     </p>
     <!-- More content if needed -->
   </div>

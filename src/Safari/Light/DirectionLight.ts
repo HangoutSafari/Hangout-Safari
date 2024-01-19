@@ -23,9 +23,9 @@ export class DirectionLight extends THREE.DirectionalLight {
     this.shadow.mapSize.set(1900, 1900);
     this.shadow.normalBias = 2.4;
     this.shadow.camera.far = 20;
-    this.shadow.camera.scale.set(240,200,200);
+    this.shadow.camera.scale.set(240, 200, 200);
     this.pos = lPosition;
-    this.target.position.set(190,0,190)
+    this.target.position.set(190, 0, 190);
     this.position.set(lPosition.x, lPosition.y, lPosition.z);
   }
 

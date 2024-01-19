@@ -14,6 +14,6 @@ export async function postData(url, fields) {
     console.log(data);
     return response.status;
   } catch (error) {
-    console.error('Fetch Error: ', error.message);
+    console.error("Fetch Error: ", error.message);
   }
 }

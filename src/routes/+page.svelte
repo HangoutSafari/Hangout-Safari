@@ -1,15 +1,16 @@
 <script>
   export let data;
   console.log(data);
-  import { goto } from '$app/navigation';
-  import Landing from '$lib/components/landingPage/landing.svelte';
+  import { goto } from "$app/navigation";
+  import Landing from "$lib/components/landingPage/landing.svelte";
+
   const redirectToRegister = () => {
-    goto('/register');
+    goto("/register");
   };
 </script>
 
 <main class="">
-    <!-- <h1 class="text-3xl justify-start pt-3">Welcome, to Safari Hangout</h1>
+  <!-- <h1 class="text-3xl justify-start pt-3">Welcome, to Safari Hangout</h1>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
     <dotlottie-player src="https://lottie.host/af1710d7-649a-4b4f-83ab-7764ee7f796d/BHFb90wVs9.json" background="transparent" speed="2" style="width: 65%; height: 65%;" autoplay></dotlottie-player>
     <div class="justify-center flex">
@@ -19,7 +20,7 @@
         >Register</button
       >
     </div> -->
-    <Landing />
+  <Landing />
 </main>
 
 <style>

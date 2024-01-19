@@ -2,6 +2,7 @@
   let underlined = true;
   export let id;
   export let value = "00:00";
+  export let name;
 </script>
 
 <div class="{$$props.class} w-full">
@@ -12,6 +13,7 @@
     on:blur={() => (underlined = true)}
     on:click={() => (underlined = false)}
     type="time"
+    {name}
     {id}
     {value}
     class="w-full px-7 py-2 focus:outline-none focus:ring focus:ring-orange-400 bg-transparent"

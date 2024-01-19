@@ -6,4 +6,3 @@ describe("Event page can be called", () => {
     expect(response.status).toBe(200);
   });
 });
-

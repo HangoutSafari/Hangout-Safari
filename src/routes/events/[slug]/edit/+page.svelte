@@ -92,7 +92,8 @@
       >
         Cancel
       </a>
-      <a href="/events/{data.id}"
+      <a
+        href="/events/{data.id}"
         type="submit"
         class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 md:py-3 md:px-7 rounded-xl ml-4 xl:ml-10 transition duration-300 ease-in-out hover:scale-110"
       >

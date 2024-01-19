@@ -2,13 +2,13 @@
   import { goto } from "$app/navigation";
   import { handleInputKeydown } from "$lib/components/register/register.svelte";
   import { postData } from "../../../api";
-    import Loading from "./loading.svelte";
+  import Loading from "./loading.svelte";
 
   let underlined = [true, true];
   let email = "";
   let password = "";
 
-  let isLoading = false
+  let isLoading = false;
 
   const redirectToRegister = () => {
     document.body.style.cursor = "wait";
@@ -37,8 +37,8 @@
 
       // regex to check if response is a 2xx code
       if (/^2\d{2}$/.test(response.status)) {
-          redirectToProfile();
-      } else {  
+        redirectToProfile();
+      } else {
         console.error("User login failed:", response);
       }
     } catch (error) {
@@ -47,9 +47,10 @@
   };
 </script>
 
-{#if !isLoading }
-  
-  <div class=" flex p-5 justify-center self-center text-center items-center z-30">
+{#if !isLoading}
+  <div
+    class=" flex p-5 justify-center self-center text-center items-center z-30"
+  >
     <div class="bg-white p-5 rounded shadow-2xl w-72 md:w-96">
       <h2 class="text-2xl font-semibold text-gray-500 mb-4">LOG IN</h2>
       <form on:submit|preventDefault={login}>
@@ -99,7 +100,6 @@
         <button
           id="3"
           type="submit"
-
           class="w-full h-10 bg-gray-300 font-bold text-gray-500 py-2 rounded-md hover:text-black hover:bg-gradient-to-r from-[#F34439] to-[#FF8D07]"
           >SUBMIT</button
         >
@@ -123,7 +123,6 @@
       >
     </div>
   </div>
-  {:else}
-  <Loading></Loading>
+{:else}
+  <Loading />
 {/if}
-

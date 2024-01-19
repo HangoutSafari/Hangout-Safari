@@ -21,10 +21,13 @@ export class Renderer extends THREE.WebGLRenderer {
   /**
    * Handles the responsivness of the canvas and resets the renderer
    */
-  public handleResizing()
-  {
-    this.dimensionHelper = document.getElementById('dimentionHelper');
-    this.setSize(this.dimensionHelper.clientWidth, this.dimensionHelper.clientHeight, true);
+  public handleResizing() {
+    this.dimensionHelper = document.getElementById("dimentionHelper");
+    this.setSize(
+      this.dimensionHelper.clientWidth,
+      this.dimensionHelper.clientHeight,
+      true
+    );
     this.pixelRatio = window.devicePixelRatio;
   }
 }

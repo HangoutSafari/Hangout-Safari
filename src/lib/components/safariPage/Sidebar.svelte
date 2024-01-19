@@ -1,28 +1,28 @@
-<script lang="ts" >
-    import { createSearchStore, searchHandler } from "$lib/stores/Searchstore";
-    import {  onDestroy } from "svelte";
+<script lang="ts">
+  import { createSearchStore, searchHandler } from "$lib/stores/Searchstore";
+  import { onDestroy } from "svelte";
   import { AnimalsModels } from "../../../Safari/Types/AnimalModelsPathTypes";
   import Header from "../events/header.svelte";
-  import SideBarItem from "./SideBarItem.svelte"
-
+  import SideBarItem from "./SideBarItem.svelte";
 
   export let header: any;
   export let animals = [];
 
-  const searchData = animals.map((animal)=>({
+  const searchData = animals.map((animal) => ({
     ...animal,
-    searchProperties: `${AnimalsModels[animal.model_id].name} ${animal.animal_name} `
+    searchProperties: `${AnimalsModels[animal.model_id].name} ${
+      animal.animal_name
+    } `,
   }));
 
   console.log(searchData);
   const searachStore = createSearchStore(searchData);
 
+  const unsubscribe = searachStore.subscribe((input) => searchHandler(input));
 
-  const unsubscribe = searachStore.subscribe((input)=> searchHandler(input));
-
-  onDestroy(()=>{
+  onDestroy(() => {
     unsubscribe();
-  })
+  });
 </script>
 
 <main class="sm:h-full w-full mt-6 lg:mt-0">
@@ -32,7 +32,7 @@
   >
     <div class="sticky top-20">
       <!-- Header name -->
-      <Header text="{header}" class="hidden sm:inline-block"/>
+      <Header text={header} class="hidden sm:inline-block" />
 
       <!-- Search bar-->
       <label
@@ -47,18 +47,20 @@
           bind:value={$searachStore.search}
           class="outline-none border-none bg-transparent placeholder-gray-200"
         />
-        
       </label>
     </div>
-    <div class="flex flex-row h-[full] lg:flex-col mt-7 lg:mt-0 sm:w-full gap-3 overflow-y-none overflow-x-auto md:overflow-y-none md:overflow-x-auto lg:overflow-x-cip lg:overflow-y-auto items-center ">
-      {#each $searachStore.filtered as animal }
-      <SideBarItem 
+    <div
+      class="flex flex-row h-[full] lg:flex-col mt-7 lg:mt-0 sm:w-full gap-3 overflow-y-none overflow-x-auto md:overflow-y-none md:overflow-x-auto lg:overflow-x-cip lg:overflow-y-auto items-center"
+    >
+      {#each $searachStore.filtered as animal}
+        <SideBarItem
           name={AnimalsModels[animal.model_id].name}
           animalImage={AnimalsModels[animal.model_id].imagePath}
           locationObtained={animal.title}
-          dateObtained = {animal.attended_at} 
-          rarity = {AnimalsModels[animal.model_id].rarity}
-          on:sideBarItemClicked/>
+          dateObtained={animal.attended_at}
+          rarity={AnimalsModels[animal.model_id].rarity}
+          on:sideBarItemClicked
+        />
       {/each}
     </div>
   </aside>

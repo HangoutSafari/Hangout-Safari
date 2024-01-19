@@ -1,21 +1,55 @@
 name: Build application
-run-name: ${{ github.actor }} is building the application 🏗️
-on: [push]
+
+on:
+  push:
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.HANGOUT_SAFARI_TOKEN }}
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "20.x"
-      - run: echo "Instaling dependencies ⏬"
+          node-version: "18.x"
+
+      - run: echo "${{ github.event_name }}"
+
+      - run: echo "Installing dependencies ⏬"
+        # Add your installation commands here
+
       - run: npm ci
+        # Add any other necessary setup steps
+
       - run: echo $PATH
+
       - run: echo "Building application 👷"
       - run: npm run build --if-present
+
       - run: echo "Building is complete ✅"
+
       - run: echo "Starting tests 🧪"
       - run: npm run test
+
       - run: echo "Tests have passed ✅"
+
+      - run: echo "Running formating"
+      - run: npm run format
+
+      - name: Get latest commit message
+        id: get_commit_message
+        run: echo "::set-output name=message::$(git log -1 --pretty=%B)"
+
+      - name: Push changes
+        if: success() && !contains(steps.get_commit_message.outputs.message, 'BuildWorkflow')
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add .
+          git commit -m "BuildWorkflow: Linted and built code"
+          git push

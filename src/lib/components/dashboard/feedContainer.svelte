@@ -3,33 +3,32 @@
   import { AnimalsModels } from "../../../Safari/Types/AnimalModelsPathTypes";
 
   export let users;
-  export let currentuser
-
+  export let currentuser;
 </script>
 
-<div class="flex justify-center rounded-t-2xl pt-4 px-12 text-2xl bg-white border-b border-slate-300">
-  
+<div
+  class="flex justify-center rounded-t-2xl pt-4 px-12 text-2xl bg-white border-b border-slate-300"
+>
   <div>
     <h1 class="pb-2 text-xl lg:text-2xl">Feed</h1>
-    <div class="h-1.5 bg-gradient-to-r from-yellow-400 to-red-500"></div>
+    <div class="h-1.5 bg-gradient-to-r from-yellow-400 to-red-500" />
   </div>
 </div>
 
 <div class="sm:h-[566px] bg-white p-4 rounded-b-2xl">
-
   <div>
-      {#each users as user}
+    {#each users as user}
       {#if currentuser.username != user.username}
-        <Feed 
-        profileImage = "/images/profileImage.jpg"
-        animalImage = {AnimalsModels[user.model_id].imagePath}
-        dateObtained = {user.attended_at}
-        locationObtained = {user.title}
-        userName = {user.username}
-        animalName = {user.animal_name}
-        rarity = {AnimalsModels[user.model_id].rarity}
+        <Feed
+          profileImage="/images/profileImage.jpg"
+          animalImage={AnimalsModels[user.model_id].imagePath}
+          dateObtained={user.attended_at}
+          locationObtained={user.title}
+          userName={user.username}
+          animalName={user.animal_name}
+          rarity={AnimalsModels[user.model_id].rarity}
         />
-        {/if}
-      {/each}
+      {/if}
+    {/each}
   </div>
 </div>

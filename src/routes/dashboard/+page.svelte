@@ -3,9 +3,9 @@
   import FeedContainer from "$lib/components/dashboard/feedContainer.svelte";
   import UpcomingContainer from "$lib/components/dashboard/upcomingContainer.svelte";
 
-  onMount(()=>{
-    document.body.style.cursor = "auto"
-  })
+  onMount(() => {
+    document.body.style.cursor = "auto";
+  });
 
   export let data;
   let users = data.users;
@@ -19,7 +19,7 @@
   console.log(currentUser);
 
   import InformationCard from "$lib/components/profilePage/informationCard.svelte";
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
   // export let data: PageData;
 </script>
 
@@ -41,7 +41,7 @@
   <div
     class="order-1 drop-shadow-lg md:order-none w-full overflow-x-auto md:w-[390px] md:p-2 md:pr-2"
   >
-  <UpcomingContainer {userEvents} />
+    <UpcomingContainer {userEvents} />
   </div>
 </div>
 

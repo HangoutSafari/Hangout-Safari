@@ -32,9 +32,9 @@
 </div>
 
 <div
-  class=" grid absolite z md:grid-cols-2 grid-cols-1 md:pt-0 mt-0 md:mt-[-35px] lg:mt-[-70px] pt-5 background"
+  class=" grid static md:relative z md:grid-cols-2 grid-cols-1 md:pt-0 mt-0 md:mt-[-15px] lg:mt-[-50px] pt-5 background"
 >
-  <div class="md:order-2">
+  <div class="md:order-2 relative">
     <h1
       class="md:collapse sm:text-3xl text-[21px] text-white text-center absolute z-10 top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2"
     >
@@ -74,12 +74,24 @@
         <a href="/register">Start Your Journey Now!</a>
       </button>
     </div>
-    <div
-      class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center"
-    >
-      <div class="text-center">
-        <p class=" font-mono font-semibold text-lg md:text-xl">80+</p>
-        <p class="font-medium text-md md:text-lg">Events</p>
+    <div class="flex mb-5 md:mb-0 md:my-3 justify-center md:mt-6 lg:mt-12">
+      <div class="grid grid-cols-2 gap-16 md:gap-32">
+        <div
+          class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center"
+        >
+          <div class="text-center">
+            <p class=" font-mono font-semibold text-lg md:text-xl">1000+</p>
+            <p class="font-medium text-md md:text-lg">Active Users</p>
+          </div>
+        </div>
+        <div
+          class="w-24 md:w-32 h-16 md:h-20 bg-slate-300 shadow-lg rounded-md flex items-center justify-center"
+        >
+          <div class="text-center">
+            <p class=" font-mono font-semibold text-lg md:text-xl">80+</p>
+            <p class="font-medium text-md md:text-lg">Events</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

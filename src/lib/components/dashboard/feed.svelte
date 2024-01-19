@@ -8,9 +8,12 @@
   export let userName;
   export let animalName;
   let trunkatedUserName = userName;
-  // console.log(userName.length)
   if (userName.length >= 7) {
     trunkatedUserName = userName.substring(0, 6) + "...";
+  }
+
+  if (profileImage === null || profileImage === "") {
+    profileImage = "/images/profileImage.jpg";
   }
 
   let createdDate = new Date(dateObtained);

@@ -48,8 +48,15 @@ jobs:
       - name: Push changes
         if: success() && !contains(steps.get_commit_message.outputs.message, 'BuildWorkflow')
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          set -e  
+          git config user.name "wpsimon09"
+          git config user.email "wpsimon09@users.noreply.github.com"
           git add .
+
+          # Use 'git diff-index' to check if there are changes to commit
+          if ! git diff-index --quiet HEAD --; then
           git commit -m "BuildWorkflow: Linted and built code"
           git push
+          else
+          echo "No changes to commit."
+          fi
